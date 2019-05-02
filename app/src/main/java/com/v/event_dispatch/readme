@@ -1,0 +1,42 @@
+android 事件分发：
+
+事件分发  焦点问题：
+
+Touch事件分发机制：只有两种类型：View(单一控件没有子控件,如：button,imageView)
+                           ViewGroup(多个View 或者 ViewGroup组成 如：布局LinearLayout)
+
+ViewGroup的相关事件有三个：
+    onInterceptTouchEvent：拦截
+    dispatchTouchEvent：分发
+    onTouchEvent：消费
+
+View的相关事件只有两个：
+    dispatchTouchEvent：分发
+    onTouchEvent：消费（处理）
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

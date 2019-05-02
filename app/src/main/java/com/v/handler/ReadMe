@@ -1,0 +1,15 @@
+不能在子线程中更新ui
+handler使用不当引起的内存泄漏
+message的优化
+在子线程中传教handler,需要为这个handler准备looper
+在handler把消息处理完了后，但是页面销毁了，这个时候可能handler会更新ui,但是不如TextView, ImageView之类的资源引用不见了，就会出现空指针异常
+
+handler能做什么：
+1、处理延迟任务
+2、线程中的通信
+
+handler.sendMessage()--->发送消息--->MessageQueue,enqueueMessage(),添加
+activityThread------>Looper.loop()------>MessageQueue.next()返回，销毁消息
+
+ThreadLocal
+
