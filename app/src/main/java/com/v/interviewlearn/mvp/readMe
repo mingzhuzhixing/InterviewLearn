@@ -10,3 +10,7 @@ Presenter持有model接口的类型
 
 
 ocp开闭原则
+
+
+
+内存泄漏问题

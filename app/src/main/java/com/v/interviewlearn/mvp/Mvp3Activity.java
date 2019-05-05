@@ -1,19 +1,19 @@
 package com.v.interviewlearn.mvp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.v.interviewlearn.R;
+import com.v.interviewlearn.mvp.MVPBaseActivity;
 import com.v.interviewlearn.mvp.adapter.GirlAdapter;
 import com.v.interviewlearn.mvp.bean.Girl;
-import com.v.interviewlearn.mvp.view.GirlPresenterV2;
+import com.v.interviewlearn.mvp.view.GirlPresenterV3;
 import com.v.interviewlearn.mvp.view.IGirlView;
 
 import java.util.List;
 
-public class MvpActivity extends AppCompatActivity implements IGirlView {
+public class Mvp3Activity extends MVPBaseActivity<IGirlView, GirlPresenterV3> implements IGirlView {
     private ListView listview;
 
     @Override
@@ -21,9 +21,12 @@ public class MvpActivity extends AppCompatActivity implements IGirlView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp);
         listview = findViewById(R.id.listview);
+        mPresenter.fetch();
+    }
 
-//        new GirlPresenterV1(this).fetch();
-        new GirlPresenterV2(this).fetch();
+    @Override
+    protected GirlPresenterV3 createPresenter() {
+        return new GirlPresenterV3();
     }
 
     @Override
@@ -36,4 +39,3 @@ public class MvpActivity extends AppCompatActivity implements IGirlView {
         listview.setAdapter(new GirlAdapter(this,girls));
     }
 }
-
