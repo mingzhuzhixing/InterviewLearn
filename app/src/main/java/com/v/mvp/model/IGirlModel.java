@@ -1,6 +1,6 @@
-package com.v.interviewlearn.mvp.model;
+package com.v.mvp.model;
 
-import com.v.interviewlearn.mvp.bean.Girl;
+import com.v.mvp.bean.Girl;
 
 import java.util.List;
 

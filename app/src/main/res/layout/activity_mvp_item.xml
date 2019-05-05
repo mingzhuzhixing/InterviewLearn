@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    tools:context=".mvp.MvpActivity">
+    tools:context="com.v.mvp.MvpActivity">
 
     <ImageView
         android:layout_width="80dp"

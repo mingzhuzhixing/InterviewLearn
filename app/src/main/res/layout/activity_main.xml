@@ -13,7 +13,7 @@
         android:text="子线程更新ui"/>
 
     <TextView
-        android:id="@+id/textview"
+        android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>

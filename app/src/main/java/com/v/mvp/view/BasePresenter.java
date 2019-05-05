@@ -1,6 +1,4 @@
-package com.v.interviewlearn.mvp.view;
-
-import android.view.View;
+package com.v.mvp.view;
 
 import java.lang.ref.WeakReference;
 

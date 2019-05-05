@@ -1,8 +1,8 @@
-package com.v.interviewlearn.mvp.view;
+package com.v.mvp.view;
 
-import com.v.interviewlearn.mvp.bean.Girl;
-import com.v.interviewlearn.mvp.model.GirlModelImplV2;
-import com.v.interviewlearn.mvp.model.IGirlModel;
+import com.v.mvp.bean.Girl;
+import com.v.mvp.model.GirlModelImplV2;
+import com.v.mvp.model.IGirlModel;
 
 import java.util.List;
 

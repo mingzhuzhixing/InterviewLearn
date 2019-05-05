@@ -1,8 +1,8 @@
-package com.v.interviewlearn.mvp.view;
+package com.v.mvp.view;
 
-import com.v.interviewlearn.mvp.bean.Girl;
-import com.v.interviewlearn.mvp.model.GirlModelImplV1;
-import com.v.interviewlearn.mvp.model.IGirlModel;
+import com.v.mvp.bean.Girl;
+import com.v.mvp.model.GirlModelImplV2;
+import com.v.mvp.model.IGirlModel;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * @company 北京千阳远望信息技术有限公司
  * @date 2019-05-05 15:34
  */
-public class GirlPresenterV1 {
+public class GirlPresenterV2 {
     /**
      * view
      */
@@ -24,9 +24,9 @@ public class GirlPresenterV1 {
     /**
      * model
      */
-    IGirlModel mGirlModel=new GirlModelImplV1();
+    IGirlModel mGirlModel=new GirlModelImplV2();
 
-    public GirlPresenterV1(IGirlView girlView){
+    public GirlPresenterV2(IGirlView girlView){
         this.mGirlView=girlView;
     }
 

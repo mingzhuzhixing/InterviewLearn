@@ -1,4 +1,4 @@
-package com.v.interviewlearn.mvp.adapter;
+package com.v.mvp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.v.interviewlearn.R;
-import com.v.interviewlearn.mvp.bean.Girl;
+import com.v.mvp.bean.Girl;
 
 import java.util.List;
 

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextView = (TextView) findViewById(R.id.textview);
+        mTextView = (TextView) findViewById(R.id.tv_content);
 
 //        new Thread(new Runnable() {
 //            @Override

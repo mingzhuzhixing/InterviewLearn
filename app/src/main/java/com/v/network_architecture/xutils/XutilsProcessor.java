@@ -1,6 +1,6 @@
 package com.v.network_architecture.xutils;
 
-import com.v.designmode.MyApplication;
+import com.v.interviewlearn.MyApplication;
 import com.v.network_architecture.ICallback;
 import com.v.network_architecture.IHttpProcessor;
 

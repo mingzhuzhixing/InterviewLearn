@@ -1,4 +1,4 @@
-package com.v.designmode;
+package com.v.interviewlearn;
 
 import android.app.Application;
 

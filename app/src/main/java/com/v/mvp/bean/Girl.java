@@ -1,4 +1,4 @@
-package com.v.interviewlearn.mvp.bean;
+package com.v.mvp.bean;
 
 /**
  * Class description here

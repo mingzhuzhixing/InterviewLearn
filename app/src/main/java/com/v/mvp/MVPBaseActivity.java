@@ -1,10 +1,9 @@
-package com.v.interviewlearn.mvp;
+package com.v.mvp;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.view.menu.BaseMenuPresenter;
 
-import com.v.interviewlearn.mvp.view.BasePresenter;
+import com.v.mvp.view.BasePresenter;
 
 /**
  * Class description here
