@@ -14,15 +14,18 @@
         android:name="com.v.designmode.MyApplication"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".mvp.Mvp3Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".mvp.MvpActivity"/>
         <activity android:name="com.v.network_architecture.TestNetworkActivity"/>
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
     </application>
