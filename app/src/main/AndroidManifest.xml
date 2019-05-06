@@ -3,34 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.v.interviewlearn">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MyApplication"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name="com.v.mvp.Mvp3Activity">
+        <activity android:name="com.v.plugin.PluginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.v.ffmpeg.FFmpegActivity" />
+        <activity android:name="com.v.mvp.Mvp3Activity">
 
-        <activity android:name=".MainActivity"/>
-        <activity android:name="com.v.mvp.MvpActivity"/>
-        <activity android:name="com.v.network_architecture.TestNetworkActivity"/>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name="com.v.mvp.MvpActivity" />
+        <activity android:name="com.v.network_architecture.TestNetworkActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
-
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.retrofit.RetrofitActivity" />
+
+        <activity android:name="com.v.plugin.ProxyActivity" android:launchMode="standard"/>
     </application>
 
 </manifest>
