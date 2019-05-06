@@ -1,4 +1,4 @@
-package com.v.screen_adaptate;
+package com.v.screen_adapter;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

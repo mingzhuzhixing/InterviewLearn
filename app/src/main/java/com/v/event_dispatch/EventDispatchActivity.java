@@ -1,5 +1,6 @@
 package com.v.event_dispatch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -47,47 +48,50 @@ public class EventDispatchActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                Log.e(TAG,"EventDispatchActivity-dispatchTouchEvent-ACTION_DOWN");
-                break;
-//                return true;
-                //注意：在事件分发的down事件里面return false   不会继续向下把down事件分发子view,这样的话他的子类view不能响应
-                //注意：在事件分发的down事件里面return true   不会继续向下把down事件分发子view,这样的话他的子类view不能响应
-                //return false 表示不向下分发，  return true 表示消费调事件  这句话是针对ViewGroup
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent event) {
+//        switch (event.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                Log.e(TAG,"EventDispatchActivity-dispatchTouchEvent-ACTION_DOWN");
+//                break;
+////                return true;
+//                //注意：在事件分发的down事件里面return false   不会继续向下把down事件分发子view,这样的话他的子类view不能响应
+//                //注意：在事件分发的down事件里面return true   不会继续向下把down事件分发子view,这样的话他的子类view不能响应
+//                //return false 表示不向下分发，  return true 表示消费调事件  这句话是针对ViewGroup
+//
+//            case MotionEvent.ACTION_UP:
+//                Log.e(TAG,"EventDispatchActivity-dispatchTouchEvent-ACTION_UP");
+//                break;
+//            default:
+//                break;
+//        }
+//        return super.dispatchTouchEvent(event);
+//    }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        switch (event.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                Log.e(TAG,"EventDispatchActivity-onTouchEvent-ACTION_DOWN");
+//                break;
+//
+//            case MotionEvent.ACTION_UP:
+//                Log.e(TAG,"EventDispatchActivity-onTouchEvent-ACTION_UP");
+//                break;
+//            default:
+//                break;
+//        }
+//        return super.onTouchEvent(event);
+//    }
 
-            case MotionEvent.ACTION_UP:
-                Log.e(TAG,"EventDispatchActivity-dispatchTouchEvent-ACTION_UP");
-                break;
-            default:
-                break;
-        }
-        return super.dispatchTouchEvent(event);
-    }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                Log.e(TAG,"EventDispatchActivity-onTouchEvent-ACTION_DOWN");
-                break;
-
-            case MotionEvent.ACTION_UP:
-                Log.e(TAG,"EventDispatchActivity-onTouchEvent-ACTION_UP");
-                break;
-            default:
-                break;
-        }
-        return super.onTouchEvent(event);
+    public void entrySencond(View view) {
+        startActivity(new Intent(this, EventDispatch2Activity.class));
     }
 }
 
 
 /**
- *
- *
  *
  04-18 18:25:59.095 15165-15165/com.v.designmode E/EventDispatchActivity: EventDispatchActivity-dispatchTouchEvent-ACTION_DOWN
  04-18 18:25:59.097 15165-15165/com.v.designmode E/MyButton: MyButton-dispatchTouchEvent-ACTION_DOWN
@@ -100,7 +104,6 @@ public class EventDispatchActivity extends AppCompatActivity {
  04-18 18:25:59.182 15165-15165/com.v.designmode E/MyButton: MyButton-onTouchEvent-ACTION_UP
 
  04-18 18:25:59.185 15165-15165/com.v.designmode E/EventDispatchActivity: MyButton-onClick
-
 
 
 
@@ -123,7 +126,15 @@ public class EventDispatchActivity extends AppCompatActivity {
  04-18 18:57:39.550 11881-11881/com.v.designmode E/EventDispatchActivity: EventDispatchActivity-dispatchTouchEvent-ACTION_UP
  04-18 18:57:39.551 11881-11881/com.v.designmode E/EventDispatchActivity: EventDispatchActivity-onTouchEvent-ACTION_UP
 
- *
+ *修改了MyButton activity的dispathTouchevent  up return false
+ 04-19 10:14:44.340 30406-30406/com.v.designmode E/EventDispatchActivity: EventDispatchActivity-dispatchTouchEvent-ACTION_DOWN
+ 04-19 10:14:44.344 30406-30406/com.v.designmode E/MyButton: MyButton-dispatchTouchEvent-ACTION_DOWN
+ 04-19 10:14:44.345 30406-30406/com.v.designmode E/EventDispatchActivity: MyButton-onTouch-ACTION_DOWN
+ 04-19 10:14:44.345 30406-30406/com.v.designmode E/MyButton: MyButton-onTouchEvent-ACTION_DOWN
+
+ 04-19 10:14:44.439 30406-30406/com.v.designmode E/EventDispatchActivity: EventDispatchActivity-dispatchTouchEvent-ACTION_UP
+ 04-19 10:14:44.440 30406-30406/com.v.designmode E/MyButton: MyButton-dispatchTouchEvent-ACTION_UP
+ 04-19 10:14:44.441 30406-30406/com.v.designmode E/EventDispatchActivity: EventDispatchActivity-onTouchEvent-ACTION_UP
  *
  *
  *

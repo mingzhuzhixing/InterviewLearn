@@ -27,6 +27,10 @@
         <activity android:name="com.v.mvp.MvpActivity"/>
         <activity android:name="com.v.network_architecture.TestNetworkActivity"/>
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
+
+        <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
+        <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
+        <activity android:name="com.v.retrofit.RetrofitActivity" />
     </application>
 
 </manifest>
