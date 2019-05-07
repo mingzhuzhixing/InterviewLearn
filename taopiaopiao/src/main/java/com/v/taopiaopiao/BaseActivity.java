@@ -14,7 +14,7 @@ import com.v.paystandard.PayInterface;
 
 
 /**
- * Class description here
+ * 所有插件apk中的activity的基类
  *
  * @author zhuming
  * @site www.hdzuoye.com
@@ -23,6 +23,9 @@ import com.v.paystandard.PayInterface;
  */
 public class BaseActivity extends Activity implements PayInterface {
 
+    /**
+     * 主apk的应用对象
+     */
     protected Activity that;
 
     /**

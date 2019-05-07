@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 
 /**
- * Class description here
+ * 所有外置apk中的app页面必须要实现的接口类 这个类是规范所有外置apk的activity的标准
  *
  * @author zhuming
  * @site www.hdzuoye.com

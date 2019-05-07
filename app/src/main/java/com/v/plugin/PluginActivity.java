@@ -1,8 +1,12 @@
 package com.v.plugin;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -21,6 +25,13 @@ public class PluginActivity extends AppCompatActivity {
     }
 
     public void loadPlugin(View view){
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},0);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
         File file=new File(Environment.getExternalStorageDirectory(),"plugin.apk");
         PluginManager.getInstance().loadApk(file.getAbsolutePath());
     }
