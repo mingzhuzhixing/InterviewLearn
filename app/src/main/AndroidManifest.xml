@@ -4,8 +4,8 @@
     package="com.v.interviewlearn">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -16,17 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.v.plugin.PluginActivity">
+        <activity android:name="com.v.database.DatabaseActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.v.ffmpeg.FFmpegActivity" />
-        <activity android:name="com.v.mvp.Mvp3Activity">
 
         </activity>
+        <activity android:name="com.v.plugin.PluginActivity">
+
+        </activity>
+        <activity android:name="com.v.ffmpeg.FFmpegActivity" />
+        <activity android:name="com.v.mvp.Mvp3Activity"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name="com.v.mvp.MvpActivity" />
         <activity android:name="com.v.network_architecture.TestNetworkActivity" />
@@ -34,8 +37,9 @@
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.retrofit.RetrofitActivity" />
-
-        <activity android:name="com.v.plugin.ProxyActivity" android:launchMode="standard"/>
+        <activity
+            android:name="com.v.plugin.ProxyActivity"
+            android:launchMode="standard" />
     </application>
 
 </manifest>
