@@ -1,0 +1,10 @@
+渲染优化
+
+自定义控件完成水波纹回执
+自定义回执线程：解放主线程，避免卡顿
+GPU绘制
+
+
+绘制网站 https://www.desmos.com/calculator
+
+path:画点连线

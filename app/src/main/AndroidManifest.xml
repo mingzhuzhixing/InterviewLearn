@@ -16,8 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.v.database.DatabaseActivity">
-
+        <activity android:name="com.v.service.ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,11 +24,12 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.v.plugin.PluginActivity">
+        <activity android:name="com.v.database.DatabaseActivity">
 
         </activity>
+        <activity android:name="com.v.plugin.PluginActivity"/>
         <activity android:name="com.v.ffmpeg.FFmpegActivity" />
-        <activity android:name="com.v.mvp.Mvp3Activity"></activity>
+        <activity android:name="com.v.mvp.Mvp3Activity" />
         <activity android:name=".MainActivity" />
         <activity android:name="com.v.mvp.MvpActivity" />
         <activity android:name="com.v.network_architecture.TestNetworkActivity" />
@@ -40,6 +40,8 @@
         <activity
             android:name="com.v.plugin.ProxyActivity"
             android:launchMode="standard" />
+
+        <service android:name="com.v.service.MyService"/>
     </application>
 
 </manifest>

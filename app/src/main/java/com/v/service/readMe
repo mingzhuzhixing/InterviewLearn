@@ -1,0 +1,84 @@
+认识Service
+
+service的启动：
+一、startService():
+    onBind为nul时：
+    Service经历：onCreate->onStart()-->onStartCommand,其中：onCreate()只被调用一次, 但是继续调用onStart()-->onStartCommand
+
+二、stopService();
+    onBind为nul时：
+        Service经历：onDestroy 只调用一次
+
+    onBind不为null时：
+        如果没有解绑，则不会调用onDestroy()，如果已经解绑则会调用onDestroy()
+
+三、bindService()：
+    如果已经启动service:
+        点击绑定执行：onBind()-->onServiceConnected()  都是只被调用一次
+
+    如果未启动service:
+        否则直接点击绑定执行：onCreate()-->onBind()-->onServiceConnected()
+
+四、unbindService()：
+   如果已经调用了stopService();
+     执行：onUnbind()--->onDestroy()
+
+   如果未调用了stopService();
+     执行：onUnbind()
+
+
+   注意： 解绑执行：onUnbind()  多次点击解绑则直接报错（Service not registered: com.v.service.ServiceActivity$MyServiceConnection@a4e6dd0）
+
+
+
+stopSelf(int startId) 和stopSelf()的区别
+    startId：代表启动服务的次数，由系统生成。
+    stopSelf(int startId)：
+         在其参数startId跟最后启动该service时生成的ID相等时才会执行停止服务。
+    stopSelf()：直接停止服务。
+    使用场景：
+         如果同时有多个服务启动请求发送到onStartCommand(),不应该在处理完一个请求后调用stopSelf()；
+         因为在调用此函数销毁service之前，可能service又接收到新的启动请求，如果此时service被销毁，新的请求将得不到处理。
+         此情况应该调用stopSelf(int startId)。请参见：IntentService
+
+
+stopself()和stopservice（）
+    stopself()方法执行之后发现service还在继续执行 并没有停掉，当完成所有功能之后，将service停掉，调用ondestory
+    stopService 立刻停止服务 立刻调用service的ondestory方法
+
+
+IntentService与Service的区别
+    IntentService是继承并处理异步请求的一个类，在IntentService内有一个工作线程来处理耗时操作，启动IntentService的方式和启动传统的Service一样，
+    同时，当任务执行完后，IntentService会自动停止，而不需要我们手动去控制或stopSelf()。另外，可以启动IntentService多次，
+    而每一个耗时操作会以工作队列的方式在IntentService的onHandleIntent回调方法中执行，并且，每次只会执行一个工作线程，执行完第一个再执行第二个，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
