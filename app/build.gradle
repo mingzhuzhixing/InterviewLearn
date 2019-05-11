@@ -48,13 +48,4 @@ dependencies {
 
     // Okhttp库
     implementation 'com.squareup.okhttp3:okhttp:3.1.2'
-    implementation project(path: ':paystandard')
-    implementation project(path: ':route')
-    implementation project(path: ':annotations')
-    annotationProcessor project(path: ':annotations_compiler')
-
-
-    if (!MEMBER_IS_APPLICATION.toBoolean()) {
-        implementation project(path: ':member')
-    }
 }

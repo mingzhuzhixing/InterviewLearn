@@ -1,1 +1,1 @@
-include ':app', ':taopiaopiao', ':paystandard', ':member', ':route', ':annotations', ':annotations_compiler'
+include ':app'

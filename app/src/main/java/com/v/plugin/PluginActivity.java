@@ -39,8 +39,8 @@ public class PluginActivity extends AppCompatActivity {
     public void entryActivity(View view){
         Toast.makeText(PluginActivity.this,"fndasfjdf",Toast.LENGTH_SHORT).show();
 
-        Intent intent=new Intent(PluginActivity.this, ProxyActivity.class);
-        intent.putExtra("className",PluginManager.getInstance().getPackageInfo().activities[0].name);
-        startActivity(intent);
+//        Intent intent=new Intent(PluginActivity.this, ProxyActivity.class);
+//        intent.putExtra("className",PluginManager.getInstance().getPackageInfo().activities[0].name);
+//        startActivity(intent);
     }
 }
