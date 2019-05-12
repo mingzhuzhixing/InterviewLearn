@@ -16,17 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity">
+        <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
+        <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.v.service.messenger.MessengerServiceActivity">
+        <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity">
 
         </activity>
-        <activity android:name="com.v.service.aidl_service.AidlServiceActivity"></activity>
+        <activity android:name="com.v.service.messenger.MessengerServiceActivity" />
+        <activity android:name="com.v.service.aidl_service.AidlServiceActivity" />
         <activity android:name="com.v.hook.HookActivity" />
         <activity android:name="com.v.modularization.ModularActivity" />
         <activity android:name="com.v.service.base_service.ServiceActivity" />
