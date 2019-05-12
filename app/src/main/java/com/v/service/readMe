@@ -27,7 +27,7 @@ service的启动：
      执行：onUnbind()
 
 
-   注意： 解绑执行：onUnbind()  多次点击解绑则直接报错（Service not registered: com.v.service.ServiceActivity$MyServiceConnection@a4e6dd0）
+   注意： 解绑执行：onUnbind()  多次点击解绑则直接报错（Service not registered: com.v.service.base_service.ServiceActivity$MyServiceConnection@a4e6dd0）
 
 
 
@@ -53,6 +53,11 @@ IntentService与Service的区别
     而每一个耗时操作会以工作队列的方式在IntentService的onHandleIntent回调方法中执行，并且，每次只会执行一个工作线程，执行完第一个再执行第二个，
 
 
+两种开启服务方法的区别。
+
+start方式开启服务。 一旦服务开启跟调用者(开启者)就没有任何关系了。开启者退出了，开启者挂了，服务还在后台长期的运行。开启者没有办法去调用服务里面的方法。（美国的司法独立）
+
+bind的方式开启服务，绑定服务，调用者挂了，服务也会跟着挂掉。不求同时生，但求同时死。开启者可以调用服务里面的方法。
 
 
 

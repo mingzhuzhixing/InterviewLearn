@@ -48,4 +48,7 @@ dependencies {
 
     // Okhttp库
     implementation 'com.squareup.okhttp3:okhttp:3.1.2'
+
+
+    implementation 'com.blankj:utilcode:1.23.7'
 }

@@ -1,4 +1,4 @@
-package com.v.service;
+package com.v.service.base_service;
 
 import android.app.Service;
 import android.content.Intent;

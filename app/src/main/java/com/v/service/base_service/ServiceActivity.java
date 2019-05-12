@@ -1,4 +1,4 @@
-package com.v.service;
+package com.v.service.base_service;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.v.interviewlearn.R;
-import com.v.service.MyService.MyBinder;
+import com.v.service.base_service.MyService.MyBinder;
 
 public class ServiceActivity extends AppCompatActivity {
 
