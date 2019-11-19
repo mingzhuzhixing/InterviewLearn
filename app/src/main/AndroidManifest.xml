@@ -16,17 +16,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
-        <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" >
+        <activity android:name="com.v.view.CustomViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity">
+        <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
+        <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity">
 
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
+        <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity"></activity>
         <activity android:name="com.v.service.messenger.MessengerServiceActivity" />
         <activity android:name="com.v.service.aidl_service.AidlServiceActivity" />
         <activity android:name="com.v.hook.HookActivity" />
@@ -43,6 +50,9 @@
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.retrofit.RetrofitActivity" />
+        <activity android:name="com.v.ioc.IocActivity">
+
+        </activity>
 
         <service android:name="com.v.service.base_service.MyService" />
     </application>

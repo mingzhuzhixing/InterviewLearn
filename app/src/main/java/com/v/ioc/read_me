@@ -1,0 +1,29 @@
+IOC是原来由程序代码中主动获取的资源，转变由第三方获取并使原来的代码被动接收的方式，
+   以达到解耦的效果，称为控制反转
+
+
+事件
+android 所有的23事件
+OnClickListener   OnLongClickListener 。。。。。。。。。。。。。。。。。。
+
+事件    三要素
+1.textView      事件源
+2  new View.OnClickListener()      事件
+3  onClick()                    事件处理
+进行订阅  setOnClickListener
+
+textView.setOnClickListener（new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+    }
+});
+
+textView.setOnLongClickListener(new View.OnLongClickListener() {
+    @Override
+    public boolean onLongClick(View v) {
+        return false;
+    }
+});
+
+
