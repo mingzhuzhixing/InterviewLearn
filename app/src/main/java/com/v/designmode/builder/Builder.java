@@ -1,8 +1,8 @@
 package com.v.designmode.builder;
 
-import com.v.designmode.factory.MailSender;
-import com.v.designmode.factory.Sender;
-import com.v.designmode.factory.SmsSender;
+import com.v.designmode.factory.exmple_1.MailSender;
+import com.v.designmode.factory.exmple_1.Sender;
+import com.v.designmode.factory.exmple_1.SmsSender;
 
 import java.util.ArrayList;
 import java.util.List;

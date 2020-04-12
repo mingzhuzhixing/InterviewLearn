@@ -5,8 +5,6 @@ package com.v.arithmetic;
  * 随便给一参数n，n不小于0，假如n=3，则算出1 * 2 * 3 = 6，如n=5，则算出1 * 2 * 3 * 4 * 5 = ?
  *
  * @author zhuming
- * @site www.hdzuoye.com
- * @company 北京千阳远望信息技术有限公司
  * @date 2019-04-17 10:24
  */
 

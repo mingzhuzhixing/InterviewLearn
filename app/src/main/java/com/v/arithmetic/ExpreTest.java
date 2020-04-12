@@ -4,8 +4,6 @@ package com.v.arithmetic;
  * Class description here
  *
  * @author zhuming
- * @site www.hdzuoye.com
- * @company 北京千阳远望信息技术有限公司
  * @date 2019-04-18 15:46
  */
 

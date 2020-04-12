@@ -5,28 +5,25 @@ package com.v.arithmetic;
  * 冒泡排序
  *
  * @author zhuming
- * @site www.hdzuoye.com
- * @company 北京千阳远望信息技术有限公司
  * @date 2019-04-17 10:39
  */
 
 public class BubbleSortTest {
 
     public static void main(String[] args) {
-        int array[] = {12, 15, 3, 13, 5, 28, 20};
-//        int arr[] = dub(array);
-//        for(int i = 0; i < arr.length; i++){
-//            System.out.print(array[i] +" ");
-//        }
+        int[] array = {12, 15, 3, 13, 5, 28, 20};
 
-        dubCre(array);
+        int[] arr = dub(array);
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
 
+        //optimizeDubCre(array);
     }
 
 
-    private static int[] dub(int array[]){
-        int n =array.length;
 
+    private static int[] dub(int[] array) {
         //12, 15, 3, 13, 5, 28, 20
         /**
          * i=0 j=1 j<7
@@ -114,26 +111,26 @@ public class BubbleSortTest {
         // j=4  12 3 13 5 15 28
         // j=5  12 3 13 5 15 20 28
 
-
+        int n = array.length;
         //3  5 12 13 15 20 28
-        for(int i = n -1;i > 0; i--){
-            for(int j = 0; j < i; j++) {
-                if(array[j] > array[j+1]){
+        for (int i = n - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
                     int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
-            System.out.println(i+ "--->"+printResult(array));
+            //System.out.println(i + "--->" + printResult(array));
         }
 
         return array;
     }
 
-    private static String printResult(int array[]){
-        String str="";
-        for(int i = 0; i < array.length; i++){
-            str = str + array[i]+" ";
+    private static String printResult(int[] array) {
+        String str = "";
+        for (int i = 0; i < array.length; i++) {
+            str = str + array[i] + " ";
         }
 
         return str;
@@ -143,21 +140,19 @@ public class BubbleSortTest {
      * 增强
      * 注意：排序方式从后向前拍是可以增强，如果从前向后排序不能的能增强，因为最后一个可能是一个小点的数，就会出现排序不完整
      */
-    private static int[] dubCre(int array[]){
-        int n =array.length;
-
+    private static int[] optimizeDubCre(int[] array) {
+        int n = array.length;
         //不能使用增强
-        for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n; j++){
-                if(array[i] > array[j]){
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (array[i] > array[j]) {
                     int temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
                 }
             }
-            System.out.println(i+ "--->"+printResult(array));
+            System.out.println(i + "--->" + printResult(array));
         }
-
 
 //        for(int i = n -1;i > 0; i--){
 //            boolean isComplete = true;
@@ -176,8 +171,6 @@ public class BubbleSortTest {
 ////            }
 //            System.out.println(i+ "--->"+printResult(array) +"---->"+isComplete);
 //        }
-
-
         return array;
     }
 }
