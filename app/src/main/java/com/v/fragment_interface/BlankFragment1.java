@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.v.interviewlearn.MainActivity;
 import com.v.interviewlearn.R;
 
 /**
@@ -18,10 +19,16 @@ import com.v.interviewlearn.R;
  */
 
 public class BlankFragment1 extends BaseFragment {
+    private IReduceListener listener;
 
     public static final String INTERFACE= BlankFragment1.class.getName()+"NPNR";
 
     private View mView;
+
+    //提供Activity调用的方法
+    public void setListener(IReduceListener listener) {
+        this.listener = listener;
+    }
 
     @Nullable
     @Override
@@ -36,6 +43,7 @@ public class BlankFragment1 extends BaseFragment {
             }
         });
 
+        listener.update(123);//向Activity传递值
 
         return mView;
     }

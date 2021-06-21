@@ -1,4 +1,4 @@
-package com.v.handler;
+package com.v.handler.source;
 
 /**
  * Class description here
@@ -11,7 +11,7 @@ package com.v.handler;
 
 public class Message {
     Handler target;
-    Object obj;
+    public Object obj;
 
 
     public Message(){
