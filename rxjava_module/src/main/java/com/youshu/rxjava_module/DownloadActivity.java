@@ -14,17 +14,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.youshu.rxjava_module.uitls.RxJavaUtils;
+
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * 下载图片

@@ -1,4 +1,4 @@
-package com.youshu.rxjava_module;
+package com.youshu.rxjava_module.api;
 
 
 import com.youshu.rxjava_module.bean.ProjectBean;

@@ -1,4 +1,4 @@
-package com.youshu.rxjava_module;
+package com.youshu.rxjava_module.uitls;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
