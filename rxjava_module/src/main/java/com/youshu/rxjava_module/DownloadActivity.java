@@ -1,6 +1,7 @@
 package com.youshu.rxjava_module;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -131,5 +132,12 @@ public class DownloadActivity extends AppCompatActivity {
         if (recycle && !bitmap.isRecycled())
             bitmap.recycle();
         return ret;
+    }
+
+    /**
+     * 进入rxjava 和 retrofit混合使用页
+     */
+    public void entryRetrofit(View view) {
+        startActivity(new Intent(this, UserInfoActivity.class));
     }
 }
