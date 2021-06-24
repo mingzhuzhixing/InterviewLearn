@@ -17,7 +17,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.v.config_changes.ConfigChangesActivity"
             android:configChanges="orientation" />
@@ -51,13 +57,7 @@
         <activity android:name="com.v.async_task.AsyncTaskActivity"/>
         <activity android:name="com.v.webview.WebViewActivity"/>
 
-        <activity android:name="com.v.handler.HandlerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.v.handler.HandlerActivity"/>
     </application>
 
 </manifest>

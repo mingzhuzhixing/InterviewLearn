@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.network_architecture.TestNetworkActivity;
+import com.youshu.rxjava_module.DownloadActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
@@ -76,5 +77,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void networkRequest(View view) {
         startActivity(new Intent(this, TestNetworkActivity.class));
+    }
+
+    public void rxJavaFrame(View view) {
+        startActivity(new Intent(this, DownloadActivity.class));
     }
 }

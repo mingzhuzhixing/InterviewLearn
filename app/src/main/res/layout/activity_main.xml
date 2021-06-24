@@ -36,4 +36,10 @@
         android:text="网络请求框架"
         android:onClick="networkRequest"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RxJava框架"
+        android:onClick="rxJavaFrame"/>
+
 </LinearLayout>
