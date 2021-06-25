@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.v.event_dispatch.EventDispatchActivity;
-import com.v.network_architecture.TestNetworkActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
 import com.youshu.handler_module.HandlerActivity;
+import com.youshu.network_module.NetworkMainActivity;
+import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
      * 网络请求框架
      */
     public void networkRequest(View view) {
-        startActivity(new Intent(this, TestNetworkActivity.class));
+        startActivity(new Intent(this, NetworkMainActivity.class));
     }
 
     /**
@@ -93,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void rxJavaFrame(View view) {
         startActivity(new Intent(this, RxJavaMainActivity.class));
+    }
+
+    /**
+     * Retrofit 框架
+     */
+    public void retrofitFrame(View view){
+        startActivity(new Intent(this, RetrofitMainActivity.class));
     }
 
     /**

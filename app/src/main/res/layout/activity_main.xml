@@ -50,6 +50,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="retrofitFrame"
+        android:text="Retrofit框架"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="handlerSignal"
         android:text="Handler通信机制"
         android:textAllCaps="false" />

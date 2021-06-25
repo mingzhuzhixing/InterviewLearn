@@ -1,3 +1,5 @@
+include ':retrofit_module'
+include ':network_module'
 include ':eventbus_module'
 include ':design_pattern_module'
 include ':arithmetic_module'
