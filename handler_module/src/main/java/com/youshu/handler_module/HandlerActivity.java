@@ -13,10 +13,6 @@ import java.util.List;
 
 public class HandlerActivity extends AppCompatActivity {
 
-    List<? extends String> list;
-
-    List<? super String> list1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +21,6 @@ public class HandlerActivity extends AppCompatActivity {
     }
 
     public void clickButton(View view) {
-
         new Thread() {
             @Override
             public void run() {

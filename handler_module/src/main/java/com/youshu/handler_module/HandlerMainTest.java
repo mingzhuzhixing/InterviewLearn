@@ -15,7 +15,7 @@ import java.util.UUID;
  * @date 2019-04-16 18:17
  */
 
-public class HandlerMain {
+public class HandlerMainTest {
 
     public static void main(String[] args) {
         Looper.prepare();

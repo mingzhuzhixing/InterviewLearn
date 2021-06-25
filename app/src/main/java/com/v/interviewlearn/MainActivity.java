@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.network_architecture.TestNetworkActivity;
+import com.youshu.eventbus_module.EventBusMainActivity;
+import com.youshu.handler_module.HandlerActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
         mTextView = findViewById(R.id.tv_content);
 
+        workThreadUpdateUi();
+    }
+
+    /**
+     * Android中子线程真的不能更新UI吗？ 不是，极端的情况可以更新的
+     *
+     * 原因参考：https://blog.csdn.net/xyh269/article/details/52728861
+     */
+    private void workThreadUpdateUi() {
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -32,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }).start();
 
-
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -44,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 //                mTextView.setText("你好");
 //            }
 //        }).run();
-
     }
 
 
@@ -52,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-//                mTextView.setText("你好3");
+                mTextView.setText("你好3");
             }
         }).start();
 
@@ -90,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
      * handler通信机制
      */
     public void handlerSignal(View view) {
+        startActivity(new Intent(this, HandlerActivity.class));
+    }
 
+    /**
+     * 手写EventBus通信机制
+     */
+    public void eventBusSignal(View view) {
+        startActivity(new Intent(this, EventBusMainActivity.class));
     }
 }

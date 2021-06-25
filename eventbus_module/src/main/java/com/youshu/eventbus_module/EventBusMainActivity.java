@@ -1,4 +1,4 @@
-package com.youshu.eventbus_module.view;
+package com.youshu.eventbus_module;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.youshu.eventbus_module.DNEventbus;
-import com.youshu.eventbus_module.DNSubscribe;
-import com.youshu.eventbus_module.DNThreadMode;
-import com.youshu.eventbus_module.R;
+import com.youshu.eventbus_module.bean.Friend;
+import com.youshu.eventbus_module.eventbus.DNEventbus;
+import com.youshu.eventbus_module.eventbus.DNSubscribe;
+import com.youshu.eventbus_module.eventbus.DNThreadMode;
 
 
 public class EventBusMainActivity extends AppCompatActivity {

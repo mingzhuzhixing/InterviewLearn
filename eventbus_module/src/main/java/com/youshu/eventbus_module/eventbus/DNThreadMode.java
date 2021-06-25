@@ -1,4 +1,4 @@
-package com.youshu.eventbus_module;
+package com.youshu.eventbus_module.eventbus;
 
 public enum DNThreadMode {
     /**

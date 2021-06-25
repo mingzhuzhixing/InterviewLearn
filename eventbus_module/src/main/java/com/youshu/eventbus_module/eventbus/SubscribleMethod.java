@@ -1,4 +1,6 @@
-package com.youshu.eventbus_module;
+package com.youshu.eventbus_module.eventbus;
+
+import com.youshu.eventbus_module.eventbus.DNThreadMode;
 
 import java.lang.reflect.Method;
 
