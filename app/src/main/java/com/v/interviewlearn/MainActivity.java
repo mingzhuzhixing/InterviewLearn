@@ -79,7 +79,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, TestNetworkActivity.class));
     }
 
+    /**
+     * RxJava框架
+     */
     public void rxJavaFrame(View view) {
         startActivity(new Intent(this, RxJavaMainActivity.class));
+    }
+
+    /**
+     * handler通信机制
+     */
+    public void handlerSignal(View view) {
+
     }
 }

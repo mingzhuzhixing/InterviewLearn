@@ -1,2 +1,3 @@
+include ':handler_module'
 include ':rxjava_module'
 include ':app', ':service'

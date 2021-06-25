@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
+    android:paddingTop="50dp"
     android:orientation="vertical"
     tools:context="com.v.interviewlearn.MainActivity">
 
@@ -42,4 +43,9 @@
         android:text="RxJava框架"
         android:onClick="rxJavaFrame"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="handler通信机制"
+        android:onClick="handlerSignal"/>
 </LinearLayout>
