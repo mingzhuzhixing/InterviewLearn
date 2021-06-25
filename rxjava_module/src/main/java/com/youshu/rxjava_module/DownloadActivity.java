@@ -75,7 +75,7 @@ public class DownloadActivity extends AppCompatActivity {
                         return bitmap;
                     }
                 })
-                .compose(RxJavaUtils.<Bitmap>applySchedulers())
+                .compose(RxJavaUtils.applySchedulers())
                 .subscribe(new Observer<Bitmap>() {
                     @Override
                     public void onSubscribe(Disposable d) {

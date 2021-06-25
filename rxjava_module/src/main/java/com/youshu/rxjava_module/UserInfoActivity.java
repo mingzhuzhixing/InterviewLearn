@@ -55,7 +55,7 @@ public class UserInfoActivity extends AppCompatActivity {
      */
     public void getProjectData(View view) {
         disposable1 = api.getProjectData()
-                .compose(RxJavaUtils.<ProjectBean>applySchedulers())
+                .compose(RxJavaUtils.applySchedulers())
                 .subscribe(new Consumer<ProjectBean>() {
                     @Override
                     public void accept(ProjectBean projectBean) throws Exception {
@@ -72,7 +72,7 @@ public class UserInfoActivity extends AppCompatActivity {
      */
     public void getProjectItem(View view) {
         disposable2 = api.getProjectItem(1, 294)
-                .compose(RxJavaUtils.<ProjectItem>applySchedulers())
+                .compose(RxJavaUtils.applySchedulers())
                 .subscribe(new Consumer<ProjectItem>() {
                     @Override
                     public void accept(ProjectItem projectItem) throws Exception {
@@ -95,14 +95,14 @@ public class UserInfoActivity extends AppCompatActivity {
                     @Override
                     public void accept(Object o) throws Exception {
                         api.getProjectData()
-                                .compose(RxJavaUtils.<ProjectBean>applySchedulers())
+                                .compose(RxJavaUtils.applySchedulers())
                                 .subscribe(new Consumer<ProjectBean>() {
                                     @Override
                                     public void accept(ProjectBean projectBean) throws Exception {
                                         if (projectBean != null) {
                                             for (ProjectBean.ProjectData data : projectBean.getData()) {
                                                 api.getProjectItem(1, data.getId())
-                                                        .compose(RxJavaUtils.<ProjectItem>applySchedulers())
+                                                        .compose(RxJavaUtils.applySchedulers())
                                                         .subscribe(new Consumer<ProjectItem>() {
                                                             @Override
                                                             public void accept(ProjectItem projectItem) throws Exception {
@@ -125,14 +125,14 @@ public class UserInfoActivity extends AppCompatActivity {
      */
     public void normalNesting(View view) {
         api.getProjectData()
-                .compose(RxJavaUtils.<ProjectBean>applySchedulers())
+                .compose(RxJavaUtils.applySchedulers())
                 .subscribe(new Consumer<ProjectBean>() {
                     @Override
                     public void accept(ProjectBean projectBean) throws Exception {
                         if (projectBean != null) {
                             for (ProjectBean.ProjectData data : projectBean.getData()) {
                                 api.getProjectItem(1, data.getId())
-                                        .compose(RxJavaUtils.<ProjectItem>applySchedulers())
+                                        .compose(RxJavaUtils.applySchedulers())
                                         .subscribe(new Consumer<ProjectItem>() {
                                             @Override
                                             public void accept(ProjectItem projectItem) throws Exception {
