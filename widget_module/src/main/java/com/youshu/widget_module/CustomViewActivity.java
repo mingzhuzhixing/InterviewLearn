@@ -1,9 +1,7 @@
-package com.v.view;
+package com.youshu.widget_module;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.v.interviewlearn.R;
+import android.support.v7.app.AppCompatActivity;
 
 public class CustomViewActivity extends AppCompatActivity {
 

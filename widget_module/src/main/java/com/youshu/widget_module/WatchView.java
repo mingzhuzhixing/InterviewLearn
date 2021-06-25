@@ -1,4 +1,4 @@
-package com.v.view;
+package com.youshu.widget_module;
 
 import android.content.Context;
 import android.graphics.Canvas;
