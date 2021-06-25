@@ -11,6 +11,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/arithmetic_module" />
+            <option value="$PROJECT_DIR$/design_pattern_module" />
             <option value="$PROJECT_DIR$/handler_module" />
             <option value="$PROJECT_DIR$/rxjava_module" />
             <option value="$PROJECT_DIR$/service" />
