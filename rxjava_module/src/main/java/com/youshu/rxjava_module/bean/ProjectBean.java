@@ -29,7 +29,7 @@ public class ProjectBean {
                 '}';
     }
 
-    public class ProjectData {
+    public static class ProjectData {
         /**
          * visible : 0
          * children : []

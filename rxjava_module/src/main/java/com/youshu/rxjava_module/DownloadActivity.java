@@ -132,11 +132,4 @@ public class DownloadActivity extends AppCompatActivity {
             bitmap.recycle();
         return ret;
     }
-
-    /**
-     * 进入rxjava 和 retrofit混合使用页
-     */
-    public void entryRetrofit(View view) {
-        startActivity(new Intent(this, UserInfoActivity.class));
-    }
 }

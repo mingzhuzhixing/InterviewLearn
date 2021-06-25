@@ -40,6 +40,12 @@
             android:layout_height="wrap_content"
             android:text="flatMap解决嵌套请求"/>
 
+        <Button
+            android:id="@+id/btn_flatMap_nesting_once"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flatMap解决嵌套请求一个item"/>
+
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="match_parent"

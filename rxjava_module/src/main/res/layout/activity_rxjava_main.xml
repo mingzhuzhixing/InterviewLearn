@@ -3,19 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DownloadActivity"
     android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="downloadImage"
-        android:text="下载图片" />
+        android:onClick="entryRetrofit"
+        android:text="进入retrofit页面" />
 
-    <ImageView
-        android:id="@+id/iv_show_image"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop" />
+        android:text="rxJava防抖测试"
+        android:onClick="rxJavaDebounce"/>
 
 </LinearLayout>

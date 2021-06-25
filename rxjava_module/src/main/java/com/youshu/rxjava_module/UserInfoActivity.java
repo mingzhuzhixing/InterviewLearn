@@ -45,6 +45,9 @@ public class UserInfoActivity extends AppCompatActivity {
 
         //初始化化防抖FlatMap使用
         initFlatMapNestingAction();
+
+        //初始化化防抖FlatMap请求一个使用
+        initFlatMapNestingItemAction();
     }
 
     /**
@@ -182,6 +185,56 @@ public class UserInfoActivity extends AppCompatActivity {
                         if (projectItem != null) {
                             Log.i(TAG, "结果：" + projectItem.toString());
                             tvResult.setText("结果 :initFlatMapNestingAction");
+                        }
+                    }
+                });
+    }
+
+    /**
+     * 初始化化防抖FlatMap请求一个使用
+     */
+    private void initFlatMapNestingItemAction() {
+        Button btn_flatMap_nesting_once = findViewById(R.id.btn_flatMap_nesting_once);
+        RxView.clicks(btn_flatMap_nesting_once)
+                .throttleFirst(2, TimeUnit.SECONDS)//两秒内只取一个点击事件，防抖操作
+
+                //只给下面 切换 异步
+                .observeOn(Schedulers.io())
+                .flatMap(new Function<Object, ObservableSource<ProjectBean>>() {
+                    @Override
+                    public ObservableSource<ProjectBean> apply(Object o) throws Exception {
+                        return api.getProjectData();
+                    }
+                })
+                .map(new Function<ProjectBean, ProjectBean.ProjectData>() {
+                    @Override
+                    public ProjectBean.ProjectData apply(ProjectBean projectBean) throws Exception {
+                        if (projectBean != null && projectBean.getData().size() > 0) {
+                            return projectBean.getData().get(0);
+                        } else {
+                            return new ProjectBean.ProjectData();
+                        }
+                    }
+                })
+                .flatMap(new Function<ProjectBean.ProjectData, ObservableSource<ProjectItem>>() {
+                    @Override
+                    public ObservableSource<ProjectItem> apply(ProjectBean.ProjectData projectData) throws Exception {
+                        if (projectData != null && projectData.getId() > 0) {
+                            return api.getProjectItem(1, projectData.getId());
+                        } else {
+                            return Observable.just(new ProjectItem());
+                        }
+                    }
+                })
+
+                //只给下面 切换 UI线程
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<ProjectItem>() {
+                    @Override
+                    public void accept(ProjectItem projectItem) throws Exception {
+                        if (projectItem != null) {
+                            Log.i(TAG, "结果：" + projectItem.toString());
+                            tvResult.setText(projectItem.toString());
                         }
                     }
                 });
