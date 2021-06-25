@@ -1,6 +1,5 @@
-package com.v.event_bus;
+package com.youshu.eventbus_module;
 
-import android.app.admin.DnsEvent;
 import android.os.Handler;
 import android.os.Looper;
 

@@ -1,11 +1,11 @@
-package com.v.event_bus.view;
+package com.youshu.eventbus_module.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.v.event_bus.DNEventbus;
-import com.v.interviewlearn.R;
+import com.youshu.eventbus_module.DNEventbus;
+import com.youshu.eventbus_module.R;
 
 
 public class SecondActivity extends AppCompatActivity {

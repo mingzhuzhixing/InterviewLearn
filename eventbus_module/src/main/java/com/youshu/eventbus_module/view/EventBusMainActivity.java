@@ -1,18 +1,19 @@
-package com.v.event_bus.view;
+package com.youshu.eventbus_module.view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.v.event_bus.DNEventbus;
-import com.v.event_bus.DNSubscribe;
-import com.v.event_bus.DNThreadMode;
-import com.v.interviewlearn.R;
+import com.youshu.eventbus_module.DNEventbus;
+import com.youshu.eventbus_module.DNSubscribe;
+import com.youshu.eventbus_module.DNThreadMode;
+import com.youshu.eventbus_module.R;
 
-public class MainActivity extends AppCompatActivity {
+
+public class EventBusMainActivity extends AppCompatActivity {
     private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

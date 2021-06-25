@@ -1,4 +1,4 @@
-package com.v.event_bus;
+package com.youshu.eventbus_module;
 
 import java.lang.reflect.Method;
 

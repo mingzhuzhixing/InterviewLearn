@@ -1,3 +1,4 @@
+include ':eventbus_module'
 include ':design_pattern_module'
 include ':arithmetic_module'
 include ':handler_module'
