@@ -11,6 +11,7 @@ import com.v.network_architecture.TestNetworkActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
 import com.youshu.handler_module.HandlerActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
+import com.youshu.snap_helper_module.SnapHelperActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
@@ -107,5 +108,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void eventBusSignal(View view) {
         startActivity(new Intent(this, EventBusMainActivity.class));
+    }
+
+    /**
+     * recyclerview SnapHelper
+     */
+    public void snapHelper(View view) {
+        startActivity(new Intent(this, SnapHelperActivity.class));
     }
 }

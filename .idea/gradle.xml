@@ -4,7 +4,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="PLATFORM" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/handler_module" />
             <option value="$PROJECT_DIR$/rxjava_module" />
             <option value="$PROJECT_DIR$/service" />
+            <option value="$PROJECT_DIR$/snap_helper_module" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

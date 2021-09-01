@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
       <module name="arithmetic_module" target="1.7" />
       <module name="design_pattern_module" target="1.7" />
+      <module name="InterviewLearn.app" target="1.8" />
+      <module name="InterviewLearn.eventbus_module" target="1.8" />
+      <module name="InterviewLearn.handler_module" target="1.8" />
+      <module name="InterviewLearn.rxjava_module" target="1.8" />
+      <module name="InterviewLearn.service" target="1.8" />
+      <module name="InterviewLearn.smap_helper_module" target="1.8" />
+      <module name="InterviewLearn.snap_helper_module" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

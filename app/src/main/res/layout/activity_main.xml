@@ -60,4 +60,11 @@
         android:onClick="eventBusSignal"
         android:text="手写EventBus通信"
         android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="snapHelper"
+        android:text="snaphelper"
+        android:textAllCaps="false" />
 </LinearLayout>
