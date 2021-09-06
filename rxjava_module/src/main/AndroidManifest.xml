@@ -7,7 +7,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application>
-        <activity android:name=".DoOnNextActivity"></activity>
+        <activity android:name=".thread_switch.ThreadSwitchActivity"></activity>
+        <activity android:name=".do_on_next.DoOnNextActivity" />
         <activity android:name=".DebounceCompareActivity" />
         <activity android:name=".RxJavaMainActivity" />
         <activity android:name=".UserInfoActivity" />

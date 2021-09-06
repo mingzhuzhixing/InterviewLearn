@@ -1,10 +1,11 @@
-package com.youshu.rxjava_module;
+package com.youshu.rxjava_module.do_on_next;
 
 import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.youshu.rxjava_module.R;
 import com.youshu.rxjava_module.api.UserCommonApi;
 import com.youshu.rxjava_module.do_on_next.LoginRequest;
 import com.youshu.rxjava_module.do_on_next.LoginResponse;
