@@ -2,8 +2,9 @@ package com.v.interviewlearn;
 
 import android.app.Application;
 
-import com.v.network_architecture.HttpHelper;
-import com.v.network_architecture.xutils.XutilsProcessor;
+import com.youshu.network_module.HttpHelper;
+import com.youshu.network_module.xutils.XutilsProcessor;
+
 
 public class MyApplication extends Application {
 
@@ -11,6 +12,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        //初始化切换网络框架
 //        HttpHelper.init(new VolleyProcessor(this));
 //        HttpHelper.init(new OkHttpProcessor());
         HttpHelper.init(new XutilsProcessor(this));

@@ -1,6 +1,7 @@
 package com.v.thread_local;
 
-import io.reactivex.annotations.Nullable;
+
+import android.support.annotation.Nullable;
 
 public class TestThreadLocal {
     public static void main(String arg[]){
