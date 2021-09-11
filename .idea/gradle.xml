@@ -4,9 +4,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -20,12 +18,12 @@
             <option value="$PROJECT_DIR$/network_module" />
             <option value="$PROJECT_DIR$/retrofit_module" />
             <option value="$PROJECT_DIR$/rxjava_module" />
+            <option value="$PROJECT_DIR$/serialize_module" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/widget_module" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
