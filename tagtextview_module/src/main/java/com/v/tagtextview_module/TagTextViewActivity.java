@@ -8,6 +8,9 @@ import com.v.tagtextview_module.lib.TagTextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TextView标签
+ */
 public class TagTextViewActivity extends AppCompatActivity {
     private TagTextView tv_with_tags;
     private TagTextView tv_with_image_tags;
