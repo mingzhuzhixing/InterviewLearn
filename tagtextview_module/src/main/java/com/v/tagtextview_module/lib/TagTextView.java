@@ -1,4 +1,4 @@
-package com.v.tagtextview_module;
+package com.v.tagtextview_module.lib;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,6 +14,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import com.v.tagtextview_module.R;
 
 import java.util.ArrayList;
 import java.util.List;

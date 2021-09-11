@@ -1,4 +1,4 @@
-package com.v.tagtextview_module;
+package com.v.tagtextview_module.lib;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

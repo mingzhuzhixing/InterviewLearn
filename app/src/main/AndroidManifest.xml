@@ -29,7 +29,6 @@
             android:name="com.v.config_changes.ConfigChangesActivity"
             android:configChanges="orientation" />
         <activity android:name="com.v.active_proxy.ActiveProxyActivity" />
-        <activity android:name="com.v.view.CustomViewActivity" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" />
         <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity" />
@@ -43,11 +42,9 @@
         <activity android:name="com.v.ffmpeg.FFmpegActivity" />
         <activity android:name="com.v.mvp.Mvp3Activity" />
         <activity android:name="com.v.mvp.MvpActivity" />
-        <activity android:name="com.v.network_architecture.TestNetworkActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
-        <activity android:name="com.v.retrofit.RetrofitActivity" />
         <activity android:name="com.v.ioc.IocActivity" />
         <activity android:name="com.v.eventbus.EventBusMainActivity" />
         <activity android:name="com.v.eventbus.EventBusSecondActivity" />
@@ -57,8 +54,6 @@
         <activity android:name="com.v.glide.GlideActivity" />
         <activity android:name="com.v.async_task.AsyncTaskActivity"/>
         <activity android:name="com.v.webview.WebViewActivity"/>
-
-        <activity android:name="com.v.handler.HandlerActivity"/>
     </application>
 
 </manifest>

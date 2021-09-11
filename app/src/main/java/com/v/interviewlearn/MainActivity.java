@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.v.event_dispatch.EventDispatchActivity;
+import com.v.tagtextview_module.TagTextViewActivity;
+import com.v.tagtextview_module.lib.TagTextView;
 import com.youshu.eventbus_module.EventBusMainActivity;
 import com.youshu.handler_module.HandlerActivity;
 import com.youshu.network_module.NetworkMainActivity;
@@ -123,5 +125,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void snapHelper(View view) {
         startActivity(new Intent(this, SnapHelperActivity.class));
+    }
+
+    /**
+     * TagTextView
+     */
+    public void tagTextview(View view) {
+        startActivity(new Intent(this, TagTextViewActivity.class));
     }
 }
