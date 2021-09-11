@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/AndroidWorkspace/InterviewLearn/widget_module/src/main/res/layout/activity_custom_view.xml" value="0.16770833333333332" />
+=======
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2758152173913043" />
+        <entry key="snap_helper_module/src/main/res/layout/activity_snap_helper.xml" value="0.39114583333333336" />
+        <entry key="snap_helper_module/src/main/res/layout/gallery_item_layout.xml" value="0.40520833333333334" />
+>>>>>>> 6c06480125d797275a5ce80062c03a4b2d700b1f
       </map>
     </option>
   </component>

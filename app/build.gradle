@@ -56,4 +56,6 @@ dependencies {
     implementation project(":eventbus_module")
     implementation project(":network_module")
     implementation project(":retrofit_module")
+    implementation project(":snap_helper_module")
+
 }
