@@ -61,4 +61,43 @@ public class QuickSortTest {
         array[i] = array[j];
         array[j] = temp;
     }
+
+
+    /**
+     * 快速排序
+     */
+    private static void getQuick(int[] array, int L, int R) {
+        if (L >= R) {
+            return;
+        }
+
+        int left = L;
+        int right = R;
+
+        int pivot = array[left]; //基准数
+        while (left < right) {
+            //先判断右边的数据比较
+            while (left < right && array[right] >= pivot) {
+                right--;
+            }
+            if (left < right) {
+                array[left] = array[right];
+            }
+
+            while (left < right && array[left] <= pivot) {
+                left++;
+            }
+
+            if (left < right) {
+                array[right] = array[left];
+            }
+
+            if (left >= right) {
+                array[left] = pivot;
+            }
+        }
+
+        getQuick(array, L, right - 1);
+        getQuick(array, right + 1, R);
+    }
 }

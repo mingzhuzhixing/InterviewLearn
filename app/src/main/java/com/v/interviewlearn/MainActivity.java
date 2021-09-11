@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.tagtextview_module.TagTextViewActivity;
 import com.v.tagtextview_module.lib.TagTextView;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Android中子线程真的不能更新UI吗？ 不是，极端的情况可以更新的
-     *
+     * <p>
      * 原因参考：https://blog.csdn.net/xyh269/article/details/52728861
      */
     private void workThreadUpdateUi() {
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Retrofit 框架
      */
-    public void retrofitFrame(View view){
+    public void retrofitFrame(View view) {
         startActivity(new Intent(this, RetrofitMainActivity.class));
     }
 
@@ -132,5 +133,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void tagTextview(View view) {
         startActivity(new Intent(this, TagTextViewActivity.class));
+    }
+
+    /**
+     * 数据库
+     */
+    public void dataBase(View view) {
+        startActivity(new Intent(this, DatabaseMainActivity.class));
     }
 }

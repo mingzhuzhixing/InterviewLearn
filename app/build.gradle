@@ -56,5 +56,6 @@ dependencies {
     implementation project(":retrofit_module")
     implementation project(":snap_helper_module")
     implementation project(":tagtextview_module")
+    implementation project(":database_module")
 
 }

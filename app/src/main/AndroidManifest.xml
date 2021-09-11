@@ -28,7 +28,6 @@
         <activity
             android:name="com.v.config_changes.ConfigChangesActivity"
             android:configChanges="orientation" />
-        <activity android:name="com.v.active_proxy.ActiveProxyActivity" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" />
         <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity" />
@@ -51,8 +50,6 @@
 
         <service android:name="com.v.service.base_service.MyService" />
 
-        <activity android:name="com.v.glide.GlideActivity" />
-        <activity android:name="com.v.async_task.AsyncTaskActivity"/>
         <activity android:name="com.v.webview.WebViewActivity"/>
     </application>
 
