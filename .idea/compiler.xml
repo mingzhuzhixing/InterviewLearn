@@ -2,9 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
-      <module name="arithmetic_module" target="1.7" />
-      <module name="design_pattern_module" target="1.7" />
-<<<<<<< HEAD
       <module name="InterviewLearn.app" target="11" />
       <module name="InterviewLearn.eventbus_module" target="11" />
       <module name="InterviewLearn.handler_module" target="11" />
@@ -13,20 +10,8 @@
       <module name="InterviewLearn.rxjava_module" target="11" />
       <module name="InterviewLearn.serialize_module" target="11" />
       <module name="InterviewLearn.service" target="11" />
+      <module name="InterviewLearn.snap_helper_module" target="11" />
       <module name="InterviewLearn.widget_module" target="11" />
-=======
-      <module name="InterviewLearn.app" target="1.8" />
-      <module name="InterviewLearn.eventbus_module" target="1.8" />
-      <module name="InterviewLearn.handler_module" target="1.8" />
-      <module name="InterviewLearn.network_module" target="1.8" />
-      <module name="InterviewLearn.retrofit_module" target="1.8" />
-      <module name="InterviewLearn.rxjava_module" target="1.8" />
-      <module name="InterviewLearn.serialize_module" target="1.8" />
-      <module name="InterviewLearn.service" target="1.8" />
-      <module name="InterviewLearn.smap_helper_module" target="1.8" />
-      <module name="InterviewLearn.snap_helper_module" target="1.8" />
-      <module name="InterviewLearn.widget_module" target="1.8" />
->>>>>>> 6c06480125d797275a5ce80062c03a4b2d700b1f
     </bytecodeTargetLevel>
   </component>
 </project>
