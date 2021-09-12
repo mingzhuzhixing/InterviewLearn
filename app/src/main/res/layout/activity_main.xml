@@ -3,37 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.v.interviewlearn.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="子线程更新ui"/>
+        android:layout_marginTop="20dp"
+        android:text="子线程更新ui"
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="Hello World!" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="updateUI"
         android:text="更细ui"
-        android:onClick="updateUI"/>
+        android:textAllCaps="false" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="进入事件分发"
-        android:onClick="eventDispatch"/>
+        android:onClick="eventDispatch"
+        android:text="进入事件分发" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="网络请求框架"
-        android:onClick="networkRequest"/>
+        android:onClick="networkRequest"
+        android:text="网络请求框架" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="rxJavaFrame"
+        android:text="RxJava框架"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="handlerSignal"
+        android:text="Handler通信机制"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="eventBusSignal"
+        android:text="手写EventBus通信"
+        android:textAllCaps="false" />
 </LinearLayout>

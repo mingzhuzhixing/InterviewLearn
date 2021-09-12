@@ -15,25 +15,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:screenOrientation="portrait"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.v.view.CustomViewActivity">
+
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.v.config_changes.ConfigChangesActivity"
+            android:configChanges="orientation" />
+        <activity android:name="com.v.active_proxy.ActiveProxyActivity" />
+        <activity android:name="com.v.view.CustomViewActivity" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
-        <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-        <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity"></activity>
+        <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" />
+        <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity" />
         <activity android:name="com.v.service.messenger.MessengerServiceActivity" />
         <activity android:name="com.v.service.aidl_service.AidlServiceActivity" />
         <activity android:name="com.v.hook.HookActivity" />
@@ -43,18 +42,23 @@
         <activity android:name="com.v.plugin.PluginActivity" />
         <activity android:name="com.v.ffmpeg.FFmpegActivity" />
         <activity android:name="com.v.mvp.Mvp3Activity" />
-        <activity android:name=".MainActivity" />
         <activity android:name="com.v.mvp.MvpActivity" />
         <activity android:name="com.v.network_architecture.TestNetworkActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.retrofit.RetrofitActivity" />
-        <activity android:name="com.v.ioc.IocActivity">
-
-        </activity>
+        <activity android:name="com.v.ioc.IocActivity" />
+        <activity android:name="com.v.eventbus.EventBusMainActivity" />
+        <activity android:name="com.v.eventbus.EventBusSecondActivity" />
 
         <service android:name="com.v.service.base_service.MyService" />
+
+        <activity android:name="com.v.glide.GlideActivity" />
+        <activity android:name="com.v.async_task.AsyncTaskActivity"/>
+        <activity android:name="com.v.webview.WebViewActivity"/>
+
+        <activity android:name="com.v.handler.HandlerActivity"/>
     </application>
 
 </manifest>

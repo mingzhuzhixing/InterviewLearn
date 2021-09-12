@@ -1,1 +1,6 @@
+include ':eventbus_module'
+include ':design_pattern_module'
+include ':arithmetic_module'
+include ':handler_module'
+include ':rxjava_module'
 include ':app', ':service'
