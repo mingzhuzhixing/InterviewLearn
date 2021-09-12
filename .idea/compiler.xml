@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="InterviewLearn.async_task_module" target="11" />
+      <module name="InterviewLearn.database_module" target="11" />
+      <module name="InterviewLearn.glide_module" target="11" />
+      <module name="InterviewLearn.network_module" target="11" />
+      <module name="InterviewLearn.proxy_module" target="11" />
+      <module name="InterviewLearn.recyclerview_module" target="11" />
+      <module name="InterviewLearn.retrofit_module" target="11" />
+      <module name="InterviewLearn.serialize_module" target="11" />
+      <module name="InterviewLearn.snap_helper_module" target="11" />
+      <module name="InterviewLearn.tagtextview_module" target="11" />
+      <module name="InterviewLearn.widget_module" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
