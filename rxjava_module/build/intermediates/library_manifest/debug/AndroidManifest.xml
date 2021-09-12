@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.youshu.rxjava_module"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity android:name="com.youshu.rxjava_module.thread_switch.ThreadSwitchActivity" />
+        <activity android:name="com.youshu.rxjava_module.do_on_next.DoOnNextActivity" />
+        <activity android:name="com.youshu.rxjava_module.DebounceCompareActivity" />
+        <activity android:name="com.youshu.rxjava_module.RxJavaMainActivity" />
+        <activity android:name="com.youshu.rxjava_module.UserInfoActivity" />
+        <activity android:name="com.youshu.rxjava_module.DownloadActivity" />
+    </application>
+
+</manifest>

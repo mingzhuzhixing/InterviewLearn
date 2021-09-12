@@ -1,0 +1,43 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+	package
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:1-14:12
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:5:5-7:41
+	android:targetSdkVersion
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:7:9-38
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:6:9-35
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml
+application
+ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:9:5-12:19
+activity#com.v.tagtextview_module.TagTextViewActivity
+ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:10:9-11:51
+	android:name
+		ADDED from E:\AndroidWorkspace\InterviewLearn\tagtextview_module\src\main\AndroidManifest.xml:11:13-48
