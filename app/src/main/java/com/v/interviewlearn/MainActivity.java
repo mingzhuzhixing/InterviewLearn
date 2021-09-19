@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
+import com.v.glide_module.GlideMainActivity;
 import com.v.tagtextview_module.TagTextViewActivity;
 import com.v.tagtextview_module.lib.TagTextView;
 import com.youshu.eventbus_module.EventBusMainActivity;
@@ -140,5 +141,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void dataBase(View view) {
         startActivity(new Intent(this, DatabaseMainActivity.class));
+    }
+
+    /**
+     * glide
+     */
+    public void glideClick(View view) {
+        startActivity(new Intent(this, GlideMainActivity.class));
     }
 }
