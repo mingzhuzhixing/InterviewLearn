@@ -22,8 +22,6 @@ def baijiayun = [
         annotations      : '1.0.2',
         compiler         : '1.0.2',
         push             : '1.0.6',
-//        pay              : '1.0.2',
-//        VideoplayerCore  : '2.0.5.4',
         VideoplayerCore  : '2.2.2',
         VideoplayerUI    : '2.0.2',
         group_class_ui   : '0.3',
