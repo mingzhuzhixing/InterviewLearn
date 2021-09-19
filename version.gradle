@@ -2,30 +2,15 @@ ext.isUserApplication = false
 
 //版本名称为${conf.versionName}.${conf.versionCode}.${conf.date}"
 def androidVersion = [
-        minSdkVersion      : 19,
         compileSdkVersion  : 28,
-        buildToolsVersion  : '28.0.3',
+        buildToolsVersion  : '28.0.2',
+        minSdkVersion      : 19,
         targetSdkVersion   : 28,
+        versionCode        : 1,
+        versionName        : "1.0",
         sourceCompatibility: JavaVersion.VERSION_1_8,
         targetCompatibility: JavaVersion.VERSION_1_8,
-        date               : '0812',
-        versionName        : "1.10.4",
-        applicationId      : "cc.youshu.classroom",
-        packageName        : "cc.youshu.cla ssroom"
-]
-
-def baijiayun = [
-        imageloader      : '1.0.4',
-        logger           : '1.0.5',
-        refresh          : '1.0.9',
-        downloader       : '1.0.2',
-        annotations      : '1.0.2',
-        compiler         : '1.0.2',
-        push             : '1.0.6',
-        VideoplayerCore  : '2.2.2',
-        VideoplayerUI    : '2.0.2',
-        group_class_ui   : '0.3',
-        liveplayer_sdk_ui: '2.0.2'
+        applicationId      : "com.v.interviewlearn"
 ]
 
 def deps = [
@@ -56,21 +41,17 @@ def deps = [
         umsdk_analytics  : '8.0.0',
         MagicIndicator   : '1.5.0',
         umsdk_common     : '2.0.0',
-        //https://github.com/huanghaibin-dev/CalendarView
         calendarview     : '3.6.4',
-//        https://github.com/lzyzsd/JsBridge
         jsbridge         : '1.0.4',
         gson             : '2.8.5',
         compressor       : '2.1.0',
         buglyIdDebug     : "d250649aa8",
         buglyIdRelase    : "65fd13cd8d",
         lottie           : "2.8.0",
-        txim           : "5.1.50",//https://github.com/tencentyun/TIMSDK/tree/master/Android
+        txim             : "5.1.50",
         zxing            : "3.3.0",
-        glide           :"4.9.0",
-
+        glide            : "4.9.0",
 ]
 
-ext.baijiayun = baijiayun
 ext.androidV = androidVersion
 ext.deps = deps

@@ -1,15 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.2"
+    compileSdkVersion androidV.compileSdkVersion
+    buildToolsVersion androidV.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.v.interviewlearn"
-        minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId androidV.applicationId
+        minSdkVersion androidV.minSdkVersion
+        targetSdkVersion androidV.targetSdkVersion
+
+        versionCode androidV.versionCode
+        versionName androidV.versionName
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
 //        externalNativeBuild {
