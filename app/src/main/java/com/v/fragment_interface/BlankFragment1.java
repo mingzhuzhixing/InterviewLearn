@@ -1,12 +1,11 @@
 package com.v.fragment_interface;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.v.interviewlearn.MainActivity;
 import com.v.interviewlearn.R;
 
 /**

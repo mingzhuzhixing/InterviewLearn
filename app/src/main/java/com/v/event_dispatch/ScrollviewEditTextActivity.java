@@ -1,16 +1,14 @@
 package com.v.event_dispatch;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-
-import com.v.interviewlearn.R;
 
 
 public class ScrollviewEditTextActivity extends AppCompatActivity {

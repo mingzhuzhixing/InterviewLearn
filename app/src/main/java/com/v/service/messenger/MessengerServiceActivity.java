@@ -8,12 +8,11 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.v.interviewlearn.R;
-import com.v.service.base_service.MyService;
 
 public class MessengerServiceActivity extends AppCompatActivity {
     private Messenger messenger;

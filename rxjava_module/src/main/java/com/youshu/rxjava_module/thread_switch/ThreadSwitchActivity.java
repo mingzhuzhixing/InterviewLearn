@@ -1,12 +1,10 @@
 package com.youshu.rxjava_module.thread_switch;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.youshu.rxjava_module.R;
 
-import java.io.PipedReader;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;

@@ -1,8 +1,8 @@
 package com.v.kotlin.base
 
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity<P : IBasePresenter> : AppCompatActivity(){
 
@@ -11,6 +11,8 @@ abstract class BaseActivity<P : IBasePresenter> : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
+        initData()
+
         mPresenter = createPresenter()
 
         //处理逻辑

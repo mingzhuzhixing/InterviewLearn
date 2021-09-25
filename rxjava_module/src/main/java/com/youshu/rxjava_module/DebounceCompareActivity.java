@@ -1,7 +1,7 @@
 package com.youshu.rxjava_module;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,11 +9,9 @@ import android.widget.Button;
 
 import com.jakewharton.rxbinding2.view.RxView;
 import com.youshu.rxjava_module.listener.OnMultiClickListener;
-import com.youshu.rxjava_module.uitls.RxJavaUtils;
 
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.Observer;
 import io.reactivex.functions.Consumer;
 
 /**

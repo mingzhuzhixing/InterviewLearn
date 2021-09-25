@@ -1,7 +1,7 @@
 package com.youshu.widget_module;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CustomViewActivity extends AppCompatActivity {
 

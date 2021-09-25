@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.AttributeSet;
@@ -24,7 +24,7 @@ import java.util.List;
  * Created by xiaozhiguang on 2017/12/14.
  */
 
-public class TagTextView extends android.support.v7.widget.AppCompatTextView {
+public class TagTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public static int TAGS_INDEX_AT_START = 0;
     public static int TAGS_INDEX_AT_END = 1;

@@ -1,7 +1,7 @@
 package com.v.thread_local;
 
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 public class TestThreadLocal {
     public static void main(String arg[]){

@@ -2,7 +2,7 @@ package com.v.interviewlearn;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +10,6 @@ import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.glide_module.GlideMainActivity;
 import com.v.tagtextview_module.TagTextViewActivity;
-import com.v.tagtextview_module.lib.TagTextView;
 import com.youshu.eventbus_module.EventBusMainActivity;
 import com.youshu.handler_module.HandlerActivity;
 import com.youshu.network_module.NetworkMainActivity;

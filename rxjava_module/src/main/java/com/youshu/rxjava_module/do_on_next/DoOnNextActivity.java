@@ -1,16 +1,11 @@
 package com.youshu.rxjava_module.do_on_next;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.youshu.rxjava_module.R;
 import com.youshu.rxjava_module.api.UserCommonApi;
-import com.youshu.rxjava_module.do_on_next.LoginRequest;
-import com.youshu.rxjava_module.do_on_next.LoginResponse;
-import com.youshu.rxjava_module.do_on_next.RegisterRequest;
-import com.youshu.rxjava_module.do_on_next.RegisterResponse;
 import com.youshu.rxjava_module.http.HttpRetrofit;
 import com.youshu.rxjava_module.uitls.RxJavaUtils;
 

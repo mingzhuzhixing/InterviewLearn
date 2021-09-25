@@ -2,12 +2,11 @@ package com.v.fragment_interface;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.v.fragment_interface.struct.FunctionNoParamNoResult;
 import com.v.fragment_interface.struct.FunctionsManager;
-import com.v.interviewlearn.MainActivity;
 import com.v.interviewlearn.R;
 
 public class FragmentMainActivity extends AppCompatActivity implements IReduceListener {
