@@ -35,6 +35,4 @@ abstract class HttpObserver<T> : Observer<HttpResponse<T>> {
      * 失败
      */
     abstract fun onFailure(errorMsg: String?)
-
-
 }

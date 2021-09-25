@@ -6,40 +6,41 @@ import com.v.kotlin.bean.LoginBean
 import com.v.kotlin.http.HttpObserver
 import com.v.kotlin.http.HttpRetrofit
 import com.v.kotlin.presenter.ILoginPresenter
+import com.v.kotlin.presenter.IRegisterPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-interface ILoginModel {
-    fun loginAction(context: Context, userName: String, userPwd: String, listener: ILoginPresenter.OnLoginLister)
+interface IRegisterModel {
+    fun registerAction(context: Context, userName: String, userPwd: String, listener: IRegisterPresenter.OnRegisterLister)
 
     /**
      * 取消登录
      */
-    fun cancelLogin()
+    fun cancelRegister()
 }
 
-class LoginModelImpl : ILoginModel {
+class RegisterModelImpl : IRegisterModel {
 
     /**
      * 登录动作
      */
-    override fun loginAction(context: Context, userName: String, userPwd: String, listener: ILoginPresenter.OnLoginLister) {
+    override fun registerAction(context: Context, userName: String, userPwd: String, listener: IRegisterPresenter.OnRegisterLister) {
         HttpRetrofit.getInstance().createApi(WanAndroidApi::class.java)
-                .login(userName, userPwd)
+                .register(userName, userPwd, userPwd)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : HttpObserver<LoginBean>() {
                     override fun onSuccess(data: LoginBean) {
-                        listener.loginSuccess(data)
+                        listener.registerSuccess(data)
                     }
 
                     override fun onFailure(errorMsg: String?) {
-                        listener.loginFailure(errorMsg ?: "")
+                        listener.registerFailure(errorMsg ?: "")
                     }
                 })
     }
 
-    override fun cancelLogin() {
+    override fun cancelRegister() {
 
     }
 }

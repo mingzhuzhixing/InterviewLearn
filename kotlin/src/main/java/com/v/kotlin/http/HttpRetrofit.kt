@@ -13,6 +13,7 @@ class HttpRetrofit {
     }
 
     companion object {
+        private const val BASE_URL: String = "https://www.wanandroid.com/"
         fun getInstance(): HttpRetrofit = Holder.instance;
     }
 
@@ -20,7 +21,7 @@ class HttpRetrofit {
         init()
     }
 
-    private lateinit var mRetrofit:Retrofit
+    private lateinit var mRetrofit: Retrofit
 
     private fun init() {
         val mOkHttpClient = OkHttpClient.Builder()
@@ -28,7 +29,8 @@ class HttpRetrofit {
                 .connectTimeout(10000, TimeUnit.SECONDS)
                 .writeTimeout(10000, TimeUnit.SECONDS)
                 .build()
-         mRetrofit = Retrofit.Builder().client(mOkHttpClient)
+        mRetrofit = Retrofit.Builder().client(mOkHttpClient)
+                .baseUrl(BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
