@@ -1,8 +1,10 @@
 package com.v.fragment_interface;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import android.widget.Toast;
 
 import com.v.fragment_interface.struct.FunctionNoParamNoResult;

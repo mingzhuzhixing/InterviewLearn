@@ -2,6 +2,7 @@ package com.v.kotlin
 
 import android.app.Application
 import android.content.Context
+import com.v.kotlin.database.AppDatabase
 
 class MyApplication : Application() {
     companion object{
@@ -14,5 +15,6 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         mApplication = this
+        AppDatabase.initApplication(this)
     }
 }

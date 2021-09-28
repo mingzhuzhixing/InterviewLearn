@@ -48,4 +48,9 @@ dependencies {
     //jetpack-->navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$deps.navigation_fragment_ktx"
     implementation "androidx.navigation:navigation-ui-ktx:$deps.navigation_ui_ktx"
+
+    //jetpack-->room
+    implementation "android.arch.persistence.room:runtime:1.0.0-alpha5"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha5"
+    debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
 }
