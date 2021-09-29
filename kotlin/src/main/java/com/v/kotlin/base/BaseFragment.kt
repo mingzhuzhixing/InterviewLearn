@@ -25,7 +25,6 @@ abstract class BaseFragment<P : IBasePresenter> : Fragment() {
     //2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initData()
         mPresenter = createPresenter()
     }
 
@@ -42,6 +41,7 @@ abstract class BaseFragment<P : IBasePresenter> : Fragment() {
     //4
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        initData()
         //处理逻辑
         processLogical()
     }

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -51,6 +52,9 @@ dependencies {
 
     //jetpack-->room
     implementation "android.arch.persistence.room:runtime:1.0.0-alpha5"
-    annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha5"
+    kapt "android.arch.persistence.room:compiler:1.0.0-alpha5"
     debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
+
+    //引入包
+    implementation project(":common_module")
 }

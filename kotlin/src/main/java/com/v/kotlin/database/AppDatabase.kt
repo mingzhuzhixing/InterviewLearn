@@ -23,15 +23,14 @@ abstract class AppDatabase : RoomDatabase() {
 
         /**
          * 初始化数据库
+         *
+         * allowMainThreadQueries() 许在主线程中访问数据库
          */
         fun initApplication(context: Context) {
             if (INSTANCE == null) {
-                INSTANCE =
-                    Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDatabase::class.java,
-                        "student_database.db"
-                    ).build()
+                INSTANCE = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "student_database.db")
+                    .allowMainThreadQueries()
+                    .build()
             }
         }
 

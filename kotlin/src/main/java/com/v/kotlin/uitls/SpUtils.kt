@@ -17,7 +17,8 @@ class SpUtils {
         fun getInstance() = Holder.instance
     }
 
-    private val sp: SharedPreferences = MyApplication.getContext().getSharedPreferences("sp_name", Context.MODE_PRIVATE);
+    private val sp: SharedPreferences =
+        MyApplication.getContext().getSharedPreferences("sp_name", Context.MODE_PRIVATE);
 
     /**
      * 存储本地数据
@@ -43,21 +44,18 @@ class SpUtils {
 
     fun getStringValue(key: String): String {
         val value = sp.getString(key, "")
-        return value ?: "";
+        return value ?: ""
     }
 
     fun getBooleanValue(key: String): Boolean {
-        val value = sp.getBoolean(key, false)
-        return value ?: false;
+        return sp.getBoolean(key, false)
     }
 
     fun getIntValue(key: String): Int {
-        val value = sp.getInt(key, 0)
-        return value ?: 0;
+        return sp.getInt(key, 0)
     }
 
     fun getFloatValue(key: String): Float {
-        val value = sp.getFloat(key, 0f)
-        return value ?: 0f;
+        return sp.getFloat(key, 0f)
     }
 }

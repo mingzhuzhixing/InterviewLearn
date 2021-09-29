@@ -15,6 +15,9 @@ abstract class BaseActivity<P : IBasePresenter> : AppCompatActivity(){
 
         mPresenter = createPresenter()
 
+        //隐藏标题栏
+        hideActionBar()
+
         //处理逻辑
         processLogical()
     }

@@ -12,13 +12,22 @@ import androidx.room.PrimaryKey
  * @date 2021/9/28 4:38 下午
  */
 @Entity
-class Student {
+class Student() {
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0
+    var id: Int = 0
 
     @ColumnInfo(name = "stuName")
-    val stuName: String = ""
+    var stuName: String = ""
 
     @ColumnInfo(name = "age")
-    val age: Int = 0
+    var age: Int = 0
+
+    constructor(name: String):this() {
+        this.stuName = name
+    }
+
+    constructor(name: String, age: Int):this() {
+        this.stuName = name
+        this.age = age
+    }
 }
