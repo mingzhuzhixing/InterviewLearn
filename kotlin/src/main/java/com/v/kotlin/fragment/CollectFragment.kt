@@ -49,10 +49,10 @@ class CollectFragment : BaseFragment<CollectPresenterImpl>(), ICollectView {
     }
 
     override fun showAllStudent(data: List<Student>) {
-        mAdapter.setCleanData(data)
+        mAdapter.setClearAndData(data)
     }
 
     override fun deleteAllStudent() {
-        mAdapter.setCleanData(listOf())
+        mAdapter.setClearAndData(listOf())
     }
 }
