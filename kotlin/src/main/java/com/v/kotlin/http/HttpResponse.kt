@@ -1,3 +1,12 @@
 package com.v.kotlin.http
 
-data class HttpResponse<T>(val data: T, val errorCode: Int, val errorMsg: String)
+import com.google.gson.annotations.SerializedName
+
+data class HttpResponse<T>(val data: T) {
+
+    @SerializedName("errcode")
+    var errorCode: Int = 0
+
+    @SerializedName("errMsg")
+    var errorMsg: String = ""
+}

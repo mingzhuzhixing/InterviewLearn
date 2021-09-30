@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.v.kotlin.fragment.MainFragment"
+        android:name="com.v.kotlin.fragment.HomeFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_collect"

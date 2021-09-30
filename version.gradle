@@ -28,6 +28,8 @@ def deps = [
         gson                   : '2.4.0',
         navigation_fragment_ktx: '2.3.1',
         navigation_ui_ktx      : '2.3.1',
+        recyclerview           : '1.2.0',
+        glide                  : '4.11.0'
 ]
 
 ext.androidV = androidVersion

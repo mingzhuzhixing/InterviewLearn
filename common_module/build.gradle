@@ -34,5 +34,8 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
 
     //recyclerview
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation "androidx.recyclerview:recyclerview:$deps.recyclerview"
+
+    //glide
+    api "com.github.bumptech.glide:glide:$deps.glide"
 }
