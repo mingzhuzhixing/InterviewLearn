@@ -99,5 +99,12 @@
             android:onClick="glideClick"
             android:text="glide"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="telephonyClick"
+            android:text="telephony"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

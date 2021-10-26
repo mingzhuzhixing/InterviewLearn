@@ -16,6 +16,7 @@ import com.youshu.network_module.NetworkMainActivity;
 import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
 import com.youshu.snap_helper_module.SnapHelperActivity;
+import com.youshu.telephony_module.TelephonyManagerActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
@@ -147,5 +148,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void glideClick(View view) {
         startActivity(new Intent(this, GlideMainActivity.class));
+    }
+
+    /**
+     * telephony
+     */
+    public void telephonyClick(View view) {
+        startActivity(new Intent(this, TelephonyManagerActivity.class));
     }
 }

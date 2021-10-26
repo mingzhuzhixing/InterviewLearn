@@ -27,7 +27,7 @@ android {
 
 dependencies {
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    implementation "com.google.android.material:material:$deps.multidex"
+    implementation "com.google.android.material:material:$deps.material"
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation "junit:junit:$deps.junit"
     androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
