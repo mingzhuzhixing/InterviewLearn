@@ -44,7 +44,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$deps.rxjava"
     implementation "io.reactivex.rxjava2:rxandroid:$deps.rxandroid"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$deps.adapter_rxjava"
-    implementation "com.squareup.retrofit2:converter-gson:$deps.gson"
+    implementation "com.squareup.retrofit2:converter-gson:$deps.converter_gson"
 
     //jetpack-->navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$deps.navigation_fragment_ktx"

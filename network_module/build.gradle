@@ -22,12 +22,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
+    testImplementation "junit:junit:$deps.junit"
+    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
 
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"
     implementation 'org.xutils:xutils:3.3.36'
 }

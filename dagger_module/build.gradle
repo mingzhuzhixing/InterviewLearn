@@ -28,12 +28,12 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
     implementation "com.google.android.material:material:$deps.material"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
     testImplementation "junit:junit:$deps.junit"
     androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
 
     //dagger2 api
-    implementation 'com.google.dagger:dagger:2.4'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    implementation "com.google.dagger:dagger:$deps.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$deps.dagger_compiler"
 }
