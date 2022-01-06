@@ -1,4 +1,4 @@
-package com.v.thread_local;
+package com.v.thread_module.thread_local;
 
 
 import androidx.annotation.Nullable;

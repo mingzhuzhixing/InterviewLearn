@@ -1,4 +1,4 @@
-package com.v.thread_pool;
+package com.v.thread_module.thread_pool;
 
 import androidx.annotation.NonNull;
 
@@ -35,7 +35,7 @@ public class ThreadPoolTest {
     private static ExecutorService fixedThreadPool = newFixedThreadPool(5);
 
     /**
-     * 创建一个可缓存的线程池，如果线程池长度超过锅里需要，可灵活回收空闲现场，若无可回收，则新建线程
+     * 创建一个可缓存的线程池，如果线程池长度超过这里需要，可灵活回收空闲现场，若无可回收，则新建线程
      */
     private static ExecutorService cacheThreadPool = newCachedThreadPool();
 
