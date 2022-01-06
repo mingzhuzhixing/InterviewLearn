@@ -62,5 +62,6 @@ dependencies {
     implementation project(":glide_module")
     implementation project(":recyclerview_module")
     implementation project(":telephony_module")
+    implementation project(":bitmap_module")
 
 }

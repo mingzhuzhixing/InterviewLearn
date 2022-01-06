@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.v.bitmap_module.BitmapMainActivity;
 import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.glide_module.GlideMainActivity;
@@ -155,5 +156,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void telephonyClick(View view) {
         startActivity(new Intent(this, TelephonyManagerActivity.class));
+    }
+
+    /**
+     * bitmap
+     */
+    public void bitmapClick(View view) {
+        startActivity(new Intent(this, BitmapMainActivity.class));
     }
 }
