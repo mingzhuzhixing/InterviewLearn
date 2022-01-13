@@ -7,7 +7,7 @@ import com.v.kotlin.base.BaseFragment
 import com.v.kotlin.bean.Student
 import com.v.kotlin.ivew.ICollectView
 import com.v.kotlin.presenter.CollectPresenterImpl
-import com.youshu.common_module.widget.HorizontalDividerItemDecoration
+import com.v.recyclerview_module.decoration.HorizontalDividerItemDecoration
 import kotlinx.android.synthetic.main.fragment_collect.*
 
 /**

@@ -113,5 +113,12 @@
             android:onClick="bitmapClick"
             android:text="bitmap"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="webViewClick"
+            android:text="webview"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

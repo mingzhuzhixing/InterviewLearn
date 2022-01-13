@@ -1,4 +1,4 @@
-package com.youshu.common_module;
+package com.v.common_module;
 
 import org.junit.Test;
 

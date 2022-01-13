@@ -2,11 +2,15 @@ package com.v.interviewlearn;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.widget.TextView;
 
 import com.v.bitmap_module.BitmapMainActivity;
+import com.v.common_module.autoservice.IWebViewService;
+import com.v.common_module.autoserviceLoader.AutoServiceLoader;
 import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.glide_module.GlideMainActivity;
@@ -18,6 +22,8 @@ import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
 import com.youshu.snap_helper_module.SnapHelperActivity;
 import com.youshu.telephony_module.TelephonyManagerActivity;
+
+import java.util.ServiceLoader;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
@@ -163,5 +169,16 @@ public class MainActivity extends AppCompatActivity {
      */
     public void bitmapClick(View view) {
         startActivity(new Intent(this, BitmapMainActivity.class));
+    }
+
+
+    /**
+     * webview
+     */
+    public void webViewClick(View view) {
+        IWebViewService service = AutoServiceLoader.load(IWebViewService.class);
+        if (service != null) {
+            service.startWebViewActivity(MainActivity.this, "https://www.baidu.com", "百度", true);
+        }
     }
 }

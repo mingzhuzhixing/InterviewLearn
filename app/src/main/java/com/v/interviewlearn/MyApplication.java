@@ -1,21 +1,11 @@
 package com.v.interviewlearn;
 
-import android.app.Application;
-import android.content.Context;
-
-import androidx.multidex.MultiDex;
-
+import com.v.base_module.BaseApplication;
 import com.youshu.network_module.HttpHelper;
 import com.youshu.network_module.xutils.XutilsProcessor;
 
 
-public class MyApplication extends Application {
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(base);
-    }
+public class MyApplication extends BaseApplication {
 
     @Override
     public void onCreate() {
