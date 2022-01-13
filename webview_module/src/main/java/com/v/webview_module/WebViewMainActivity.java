@@ -39,4 +39,15 @@ public class WebViewMainActivity extends AppCompatActivity implements View.OnCli
             onBackPressed();
         }
     }
+
+    /**
+     * 更新标题
+     *
+     * @param title 标题
+     */
+    public void updateTitle(String title) {
+        if (mBinding != null) {
+            mBinding.tvTitle.setText(title);
+        }
+    }
 }
