@@ -171,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, BitmapMainActivity.class));
     }
 
-
     /**
      * webview
      */

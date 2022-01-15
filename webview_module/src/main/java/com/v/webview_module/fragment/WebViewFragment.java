@@ -1,6 +1,7 @@
 package com.v.webview_module.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.kingja.loadsir.callback.Callback;
+import com.kingja.loadsir.core.LoadService;
+import com.kingja.loadsir.core.LoadSir;
+import com.v.base_module.callback.EmptyCallback;
+import com.v.base_module.callback.ErrorCallback;
+import com.v.base_module.callback.LoadingCallback;
 import com.v.webview_module.R;
 import com.v.webview_module.WebViewMainActivity;
 import com.v.webview_module.constant.Constants;
@@ -22,7 +29,9 @@ import com.v.webview_module.webviewclient.MyWebViewClient;
  * WebViewFragment
  */
 public class WebViewFragment extends Fragment implements WebViewCallBack {
+    private final String TAG = "WebViewFragment";
     private FragmentWebViewBinding mBinding;
+    private LoadService mLoadService;
 
     public static WebViewFragment newInstance(String url) {
         WebViewFragment fragment = new WebViewFragment();
@@ -41,7 +50,16 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
 
         mBinding.webview.setWebViewClient(new MyWebViewClient(this));
         mBinding.webview.setWebChromeClient(new MyWebChromeClient(this));
-        return mBinding.getRoot();
+
+        mLoadService = LoadSir.getDefault().register(mBinding.getRoot(), new Callback.OnReloadListener() {
+            @Override
+            public void onReload(View view) {
+                Log.i(TAG, "onReload()");
+                mBinding.webview.reload();
+            }
+        });
+
+        return mLoadService.getLoadLayout();
     }
 
     @Override
@@ -51,13 +69,17 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
 
     @Override
     public void onPageStarted(String url) {
-
+        mLoadService.showCallback(LoadingCallback.class);
     }
 
     @Override
-    public void onPageFinished(String url) {
-
+    public void onPageFinished(String url, boolean isLoadError) {
+        mLoadService.showSuccess();
+        if (isLoadError) {
+            mLoadService.showCallback(ErrorCallback.class);
+        }
     }
+
 
     @Override
     public void onReceivedTitle(String title) {

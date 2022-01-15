@@ -33,4 +33,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3'
 }
