@@ -25,6 +25,6 @@ public class WebViewServiceImpl implements IWebViewService {
 
     @Override
     public Fragment getWebViewFragment(String url) {
-        return WebViewFragment.newInstance(url);
+        return WebViewFragment.newInstance(url, false);
     }
 }

@@ -14,7 +14,8 @@ import androidx.fragment.app.Fragment;
 import com.kingja.loadsir.callback.Callback;
 import com.kingja.loadsir.core.LoadService;
 import com.kingja.loadsir.core.LoadSir;
-import com.v.base_module.callback.EmptyCallback;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.v.base_module.callback.ErrorCallback;
 import com.v.base_module.callback.LoadingCallback;
 import com.v.webview_module.R;
@@ -32,11 +33,14 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
     private final String TAG = "WebViewFragment";
     private FragmentWebViewBinding mBinding;
     private LoadService mLoadService;
+    private boolean mIsSupportRefresh = false;
+    private String mUrl = "";
 
-    public static WebViewFragment newInstance(String url) {
+    public static WebViewFragment newInstance(String url, boolean supportRefresh) {
         WebViewFragment fragment = new WebViewFragment();
         Bundle bundle = new Bundle();
         bundle.putString(Constants.EXTRA_URL, url);
+        bundle.putBoolean(Constants.EXTRA_SUPPORT_REFRESH, supportRefresh);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -45,8 +49,16 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_web_view, container, false);
+
+        if (getArguments() != null) {
+            mIsSupportRefresh = getArguments().getBoolean(Constants.EXTRA_SUPPORT_REFRESH, false);
+            mUrl = getArguments().getString(Constants.EXTRA_URL);
+        }
+
+        initRefreshLayout();
+
         mBinding.webview.getSettings().setJavaScriptEnabled(true);
-        mBinding.webview.loadUrl(getArguments().getString(Constants.EXTRA_URL));
+        mBinding.webview.loadUrl(mUrl);
 
         mBinding.webview.setWebViewClient(new MyWebViewClient(this));
         mBinding.webview.setWebChromeClient(new MyWebChromeClient(this));
@@ -62,24 +74,45 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
         return mLoadService.getLoadLayout();
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    /**
+     * 初始化刷新
+     */
+    private void initRefreshLayout() {
+        mBinding.refreshLayout.setEnableLoadMore(false);
+        mBinding.refreshLayout.setEnableRefresh(mIsSupportRefresh);
+        mBinding.refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                Log.i(TAG, "onRefresh()");
+                mBinding.webview.reload();
+            }
+        });
     }
 
     @Override
     public void onPageStarted(String url) {
-        mLoadService.showCallback(LoadingCallback.class);
+        mBinding.refreshLayout.finishRefresh();
+        if (mLoadService != null) {
+            mLoadService.showCallback(LoadingCallback.class);
+        }
     }
 
     @Override
     public void onPageFinished(String url, boolean isLoadError) {
-        mLoadService.showSuccess();
+        mBinding.refreshLayout.finishRefresh();
         if (isLoadError) {
-            mLoadService.showCallback(ErrorCallback.class);
+            mBinding.refreshLayout.setEnableRefresh(false);
+        } else {
+            mBinding.refreshLayout.setEnableRefresh(mIsSupportRefresh);
+        }
+        if (mLoadService != null) {
+            if (isLoadError) {
+                mLoadService.showCallback(ErrorCallback.class);
+            } else {
+                mLoadService.showSuccess();
+            }
         }
     }
-
 
     @Override
     public void onReceivedTitle(String title) {
@@ -91,5 +124,10 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
     @Override
     public void onError(int code) {
 
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }

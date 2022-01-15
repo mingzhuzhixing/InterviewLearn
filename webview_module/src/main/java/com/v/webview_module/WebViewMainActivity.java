@@ -29,7 +29,7 @@ public class WebViewMainActivity extends AppCompatActivity implements View.OnCli
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.framelayout, WebViewFragment.newInstance(getIntent().getStringExtra(Constants.EXTRA_URL)));
+        transaction.replace(R.id.framelayout, WebViewFragment.newInstance(getIntent().getStringExtra(Constants.EXTRA_URL), true));
         transaction.commit();
     }
 
