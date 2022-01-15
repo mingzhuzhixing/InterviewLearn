@@ -24,6 +24,15 @@ public class WebViewServiceImpl implements IWebViewService {
     }
 
     @Override
+    public void startLocalHtmlActivity(Context context) {
+        Intent intent = new Intent(context, WebViewMainActivity.class);
+        intent.putExtra(Constants.EXTRA_URL, Constants.ANDROID_NATIVE_ASSETS + "demo.html");
+        intent.putExtra(Constants.EXTRA_TITLE, "test");
+        intent.putExtra(Constants.EXTRA_SHOW_ACTION_BAR, true);
+        context.startActivity(intent);
+    }
+
+    @Override
     public Fragment getWebViewFragment(String url) {
         return WebViewFragment.newInstance(url, false);
     }

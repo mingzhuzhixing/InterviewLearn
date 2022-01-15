@@ -1,6 +1,7 @@
-package com.v.webview_module.webchromeclient;
+package com.v.webview_module.webviewprocess.webchromeclient;
 
 import android.util.Log;
+import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
@@ -22,5 +23,10 @@ public class MyWebChromeClient extends WebChromeClient {
         } else {
             Log.i(TAG, "mCallBack is null");
         }
+    }
+
+    public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+        Log.i(TAG, "consoleMessage:" + consoleMessage.message());
+        return super.onConsoleMessage(consoleMessage);
     }
 }

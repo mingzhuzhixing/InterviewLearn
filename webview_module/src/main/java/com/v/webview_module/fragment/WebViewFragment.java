@@ -23,8 +23,6 @@ import com.v.webview_module.WebViewMainActivity;
 import com.v.webview_module.constant.Constants;
 import com.v.webview_module.databinding.FragmentWebViewBinding;
 import com.v.webview_module.listener.WebViewCallBack;
-import com.v.webview_module.webchromeclient.MyWebChromeClient;
-import com.v.webview_module.webviewclient.MyWebViewClient;
 
 /**
  * WebViewFragment
@@ -57,11 +55,8 @@ public class WebViewFragment extends Fragment implements WebViewCallBack {
 
         initRefreshLayout();
 
-        mBinding.webview.getSettings().setJavaScriptEnabled(true);
         mBinding.webview.loadUrl(mUrl);
-
-        mBinding.webview.setWebViewClient(new MyWebViewClient(this));
-        mBinding.webview.setWebChromeClient(new MyWebChromeClient(this));
+        mBinding.webview.registerListener(this);
 
         mLoadService = LoadSir.getDefault().register(mBinding.getRoot(), new Callback.OnReloadListener() {
             @Override

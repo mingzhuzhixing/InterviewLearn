@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v.webview_module">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application android:usesCleartextTraffic="true">
+        <!--android:process 设置webview在独立的进程中运行-->
         <activity
             android:name=".WebViewMainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:process=":webview" />
     </application>
 
 </manifest>

@@ -12,5 +12,7 @@ import androidx.fragment.app.Fragment;
 public interface IWebViewService {
     void startWebViewActivity(Context context, String url, String title, boolean isShowActionBar);
 
+    void startLocalHtmlActivity(Context context);
+
     Fragment getWebViewFragment(String url);
 }
