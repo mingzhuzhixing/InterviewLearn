@@ -17,9 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".MainProcessTestActivity"
-            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,7 +35,6 @@
         <activity android:name="com.v.hook.HookActivity" />
         <activity android:name="com.v.modularization.ModularActivity" />
         <activity android:name="com.v.service.base_service.ServiceActivity" />
-        <activity android:name="com.v.database.DatabaseActivity" />
         <activity android:name="com.v.plugin.PluginActivity" />
         <activity android:name="com.v.ffmpeg.FFmpegActivity" />
         <activity android:name="com.v.mvp.Mvp3Activity" />
@@ -47,12 +43,12 @@
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.ioc.IocActivity" />
-        <activity android:name="com.v.eventbus.EventBusMainActivity" />
-        <activity android:name="com.v.eventbus.EventBusSecondActivity" />
 
         <service android:name="com.v.service.base_service.MyService" />
 
         <activity android:name="com.v.webview.WebViewActivity" />
+
+        <activity android:name=".MainProcessTestActivity" />
     </application>
 
 </manifest>

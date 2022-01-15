@@ -14,7 +14,7 @@ import com.v.base_module.callback.TimeoutCallback;
 
 public class BaseApplication extends Application {
 
-    public BaseApplication sApplication;
+    public static BaseApplication sApplication;
 
     @Override
     protected void attachBaseContext(Context base) {

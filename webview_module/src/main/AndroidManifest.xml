@@ -11,6 +11,8 @@
             android:name=".WebViewMainActivity"
             android:exported="true"
             android:process=":webview" />
+
+        <service android:name=".mainprocess.MainProcessCommandService"/>
     </application>
 
 </manifest>

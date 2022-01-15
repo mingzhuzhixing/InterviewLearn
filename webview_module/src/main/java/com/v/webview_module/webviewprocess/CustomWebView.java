@@ -35,6 +35,7 @@ public class CustomWebView extends WebView {
      * 初始化
      */
     private void initView() {
+        WebViewProcessCommandDispatcher.getInstance().initAidlConnection();
         WebViewDefaultSettings.getInstance().setSettings(this);
         this.addJavascriptInterface(this, "webViewJs");
     }
@@ -53,8 +54,21 @@ public class CustomWebView extends WebView {
         if (!TextUtils.isEmpty(jsParam)) {
             JsParamBean paramBean = JSON.parseObject(jsParam, JsParamBean.class);
             if (paramBean != null && paramBean.getParam() != null) {
-                String message = paramBean.getParam().getString("message");
-                Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT).show();
+                if ("showToast".equals(paramBean.getName())) {
+                    String message = paramBean.getParam().getString("message");
+                    Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT).show();
+                } else if ("openPage".equals(paramBean.getName())) {
+                    String target_class = paramBean.getParam().getString("target_class");
+
+                    //第一种方式：
+                    //Intent intent = new Intent();
+                    //intent.setComponent(new ComponentName(BaseApplication.sApplication, target_class));
+                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    //BaseApplication.sApplication.startActivity(intent);
+
+                    //第二种方式:
+                    WebViewProcessCommandDispatcher.getInstance().executeCommand(paramBean.getName(), target_class);
+                }
             }
         }
     }

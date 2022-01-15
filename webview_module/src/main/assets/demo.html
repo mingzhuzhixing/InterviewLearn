@@ -20,6 +20,11 @@
             console.log("showToast");
             nativeJs.takeNativeAction("showToast",{message:"this is a from html"})
         }
+
+         function openActivity(){
+            console.log("openActivity");
+            nativeJs.takeNativeAction("openPage",{target_class:"com.v.interviewlearn.MainProcessTestActivity"})
+        }
     </script>
     <script src="js/demo.js" charset="UTF-8"></script>
 </head>
@@ -27,5 +32,7 @@
 
 <body style="height:100%">
 <div class="item" style="font-size:30px; color:#ffffff" onclick="callAppToast()">调用：showToast</div>
+
+<div class="item" style="font-size:30px; color:#ffffff" onclick="openActivity()">打开主进程Activity</div>
 </body>
 </html>
