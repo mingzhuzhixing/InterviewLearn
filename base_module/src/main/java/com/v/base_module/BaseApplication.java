@@ -11,6 +11,7 @@ import com.v.base_module.callback.EmptyCallback;
 import com.v.base_module.callback.ErrorCallback;
 import com.v.base_module.callback.LoadingCallback;
 import com.v.base_module.callback.TimeoutCallback;
+import com.v.thread_module.thread.ThreadPool;
 
 public class BaseApplication extends Application {
 
@@ -26,6 +27,9 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sApplication = this;
+
+        //初始化线程
+        ThreadPool.startup();
 
         LoadSir.beginBuilder()
                 .addCallback(new ErrorCallback())//'添加各种状态页

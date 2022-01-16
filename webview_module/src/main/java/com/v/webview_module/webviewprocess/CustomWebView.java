@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.v.webview_module.bean.JsParamBean;
@@ -54,21 +53,22 @@ public class CustomWebView extends WebView {
         if (!TextUtils.isEmpty(jsParam)) {
             JsParamBean paramBean = JSON.parseObject(jsParam, JsParamBean.class);
             if (paramBean != null && paramBean.getParam() != null) {
-                if ("showToast".equals(paramBean.getName())) {
-                    String message = paramBean.getParam().getString("message");
-                    Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT).show();
-                } else if ("openPage".equals(paramBean.getName())) {
-                    String target_class = paramBean.getParam().getString("target_class");
-
-                    //第一种方式：
-                    //Intent intent = new Intent();
-                    //intent.setComponent(new ComponentName(BaseApplication.sApplication, target_class));
-                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    //BaseApplication.sApplication.startActivity(intent);
-
-                    //第二种方式:
-                    WebViewProcessCommandDispatcher.getInstance().executeCommand(paramBean.getName(), target_class);
-                }
+//                if ("showToast".equals(paramBean.getName())) {
+//                    String message = paramBean.getParam().getString("message");
+//                    Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT).show();
+//                } else if ("openPage".equals(paramBean.getName())) {
+//                    String target_class = paramBean.getParam().getString("target_class");
+//
+//                    //第一种方式：
+//                    //Intent intent = new Intent();
+//                    //intent.setComponent(new ComponentName(BaseApplication.sApplication, target_class));
+//                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    //BaseApplication.sApplication.startActivity(intent);
+//
+//                    //第二种方式:
+//                    WebViewProcessCommandDispatcher.getInstance().executeCommand(paramBean.getName(), target_class);
+//                }
+                WebViewProcessCommandDispatcher.getInstance().executeCommand(paramBean.getName(), paramBean.getParam().toJSONString());
             }
         }
     }
