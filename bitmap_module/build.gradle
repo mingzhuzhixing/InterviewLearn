@@ -32,5 +32,5 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
 
-    implementation project(":glide_module")
+    api project(":glide_module")
 }

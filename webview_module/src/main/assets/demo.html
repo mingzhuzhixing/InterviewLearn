@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+
+    <style type="text/css">
+        .item{
+            padding:20px;
+            max-width:600px;
+            margin:0 auto;
+            text-align:center;
+            background-color:#999999;
+            margin-top:40px;
+        }
+    </style>
+
+    <script>
+        function callAppToast(){
+            console.log("showToast");
+            nativeJs.takeNativeAction("showToast",{message:"this is a from html"})
+        }
+
+         function openActivity(){
+            console.log("openActivity");
+            nativeJs.takeNativeAction("openPage",{target_class:"com.v.interviewlearn.MainProcessTestActivity"})
+        }
+    </script>
+    <script src="js/demo.js" charset="UTF-8"></script>
+</head>
+
+
+<body style="height:100%">
+<div class="item" style="font-size:30px; color:#ffffff" onclick="callAppToast()">调用：showToast</div>
+
+<div class="item" style="font-size:30px; color:#ffffff" onclick="openActivity()">打开主进程Activity</div>
+</body>
+</html>

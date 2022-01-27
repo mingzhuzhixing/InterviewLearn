@@ -19,7 +19,17 @@ android {
 //                cppFlags ""
 //            }
 //        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true }
+        }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -39,7 +49,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
     implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    implementation "androidx.multidex:multidex:$deps.multidex"
+    implementation 'com.google.android.material:material:1.3.0'
     testImplementation "junit:junit:$deps.junit"
     androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
@@ -51,17 +61,10 @@ dependencies {
 
     implementation "org.greenrobot:eventbus:$deps.eventbus"
 
-    implementation project(":rxjava_module")
     implementation project(":handler_module")
-    implementation project(":eventbus_module")
-    implementation project(":network_module")
-    implementation project(":retrofit_module")
     implementation project(":snap_helper_module")
     implementation project(":tagtextview_module")
-    implementation project(":database_module")
-    implementation project(":glide_module")
-    implementation project(":recyclerview_module")
     implementation project(":telephony_module")
-    implementation project(":bitmap_module")
+    implementation project(":webview_module")
 
 }
