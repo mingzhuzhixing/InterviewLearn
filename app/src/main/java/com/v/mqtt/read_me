@@ -22,3 +22,6 @@ MQTT提供三种质量的服务：
     connet 客户端到服务端的连接请求
     connAck 服务器对连接请求的响应
     Reseved 保留
+
+认识：https://www.runoob.com/w3cnote/mqtt-intro.html
+接入：https://docs-im.easemob.com/mqtt/qsandroidsdk
