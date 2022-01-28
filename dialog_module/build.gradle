@@ -8,9 +8,10 @@ android {
     defaultConfig {
         minSdkVersion androidV.minSdkVersion
         targetSdkVersion androidV.targetSdkVersion
+    }
 
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        consumerProguardFiles "consumer-rules.pro"
+    dataBinding {
+        enabled = true
     }
 
     buildTypes {
@@ -28,12 +29,11 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
     implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation  'com.android.support:cardview-v7:28.0.0'
+    implementation  'com.android.support:design:28.0.0'
 
-    api "androidx.recyclerview:recyclerview:$deps.recyclerview"
+    api project(":common_module")
+    implementation project(":recyclerview_module")
 
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
 }

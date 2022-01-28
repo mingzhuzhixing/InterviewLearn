@@ -120,5 +120,12 @@
             android:onClick="webViewClick"
             android:text="webview"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="dialogClick"
+            android:text="弹框"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

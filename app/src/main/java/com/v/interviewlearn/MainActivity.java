@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.v.bitmap_module.BitmapMainActivity;
+import com.v.common_module.autoservice.IDialogService;
 import com.v.common_module.autoservice.IWebViewService;
 import com.v.common_module.autoserviceLoader.AutoServiceLoader;
 import com.v.database_module.DatabaseMainActivity;
@@ -179,6 +180,16 @@ public class MainActivity extends AppCompatActivity {
         if (service != null) {
             //service.startWebViewActivity(MainActivity.this, "https://www.baidu.com", "百度", true);
             service.startLocalHtmlActivity(MainActivity.this);
+        }
+    }
+
+    /**
+     * dialog
+     */
+    public void dialogClick(View view) {
+        IDialogService service = AutoServiceLoader.load(IDialogService.class);
+        if (service != null) {
+            service.startDialogActivity(MainActivity.this);
         }
     }
 }
