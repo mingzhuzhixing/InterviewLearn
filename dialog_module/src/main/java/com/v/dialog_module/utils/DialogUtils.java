@@ -29,6 +29,7 @@ import java.lang.reflect.Method;
  * Toast工具类
  */
 public final class DialogUtils {
+
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);

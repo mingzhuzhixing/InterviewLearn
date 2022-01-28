@@ -539,15 +539,6 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    private void showBuilder() {
-        new BuilderDemo.UserBuilder("yc","10086")
-                .age(24)
-                .address("beijing")
-                .phone("13667225184")
-                .build();
-    }
-
-
     /**
      * 获取屏幕的高度（单位：px）
      *
