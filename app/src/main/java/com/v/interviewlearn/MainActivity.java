@@ -16,6 +16,7 @@ import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.glide_module.GlideMainActivity;
 import com.v.tagtextview_module.TagTextViewActivity;
+import com.v.video_module.VideoMainActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
 import com.youshu.handler_module.HandlerActivity;
 import com.youshu.network_module.NetworkMainActivity;
@@ -191,5 +192,12 @@ public class MainActivity extends AppCompatActivity {
         if (service != null) {
             service.startDialogActivity(MainActivity.this);
         }
+    }
+
+    /**
+     * 视频
+     */
+    public void videoClick(View view) {
+        startActivity(new Intent(this, VideoMainActivity.class));
     }
 }

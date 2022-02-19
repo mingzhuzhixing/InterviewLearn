@@ -1,4 +1,4 @@
-package com.v.url_module;
+package com.v.video_module.adapter;
 
 import android.view.ViewGroup;
 

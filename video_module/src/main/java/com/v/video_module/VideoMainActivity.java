@@ -1,19 +1,14 @@
-package com.v.url_module;
+package com.v.video_module;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -23,12 +18,19 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.v.tools_module.ScreenUtil;
-import com.v.url_module.like_view.KsgLikeView;
+import com.v.video_module.adapter.ViewPagerAdapter;
+import com.v.video_module.fragment.LiveChatFragment;
+import com.v.video_module.fragment.LiveTeacherFragment;
+import com.v.video_module.view.LiveVideoView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LandSpaceActivity extends AppCompatActivity {
+/**
+ * 有书直播项目demo
+ *
+ */
+public class VideoMainActivity extends AppCompatActivity {
     private LiveVideoView rl_video;
     private int screenW, screenH;//视频的宽度和高度
     private TextView tv_animation;
@@ -50,7 +52,7 @@ public class LandSpaceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_land_space);
+        setContentView(R.layout.activity_video_main);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }

@@ -67,5 +67,6 @@ dependencies {
     implementation project(":telephony_module")
     implementation project(":webview_module")
     implementation project(":dialog_module")
+    implementation project(":video_module")
 
 }

@@ -1,9 +1,11 @@
-package com.v.url_module;
+package com.v.video_module.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
+
+import com.v.video_module.R;
 
 /**
  * ClassName: LiveVideoView

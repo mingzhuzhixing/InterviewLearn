@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".VideoMainActivity">
 
     <!--  视频部分  -->
-    <com.v.url_module.LiveVideoView
+    <com.v.video_module.view.LiveVideoView
         android:id="@+id/rl_video"
         android:layout_width="match_parent"
         android:layout_height="211dp"

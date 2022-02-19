@@ -127,5 +127,12 @@
             android:onClick="dialogClick"
             android:text="弹框"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="videoClick"
+            android:text="视频"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
