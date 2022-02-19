@@ -37,8 +37,6 @@
         <activity android:name="com.v.service.base_service.ServiceActivity" />
         <activity android:name="com.v.plugin.PluginActivity" />
         <activity android:name="com.v.ffmpeg.FFmpegActivity" />
-        <activity android:name="com.v.mvp.Mvp3Activity" />
-        <activity android:name="com.v.mvp.MvpActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
         <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
