@@ -1,0 +1,103 @@
+Tinker热修复
+热修复背景:
+     1、刚发布的版本出现了严重的Bug，这就需要去解决Bug、测试打包重新发布，这会耗费大量的人力和物力，代价比较大
+     2、已经更正了此前发布版本的Bug，如果下个版本是大版本，那么两个版本之间间隔时间会很长，这样要等到下个大版本发布再修复Bug，而之前版本的Bug会长期的影响用户
+     3、版本升级率不高，并且需要长时间来完成版本迭代，前版本的Bug就会一直影响不升级的用户
+     4、有一些小但是很重要的功能需要在短时间内完成版本迭代，比如节日活动
+
+正常开发流程与热修复开发流程对比：
+    见图片：hofix
+
+热修复优势：
+    1、无需重新发布新版本，省时省力
+    2、用户无感知修复，也无需下载最新应用，代价小
+    3、修复成功率高，把损失降到最低
+
+热修复框架分类与对比:
+    阿里系：AndFix、Dexposed、阿里百川、Sophix
+    腾讯系：微信的Tinker、QQ空间的超级补丁、手Q的QFix
+    知名公司：美团的Robust、饿了么的Amigo、美丽说蘑菇街的Aceso
+    其它：RocooFix、Nuwa、AnoleFix
+    见图片：hot_fix_compare
+
+代码修复方案：
+    底层替换方案：
+        1、在已加载的类中直接替换原有方法，是在原有类的基础上进行修改，无法实现对原有类进行方法和字段的增减，这样会破坏原有类的结构
+        2、最大问题是不稳定性，直接修改虚拟机方法实体的具体字段来实现的。Android是开源的，不同的手机厂商开源对代码进行修改，所以像Andfix就会出现在部分机型上的热修复失效的现象
+    类加载方案：
+        1、APP重新启动后，让ClassLoader去加载新的类。
+
+插桩原理：
+     见图片：hot_fix_chazhuang
+     http://androidxref.com/8.1.0_r33/xref/libcore/dalvik/src/main/java/dalvik/system/BaseDexClassLoader.java
+
+Dex分包:
+    1、分包原因：
+       65536限制：
+            应用的方法数超过了最大数65536个。因为DVM Bytecode的限制，DVM指令集的方法调用指令invoke-kind索引为16bits，最多能引用65535个方法
+            com.android.dex.DexIndexOverflowException: method ID not in [0, 0xffff]: 65536
+       LinearAlloc限制：
+            在安装应用时可能会提示INSTALL_FAILED_DEXOPT，产生的原因就是LinearAlloc限制，DVM中的LinearAlloc是一个固定的缓存区，当方法数超出缓存区的大小时会报错。
+            INSTALL_FAILED_DEXOPT
+    2、解决办法：
+       为了解决65536限制和LinearAlloc限制，从而产生了Dex分包机制。
+       Dex分包方案主要做的时在打包时将应用代码分成多个Dex，将应用启动时必须用到的类和这些类的直接引用类放到主Dex中，
+       其它代码放到次Dex中。当应用启动时先加载主Dex，等到应用启动后再动态地加载次Dex，从而缓解了主Dex的65536限制和LinearAlloc限制
+    3、自定义分包配置：
+       1、gradle配置（默认不用gradle配置）
+          android {
+                 	compileSdkVersion 28
+                 	defaultConfig {
+                 		...
+                 		 // 开启分包
+                 		multiDexEnabled true
+                 		// 设置分包配置文件
+                 		multiDexKeepFile file('multidex.keep')
+                 	}
+                 	...
+                 	dexOptions {
+                 		javaMaxHeapSize "4g"
+                 		preDexLibraries = false
+                 		additionalParameters = [ // 配置multidex参数
+                                                  '--multi-dex', // 多dex分包
+                                                  '--set-max-idx-number=50000', // 每个包内方法数上限
+                                                  '--main-dex-list=' + '/multidex-config.txt', // 打包到主classes.dex的文件列表
+                                                  '--minimal-main-dex'
+                 		]
+                 	}
+                 }
+                 dependencies {
+                     ...
+                     implementation 'com.android.support:multidex:1.0.3'
+                 }
+       2、配置文件multidex.keep
+          com/v/tinker_module/BaseActivity.class
+          com/v/tinker_module/BaseApplication.class
+          com/v/tinker_module/MainActivity.class
+       3、Application重写attachiBaseContext
+          @Override
+          protected void attachBaseContext(Context base) {
+          	super.attachBaseContext(base);
+          	MultiDex.install(this);
+          }
+热修复步骤：
+    1、从服务器下载dex文件
+    2、如果修复包存在先删除
+    3、拷贝到私有目录
+    4、开始修复
+      1、创建自己的类加载器
+      2、获取系统的PathClassLoader
+      3、获取自己的dexElements
+      4、获取系统的dexElements
+      5、将系统的dexElements和自己的合并成新的dexElements
+      6、重新赋值给系统的pathList
+
+未来发展展望：
+    1、热修复=“黑科技”？
+       1、热修复不同于国内APP进程保活这种“黑科技”，让app常驻后台，既耗电又占用内存，浪费很多手机资源。还有APP的推送服务，
+          无节操地对用户进行信息轰炸。还有更无节操的全家桶app。导致Android手机卡顿不堪，这些所谓的“黑科技”都是为了手机厂商的利益而损害用户的体验，
+       2、热修复是能够让开发者和用户双赢的。不仅厂商能快速迭代更新app，使功能尽快上线，而且热更新过程用户无感知，节省大量更新时间，提高用户体验。
+          更重要的能保证app的功能稳定，bug能及时修复。
+    2、IOS封杀了热修复功能，Android的热修复是否也有可能被干掉呢？
+       不会 Android和IOS的开放性不同
+    3、热修复未来是十分乐观的，不仅不会受到封杀，反而会有很大发展空间

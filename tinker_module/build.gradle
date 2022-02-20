@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion androidV.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.v.tinker_module"
+        minSdkVersion androidV.minSdkVersion
+        targetSdkVersion androidV.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // 开启分包
+        multiDexEnabled true
+        // 设置分包配置文件
+        multiDexKeepFile file('multidex.keep')
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        additionalParameters = [ // 配置multidex参数
+                                 '--multi-dex', // 多dex分包
+                                 '--set-max-idx-number=50000', // 每个包内方法数上限
+                                 '--main-dex-list=' + '/multidex.keep', // 打包到主classes.dex的文件列表
+                                 '--minimal-main-dex'
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
+    implementation "com.google.android.material:material:$deps.material"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation "junit:junit:$deps.junit"
+    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+
+    implementation "androidx.multidex:multidex:$deps.multidex"
+}
