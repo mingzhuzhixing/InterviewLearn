@@ -51,11 +51,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_tab" />
 
+
     <TextView
         android:id="@+id/tv_all_screen"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
         android:background="@color/purple_200"
         android:gravity="center"
         android:text="全屏"
@@ -65,24 +66,26 @@
 
     <TextView
         android:id="@+id/tv_half_animation"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:layout_marginTop="100dp"
         android:background="@color/purple_200"
         android:gravity="center"
+        android:layout_marginRight="10dp"
         android:text="半屏动画"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_all_screen"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_all_animation"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:layout_marginTop="100dp"
         android:background="@color/purple_200"
         android:gravity="center"
         android:text="全屏屏动画"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_all_screen"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -120,11 +123,11 @@
         android:layout_width="190dp"
         android:layout_height="100dp"
         android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:background="@color/purple_500"
+        android:text="回复消息\n回复消息\n回复消息\n回复消息\n回复消息"
         android:textColor="@color/white"
-        android:text="回复消息\n回复消息\n回复消息\n回复消息\n回复消息"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <!-- 加载半屏贴片广告内容容器 webview-->
     <FrameLayout
