@@ -26,6 +26,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.v.tagtextview_module.view.CenterAlignImageSpan;
+
 /**
  * SpannableString中的setSpan使用的flag 一般有以下四种：
  * Spanned.SPAN_EXCLUSIVE_EXCLUSIVE --- 不包含两端start和end所在的端点
@@ -51,11 +53,14 @@ public class SpannableStringActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spannable_string);
 
         TextView text1 = (TextView) findViewById(R.id.text1);
+        TextView text2 = (TextView) findViewById(R.id.text2);
         TextView text5 = (TextView) findViewById(R.id.text5);
 
         testHighLight(text1);
 
         imageAndText(text5);
+
+        imageAndText2(text2);
     }
 
     /**
@@ -140,6 +145,27 @@ public class SpannableStringActivity extends AppCompatActivity {
 
         if (span2 != null) {
             ss.setSpan(span2, ss.length() - 1, ss.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        textView.setText(ss);
+    }
+
+    /**
+     * 图文混合
+     */
+    private void imageAndText2(TextView textView) {
+        final SpannableStringBuilder ss = new SpannableStringBuilder(" " + content);
+        //得到drawable对象，即所要插入的图片
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.icon_answer);
+        ImageSpan span = null;
+        if (drawable != null) {
+            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+            //用这个drawable对象代替字符串content
+            //span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+            span = new CenterAlignImageSpan(drawable,10,20);
+        }
+        if (span != null) {
+            //包括0但是不包括content.length()即：1。[0,1)。值得注意的是当我们复制这个图片的时候，实际是复制了"图"这个字符串。
+            ss.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         textView.setText(ss);
     }
