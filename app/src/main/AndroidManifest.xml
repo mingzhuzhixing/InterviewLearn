@@ -35,7 +35,7 @@
         <activity android:name="com.v.hook.HookActivity" />
         <activity android:name="com.v.modularization.ModularActivity" />
         <activity android:name="com.v.service.base_service.ServiceActivity" />
-        <activity android:name="com.v.plugin.PluginActivity" />
+        <activity android:name="com.v.plugin.P/MainActivityluginActivity" />
         <activity android:name="com.v.ffmpeg.FFmpegActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
         <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />

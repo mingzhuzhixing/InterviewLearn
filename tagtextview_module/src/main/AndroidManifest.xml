@@ -8,7 +8,13 @@
 
     <application>
         <activity
-            android:name=".TagTextViewActivity" />
+            android:name=".HtmlTextViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TextViewMainActivity"
+            android:exported="true" />
+        <activity android:name=".TagTextViewActivity" />
+        <activity android:name=".SpannableStringActivity" />
     </application>
 
 </manifest>
