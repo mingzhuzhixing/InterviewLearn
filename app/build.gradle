@@ -63,7 +63,6 @@ dependencies {
 
     implementation project(":handler_module")
     implementation project(":snap_helper_module")
-    implementation project(":tagtextview_module")
     implementation project(":telephony_module")
     implementation project(":webview_module")
     implementation project(":dialog_module")

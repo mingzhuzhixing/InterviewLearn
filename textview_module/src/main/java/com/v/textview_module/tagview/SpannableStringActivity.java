@@ -1,10 +1,9 @@
-package com.v.tagtextview_module;
+package com.v.textview_module.tagview;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -25,6 +24,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import com.v.textview_module.R;
 
 /**
  * SpannableString中的setSpan使用的flag 一般有以下四种：

@@ -1,4 +1,4 @@
-package com.v.tagtextview_module.lib;
+package com.v.textview_module.tagview.lib;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import androidx.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.AttributeSet;
@@ -15,7 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.v.tagtextview_module.R;
+import androidx.annotation.NonNull;
+
+import com.v.textview_module.R;
 
 import java.util.ArrayList;
 import java.util.List;

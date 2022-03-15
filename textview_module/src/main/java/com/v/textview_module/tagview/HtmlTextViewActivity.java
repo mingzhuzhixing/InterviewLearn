@@ -1,12 +1,14 @@
-package com.v.tagtextview_module;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+package com.v.textview_module.tagview;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import com.v.textview_module.R;
 
 public class HtmlTextViewActivity extends AppCompatActivity {
 

@@ -1,11 +1,12 @@
-package com.v.tagtextview_module.lib;
+package com.v.textview_module.tagview.lib;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import androidx.annotation.NonNull;
 import android.text.style.ImageSpan;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by xiaozhiguang on 2018/1/8.

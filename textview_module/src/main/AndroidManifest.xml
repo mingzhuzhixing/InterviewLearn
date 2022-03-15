@@ -9,6 +9,14 @@
         <activity
             android:name=".TextviewMainActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".tagview.HtmlTextViewActivity"
+            android:exported="true" />
+
+        <activity android:name=".tagview.TagTextViewActivity" />
+
+        <activity android:name=".tagview.SpannableStringActivity" />
     </application>
 
 </manifest>

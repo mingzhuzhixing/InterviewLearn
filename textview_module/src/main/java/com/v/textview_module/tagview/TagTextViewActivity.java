@@ -1,9 +1,11 @@
-package com.v.tagtextview_module;
+package com.v.textview_module.tagview;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.v.tagtextview_module.lib.TagTextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.v.textview_module.R;
+import com.v.textview_module.tagview.lib.TagTextView;
 
 import java.util.ArrayList;
 import java.util.List;
