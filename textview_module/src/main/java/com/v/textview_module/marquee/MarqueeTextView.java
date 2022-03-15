@@ -18,8 +18,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.v.textview_module.R;
 
 /**
- * @Author: dreamgyf
- * @Data: 2021/5/19
+ * 自定义跑马灯TextView
  */
 public class MarqueeTextView extends AppCompatTextView {
 
