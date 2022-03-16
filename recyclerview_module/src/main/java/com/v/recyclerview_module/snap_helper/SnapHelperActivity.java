@@ -1,10 +1,12 @@
-package com.youshu.snap_helper_module;
+package com.v.recyclerview_module.snap_helper;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
+import com.v.recyclerview_module.R;
 
 import java.util.ArrayList;
 
@@ -33,5 +35,4 @@ public class SnapHelperActivity extends AppCompatActivity {
             mData.add("i="+i);
         }
     }
-
 }

@@ -15,6 +15,7 @@ import com.v.common_module.autoserviceLoader.AutoServiceLoader;
 import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.glide_module.GlideMainActivity;
+import com.v.recyclerview_module.RecyclerviewMainActivity;
 import com.v.textview_module.TextviewMainActivity;
 import com.v.video_module.VideoMainActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
@@ -22,7 +23,6 @@ import com.youshu.handler_module.HandlerActivity;
 import com.youshu.network_module.NetworkMainActivity;
 import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
-import com.youshu.snap_helper_module.SnapHelperActivity;
 import com.youshu.telephony_module.TelephonyManagerActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -130,17 +130,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * recyclerview SnapHelper
+     * recyclerview
      */
-    public void snapHelper(View view) {
-        startActivity(new Intent(this, SnapHelperActivity.class));
-    }
-
-    /**
-     * TagTextView
-     */
-    public void tagTextview(View view) {
-        //startActivity(new Intent(this, TextViewMainActivity.class));
+    public void recyclerviewClick(View view) {
+        startActivity(new Intent(this, RecyclerviewMainActivity.class));
     }
 
     /**

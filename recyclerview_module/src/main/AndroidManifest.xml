@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".RecyclerviewMainActivity"></activity>
+        <activity android:name=".snap_helper.SnapHelperActivity" />
     </application>
 
 </manifest>

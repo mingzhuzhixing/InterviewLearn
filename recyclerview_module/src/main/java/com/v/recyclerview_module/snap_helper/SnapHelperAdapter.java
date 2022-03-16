@@ -1,4 +1,4 @@
-package com.youshu.snap_helper_module;
+package com.v.recyclerview_module.snap_helper;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.v.recyclerview_module.R;
 
 import java.util.ArrayList;
 
