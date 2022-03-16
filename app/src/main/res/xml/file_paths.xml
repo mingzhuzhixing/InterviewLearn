@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <paths>
+        <external-path path="" name="download"/>
+
+        <!-- 友盟微信分享sdk 共享路径 -->
+        <external-files-path
+            name="umeng_cache"
+            path="umeng_cache/" />
+
+        <!-- QQ 官方分享SDK 共享路径 -->
+        <root-path
+            name="opensdk_root"
+            path="" />
+        <external-files-path
+            name="opensdk_external"
+            path="Images/tmp" />
+
+        <!-- 新浪微博 官方分享sdk 10.0.0 共享路径 -->
+        <external-files-path
+            name="share_files"
+            path="." />
+
+    </paths>
+</resources>

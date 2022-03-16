@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
 }
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion androidV.compileSdkVersion
 
@@ -31,6 +33,10 @@ dependencies {
     testImplementation "junit:junit:$deps.junit"
     androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+
+    // Butterknife
+    api 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     api project(":glide_module")
 }

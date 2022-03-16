@@ -2,6 +2,7 @@ package com.v.bitmap_module;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,12 +12,34 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.v.bitmap_module.utils.BitmapHelper;
 import com.v.glide_module.GlideUtils;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * glide使用
  */
+@SuppressLint("NonConstantResourceId")
 public class BitmapMainActivity extends AppCompatActivity {
+
+    @BindView(R2.id.img)
+    public ImageView ivCover;
+
+    @BindView(R2.id.iv_assets_image)
+    public ImageView ivAssetsImage;
+
+    @BindView(R2.id.iv_resource_image)
+    public ImageView ivResourceImage;
+
+    @BindView(R2.id.iv_sdcard_image)
+    public ImageView ivSdcardImage;
+
+    @BindView(R2.id.iv_network_image)
+    public ImageView ivNetworkImage;
+
     private final String[] array = {"https://img0.baidu.com/it/u=985192759,2265250910&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=333",
             "https://img2.baidu.com/it/u=220990409,124547830&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
             "https://img0.baidu.com/it/u=4051233098,4122077873&fm=253&fmt=auto&app=120&f=JPEG?w=1024&h=682",
@@ -28,18 +51,43 @@ public class BitmapMainActivity extends AppCompatActivity {
             "https://img0.baidu.com/it/u=2627496060,1933351908&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
             "https://img0.baidu.com/it/u=76521878,3199938898&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
             "https://img0.baidu.com/it/u=2866200409,4132400541&fm=253&fmt=auto&app=120&f=JPEG?w=450&h=780",
-            "https://img1.baidu.com/it/u=3796593454,4087161325&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"};
+            "https://img1.baidu.com/it/u=3796593454,4087161325&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg5.51tietu.net%2Fpic%2F2019-082004%2F5gbe3mjih1t5gbe3mjih1t.jpg",
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg5.51tietu.net%2Fpic%2F2019-082122%2F1k1rpqlfcqd1k1rpqlfcqd.jpg",
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F1111%2F03041Q50536%2F1P304150536-7.jpg"};
 
     private Bitmap bitmapCut = null;
 
     private int index = 0;
-    private ImageView ivCover;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bitmap_main);
-        ivCover = findViewById(R.id.img);
+        unbinder = ButterKnife.bind(this);
+
+        Bitmap bitmap = BitmapHelper.getAssetsBitmap(this, "image_2.jpg");
+        ivAssetsImage.setImageBitmap(bitmap);
+
+        Bitmap resourceBitmap = BitmapHelper.getResourceBitmap(this, R.drawable.icon_image);
+        ivResourceImage.setImageBitmap(resourceBitmap);
+
+        Bitmap sdcardBitmap = BitmapHelper.getSdCardBitmap("meinu.jpg");
+        ivSdcardImage.setImageBitmap(sdcardBitmap);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Bitmap netWorkBitmap = BitmapHelper.getNetWorkBitmap(array[array.length - 1]);
+                ivNetworkImage.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        ivNetworkImage.setImageBitmap(netWorkBitmap);
+                    }
+                });
+            }
+        }).start();
     }
 
     public void showBimap(View view) {
@@ -62,7 +110,7 @@ public class BitmapMainActivity extends AppCompatActivity {
                     int width = resource.getWidth();
                     int height = resource.getHeight();
                     if (bitmapCut != null && !bitmapCut.isRecycled()) {
-                        Log.i("tag1234","bitmap释放");
+                        Log.i("tag1234", "bitmap释放");
                         bitmapCut.recycle();
                     }
                     if (width < height) {
@@ -100,7 +148,7 @@ public class BitmapMainActivity extends AppCompatActivity {
 
     public void gcRecycled(View view) {
         System.gc();
-        Log.i("tag1234","gc回收");
+        Log.i("tag1234", "gc回收");
     }
 
     @Override
@@ -110,6 +158,10 @@ public class BitmapMainActivity extends AppCompatActivity {
             if (null != bitmapCut && !bitmapCut.isRecycled()) {
                 bitmapCut.recycle();
                 bitmapCut = null;
+            }
+
+            if (unbinder != null) {
+                unbinder.unbind();
             }
         } catch (Exception e) {
             e.printStackTrace();
