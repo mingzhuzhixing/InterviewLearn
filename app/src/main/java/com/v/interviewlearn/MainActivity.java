@@ -15,11 +15,11 @@ import com.v.common_module.autoserviceLoader.AutoServiceLoader;
 import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.module_glide.GlideMainActivity;
+import com.v.module_handler.HandlerMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
 import com.v.textview_module.TextviewMainActivity;
 import com.v.video_module.VideoMainActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
-import com.youshu.handler_module.HandlerActivity;
 import com.youshu.network_module.NetworkMainActivity;
 import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
      * handler通信机制
      */
     public void handlerSignal(View view) {
-        startActivity(new Intent(this, HandlerActivity.class));
+        startActivity(new Intent(this, HandlerMainActivity.class));
     }
 
     /**
