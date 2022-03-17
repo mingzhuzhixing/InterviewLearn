@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.v.common_module.uitls.ScreenUtils;
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
 import com.v.module_recyclerview.decoration.GridItemCenterDecoration;
 import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_utils.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;

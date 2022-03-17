@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".waterfall_flow.WaterfallFlowActivity"
+            android:exported="true" />
+        <activity
             android:name=".gridview.GridviewActivity"
             android:exported="true" />
         <activity

@@ -18,6 +18,7 @@ import com.v.module_glide.GlideMainActivity;
 import com.v.module_handler.HandlerMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
 import com.v.module_telephony.TelephonyManagerActivity;
+import com.v.module_widget.CustomViewMainActivity;
 import com.v.textview_module.TextviewMainActivity;
 import com.v.video_module.VideoMainActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
@@ -197,5 +198,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void textviewClick(View view) {
         startActivity(new Intent(this, TextviewMainActivity.class));
+    }
+
+    /**
+     * 自定义view
+     */
+    public void customViewClick(View view) {
+        startActivity(new Intent(this, CustomViewMainActivity.class));
     }
 }

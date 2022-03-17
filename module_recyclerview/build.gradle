@@ -44,7 +44,6 @@ dependencies {
 
     api 'com.makeramen:roundedimageview:2.3.0'
 
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
-
-    implementation project(":common_module")
+    implementation project(":module_utils")
+    implementation project(":module_resource")
 }

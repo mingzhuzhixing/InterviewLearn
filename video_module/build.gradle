@@ -29,5 +29,5 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
     implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
 
-    implementation project(":tools_module")
+    implementation project(":module_utils")
 }

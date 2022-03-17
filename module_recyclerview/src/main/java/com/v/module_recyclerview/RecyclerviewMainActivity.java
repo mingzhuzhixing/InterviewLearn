@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
+import com.v.module_recyclerview.waterfall_flow.WaterfallFlowActivity;
 
 public class RecyclerviewMainActivity extends AppCompatActivity {
 
@@ -44,5 +45,10 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
         startActivity(new Intent(this, GridviewActivity.class));
     }
 
-
+    /**
+     * 瀑布流
+     */
+    public void waterfallFlowClick(View view) {
+        startActivity(new Intent(this, WaterfallFlowActivity.class));
+    }
 }
