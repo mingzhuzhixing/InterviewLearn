@@ -40,6 +40,6 @@ dependencies {
     api project(":eventbus_module")
     api project(":network_module")
     api project(":database_module")
-    api project(":recyclerview_module")
+    api project(":module_resource")
     api project(":bitmap_module")
 }

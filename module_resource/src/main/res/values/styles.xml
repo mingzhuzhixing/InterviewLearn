@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="T1">
+        <item name="android:textSize">@dimen/x38</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T1_Normal">
+        <item name="android:textSize">@dimen/x38</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T2">
+        <item name="android:textSize">@dimen/x34</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="T2_2">
+        <item name="android:textSize">@dimen/x34</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T3">
+        <item name="android:textSize">@dimen/x32</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T4">
+        <item name="android:textSize">@dimen/x30</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T4_Normal">
+        <item name="android:textSize">@dimen/x30</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T5">
+        <item name="android:textSize">@dimen/x28</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T5_2">
+        <item name="android:textSize">@dimen/x28</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T6">
+        <item name="android:textSize">@dimen/x26</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T7">
+        <item name="android:textSize">@dimen/x24</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="T7_2">
+        <item name="android:textSize">@dimen/x24</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T8">
+        <item name="android:textSize">@dimen/x22</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T9">
+        <item name="android:textSize">@dimen/x20</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T10">
+        <item name="android:textSize">@dimen/x18</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T11">
+        <item name="android:textSize">@dimen/x16</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T12">
+        <item name="android:textSize">@dimen/x14</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T13">
+        <item name="android:textSize">@dimen/x12</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="S1_5_8">
+        <item name="android:textSize">@dimen/y48</item>
+    </style>
+
+    <style name="S2_3_5">
+        <item name="android:textSize">@dimen/y32</item>
+    </style>
+
+    <style name="S3_3_4">
+        <item name="android:textSize">@dimen/y24</item>
+    </style>
+
+    <style name="S4_2_2">
+        <item name="android:textSize">@dimen/y22</item>
+    </style>
+
+    <style name="S5_3_5">
+        <item name="android:textSize">@dimen/y28</item>
+    </style>
+
+    <style name="S6_4_5">
+        <item name="android:textSize">@dimen/y36</item>
+    </style>
+
+    <style name="S7_4_6">
+        <item name="android:textSize">@dimen/y42</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="S7_xi_4_6">
+        <item name="android:textSize">@dimen/y42</item>
+    </style>
+
+    <style name="S8_8_8Deprecated">
+        <item name="android:textSize">@dimen/y68</item>
+    </style>
+
+    <style name="S9_8_10Deprecated">
+        <item name="android:textSize">@dimen/y72</item>
+    </style>
+
+    <style name="S10_18_24Deprecated">
+        <item name="android:textSize">@dimen/y160</item>
+    </style>
+
+    <style name="S11_3_5Deprecated">
+        <item name="android:textSize">@dimen/y20</item>
+    </style>
+
+    <style name="S8_4_5">
+        <item name="android:textSize">@dimen/y34</item>
+    </style>
+
+    <style name="S9_3_4">
+        <item name="android:textSize">@dimen/y30</item>
+    </style>
+
+    <style name="S10_2_3">
+        <item name="android:textSize">@dimen/y26</item>
+    </style>
+
+    <style name="S11_10_12">
+        <item name="android:textSize">@dimen/y90</item>
+    </style>
+
+    <style name="S12_4_5">
+        <item name="android:textSize">@dimen/y38</item>
+    </style>
+
+
+    <style name="S1_5_8_13">
+        <item name="android:textSize">@dimen/y48</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S2_3_5_8">
+        <item name="android:textSize">@dimen/y32</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S3_3_4_7">
+        <item name="android:textSize">@dimen/y24</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S4_2_2_4">
+        <item name="android:textSize">@dimen/y22</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S5_3_5_8">
+        <item name="android:textSize">@dimen/y28</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S6_4_5_9">
+        <item name="android:textSize">@dimen/y36</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S7_4_6_10">
+        <item name="android:textSize">@dimen/y42</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S7_xi_4_6_10">
+        <item name="android:textSize">@dimen/y42</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S8_4_5_9">
+        <item name="android:textSize">@dimen/y34</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S9_3_4_7">
+        <item name="android:textSize">@dimen/y30</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S10_2_3_5">
+        <item name="android:textSize">@dimen/y26</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S11_10_12_22">
+        <item name="android:textSize">@dimen/y90</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S12_4_5_9">
+        <item name="android:textSize">@dimen/y38</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="S13_2_2_4">
+        <item name="android:textSize">@dimen/y18</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!--4.9.0新定义字体大小-->
+    <style name="P1_S42_5_6">
+        <item name="android:textSize">@dimen/y42</item>
+    </style>
+
+    <style name="P2_S36_5_5">
+        <item name="android:textSize">@dimen/y36</item>
+    </style>
+
+    <style name="P3_S34_5_5">
+        <item name="android:textSize">@dimen/y34</item>
+    </style>
+
+    <style name="P4_S32_5_5">
+        <item name="android:textSize">@dimen/y32</item>
+    </style>
+
+    <style name="P5_S30_4_4">
+        <item name="android:textSize">@dimen/y30</item>
+    </style>
+
+    <style name="P6_S28_4_4">
+        <item name="android:textSize">@dimen/y28</item>
+    </style>
+
+    <style name="P7_S26_3_3">
+        <item name="android:textSize">@dimen/y26</item>
+    </style>
+
+    <style name="P8_S24_3_3">
+        <item name="android:textSize">@dimen/y24</item>
+    </style>
+
+    <style name="P9_S22_3_3">
+        <item name="android:textSize">@dimen/y22</item>
+    </style>
+
+    <style name="P10_S20_3_3">
+        <item name="android:textSize">@dimen/y20</item>
+    </style>
+
+    <style name="P11_S18_2_2">
+        <item name="android:textSize">@dimen/y18</item>
+    </style>
+
+    <style name="P12_S16_1_1">
+        <item name="android:textSize">@dimen/y16</item>
+    </style>
+
+</resources>

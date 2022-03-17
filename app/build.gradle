@@ -67,4 +67,5 @@ dependencies {
     implementation project(":dialog_module")
     implementation project(":video_module")
     implementation project(":textview_module")
+    implementation project(":module_recyclerview")
 }
