@@ -1,8 +1,8 @@
-package com.v.proxy_module;
+package com.v.module_proxy;
 
-import com.v.proxy_module.dyna_proxy.DynamicProxy;
-import com.v.proxy_module.static_proxy.Lawyer;
-import com.v.proxy_module.static_proxy.XiaoMin;
+import com.v.module_proxy.dyna_proxy.DynamicProxy;
+import com.v.module_proxy.static_proxy.Lawyer;
+import com.v.module_proxy.static_proxy.XiaoMin;
 
 import java.lang.reflect.Proxy;
 

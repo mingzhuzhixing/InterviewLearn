@@ -1,4 +1,4 @@
-package com.v.proxy_module;
+package com.v.module_proxy;
 
 import org.junit.Test;
 

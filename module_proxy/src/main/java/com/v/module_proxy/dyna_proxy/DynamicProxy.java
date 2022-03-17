@@ -1,4 +1,4 @@
-package com.v.proxy_module.dyna_proxy;
+package com.v.module_proxy.dyna_proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

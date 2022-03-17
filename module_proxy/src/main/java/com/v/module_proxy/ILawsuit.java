@@ -1,4 +1,4 @@
-package com.v.proxy_module;
+package com.v.module_proxy;
 
 /**
  * 诉讼接口类

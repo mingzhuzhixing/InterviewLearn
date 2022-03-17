@@ -1,7 +1,6 @@
-package com.v.proxy_module.static_proxy;
+package com.v.module_proxy.static_proxy;
 
-
-import com.v.proxy_module.ILawsuit;
+import com.v.module_proxy.ILawsuit;
 
 /**
  * 具体的诉讼人
