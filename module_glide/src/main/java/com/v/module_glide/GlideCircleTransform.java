@@ -1,4 +1,4 @@
-package com.v.glide_module;
+package com.v.module_glide;
 
 import android.content.Context;
 import android.content.res.Resources;

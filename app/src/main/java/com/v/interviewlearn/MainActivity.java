@@ -14,7 +14,7 @@ import com.v.common_module.autoservice.IWebViewService;
 import com.v.common_module.autoserviceLoader.AutoServiceLoader;
 import com.v.database_module.DatabaseMainActivity;
 import com.v.event_dispatch.EventDispatchActivity;
-import com.v.glide_module.GlideMainActivity;
+import com.v.module_glide.GlideMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
 import com.v.textview_module.TextviewMainActivity;
 import com.v.video_module.VideoMainActivity;

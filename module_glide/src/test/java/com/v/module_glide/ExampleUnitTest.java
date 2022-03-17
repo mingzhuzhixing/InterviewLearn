@@ -1,4 +1,4 @@
-package com.v.glide_module;
+package com.v.module_glide;
 
 import org.junit.Test;
 

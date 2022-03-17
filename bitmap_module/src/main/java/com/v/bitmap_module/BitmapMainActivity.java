@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.v.bitmap_module.utils.BitmapHelper;
-import com.v.glide_module.GlideUtils;
+import com.v.module_glide.GlideUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

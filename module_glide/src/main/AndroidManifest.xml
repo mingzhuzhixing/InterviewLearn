@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.v.glide_module">
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    package="com.v.module_glide">
     <application>
         <activity
             android:name=".GlideMainActivity"
             android:exported="true" />
     </application>
-
 </manifest>
