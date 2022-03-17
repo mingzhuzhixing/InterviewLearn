@@ -62,7 +62,7 @@ dependencies {
     implementation "org.greenrobot:eventbus:$deps.eventbus"
 
     implementation project(":module_handler")
-    implementation project(":telephony_module")
+    implementation project(":module_telephony")
     implementation project(":webview_module")
     implementation project(":dialog_module")
     implementation project(":video_module")

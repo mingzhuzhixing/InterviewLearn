@@ -17,13 +17,13 @@ import com.v.event_dispatch.EventDispatchActivity;
 import com.v.module_glide.GlideMainActivity;
 import com.v.module_handler.HandlerMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
+import com.v.module_telephony.TelephonyManagerActivity;
 import com.v.textview_module.TextviewMainActivity;
 import com.v.video_module.VideoMainActivity;
 import com.youshu.eventbus_module.EventBusMainActivity;
 import com.youshu.network_module.NetworkMainActivity;
 import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
-import com.youshu.telephony_module.TelephonyManagerActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
