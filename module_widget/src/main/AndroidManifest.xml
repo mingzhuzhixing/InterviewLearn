@@ -18,6 +18,7 @@
         <activity android:name=".CustomViewMainActivity" />
         <activity android:name=".text_view.CustomTextViewActivity" />
         <activity android:name=".watch_view.CustomWatchActivity" />
+        <activity android:name=".shape_view.ShapeViewActivity" />
     </application>
 
 </manifest>

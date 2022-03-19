@@ -41,4 +41,10 @@
         android:text="自定义圆形进度条"
         android:onClick="progressBarClick" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="变换不同的图形"
+        android:onClick="shapeViewClick" />
+
 </LinearLayout>

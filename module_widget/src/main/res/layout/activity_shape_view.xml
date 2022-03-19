@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".progess_bar.ProgressBarActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <com.v.module_widget.shape_view.ShapeView
+        android:id="@+id/shape_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x80"
+        android:onClick="startClick"
+        android:text="开始" />
+
+</LinearLayout>
