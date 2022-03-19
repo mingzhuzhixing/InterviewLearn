@@ -81,6 +81,17 @@ public class ProgressBarView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        //canvasCircle1(canvas);
+        //第二种画圆方式
+        canvasCircle2(canvas);
+
+        canvasText(canvas);
+    }
+
+    /**
+     * 第一种画圆方式
+     */
+    private void canvasCircle1(Canvas canvas) {
         //画外圆
         float halfBorderWidth = mBorderWidth / 2.0f;
         float dy = getWidth() - halfBorderWidth;
@@ -88,13 +99,36 @@ public class ProgressBarView extends View {
         canvas.drawArc(rectF1, 0, 360, false, mOuterColorPaint);
 
         //画内圆
+        float percent = mCurrentProgress / (float) mMaxProgress;
         //float left, float top, float right, float bottom
         RectF rectF = new RectF(halfBorderWidth, halfBorderWidth, dy, dy);
         //(RectF oval, float startAngle, float sweepAngle, boolean useCenter, Paint paint
-        canvas.drawArc(rectF, 0, (mCurrentProgress / (float) mMaxProgress) * 360, false, mInnerColorPaint);
+        canvas.drawArc(rectF, 0, percent * 360, false, mInnerColorPaint);
+    }
 
+    /**
+     * 第二种画圆方式
+     */
+    private void canvasCircle2(Canvas canvas) {
+        int center = getWidth() / 2;
+        //画外圆float cx, float cy, float radius, @NonNull Paint paint
+        canvas.drawCircle(center, center, center - mBorderWidth / 2.0f, mOuterColorPaint);
+
+        //画内圆
+        float halfBorderWidth = mBorderWidth / 2.0f;
+        float dy = getWidth() - halfBorderWidth;
+        float percent = mCurrentProgress / (float) mMaxProgress;
+        //float left, float top, float right, float bottom
+        RectF rectF = new RectF(halfBorderWidth, halfBorderWidth, dy, dy);
+        //(RectF oval, float startAngle, float sweepAngle, boolean useCenter, Paint paint
+        canvas.drawArc(rectF, 0, percent * 360, false, mInnerColorPaint);
+    }
+
+    /**
+     * 画文字
+     */
+    private void canvasText(Canvas canvas) {
         //画文字 @NonNull String text, float x, float y, @NonNull Paint paint
-
         //计算文字基线
         Paint.FontMetricsInt fontMetrics = mTextPaint.getFontMetricsInt();
         float dy_text = (fontMetrics.bottom - fontMetrics.top) / 2f - fontMetrics.bottom;
@@ -108,6 +142,7 @@ public class ProgressBarView extends View {
 
         canvas.drawText(text, dx, baseLine, mTextPaint);
     }
+
 
     public void setMaxProgress(int maxProgress) {
         this.mMaxProgress = maxProgress;
