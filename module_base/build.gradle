@@ -2,9 +2,10 @@ plugins {
     id 'com.android.library'
 }
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion androidV.compileSdkVersion
-    buildToolsVersion androidV.buildToolsVersion
 
     defaultConfig {
         minSdkVersion androidV.minSdkVersion
@@ -29,18 +30,15 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
     implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation "androidx.multidex:multidex:$deps.multidex"
 
-    //autoservice
-    api "com.google.auto.service:auto-service:1.0-rc6"
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    api deps["loadsir"]
+    api deps["fastjson"]
 
-    api project(":module_base")
-    api project(":eventbus_module")
-    api project(":network_module")
-    api project(":database_module")
-    api project(":bitmap_module")
-    api project(":module_recyclerview")
+    // Butterknife
+    api deps["butterknife"]
+    annotationProcessor deps["butterknife_compiler"]
+
+    api project(":thread_module")
+    api project(":module_resource")
 }

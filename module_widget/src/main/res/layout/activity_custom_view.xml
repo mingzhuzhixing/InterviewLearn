@@ -2,14 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.v.module_widget.view.WatchView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:color="@color/colorPrimary"
-        app:inCircle="15"
-        app:numSize="18dp"
-        app:outCircle="25" />
+        android:text="自定义钟表view"
+        android:onClick="customWatchView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义textview"
+        android:onClick="customTextView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义步数计数器"
+        android:onClick="customStepCounter" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="滑动字体颜色跟踪变色"
+        android:onClick="colorTrackView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="滑动viewpager字体颜色跟踪变色"
+        android:onClick="colorTrackViewpager" />
 
 </LinearLayout>

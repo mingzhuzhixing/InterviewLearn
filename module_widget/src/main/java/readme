@@ -1,0 +1,83 @@
+//invalidate() 解析
+
+  invalidate()(View类)-->
+  invalidateInternal()(View类)-->
+            // Propagate the damage rectangle to the parent view.
+            final AttachInfo ai = mAttachInfo;
+            final ViewParent p = mParent; //关键 是调用了父类的  父类是ViewGroup容器 invalidateChild（）
+            if (p != null && ai != null && l < r && t < b) {
+                final Rect damage = ai.mTmpInvalRect;
+                damage.set(l, t, r, b);
+                p.invalidateChild(this, damage);
+            }
+  invalidateChild()(ViewGroup类)-->
+            do {
+                View view = null;
+                if (parent instanceof View) {
+                    view = (View) parent;
+                }
+
+                if (drawAnimation) {
+                    if (view != null) {
+                        view.mPrivateFlags |= PFLAG_DRAW_ANIMATION;
+                    } else if (parent instanceof ViewRootImpl) {
+                        ((ViewRootImpl) parent).mIsAnimating = true;
+                    }
+                }
+
+                // If the parent is dirty opaque or not dirty, mark it dirty with the opaque
+                // flag coming from the child that initiated the invalidate
+                if (view != null) {
+                    if ((view.mViewFlags & FADING_EDGE_MASK) != 0 &&
+                            view.getSolidColor() == 0) {
+                        opaqueFlag = PFLAG_DIRTY;
+                    }
+                    if ((view.mPrivateFlags & PFLAG_DIRTY_MASK) != PFLAG_DIRTY) {
+                        view.mPrivateFlags = (view.mPrivateFlags & ~PFLAG_DIRTY_MASK) | opaqueFlag;
+                    }
+                }
+
+                //关键 parent=this  在循环中不段调用invalidateChildInParent()获取父类，最终调用到最外层的View上 ViewRootImpl
+                parent = parent.invalidateChildInParent(location, dirty);
+                if (view != null) {
+                    // Account for transform on current parent
+                    Matrix m = view.getMatrix();
+                    if (!m.isIdentity()) {
+                        RectF boundingRect = attachInfo.mTmpTransformRect;
+                        boundingRect.set(dirty);
+                        m.mapRect(boundingRect);
+                        dirty.set((int) Math.floor(boundingRect.left),
+                                (int) Math.floor(boundingRect.top),
+                                (int) Math.ceil(boundingRect.right),
+                                (int) Math.ceil(boundingRect.bottom));
+                    }
+                }
+            } while (parent != null);
+  invalidateChildInParent()(ViewRootImpl类)-->
+  invalidateRectOnScreen()(ViewRootImpl类)-->
+  scheduleTraversals()(ViewRootImpl类)-->
+
+  总结：一路往上跑，跑到最外层 draw()->dispatchDraw() 一路往下画 最终滑动但钱调用invalidate的View的onDraw()方法
+      invalidate()牵连着整个layout布局中的view
+
+二、为什么不能再子线程中更新UI？
+   开了线程，更新UI  一般会调用setText() setImageView() 掉回来这里ViewRootImpl checkThread()
+  checkThread() 用来检测线程
+    void checkThread() {
+        if (mThread != Thread.currentThread()) {
+            throw new CalledFromWrongThreadException(
+                    "Only the original thread that created a view hierarchy can touch its views.");
+        }
+    }
+
+    mThread：  mThread = Thread.currentThread();在构造函数中初始化 主线程mainThread
+
+三、WX朋友圈过度渲染优化
+  自己写依稀接麦你会非常负责  QQ空间 wx朋友圈  列表嵌套列表  （item里面布局可能嵌套布局）
+  1、网上一般的解决方法：
+     尽量不要嵌套
+     能不设置背景就不要设置背景
+     ......
+  2、最好的解决方案（蛋疼）
+     获取到数据去设置 setText() setImageView() 其实都会调用onInvalidate()
+     最好是自己花，不要用系统的嵌套布局， 运行效率高，实现功能更功能效率低（抉择问题）

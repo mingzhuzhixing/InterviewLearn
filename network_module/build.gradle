@@ -31,7 +31,6 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"
     implementation 'org.xutils:xutils:3.3.36'
 
-    api project(":base_module")
     api project(":retrofit_module")
     api project(":rxjava_module")
 }

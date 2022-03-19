@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
 }
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion androidV.compileSdkVersion
 
@@ -19,14 +21,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation project(":module_resource")
+    implementation project(":common_module")
+
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+
+    // Butterknife
+    implementation deps["butterknife"]
+    annotationProcessor deps["butterknife_compiler"]
 }

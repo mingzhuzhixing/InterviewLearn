@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".watch_view.CustomWatchActivity">
+
+    <com.v.module_widget.watch_view.WatchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:color="@color/colorPrimary"
+        app:inCircle="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:numSize="18dp"
+        app:outCircle="25" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
