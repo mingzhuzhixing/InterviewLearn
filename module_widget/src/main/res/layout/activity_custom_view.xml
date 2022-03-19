@@ -35,4 +35,10 @@
         android:text="滑动viewpager字体颜色跟踪变色"
         android:onClick="colorTrackViewpager" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义圆形进度条"
+        android:onClick="progressBarClick" />
+
 </LinearLayout>

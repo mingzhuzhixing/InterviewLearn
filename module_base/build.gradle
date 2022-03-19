@@ -28,9 +28,9 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    implementation "androidx.multidex:multidex:$deps.multidex"
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["multidex"]
 
     api deps["loadsir"]
     api deps["fastjson"]

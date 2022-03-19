@@ -27,5 +27,5 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
+    implementation deps["appcompat_x"]
 }

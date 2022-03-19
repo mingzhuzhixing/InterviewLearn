@@ -1,6 +1,5 @@
 package com.v.module_widget.color_track;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -33,6 +32,11 @@ public class ViewPageActivity extends BaseTitleBarActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_view_page;
+    }
+
+    @Override
+    protected boolean isNeedButterKnife() {
+        return true;
     }
 
     @Override

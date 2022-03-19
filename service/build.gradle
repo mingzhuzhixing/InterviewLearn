@@ -25,9 +25,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
 }

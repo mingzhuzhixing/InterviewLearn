@@ -26,6 +26,6 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    testImplementation "junit:junit:$deps.junit"
+    implementation deps["appcompat_x"]
+    testImplementation deps["junit"]
 }

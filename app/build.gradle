@@ -47,12 +47,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    implementation 'com.google.android.material:material:1.3.0'
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["material"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
 
     // Okhttp库
     implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"

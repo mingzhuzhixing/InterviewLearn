@@ -22,10 +22,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation deps["appcompat_x"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
 
     // Retrofit库
     implementation "com.squareup.retrofit2:retrofit:$deps.retrofit"

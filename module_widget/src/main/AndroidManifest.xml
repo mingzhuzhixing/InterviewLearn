@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".progess_bar.ProgressBarActivity"
+            android:exported="true" />
+        <activity
             android:name=".color_track.ViewPageActivity"
             android:exported="true" />
         <activity

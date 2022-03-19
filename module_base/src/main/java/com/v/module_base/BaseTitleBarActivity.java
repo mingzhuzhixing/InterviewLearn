@@ -31,7 +31,9 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
         FrameLayout mFlContainer = findViewById(R.id.fl_container);
         if (getLayoutId() > 0) {
             mFlContainer.addView(getLayoutInflater().inflate(getLayoutId(), null));
-            unbinder = ButterKnife.bind(this);
+            if (isNeedButterKnife()) {
+                unbinder = ButterKnife.bind(this);
+            }
         }
 
         //设置标题
@@ -65,6 +67,14 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
      * 处理逻辑
      */
     protected abstract void processLogical();
+
+    /**
+     * 是否需要ButterKnife
+     */
+    protected boolean isNeedButterKnife() {
+        return false;
+    }
+
 
     @Override
     protected void onDestroy() {

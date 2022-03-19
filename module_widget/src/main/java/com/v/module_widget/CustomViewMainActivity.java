@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
+import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.step_counter.StepCounterActivity;
 import com.v.module_widget.text_view.CustomTextViewActivity;
 import com.v.module_widget.watch_view.CustomWatchActivity;
@@ -53,5 +54,13 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void colorTrackViewpager(View view) {
         startActivity(new Intent(this, ViewPageActivity.class));
+    }
+
+
+    /**
+     * 自定义圆形进度条
+     */
+    public void progressBarClick(View view) {
+        startActivity(new Intent(this, ProgressBarActivity.class));
     }
 }
