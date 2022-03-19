@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".rating_bar.RatingBarActivity"
+            android:exported="true" />
+        <activity
             android:name=".progess_bar.ProgressBarActivity"
             android:exported="true" />
         <activity

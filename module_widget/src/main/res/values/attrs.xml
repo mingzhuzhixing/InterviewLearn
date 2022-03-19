@@ -47,15 +47,22 @@
         <attr name="outerColor" format="color" />
         <attr name="innerColor" format="color" />
         <attr name="borderWidth" format="dimension" />
-        <attr name="stepTextSize" format="dimension"/>
-        <attr name="stepTextColor" format="color"/>
+        <attr name="stepTextSize" format="dimension" />
+        <attr name="stepTextColor" format="color" />
     </declare-styleable>
-
 
     <!--滑动字体颜色跟踪变色 自定义属性-->
     <declare-styleable name="ColorTrackTextView">
         <attr name="originColor" format="color" />
         <attr name="changeColor" format="color" />
+    </declare-styleable>
+
+    <!--评分控件 RatingBar 自定义属性-->
+    <declare-styleable name="RatingBarView">
+        <attr name="starNormal" format="reference" />
+        <attr name="starFocus" format="reference" />
+        <attr name="starCount" format="integer" />
+        <attr name="starPadding" format="dimension" />
     </declare-styleable>
 
 </resources>

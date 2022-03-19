@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
+import com.v.module_widget.rating_bar.RatingBarActivity;
 import com.v.module_widget.shape_view.ShapeViewActivity;
 import com.v.module_widget.step_counter.StepCounterActivity;
 import com.v.module_widget.text_view.CustomTextViewActivity;
@@ -69,5 +70,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void shapeViewClick(View view) {
         startActivity(new Intent(this, ShapeViewActivity.class));
+    }
+
+    /**
+     * 评分控件 RatingBar
+     */
+    public void ratingBarClick(View view) {
+        startActivity(new Intent(this, RatingBarActivity.class));
     }
 }
