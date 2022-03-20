@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".tag_layout.TagLayoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".letter_side_bar.LetterSideBarActivity"
             android:exported="true" />
         <activity

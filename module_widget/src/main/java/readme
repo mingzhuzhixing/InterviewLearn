@@ -81,3 +81,18 @@
   2、最好的解决方案（蛋疼）
      获取到数据去设置 setText() setImageView() 其实都会调用onInvalidate()
      最好是自己花，不要用系统的嵌套布局， 运行效率高，实现功能更功能效率低（抉择问题）
+
+四、view的绘制流程：
+1、第一步： performMeasure():用户指定和测量layout中缩有孔家你的宽高，对于ViewGroup,先去测量里面的子孩子，根据孩子的宽高再来计算和指定自己的宽高，
+    对于View,他的宽高是有自己和父布局决定的;
+
+2、第二步：performLayout():用于摆放布局，for循环所有子view,用child.layout()摆放childView;
+
+3、第三步：performDraw():用于绘制自己还有子view，对于ViewGroup首先绘制自己的背景，for循环绘制子view调用子view的draw()方法，
+   对于view绘制自己的背景，绘制自己显示的内容（TextView）
+
+思考问题：
+1、如果要获取view的高度，前度肯定需要调用测量方法，测量完毕之后才能获取宽高
+2、View的绘制流程是在onResume()之后开始的（activity启动流程的源码）
+3、addView() setVisibility()会等回调requestLayout(),重新走一遍View的绘制流程（有所差别）
+4、优化的时候，根据知道源码写代码的时候优化，onDraw() 不要布局嵌套，等等

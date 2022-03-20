@@ -13,6 +13,7 @@ import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
 import com.v.module_widget.shape_view.ShapeViewActivity;
 import com.v.module_widget.step_counter.StepCounterActivity;
+import com.v.module_widget.tag_layout.TagLayoutActivity;
 import com.v.module_widget.text_view.CustomTextViewActivity;
 import com.v.module_widget.watch_view.CustomWatchActivity;
 
@@ -85,5 +86,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void letterSideBarClick(View view) {
         startActivity(new Intent(this, LetterSideBarActivity.class));
+    }
+
+    /**
+     * Tag流式布局
+     */
+    public void tagLayoutClick(View view) {
+        startActivity(new Intent(this, TagLayoutActivity.class));
     }
 }

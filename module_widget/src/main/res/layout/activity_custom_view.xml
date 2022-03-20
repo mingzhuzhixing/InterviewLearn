@@ -64,4 +64,11 @@
         android:onClick="letterSideBarClick"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tag流式布局"
+        android:onClick="tagLayoutClick"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

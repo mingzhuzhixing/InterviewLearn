@@ -75,6 +75,67 @@ public class CustomTextView extends View {
      * MeasureSpec.AT_MOST://在布局中指定的warp_content
      * MeasureSpec.EXACTLY://在布局中指定的确切的  100dp  match_parent fill_parent
      * MeasureSpec.UNSPECIFIED://尽可能的大,很好能用到，ListView ScrollView 在测量子布局的时候会用UNSPECIFIED，会在自定义ViewGroup的时候详细讲
+     *
+     * 注意：模式和大小是父布局和自己决定的：
+     *   1、当父布局是MATCH_PARENT时，计算子布局是MATCH_PARENT，这时候的计算模量模式还是EXACTLY
+     *   2、当父布局是WRAP_CONTENT时，计算子布局是MATCH_PARENT，这时候的计算模量模式还是AT_MOST
+     *   如下switch判断
+     *   switch (specMode) {
+     *         // Parent has imposed an exact size on us
+     *         case MeasureSpec.EXACTLY: //父布局是MATCH_PARENT时
+     *             if (childDimension >= 0) {
+     *                 resultSize = childDimension;
+     *                 resultMode = MeasureSpec.EXACTLY;
+     *             } else if (childDimension == LayoutParams.MATCH_PARENT) {
+     *                 // Child wants to be our size. So be it.
+     *                 resultSize = size;
+     *                 resultMode = MeasureSpec.EXACTLY;
+     *             } else if (childDimension == LayoutParams.WRAP_CONTENT) {
+     *                 // Child wants to determine its own size. It can't be
+     *                 // bigger than us.
+     *                 resultSize = size;
+     *                 resultMode = MeasureSpec.AT_MOST;
+     *             }
+     *             break;
+     *
+     *         // Parent has imposed a maximum size on us
+     *         case MeasureSpec.AT_MOST:
+     *             if (childDimension >= 0) {
+     *                 // Child wants a specific size... so be it
+     *                 resultSize = childDimension;
+     *                 resultMode = MeasureSpec.EXACTLY;
+     *             } else if (childDimension == LayoutParams.MATCH_PARENT) {
+     *                 // Child wants to be our size, but our size is not fixed.
+     *                 // Constrain child to not be bigger than us.
+     *                 resultSize = size;
+     *                 resultMode = MeasureSpec.AT_MOST;
+     *             } else if (childDimension == LayoutParams.WRAP_CONTENT) {
+     *                 // Child wants to determine its own size. It can't be
+     *                 // bigger than us.
+     *                 resultSize = size;
+     *                 resultMode = MeasureSpec.AT_MOST;
+     *             }
+     *             break;
+     *
+     *         // Parent asked to see how big we want to be
+     *         case MeasureSpec.UNSPECIFIED:
+     *             if (childDimension >= 0) {
+     *                 // Child wants a specific size... let him have it
+     *                 resultSize = childDimension;
+     *                 resultMode = MeasureSpec.EXACTLY;
+     *             } else if (childDimension == LayoutParams.MATCH_PARENT) {
+     *                 // Child wants to be our size... find out how big it should
+     *                 // be
+     *                 resultSize = View.sUseZeroUnspecifiedMeasureSpec ? 0 : size;
+     *                 resultMode = MeasureSpec.UNSPECIFIED;
+     *             } else if (childDimension == LayoutParams.WRAP_CONTENT) {
+     *                 // Child wants to determine its own size.... find out how
+     *                 // big it should be
+     *                 resultSize = View.sUseZeroUnspecifiedMeasureSpec ? 0 : size;
+     *                 resultMode = MeasureSpec.UNSPECIFIED;
+     *             }
+     *             break;
+     *         }
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
