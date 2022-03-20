@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
+import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
 import com.v.module_widget.shape_view.ShapeViewActivity;
@@ -77,5 +78,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void ratingBarClick(View view) {
         startActivity(new Intent(this, RatingBarActivity.class));
+    }
+
+    /**
+     * 字符侧边栏bar
+     */
+    public void letterSideBarClick(View view) {
+        startActivity(new Intent(this, LetterSideBarActivity.class));
     }
 }

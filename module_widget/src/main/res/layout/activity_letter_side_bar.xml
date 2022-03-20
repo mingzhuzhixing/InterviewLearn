@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".letter_side_bar.LetterSideBarActivity">
+
+    <TextView
+        android:id="@+id/tv_show_letter"
+        style="@style/P2_S36_5_5"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x100"
+        android:background="@drawable/bg_letter_circle"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/W"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.v.module_widget.letter_side_bar.LetterSideBar
+        android:id="@+id/letter_side_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/x20"
+        app:focusColor="@color/red"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:letterPaddingTop="@dimen/x30"
+        app:letterTextSize="@dimen/x30"
+        app:normalColor="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".letter_side_bar.LetterSideBarActivity"
+            android:exported="true" />
+        <activity
             android:name=".rating_bar.RatingBarActivity"
             android:exported="true" />
         <activity

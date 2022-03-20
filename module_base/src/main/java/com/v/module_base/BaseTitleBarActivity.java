@@ -56,12 +56,12 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
      */
     protected abstract int getLayoutId();
 
+    protected abstract String setTitle();
+
     /**
      * 初始化数据
      */
     protected abstract void initData();
-
-    protected abstract String setTitle();
 
     /**
      * 处理逻辑

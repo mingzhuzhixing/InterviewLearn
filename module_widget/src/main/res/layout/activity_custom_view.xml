@@ -9,13 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="自定义钟表view"
-        android:onClick="customWatchView" />
+        android:onClick="customWatchView"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="自定义textview"
-        android:onClick="customTextView" />
+        android:onClick="customTextView"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
@@ -33,7 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="滑动viewpager字体颜色跟踪变色"
-        android:onClick="colorTrackViewpager" />
+        android:onClick="colorTrackViewpager"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
@@ -51,6 +54,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="评分控件 RatingBar"
-        android:onClick="ratingBarClick" />
+        android:onClick="ratingBarClick"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="字符侧边栏bar"
+        android:onClick="letterSideBarClick"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

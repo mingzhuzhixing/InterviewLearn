@@ -65,4 +65,13 @@
         <attr name="starPadding" format="dimension" />
     </declare-styleable>
 
+    <!--字符侧边栏bar LetterSideBar 自定义属性-->
+    <declare-styleable name="LetterSideBar">
+        <attr name="normalColor" format="color" />
+        <attr name="focusColor" format="color" />
+        <attr name="letterTextSize" format="dimension" />
+        <attr name="letterPaddingTop" format="dimension" />
+        <attr name="letterPaddingBottom" format="dimension" />
+    </declare-styleable>
+
 </resources>
