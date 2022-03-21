@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".touch_view.TouchViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".tag_layout.TagLayoutActivity"
             android:exported="true" />
         <activity

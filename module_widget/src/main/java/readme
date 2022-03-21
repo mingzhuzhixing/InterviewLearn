@@ -96,3 +96,55 @@
 2、View的绘制流程是在onResume()之后开始的（activity启动流程的源码）
 3、addView() setVisibility()会等回调requestLayout(),重新走一遍View的绘制流程（有所差别）
 4、优化的时候，根据知道源码写代码的时候优化，onDraw() 不要布局嵌套，等等
+
+五、自定义View的套路：
+1、自定义属性，获取自定义属性（达到配置的效果）
+2、onMeasure()方法用于测量计算自己的宽高，前提是继承子view,如果是继承自系统已有的Textview ,Button,已经给你计算好了宽高
+3、onDraw()用于绘制自己的显示
+4、onTouch用于用户交互
+
+
+六、自定义ViewGroup的套路：
+1、自定义属性，获取自定义属性（达到配置的效果）  很少有
+2、onMeasure()方法，for循环测量子view，根据子view的宽高来计算自己的宽高
+3、onDraw()一般不需要，默认情况是不会调用的，如果你要绘制需要实现dispatchDraw()方法
+4、onLayout()方法用于摆放子view，前提不是GONE的情况
+5、在很多情况下不会继承ViewGroup,往往是继承系统已经提供好的ViewGroup 如:ViewPager ScrollView RelativeLayout
+
+
+七、View的Touch事件分发
+1、现象 OnTouchListener OnTouchEvent OnClickListener 三个都有的情况 前提是 OnTouchListener 返回false
+       OnTouchListener.DOWN--> OnTouchEvent.DOWN ->OnTouchListener.MOVE -OnTouchEvent.MOVE ->OnTouchListener.UP--> OnTouchEvent.UP-> OnClickListener
+2、现象 OnTouchListener OnTouchEvent OnClickListener 三个都有的情况 前提是 OnTouchListener 返回false
+       OnTouchListener.DOWN -> OnTouchListener.MOVE--> OnTouchListener.UP
+
+2、现象 OnTouchEvent OnClickListener 三个都有的情况 前提是 OnTouchEvent 返回true
+       OnTouchListener.DOWN -> OnTouchListener.MOVE--> OnTouchListener.UP  不会执行OnClickListener  因为onClick是在super.onTouchView(view)中
+
+3、View 与Touch 想关的有个两个重要的方法：
+   3.1、dispatchTouchEvent() 事件分发
+
+        boolean result = false; 初始值
+
+        ListenerInfo li = mListenerInfo; 存放有关view的所有Listener的信息 如何：OnClickListener  OnTouchListener
+
+        if (li != null && li.mOnTouchListener != null
+                    && (mViewFlags & ENABLED_MASK) == ENABLED //是否是enable
+                    && li.mOnTouchListener.onTouch(this, event)) {//如果返回是false:result=false 如果返回是 true :result == true
+                    result = true;
+        }
+
+        if (!result && onTouchEvent(event)) {//如果result = false 就会执行onTouchEvent() 如果result = true 就不会执行onTouchEvent()
+                    result = true;
+        }
+
+        return result;//返回
+
+        目前没有看到点击事件？
+        在View的 onTouchEvent -> MotionEvent.ACTION_UP:里面调用了 performClickInternal() --> performClick() --> li.mOnClickListener.onClick(this);调用了点击事件
+
+   3.2、onTouchEvent():一般都会被我们复写
+
+
+
+

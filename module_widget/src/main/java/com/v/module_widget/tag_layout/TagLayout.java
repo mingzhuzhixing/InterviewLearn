@@ -57,6 +57,11 @@ public class TagLayout extends ViewGroup {
             //1.1、for循环测量子view
             View childView = getChildAt(i);
 
+            if (childView.getVisibility() == GONE) {
+                //判断是否可见
+                continue;
+            }
+
             //1.2、根据子view计算和指定自己的布局
 
             //这段话执行之后就可以获取子view的宽高了，因为会调用子view的onMeasure()
@@ -66,18 +71,19 @@ public class TagLayout extends ViewGroup {
             //想想 LinearLayout 为什么有？
             // 1、LinearLayout有自己定义的LayoutParams， 2、会腹泻一个重要的方法
             ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childView.getLayoutParams();
-
+            int leftRightMargin = params.leftMargin + params.rightMargin;
+            int topBottomMargin = params.topMargin + params.bottomMargin;
             //什么时候需要换行 注意：需要考虑子view的margin
-            if (lineWidth + (childView.getMeasuredWidth() + params.rightMargin + params.leftMargin) > width) {
+            if (lineWidth + (childView.getMeasuredWidth() + leftRightMargin) > width) {
                 //需要换行
-                height += childView.getMeasuredHeight() + params.bottomMargin + params.topMargin;
-                lineWidth = childView.getMeasuredWidth() + params.rightMargin + params.leftMargin;
+                height += maxHeight;
+                lineWidth = childView.getMeasuredWidth() + leftRightMargin;
                 lineChildViews = new ArrayList<>();
                 mChildViews.add(lineChildViews);
             } else {
                 //不需要换行
-                lineWidth += childView.getMeasuredWidth() + params.rightMargin + params.leftMargin;
-                maxHeight = Math.max(childView.getMeasuredHeight() + params.bottomMargin + params.topMargin, maxHeight);
+                lineWidth += childView.getMeasuredWidth() + leftRightMargin;
+                maxHeight = Math.max(childView.getMeasuredHeight() + topBottomMargin, maxHeight);
             }
             lineChildViews.add(childView);
         }
@@ -105,25 +111,45 @@ public class TagLayout extends ViewGroup {
         int left = 0, top = getPaddingTop(), right = 0, bottom = 0;
         for (List<View> childViews : mChildViews) {
             left = getPaddingLeft();
+            int maxHeight = 0;
             for (View childView : childViews) {
-                ViewGroup.MarginLayoutParams childViewParams = (MarginLayoutParams) childView.getLayoutParams();
-                left += childViewParams.leftMargin;
-                int childTop = top + childViewParams.topMargin;
+                if (childView.getVisibility() == GONE) {
+                    //判断是否可见
+                    continue;
+                }
+                ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childView.getLayoutParams();
+                left += params.leftMargin;
+                int childTop = top + params.topMargin;
                 right = left + childView.getMeasuredWidth();
                 bottom = childTop + childView.getMeasuredHeight();
                 //摆放位置
                 childView.layout(left, childTop, right, bottom);
                 //left 叠加
-                left += childView.getMeasuredWidth() + childViewParams.rightMargin;
+                left += childView.getMeasuredWidth() + params.rightMargin;
+
+                int childHeight = childView.getMeasuredHeight() + params.bottomMargin + params.topMargin;
+                maxHeight = Math.max(maxHeight, childHeight);
             }
-            ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childViews.get(0).getLayoutParams();
-            top += childViews.get(0).getMeasuredHeight() + params.topMargin + params.bottomMargin;
+            top += maxHeight;
         }
     }
 
-    public void setTagList(List<String> tagList) {
-        for (String s : tagList) {
+    /**
+     * 设置adapter
+     */
+    public void setAdapter(TagLayoutAdapter adapter) {
+        if (adapter == null) {
+            //空指针异常
+            throw new RuntimeException("adapter is null");
+        }
+        //清空所有子view
+        removeAllViews();
 
+        //获取数量
+        int childCount = adapter.getCount();
+        for (int i = 0; i < childCount; i++) {
+            View view = adapter.getView(i, this);
+            addView(view);
         }
     }
 

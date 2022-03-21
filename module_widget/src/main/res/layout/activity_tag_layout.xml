@@ -7,120 +7,121 @@
     tools:context=".tag_layout.TagLayoutActivity">
 
     <com.v.module_widget.tag_layout.TagLayout
+        android:id="@+id/tag_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blue_00"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello world,Hello world" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello world,Hello world" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello world" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello world" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello " />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello " />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello world,Hello" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello world,Hello" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello world" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello world" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="HeHeHe" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="HeHeHe" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello world,He" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello world,He" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="He" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="He" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello ,He" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello ,He" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/x20"
-            android:background="@drawable/bg_tag_layout"
-            android:paddingLeft="@dimen/x10"
-            android:paddingTop="@dimen/x5"
-            android:paddingRight="@dimen/x10"
-            android:paddingBottom="@dimen/x5"
-            android:text="Hello world,He" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/x20"-->
+<!--            android:background="@drawable/bg_tag_layout"-->
+<!--            android:paddingLeft="@dimen/x10"-->
+<!--            android:paddingTop="@dimen/x5"-->
+<!--            android:paddingRight="@dimen/x10"-->
+<!--            android:paddingBottom="@dimen/x5"-->
+<!--            android:text="Hello world,He" />-->
 
     </com.v.module_widget.tag_layout.TagLayout>
 
