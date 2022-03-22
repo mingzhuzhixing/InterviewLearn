@@ -15,6 +15,7 @@ import com.v.module_widget.shape_view.ShapeViewActivity;
 import com.v.module_widget.step_counter.StepCounterActivity;
 import com.v.module_widget.tag_layout.TagLayoutActivity;
 import com.v.module_widget.text_view.CustomTextViewActivity;
+import com.v.module_widget.view_drag_helper.VerticalViewDragActivity;
 import com.v.module_widget.watch_view.CustomWatchActivity;
 
 public class CustomViewMainActivity extends AppCompatActivity {
@@ -93,5 +94,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void tagLayoutClick(View view) {
         startActivity(new Intent(this, TagLayoutActivity.class));
+    }
+
+    /**
+     * 竖直拖动的listview
+     */
+    public void viewDragClick(View view) {
+        startActivity(new Intent(this, VerticalViewDragActivity.class));
     }
 }
