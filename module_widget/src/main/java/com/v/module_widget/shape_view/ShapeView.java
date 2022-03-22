@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+
+import com.v.module_widget.R;
 
 /**
  * 每秒切换一个图形
@@ -45,20 +48,20 @@ public class ShapeView extends View {
             case circle:
                 //画圆形
                 int center = getWidth() / 2;
-                mPaint.setColor(Color.YELLOW);
+                mPaint.setColor(ContextCompat.getColor(getContext(), R.color.color_738ffe));
                 canvas.drawCircle(center, center, center, mPaint);
                 break;
 
             case square:
                 //画正方形
-                mPaint.setColor(Color.BLUE);
+                mPaint.setColor(ContextCompat.getColor(getContext(), R.color.color_72d572));
                 //float left, float top, float right, float bottom, @NonNull Paint paint
                 canvas.drawRect(0, 0, getWidth(), getWidth(), mPaint);
                 break;
 
             case triangle:
                 //画三角
-                mPaint.setColor(Color.RED);
+                mPaint.setColor(ContextCompat.getColor(getContext(), R.color.color_e84e40));
                 //画路径
                 if (mPath == null) {
                     mPath = new Path();
@@ -107,5 +110,9 @@ public class ShapeView extends View {
                 break;
         }
         invalidate();
+    }
+
+    public Shape getCurrentShape(){
+        return mCurrentShape;
     }
 }
