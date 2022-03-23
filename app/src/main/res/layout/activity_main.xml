@@ -89,6 +89,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="customViewClick"
+            android:text="自定义view"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="dataBase"
             android:text="数据库"
             android:textAllCaps="false" />
@@ -135,11 +142,5 @@
             android:text="视频"
             android:textAllCaps="false" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="customViewClick"
-            android:text="自定义view"
-            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

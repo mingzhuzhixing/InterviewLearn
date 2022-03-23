@@ -11,6 +11,7 @@ import com.v.module_widget.color_track.ViewPageActivity;
 import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
+import com.v.module_widget.screem_view.ListDataScreenViewActivity;
 import com.v.module_widget.shape_view.ShapeViewActivity;
 import com.v.module_widget.step_counter.StepCounterActivity;
 import com.v.module_widget.tag_layout.TagLayoutActivity;
@@ -101,5 +102,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void viewDragClick(View view) {
         startActivity(new Intent(this, VerticalViewDragActivity.class));
+    }
+
+    /**
+     * 竖直拖动的listview
+     */
+    public void listDataScreenClick(View view) {
+        startActivity(new Intent(this, ListDataScreenViewActivity.class));
     }
 }
