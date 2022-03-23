@@ -18,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.v.module_utils.DensityUtils;
 import com.v.module_utils.ScreenUtils;
 import com.v.video_module.adapter.ViewPagerAdapter;
 import com.v.video_module.fragment.LiveChatFragment;
@@ -71,7 +72,7 @@ public class VideoMainActivity extends AppCompatActivity {
         webfragment_container = findViewById(R.id.webfragment_container);
         WebFragment_container_inner = findViewById(R.id.WebFragment_container_inner);
         fl_allsceen_featurecontainer = findViewById(R.id.fl_allsceen_featurecontainer);
-        fl_allsceen_featurecontainer.setLayoutParams(new ConstraintLayout.LayoutParams(ScreenUtils.dip2px(this, 310), screenW));
+        fl_allsceen_featurecontainer.setLayoutParams(new ConstraintLayout.LayoutParams(DensityUtils.dip2px(this, 310), screenW));
 
         tv_tiepian_ad = findViewById(R.id.tv_tiepian_ad);
         tv_tuiguang_ad = findViewById(R.id.tv_tuiguang_ad);
@@ -172,19 +173,19 @@ public class VideoMainActivity extends AppCompatActivity {
 
     private void setAnimationTopMargin(int dipView) {
         ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) tv_animation.getLayoutParams();
-        layoutParams2.topMargin = ScreenUtils.dip2px(this, dipView);
+        layoutParams2.topMargin = DensityUtils.dip2px(this, dipView);
         tv_animation.setLayoutParams(layoutParams2);
     }
 
     private void setTiePianAdTopMargin(int dipView) {
         ConstraintLayout.LayoutParams layoutParams3 = (ConstraintLayout.LayoutParams) tv_tiepian_ad.getLayoutParams();
-        layoutParams3.topMargin = ScreenUtils.dip2px(this, dipView);
+        layoutParams3.topMargin = DensityUtils.dip2px(this, dipView);
         tv_tiepian_ad.setLayoutParams(layoutParams3);
     }
 
     private void setTuiGuangAdTopMargin(int dipView) {
         ConstraintLayout.LayoutParams layoutParams3 = (ConstraintLayout.LayoutParams) tv_tuiguang_ad.getLayoutParams();
-        layoutParams3.topMargin = ScreenUtils.dip2px(this, dipView);
+        layoutParams3.topMargin = DensityUtils.dip2px(this, dipView);
         tv_tuiguang_ad.setLayoutParams(layoutParams3);
     }
 
@@ -214,7 +215,7 @@ public class VideoMainActivity extends AppCompatActivity {
      */
     public void showAllSceenDingyueWithAnimation(String url, int type) {
         int widthPixels = ScreenUtils.getWidthPixels(this);
-        float width = ScreenUtils.dip2px(this, 310);
+        float width = DensityUtils.dip2px(this, 310);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(fl_allsceen_featurecontainer, "x", widthPixels, widthPixels - width);
         objectAnimator.addListener(animatorListenerShow);
         objectAnimator.setDuration(300);
@@ -223,7 +224,7 @@ public class VideoMainActivity extends AppCompatActivity {
 
     public void hideAllSceenDingYueWithAnimation() {
         int widthPixels = ScreenUtils.getWidthPixels(this);
-        float width = ScreenUtils.dip2px(this, 310);
+        float width = DensityUtils.dip2px(this, 310);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(fl_allsceen_featurecontainer, "x", widthPixels - width, widthPixels);
         objectAnimator.addListener(animatorListenerHide);
         objectAnimator.setDuration(150);

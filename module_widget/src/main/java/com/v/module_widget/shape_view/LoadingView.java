@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -18,6 +19,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
+import com.v.module_utils.DensityUtils;
 import com.v.module_widget.R;
 
 public class LoadingView extends LinearLayout {
@@ -29,6 +31,8 @@ public class LoadingView extends LinearLayout {
     private final int ANIMATOR_DURATION = 350;
 
     private int mTranslationYDistance = 0;
+    //是否停止动画
+    private boolean mIsStopAnimator = false;
 
     public LoadingView(Context context) {
         this(context, null);
@@ -40,7 +44,7 @@ public class LoadingView extends LinearLayout {
 
     public LoadingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mTranslationYDistance = dip2px(getContext(), 80);
+        mTranslationYDistance = DensityUtils.dip2px(getContext(), 80);
         initLayout();
     }
 
@@ -82,6 +86,9 @@ public class LoadingView extends LinearLayout {
      */
     @SuppressLint("Recycle")
     private void fallAnimator() {
+        if (mIsStopAnimator) {
+            return;
+        }
         //动画作用在谁身上
 
         //下落移动动画
@@ -115,6 +122,9 @@ public class LoadingView extends LinearLayout {
      * 执行上抛动画
      */
     private void starUpAnimation() {
+        if (mIsStopAnimator) {
+            return;
+        }
         ObjectAnimator tranAnimator = ObjectAnimator.ofFloat(mShapeView, "translationY", mTranslationYDistance, 0);
         ObjectAnimator scaleAnimator = ObjectAnimator.ofFloat(mShadowView, "scaleX", 0.3f, 1.0f);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -167,8 +177,23 @@ public class LoadingView extends LinearLayout {
     }
     //正方型180  三角形 60
 
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
+    @Override
+    public void setVisibility(int visibility) {
+        super.setVisibility(visibility);//不要在去摆放和计算，少走一些系统的方法
+        if (visibility == VISIBLE) {
+            return;
+        }
+        //清理动画
+        mShapeView.clearAnimation();
+        mShadowView.clearAnimation();
+
+        //把loadingView 从父布局移动
+        ViewGroup parent = (ViewGroup) getParent();
+        if (parent != null) {
+            parent.removeView(this); // 从父布局移除
+            removeAllViews(); //移除自己所有的View
+        }
+
+        mIsStopAnimator = true;
     }
 }

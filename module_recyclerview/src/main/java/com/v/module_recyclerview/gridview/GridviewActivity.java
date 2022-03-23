@@ -13,6 +13,7 @@ import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
 import com.v.module_recyclerview.decoration.GridItemCenterDecoration;
 import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_utils.DensityUtils;
 import com.v.module_utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class GridviewActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, spanCount, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(gridLayoutManager);
         //设置分割线 item居中显示
-        float space = ScreenUtils.getScreenWidthPixels(this) - ScreenUtils.dip2px(this, 80) * spanCount;
+        float space = ScreenUtils.getScreenWidthPixels(this) - DensityUtils.dip2px(this, 80) * spanCount;
         recyclerView.addItemDecoration(new GridItemCenterDecoration(spanCount, (int) (space / (spanCount - 1)), false));
         mAdapter = new ListviewAdapter(R.layout.item_gridview);
         recyclerView.setAdapter(mAdapter);

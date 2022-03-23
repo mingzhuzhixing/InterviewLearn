@@ -22,9 +22,6 @@ import java.lang.reflect.Method;
  * Description: 屏幕尺寸工具
  */
 public class ScreenUtils {
-    private static float sDensity = 0f;
-    private static int sDensityDpi = 0;
-
     public static int getScreenWidthPixels(Context context) {
         DisplayMetrics dm = new DisplayMetrics();
         ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(dm);
@@ -41,54 +38,17 @@ public class ScreenUtils {
      * 获取 android 通知栏高度
      */
     public static int getStatusBarHeight(Context context) {
-        Class<?> c = null;
-        Object obj = null;
-        Field field = null;
-        int x = 0, statusBarHeight = 0;
+        int statusBarHeight = 0;
         try {
-            c = Class.forName("com.android.internal.R$dimen");
-            obj = c.newInstance();
-            field = c.getField("status_bar_height");
-            x = Integer.parseInt(field.get(obj).toString());
+            Class<?> c = Class.forName("com.android.internal.R$dimen");
+            Object obj = c.newInstance();
+            Field field = c.getField("status_bar_height");
+            int x = Integer.parseInt(field.get(obj).toString());
             statusBarHeight = context.getResources().getDimensionPixelSize(x);
         } catch (Exception e1) {
             e1.printStackTrace();
         }
         return statusBarHeight;
-    }
-
-    private static final String TAG = "ScreenUtil";
-
-    /**
-     * 将px值转换为dip或dp值，保证尺寸大小不变
-     */
-    public static int px2dip(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
-    }
-
-    /**
-     * 将dip或dp值转换为px值，保证尺寸大小不变
-     */
-    public static int dip2px(Context context, float dipValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dipValue * scale + 0.5f);
-    }
-
-    /**
-     * 将px值转换为sp值，保证文字大小不变
-     */
-    public static int px2sp(Context context, float pxValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (pxValue / fontScale + 0.5f);
-    }
-
-    /**
-     * 将sp值转换为px值，保证文字大小不变
-     */
-    public static int sp2px(Context context, float spValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (spValue * fontScale + 0.5f);
     }
 
     /**
@@ -106,7 +66,6 @@ public class ScreenUtils {
     public static int getHeightPixels(Context context) {
         DisplayMetrics dm = new DisplayMetrics();
         ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
-        Log.e("kkk", "屏幕高度==========》" + dm.heightPixels);
         return dm.heightPixels;
     }
 
@@ -124,16 +83,15 @@ public class ScreenUtils {
         try {
             DisplayMetrics dm = new DisplayMetrics();
             context.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
-//        Log.e("kkk", "屏幕真实高度==========》" + dm.heightPixels);
             return dm.heightPixels;
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return 0;
     }
 
-    /* 获取状态栏高度
-     * @param context
-     * @return
+    /**
+     * 获取状态栏高度
      */
     public static int getStatusBarHeight1(Context context) {
         int result = 0;
@@ -149,7 +107,9 @@ public class ScreenUtils {
         return result;
     }
 
-    //获取虚拟按键的高度
+    /**
+     * 获取虚拟按键的高度
+     */
     public static int getNavigationBarHeight(Context context) {
         int result = 0;
         try {
@@ -164,7 +124,9 @@ public class ScreenUtils {
         return result;
     }
 
-    //获取虚拟按键的高度，全面屏下返回0，非全面屏下返回实际高度
+    /**
+     * 获取虚拟按键的高度，全面屏下返回0，非全面屏下返回实际高度
+     */
     public static int getNavigationBarHeight2(Activity context) {
         int result = 0;
         try {
@@ -248,8 +210,7 @@ public class ScreenUtils {
                 //for new api versions.
                 View decorView = ((Activity) context).getWindow().getDecorView();
                 ((Activity) context).getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+                int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
                 decorView.setSystemUiVisibility(uiOptions);
             }
         } else {
