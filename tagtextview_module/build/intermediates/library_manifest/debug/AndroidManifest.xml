@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.tagtextview_module" >
+
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="28" />
+
+    <application>
+        <activity
+            android:name="com.v.tagtextview_module.HtmlTextViewActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.v.tagtextview_module.TextViewMainActivity"
+            android:exported="true" />
+        <activity android:name="com.v.tagtextview_module.TagTextViewActivity" />
+        <activity android:name="com.v.tagtextview_module.SpannableStringActivity" />
+    </application>
+
+</manifest>

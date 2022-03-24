@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.auto.service.AutoService;
-import com.v.base_module.BaseApplication;
+import com.v.module_base.BaseApplication;
 import com.v.webview_module.command.Command;
 
 /**

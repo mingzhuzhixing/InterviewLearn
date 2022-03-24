@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.module_recyclerview">
+
+    <application>
+        <activity
+            android:name=".waterfall_flow.WaterfallFlowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".gridview.GridviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".listview.ListviewActivity"
+            android:exported="true" />
+        <activity android:name=".RecyclerviewMainActivity" />
+        <activity android:name=".snap_helper.SnapHelperActivity" />
+    </application>
+
+</manifest>

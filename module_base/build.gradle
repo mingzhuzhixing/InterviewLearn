@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion androidV.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidV.minSdkVersion
+        targetSdkVersion androidV.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["multidex"]
+
+    api deps["loadsir"]
+    api deps["fastjson"]
+
+    // Butterknife
+    api deps["butterknife"]
+    annotationProcessor deps["butterknife_compiler"]
+
+    api project(":thread_module")
+    api project(":module_resource")
+}

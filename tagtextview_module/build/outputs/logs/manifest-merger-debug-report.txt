@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:2:1-20:12
+	package
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:3:5-39
+		INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:5:5-7:41
+	android:targetSdkVersion
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:7:9-38
+		INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:6:9-35
+		INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml
+application
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:9:5-18:19
+activity#com.v.tagtextview_module.HtmlTextViewActivity
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:10:9-12:39
+	android:exported
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:12:13-36
+	android:name
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:11:13-49
+activity#com.v.tagtextview_module.TextViewMainActivity
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:13:9-15:39
+	android:exported
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:15:13-36
+	android:name
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:14:13-49
+activity#com.v.tagtextview_module.TagTextViewActivity
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:16:9-57
+	android:name
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:16:19-54
+activity#com.v.tagtextview_module.SpannableStringActivity
+ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:17:9-61
+	android:name
+		ADDED from /Users/zhuming/Documents/android_demo/InterviewLearn/tagtextview_module/src/main/AndroidManifest.xml:17:19-58

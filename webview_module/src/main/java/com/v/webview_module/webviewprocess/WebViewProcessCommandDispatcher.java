@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.v.base_module.BaseApplication;
+import com.v.module_base.BaseApplication;
 import com.v.webview_module.IWebviewProcessToMainProcessInterface;
 import com.v.webview_module.mainprocess.MainProcessCommandService;
 

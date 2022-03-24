@@ -1,0 +1,150 @@
+//invalidate() 解析
+
+  invalidate()(View类)-->
+  invalidateInternal()(View类)-->
+            // Propagate the damage rectangle to the parent view.
+            final AttachInfo ai = mAttachInfo;
+            final ViewParent p = mParent; //关键 是调用了父类的  父类是ViewGroup容器 invalidateChild（）
+            if (p != null && ai != null && l < r && t < b) {
+                final Rect damage = ai.mTmpInvalRect;
+                damage.set(l, t, r, b);
+                p.invalidateChild(this, damage);
+            }
+  invalidateChild()(ViewGroup类)-->
+            do {
+                View view = null;
+                if (parent instanceof View) {
+                    view = (View) parent;
+                }
+
+                if (drawAnimation) {
+                    if (view != null) {
+                        view.mPrivateFlags |= PFLAG_DRAW_ANIMATION;
+                    } else if (parent instanceof ViewRootImpl) {
+                        ((ViewRootImpl) parent).mIsAnimating = true;
+                    }
+                }
+
+                // If the parent is dirty opaque or not dirty, mark it dirty with the opaque
+                // flag coming from the child that initiated the invalidate
+                if (view != null) {
+                    if ((view.mViewFlags & FADING_EDGE_MASK) != 0 &&
+                            view.getSolidColor() == 0) {
+                        opaqueFlag = PFLAG_DIRTY;
+                    }
+                    if ((view.mPrivateFlags & PFLAG_DIRTY_MASK) != PFLAG_DIRTY) {
+                        view.mPrivateFlags = (view.mPrivateFlags & ~PFLAG_DIRTY_MASK) | opaqueFlag;
+                    }
+                }
+
+                //关键 parent=this  在循环中不段调用invalidateChildInParent()获取父类，最终调用到最外层的View上 ViewRootImpl
+                parent = parent.invalidateChildInParent(location, dirty);
+                if (view != null) {
+                    // Account for transform on current parent
+                    Matrix m = view.getMatrix();
+                    if (!m.isIdentity()) {
+                        RectF boundingRect = attachInfo.mTmpTransformRect;
+                        boundingRect.set(dirty);
+                        m.mapRect(boundingRect);
+                        dirty.set((int) Math.floor(boundingRect.left),
+                                (int) Math.floor(boundingRect.top),
+                                (int) Math.ceil(boundingRect.right),
+                                (int) Math.ceil(boundingRect.bottom));
+                    }
+                }
+            } while (parent != null);
+  invalidateChildInParent()(ViewRootImpl类)-->
+  invalidateRectOnScreen()(ViewRootImpl类)-->
+  scheduleTraversals()(ViewRootImpl类)-->
+
+  总结：一路往上跑，跑到最外层 draw()->dispatchDraw() 一路往下画 最终滑动但钱调用invalidate的View的onDraw()方法
+      invalidate()牵连着整个layout布局中的view
+
+二、为什么不能再子线程中更新UI？
+   开了线程，更新UI  一般会调用setText() setImageView() 掉回来这里ViewRootImpl checkThread()
+  checkThread() 用来检测线程
+    void checkThread() {
+        if (mThread != Thread.currentThread()) {
+            throw new CalledFromWrongThreadException(
+                    "Only the original thread that created a view hierarchy can touch its views.");
+        }
+    }
+
+    mThread：  mThread = Thread.currentThread();在构造函数中初始化 主线程mainThread
+
+三、WX朋友圈过度渲染优化
+  自己写依稀接麦你会非常负责  QQ空间 wx朋友圈  列表嵌套列表  （item里面布局可能嵌套布局）
+  1、网上一般的解决方法：
+     尽量不要嵌套
+     能不设置背景就不要设置背景
+     ......
+  2、最好的解决方案（蛋疼）
+     获取到数据去设置 setText() setImageView() 其实都会调用onInvalidate()
+     最好是自己花，不要用系统的嵌套布局， 运行效率高，实现功能更功能效率低（抉择问题）
+
+四、view的绘制流程：
+1、第一步： performMeasure():用户指定和测量layout中缩有孔家你的宽高，对于ViewGroup,先去测量里面的子孩子，根据孩子的宽高再来计算和指定自己的宽高，
+    对于View,他的宽高是有自己和父布局决定的;
+
+2、第二步：performLayout():用于摆放布局，for循环所有子view,用child.layout()摆放childView;
+
+3、第三步：performDraw():用于绘制自己还有子view，对于ViewGroup首先绘制自己的背景，for循环绘制子view调用子view的draw()方法，
+   对于view绘制自己的背景，绘制自己显示的内容（TextView）
+
+思考问题：
+1、如果要获取view的高度，前度肯定需要调用测量方法，测量完毕之后才能获取宽高
+2、View的绘制流程是在onResume()之后开始的（activity启动流程的源码）
+3、addView() setVisibility()会等回调requestLayout(),重新走一遍View的绘制流程（有所差别）
+4、优化的时候，根据知道源码写代码的时候优化，onDraw() 不要布局嵌套，等等
+
+五、自定义View的套路：
+1、自定义属性，获取自定义属性（达到配置的效果）
+2、onMeasure()方法用于测量计算自己的宽高，前提是继承子view,如果是继承自系统已有的Textview ,Button,已经给你计算好了宽高
+3、onDraw()用于绘制自己的显示
+4、onTouch用于用户交互
+
+
+六、自定义ViewGroup的套路：
+1、自定义属性，获取自定义属性（达到配置的效果）  很少有
+2、onMeasure()方法，for循环测量子view，根据子view的宽高来计算自己的宽高
+3、onDraw()一般不需要，默认情况是不会调用的，如果你要绘制需要实现dispatchDraw()方法
+4、onLayout()方法用于摆放子view，前提不是GONE的情况
+5、在很多情况下不会继承ViewGroup,往往是继承系统已经提供好的ViewGroup 如:ViewPager ScrollView RelativeLayout
+
+
+七、View的Touch事件分发
+1、现象 OnTouchListener OnTouchEvent OnClickListener 三个都有的情况 前提是 OnTouchListener 返回false
+       OnTouchListener.DOWN--> OnTouchEvent.DOWN ->OnTouchListener.MOVE -OnTouchEvent.MOVE ->OnTouchListener.UP--> OnTouchEvent.UP-> OnClickListener
+2、现象 OnTouchListener OnTouchEvent OnClickListener 三个都有的情况 前提是 OnTouchListener 返回false
+       OnTouchListener.DOWN -> OnTouchListener.MOVE--> OnTouchListener.UP
+
+2、现象 OnTouchEvent OnClickListener 三个都有的情况 前提是 OnTouchEvent 返回true
+       OnTouchListener.DOWN -> OnTouchListener.MOVE--> OnTouchListener.UP  不会执行OnClickListener  因为onClick是在super.onTouchView(view)中
+
+3、View 与Touch 想关的有个两个重要的方法：
+   3.1、dispatchTouchEvent() 事件分发
+
+        boolean result = false; 初始值
+
+        ListenerInfo li = mListenerInfo; 存放有关view的所有Listener的信息 如何：OnClickListener  OnTouchListener
+
+        if (li != null && li.mOnTouchListener != null
+                    && (mViewFlags & ENABLED_MASK) == ENABLED //是否是enable
+                    && li.mOnTouchListener.onTouch(this, event)) {//如果返回是false:result=false 如果返回是 true :result == true
+                    result = true;
+        }
+
+        if (!result && onTouchEvent(event)) {//如果result = false 就会执行onTouchEvent() 如果result = true 就不会执行onTouchEvent()
+                    result = true;
+        }
+
+        return result;//返回
+
+        目前没有看到点击事件？
+        在View的 onTouchEvent -> MotionEvent.ACTION_UP:里面调用了 performClickInternal() --> performClick() --> li.mOnClickListener.onClick(this);调用了点击事件
+
+   3.2、onTouchEvent():一般都会被我们复写
+
+
+
+

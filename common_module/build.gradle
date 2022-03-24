@@ -27,19 +27,21 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
-    testImplementation "junit:junit:$deps.junit"
-    androidTestImplementation "androidx.test.ext:junit:$deps.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$deps.espresso_core"
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
 
     //autoservice
     api "com.google.auto.service:auto-service:1.0-rc6"
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
 
+    api project(":module_base")
     api project(":eventbus_module")
     api project(":network_module")
     api project(":database_module")
-    api project(":recyclerview_module")
     api project(":bitmap_module")
+    api project(":module_recyclerview")
+    api project(":module_handler")
 }

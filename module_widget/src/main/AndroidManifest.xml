@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.module_widget">
+
+    <application>
+        <activity
+            android:name=".screem_view.ListDataScreenViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view_drag_helper.VerticalViewDragActivity"
+            android:exported="true" />
+        <activity
+            android:name=".touch_view.TouchViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".tag_layout.TagLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".letter_side_bar.LetterSideBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".rating_bar.RatingBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".progess_bar.ProgressBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".color_track.ViewPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".color_track.ColorTrackTextViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".step_counter.StepCounterActivity"
+            android:exported="true" />
+        <activity android:name=".CustomViewMainActivity" />
+        <activity android:name=".text_view.CustomTextViewActivity" />
+        <activity android:name=".watch_view.CustomWatchActivity" />
+        <activity android:name=".shape_view.ShapeViewActivity" />
+    </application>
+
+</manifest>

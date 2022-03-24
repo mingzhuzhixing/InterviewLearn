@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.v.module_widget.shape_view.ShapeView
+        android:id="@+id/shape_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        style="@style/P2_S36_5_5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"
+        android:layout_below="@+id/shape_view"
+        android:layout_marginLeft="@dimen/y53"
+        android:layout_marginTop="@dimen/x80"
+        android:layout_marginRight="@dimen/y53"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:onClick="startClick"
+        android:text="开始"
+        android:textColor="@color/black" />
+
+        <com.v.module_widget.shape_view.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+</RelativeLayout>

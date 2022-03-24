@@ -20,9 +20,6 @@ import java.io.FileOutputStream;
 public class BitmapUtils {
     /**
      * 尺寸压缩（通过缩放图片像素来减少图片占用内存大小）
-     *
-     * @param bmp
-     * @param file
      */
     public static void sizeCompress(Bitmap bmp, File file) {
         // 尺寸压缩倍数,值越大，图片尺寸越小
@@ -48,7 +45,6 @@ public class BitmapUtils {
 
     /**
      * 采样率压缩（设置图片的采样率，降低图片像素）
-     *
      */
     public static void samplingRateCompress(String filePath, File file) {
         // 数值越高，图片像素越低

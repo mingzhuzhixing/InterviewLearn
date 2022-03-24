@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.textview_module">
+
+    <application>
+        <activity
+            android:name=".marquee.MarqueeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TextviewMainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".tagview.HtmlTextViewActivity"
+            android:exported="true" />
+
+        <activity android:name=".tagview.TagTextViewActivity" />
+
+        <activity android:name=".tagview.SpannableStringActivity" />
+    </application>
+
+</manifest>

@@ -27,13 +27,13 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$deps.appcompat_x"
-    implementation "androidx.constraintlayout:constraintlayout:$deps.constraint_layout"
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
     implementation  'com.android.support:cardview-v7:28.0.0'
     implementation  'com.android.support:design:28.0.0'
 
     api project(":common_module")
-    implementation project(":recyclerview_module")
+    implementation project(":module_recyclerview")
 
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
 }
