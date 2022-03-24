@@ -102,13 +102,39 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     }
 
     /**
+     * 具体的观察者类对象
+     */
+    private class AdapterMenuObserver extends MenuObserver {
+
+        @Override
+        public void closeMenu() {
+            //如果有注册就会收到通知
+            ListDataScreenView.this.closeMenu();
+        }
+    }
+
+    private AdapterMenuObserver menuObserver;
+
+    /**
      * 设置适配器
      */
     public void setAdapter(BaseMenuAdapter adapter) {
+        //观察者
+        if (mAdapter != null && menuObserver != null) {
+            mAdapter.unregisterDataSetObserver(menuObserver);
+        }
+
         this.mAdapter = adapter;
+
+        //注册观察者  订阅
+        menuObserver = new AdapterMenuObserver();
+        mAdapter.registerDataSetObserver(menuObserver);
+
         //获取有多少条
         int count = mAdapter.getCount();
-        for (int i = 0; i < count; i++) {
+        for (
+                int i = 0;
+                i < count; i++) {
             //获取tab
             View tabView = mAdapter.getTabView(i, mMenuTabView);
             mMenuTabView.addView(tabView);
@@ -120,6 +146,7 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
             menuView.setVisibility(GONE);
             mMenuContainerView.addView(menuView);
         }
+
     }
 
     /**

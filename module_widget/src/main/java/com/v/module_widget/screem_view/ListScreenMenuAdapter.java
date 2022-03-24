@@ -37,6 +37,12 @@ public class ListScreenMenuAdapter extends BaseMenuAdapter {
     public View getMenuView(int position, ViewGroup parent) {
         TextView menuView = (TextView) mInflater.inflate(R.layout.ui_list_data_screen_menu, parent, false);
         menuView.setText(mItems[position]);
+        menuView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeMenu();
+            }
+        });
         return menuView;
     }
 
