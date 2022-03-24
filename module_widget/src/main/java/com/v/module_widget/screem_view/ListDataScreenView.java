@@ -92,11 +92,13 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
-        mMenuContainerHeight = (int) (height * 75 / 100.0f);
-        ViewGroup.LayoutParams params = mMenuContainerView.getLayoutParams();
-        params.height = mMenuContainerHeight;
-        mMenuContainerView.setLayoutParams(params);
-        mMenuContainerView.setTranslationY(-mMenuContainerHeight);
+        if (mCurrentPosition < 0) {
+            mMenuContainerHeight = (int) (height * 75 / 100.0f);
+            ViewGroup.LayoutParams params = mMenuContainerView.getLayoutParams();
+            params.height = mMenuContainerHeight;
+            mMenuContainerView.setLayoutParams(params);
+            mMenuContainerView.setTranslationY(-mMenuContainerHeight);
+        }
     }
 
     /**
@@ -130,10 +132,27 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
             public void onClick(View v) {
                 if (mCurrentPosition == -1) {
                     //没打开
-                    openMenu(position);
+                    openMenu(tabView, position);
                 } else {
-                    //打开了
-                    closeMenu();
+                    if (mCurrentPosition == position) {
+                        //点击打开和关闭的tabview 是同一个，则需要第二次点击关闭
+                        closeMenu();
+                    } else {
+                        View menuView = mMenuContainerView.getChildAt(mCurrentPosition);
+                        menuView.setVisibility(GONE);
+                        //打开菜单栏
+                        if (mAdapter != null) {
+                            mAdapter.menuNormalStyle(mMenuTabView.getChildAt(mCurrentPosition));
+                        }
+
+                        mCurrentPosition = position;
+                        menuView = mMenuContainerView.getChildAt(mCurrentPosition);
+                        menuView.setVisibility(VISIBLE);
+                        //打开菜单栏
+                        if (mAdapter != null) {
+                            mAdapter.menuSelectStyle(tabView);
+                        }
+                    }
                 }
             }
         });
@@ -142,7 +161,7 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     /**
      * 打开菜单
      */
-    private void openMenu(int position) {
+    private void openMenu(View tabView, int position) {
         //获取当前位置显示当前菜单，  菜单是加到了菜单容器的
 
         //判断如果正在执行动画怎不进行下面的动画
@@ -163,6 +182,11 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
 
                 View menuView = mMenuContainerView.getChildAt(position);
                 menuView.setVisibility(VISIBLE);
+
+                //打开菜单栏
+                if (mAdapter != null) {
+                    mAdapter.menuSelectStyle(tabView);
+                }
             }
 
             @Override
@@ -194,6 +218,12 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
             @Override
             public void onAnimationStart(Animator animation) {
                 isRunningAnimator = true;
+
+                //关闭菜单栏
+                View tabView = mMenuTabView.getChildAt(mCurrentPosition);
+                if (mAdapter != null) {
+                    mAdapter.menuNormalStyle(tabView);
+                }
             }
 
             @Override

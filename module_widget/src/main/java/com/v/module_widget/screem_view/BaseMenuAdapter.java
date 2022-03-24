@@ -15,4 +15,14 @@ public abstract class BaseMenuAdapter {
 
     //获取菜单的内容
     public abstract View getMenuView(int position,ViewGroup parent);
+
+    //打开菜单栏
+    public void menuSelectStyle(View tabView){
+
+    }
+
+    //关闭菜单栏
+    public void menuNormalStyle(View tabView) {
+
+    }
 }

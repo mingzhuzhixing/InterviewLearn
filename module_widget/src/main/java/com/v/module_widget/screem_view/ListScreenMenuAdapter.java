@@ -1,6 +1,7 @@
 package com.v.module_widget.screem_view;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class ListScreenMenuAdapter extends BaseMenuAdapter {
     public View getTabView(int position, ViewGroup parent) {
         TextView tabView = (TextView) mInflater.inflate(R.layout.ui_list_data_screen_tab, parent, false);
         tabView.setText(mItems[position]);
+        tabView.setTextColor(Color.BLACK);
         return tabView;
     }
 
@@ -36,5 +38,19 @@ public class ListScreenMenuAdapter extends BaseMenuAdapter {
         TextView menuView = (TextView) mInflater.inflate(R.layout.ui_list_data_screen_menu, parent, false);
         menuView.setText(mItems[position]);
         return menuView;
+    }
+
+    @Override
+    public void menuSelectStyle(View tabView) {
+        if (tabView instanceof TextView) {
+            ((TextView) tabView).setTextColor(Color.RED);
+        }
+    }
+
+    @Override
+    public void menuNormalStyle(View tabView) {
+        if (tabView instanceof TextView) {
+            ((TextView) tabView).setTextColor(Color.BLACK);
+        }
     }
 }
