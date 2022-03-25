@@ -1,4 +1,4 @@
-package com.v.url_module.like_view;
+package com.v.module_widget.like_view;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -6,7 +6,6 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
-import android.nfc.Tag;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -15,13 +14,11 @@ import android.view.animation.LinearInterpolator;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 
-
-import com.v.url_module.R;
+import com.v.module_widget.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
 
 /**
@@ -98,6 +95,7 @@ public class KsgLikeView extends AnimationLayout {
 //                mChildViews.add(favorView);
 //            }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -133,6 +131,7 @@ public class KsgLikeView extends AnimationLayout {
             // 开始执行动画
             this.start(favorView, layoutParams);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -166,6 +165,7 @@ public class KsgLikeView extends AnimationLayout {
             // add父布局
             super.addView(child, layoutParams);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -212,6 +212,7 @@ public class KsgLikeView extends AnimationLayout {
             // 再Y轴上 为了确保第二个控制点 在第一个点之上,我把Y分成了上下两半
             pointf.y = (float) mRandom.nextInt((mViewHeight - 100)) / scale;
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return pointf;
     }

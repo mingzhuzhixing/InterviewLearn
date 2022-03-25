@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
 import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
+import com.v.module_widget.like_view.KsgLikeViewActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
 import com.v.module_widget.screem_view.ListDataScreenViewActivity;
@@ -109,5 +110,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void listDataScreenClick(View view) {
         startActivity(new Intent(this, ListDataScreenViewActivity.class));
+    }
+
+    /**
+     * 直播点赞动效
+     */
+    public void liveDiggViewClick(View view) {
+        startActivity(new Intent(this, KsgLikeViewActivity.class));
     }
 }

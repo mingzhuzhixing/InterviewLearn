@@ -1,4 +1,4 @@
-package com.v.url_module.like_view.evaluator;
+package com.v.module_widget.like_view.evaluator;
 
 import android.animation.TypeEvaluator;
 import android.graphics.PointF;

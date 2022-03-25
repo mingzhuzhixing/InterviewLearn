@@ -30,4 +30,10 @@
         android:text="跑马灯"
         android:onClick="marqueeClick"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取url中的参数值"
+        android:onClick="URLQueryParamsClick"/>
+
 </LinearLayout>

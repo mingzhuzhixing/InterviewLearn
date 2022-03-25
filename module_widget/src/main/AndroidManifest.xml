@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".like_view.KsgLikeViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".screem_view.ListDataScreenViewActivity"
             android:exported="true" />
         <activity

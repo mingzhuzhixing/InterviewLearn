@@ -1,4 +1,4 @@
-package com.v.url_module.like_view;
+package com.v.module_widget.like_view;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -7,7 +7,6 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.PointF;
-import android.nfc.Tag;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,17 +14,13 @@ import android.widget.FrameLayout;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.util.Pools;
 
-
-import com.v.url_module.PoolViews;
-import com.v.url_module.like_view.evaluator.CurveEvaluatorRecord;
+import com.v.module_widget.like_view.evaluator.CurveEvaluatorRecord;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 
 /**
  * @ClassName: AnimationLayout

@@ -29,4 +29,6 @@ dependencies {
     implementation deps["appcompat_x"]
     implementation deps["material"]
     implementation deps["constraint_layout"]
+
+    implementation project(":module_base")
 }

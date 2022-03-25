@@ -85,4 +85,11 @@
         android:onClick="listDataScreenClick"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="直播点赞效果"
+        android:onClick="liveDiggViewClick"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

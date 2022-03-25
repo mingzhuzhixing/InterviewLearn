@@ -10,6 +10,7 @@ import com.v.module_textview.marquee.MarqueeActivity;
 import com.v.module_textview.tagview.HtmlTextViewActivity;
 import com.v.module_textview.tagview.SpannableStringActivity;
 import com.v.module_textview.tagview.TagTextViewActivity;
+import com.v.module_textview.url_parse.UrlQueryParameterActivity;
 
 /**
  * 文本 主activity
@@ -37,5 +38,12 @@ public class TextviewMainActivity extends AppCompatActivity {
     //跑马灯效果
     public void marqueeClick(View view) {
         startActivity(new Intent(this, MarqueeActivity.class));
+    }
+
+    /**
+     * 获取url中的参数值
+     */
+    public void URLQueryParamsClick(View view) {
+        startActivity(new Intent(this, UrlQueryParameterActivity.class));
     }
 }

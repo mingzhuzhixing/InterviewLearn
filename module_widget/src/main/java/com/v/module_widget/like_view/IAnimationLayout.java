@@ -1,4 +1,4 @@
-package com.v.url_module.like_view;
+package com.v.module_widget.like_view;
 
 import java.util.List;
 
