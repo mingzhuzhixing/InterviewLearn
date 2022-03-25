@@ -38,13 +38,6 @@ dependencies {
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
 
-    // Retrofit库
-    implementation "com.squareup.retrofit2:retrofit:$deps.retrofit"
-    implementation "io.reactivex.rxjava2:rxjava:$deps.rxjava"
-    implementation "io.reactivex.rxjava2:rxandroid:$deps.rxandroid"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$deps.adapter_rxjava"
-    implementation "com.squareup.retrofit2:converter-gson:$deps.converter_gson"
-
     //jetpack-->navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$deps.navigation_fragment_ktx"
     implementation "androidx.navigation:navigation-ui-ktx:$deps.navigation_ui_ktx"
@@ -53,6 +46,9 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.0.0-alpha5"
     kapt "android.arch.persistence.room:compiler:1.0.0-alpha5"
     debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
+
+    // Retrofit库
+    implementation project(":module_retrofit")
 
     //引入包
     implementation project(":common_module")

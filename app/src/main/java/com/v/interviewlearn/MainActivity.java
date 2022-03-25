@@ -18,12 +18,12 @@ import com.v.module_eventbus.EventBusMainActivity;
 import com.v.module_glide.GlideMainActivity;
 import com.v.module_handler.HandlerMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
+import com.v.module_retrofit.RetrofitMainActivity;
 import com.v.module_telephony.TelephonyManagerActivity;
 import com.v.module_textview.TextviewMainActivity;
 import com.v.module_widget.CustomViewMainActivity;
 import com.v.video_module.VideoMainActivity;
 import com.youshu.network_module.NetworkMainActivity;
-import com.youshu.retrofit_module.RetrofitMainActivity;
 import com.youshu.rxjava_module.RxJavaMainActivity;
 
 public class MainActivity extends AppCompatActivity {

@@ -36,11 +36,11 @@ dependencies {
 
     //为什么rxjava使用还需要导入rxandroid包？
     //因为使用rxjava中的功能不全，大概只有80%，而剩余的20%需要rxandroid补全。比如：AndroidSchedulers.mainThread()就是rxandroid中的内容
-    implementation "com.squareup.retrofit2:retrofit:$deps.retrofit"
-    implementation "io.reactivex.rxjava2:rxjava:$deps.rxjava"
-    implementation "io.reactivex.rxjava2:rxandroid:$deps.rxandroid"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$deps.adapter_rxjava"
-    implementation "com.squareup.retrofit2:converter-gson:$deps.converter_gson"
+    implementation deps["retrofit"]
+    implementation deps["rxjava"]
+    implementation deps["rxandroid"]
+    implementation deps["adapter_rxjava"]
+    implementation deps["converter_gson"]
 
     //防抖
     implementation "com.jakewharton.rxbinding2:rxbinding:$deps.rxbinding"

@@ -1,14 +1,15 @@
-package com.youshu.retrofit_module;
+package com.v.module_retrofit;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.youshu.retrofit_module.api.AccessApi;
-import com.youshu.retrofit_module.bean.JavaBean;
-import com.youshu.retrofit_module.http.RetrofitConfig;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.v.module_retrofit.api.AccessApi;
+import com.v.module_retrofit.bean.JavaBean;
+import com.v.module_retrofit.http.RetrofitConfig;
 
 import retrofit2.Call;
 import retrofit2.Callback;

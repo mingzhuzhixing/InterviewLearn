@@ -1,4 +1,4 @@
-package com.youshu.retrofit_module;
+package com.v.module_retrofit;
 
 import org.junit.Test;
 

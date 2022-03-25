@@ -1,6 +1,7 @@
-package com.youshu.retrofit_module;
+package com.v.module_retrofit;
 
 import android.content.Context;
+
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -20,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.youshu.retrofit_module.test", appContext.getPackageName());
+        assertEquals("com.v.module_retrofit.test", appContext.getPackageName());
     }
 }

@@ -1,6 +1,4 @@
-package com.youshu.retrofit_module.http;
-
-import com.youshu.retrofit_module.http.FastJsonConverterFactory;
+package com.v.module_retrofit.http;
 
 import java.util.concurrent.TimeUnit;
 

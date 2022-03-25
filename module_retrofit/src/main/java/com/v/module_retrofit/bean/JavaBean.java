@@ -1,4 +1,4 @@
-package com.youshu.retrofit_module.bean;
+package com.v.module_retrofit.bean;
 
 import java.util.List;
 

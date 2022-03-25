@@ -1,6 +1,7 @@
-package com.youshu.retrofit_module.api;
+package com.v.module_retrofit.api;
 
-import com.youshu.retrofit_module.bean.JavaBean;
+
+import com.v.module_retrofit.bean.JavaBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

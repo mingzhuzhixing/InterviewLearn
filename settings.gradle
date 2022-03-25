@@ -1,5 +1,5 @@
 include ':module_widget'
-include ':retrofit_module'
+include ':module_retrofit'
 include ':network_module'
 include ':module_eventbus'
 include ':design_pattern_module'
