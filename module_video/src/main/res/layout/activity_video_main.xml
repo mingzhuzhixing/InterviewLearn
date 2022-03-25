@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--  视频部分  -->
+    <com.v.module_video.view.LiveVideoView
+        android:id="@+id/rl_video"
+        android:layout_width="match_parent"
+        android:layout_height="211dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/rl_video">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="聊天" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="老师" />
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_tab" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/purple_200"
+        android:text="公告"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_tab" />
+
+
+    <TextView
+        android:id="@+id/tv_all_screen"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="全屏"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_half_animation"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:text="半屏动画"
+        app:layout_constraintRight_toLeftOf="@+id/tv_all_screen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_all_animation"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="全屏屏动画"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_all_screen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tiepian_ad"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="350dp"
+        android:background="@color/purple_200"
+        android:text="贴片广告"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tuiguang_ad"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="450dp"
+        android:background="@color/purple_200"
+        android:text="推广商品"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_animation"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="350dp"
+        android:background="@color/purple_200"
+        android:text="礼物动画\n礼物动画\n礼物动画\n礼物动画\n礼物动画"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_reply_msg"
+        android:layout_width="190dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/purple_500"
+        android:text="回复消息\n回复消息\n回复消息\n回复消息\n回复消息"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <!-- 加载半屏贴片广告内容容器 webview-->
+    <FrameLayout
+        android:id="@+id/webfragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ccD81B60"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/rl_video">
+
+        <FrameLayout
+            android:id="@+id/WebFragment_container_inner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_dialog_close"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="right"
+            android:src="@mipmap/ic_launcher" />
+    </FrameLayout>
+
+    <!-- 横屏加载半屏贴片广告内容容器 webview-->
+    <FrameLayout
+        android:id="@+id/fl_allsceen_featurecontainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#cc03DAC5"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

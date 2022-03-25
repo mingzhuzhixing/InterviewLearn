@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--  视频部分  -->
+    <FrameLayout
+        android:id="@+id/fl_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:foregroundGravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#3303DAC5"
+        android:gravity="center"
+        android:text="弹幕位置弹幕位置弹幕位置弹幕位置弹幕位置弹幕位置"
+        android:textColor="@color/white" />
+
+    <com.v.module_video.view.MediaControllerView
+        android:id="@+id/controller_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>
