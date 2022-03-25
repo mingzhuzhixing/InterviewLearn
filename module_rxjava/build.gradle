@@ -1,4 +1,6 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+}
 
 android {
     compileSdkVersion androidV.compileSdkVersion
@@ -12,6 +14,12 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    compileOptions.encoding = "utf-8"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,14 +31,19 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
 
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"
-    implementation 'org.xutils:xutils:3.3.36'
+    //为什么rxjava使用还需要导入rxandroid包？
+    //因为使用rxjava中的功能不全，大概只有80%，而剩余的20%需要rxandroid补全。比如：AndroidSchedulers.mainThread()就是rxandroid中的内容
+    implementation deps["retrofit"]
+    implementation deps["rxjava"]
+    implementation deps["rxandroid"]
+    implementation deps["adapter_rxjava"]
+    implementation deps["converter_gson"]
 
-    api project(":module_retrofit")
-    api project(":module_rxjava")
+    //防抖
+    implementation "com.jakewharton.rxbinding2:rxbinding:$deps.rxbinding"
 }
