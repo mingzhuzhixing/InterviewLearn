@@ -1,10 +1,11 @@
-package com.youshu.dagger_module;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.v.module_dagger;
 
 import android.os.Bundle;
 
-import com.youshu.dagger_module.http.HttpRetrofit;
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import com.v.module_dagger.http.HttpRetrofit;
 
 import javax.inject.Inject;
 
@@ -17,7 +18,5 @@ public class DaggerMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger_main);
-
-
     }
 }

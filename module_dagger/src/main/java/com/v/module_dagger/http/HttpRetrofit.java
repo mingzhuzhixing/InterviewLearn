@@ -1,4 +1,4 @@
-package com.youshu.dagger_module.http;
+package com.v.module_dagger.http;
 
 import android.util.Log;
 

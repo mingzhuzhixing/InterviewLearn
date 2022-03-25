@@ -1,7 +1,7 @@
-package com.youshu.dagger_module.component;
+package com.v.module_dagger.component;
 
-import com.youshu.dagger_module.DaggerMainActivity;
-import com.youshu.dagger_module.module.HttpRetrofitModule;
+import com.v.module_dagger.DaggerMainActivity;
+import com.v.module_dagger.module.HttpRetrofitModule;
 
 import dagger.Component;
 

@@ -1,4 +1,4 @@
-package com.youshu.dagger_module;
+package com.v.module_dagger;
 
 import org.junit.Test;
 

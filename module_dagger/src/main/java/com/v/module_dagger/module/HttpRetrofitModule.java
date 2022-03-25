@@ -1,6 +1,7 @@
-package com.youshu.dagger_module.module;
+package com.v.module_dagger.module;
 
-import com.youshu.dagger_module.http.HttpRetrofit;
+
+import com.v.module_dagger.http.HttpRetrofit;
 
 import dagger.Module;
 import dagger.Provides;
