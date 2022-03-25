@@ -1,4 +1,4 @@
-package com.v.database_module;
+package com.v.module_database;
 
 import java.util.List;
 

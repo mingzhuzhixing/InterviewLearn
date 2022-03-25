@@ -1,11 +1,11 @@
-package com.v.database_module;
+package com.v.module_database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.v.database_module.annotion.DbFiled;
-import com.v.database_module.annotion.DbTable;
+import com.v.module_database.annotion.DbFiled;
+import com.v.module_database.annotion.DbTable;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
-package com.v.database_module;
+package com.v.module_database;
 
-import com.v.database_module.annotion.DbFiled;
-import com.v.database_module.annotion.DbTable;
+import com.v.module_database.annotion.DbFiled;
+import com.v.module_database.annotion.DbTable;
 
 /**
  * Class description here
