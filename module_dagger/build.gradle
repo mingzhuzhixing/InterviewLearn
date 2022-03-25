@@ -34,6 +34,6 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     //dagger2 api
-    implementation "com.google.dagger:dagger:$deps.dagger"
-    annotationProcessor "com.google.dagger:dagger-compiler:$deps.dagger_compiler"
+    implementation deps["dagger"]
+    annotationProcessor deps["dagger_compiler"]
 }

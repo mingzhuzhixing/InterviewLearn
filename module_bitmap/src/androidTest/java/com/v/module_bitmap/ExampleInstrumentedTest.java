@@ -1,4 +1,4 @@
-package com.v.bitmap_module;
+package com.v.module_bitmap;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.v.bitmap_module.test", appContext.getPackageName());
+        assertEquals("com.v.module_bitmap.test", appContext.getPackageName());
     }
 }

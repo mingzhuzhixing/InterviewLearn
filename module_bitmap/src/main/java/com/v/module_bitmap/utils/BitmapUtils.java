@@ -1,4 +1,4 @@
-package com.v.bitmap_module.utils;
+package com.v.module_bitmap.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

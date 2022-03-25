@@ -1,6 +1,4 @@
-package com.v.bitmap_module;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.v.module_bitmap;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -10,9 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.v.bitmap_module.utils.BitmapHelper;
+import com.v.module_bitmap.utils.BitmapHelper;
 import com.v.module_glide.GlideUtils;
 
 import butterknife.BindView;

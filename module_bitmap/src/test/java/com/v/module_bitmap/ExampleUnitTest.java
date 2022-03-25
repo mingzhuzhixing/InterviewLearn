@@ -1,4 +1,4 @@
-package com.v.bitmap_module;
+package com.v.module_bitmap;
 
 import org.junit.Test;
 

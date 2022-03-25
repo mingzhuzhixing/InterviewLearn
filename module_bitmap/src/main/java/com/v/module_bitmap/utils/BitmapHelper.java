@@ -1,16 +1,12 @@
-package com.v.bitmap_module.utils;
+package com.v.module_bitmap.utils;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 

@@ -41,7 +41,7 @@ dependencies {
     api project(":module_eventbus")
     api project(":network_module")
     api project(":module_database")
-    api project(":bitmap_module")
+    api project(":module_bitmap")
     api project(":module_recyclerview")
     api project(":module_handler")
 }
