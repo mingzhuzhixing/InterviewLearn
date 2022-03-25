@@ -1,7 +1,6 @@
 package com.v.interviewlearn;
-
-import com.v.dialog_module.toast.ToastUtils;
 import com.v.module_base.BaseApplication;
+import com.v.module_dialog.toast.ToastUtils;
 import com.youshu.network_module.HttpHelper;
 import com.youshu.network_module.xutils.XutilsProcessor;
 
