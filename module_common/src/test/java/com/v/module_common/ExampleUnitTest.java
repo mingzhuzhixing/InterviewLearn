@@ -1,4 +1,4 @@
-package com.v.common_module;
+package com.v.module_common;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.v.common_module.autoserviceLoader;
+package com.v.module_common.autoserviceLoader;
 
 import java.util.ServiceLoader;
 

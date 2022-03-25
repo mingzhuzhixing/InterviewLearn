@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.google.auto.service.AutoService;
-import com.v.common_module.autoservice.IDialogService;
+import com.v.module_common.autoservice.IDialogService;
 import com.v.module_dialog.DialogMainActivity;
 
 /**

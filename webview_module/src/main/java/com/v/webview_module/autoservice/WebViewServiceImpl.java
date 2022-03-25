@@ -6,7 +6,7 @@ import android.content.Intent;
 import androidx.fragment.app.Fragment;
 
 import com.google.auto.service.AutoService;
-import com.v.common_module.autoservice.IWebViewService;
+import com.v.module_common.autoservice.IWebViewService;
 import com.v.webview_module.WebViewMainActivity;
 import com.v.webview_module.constant.Constants;
 import com.v.webview_module.fragment.WebViewFragment;

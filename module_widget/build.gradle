@@ -34,7 +34,7 @@ dependencies {
     implementation deps["constraint_layout"]
     implementation deps["material"]
 
-    implementation project(":common_module")
+    implementation project(":module_common")
     implementation project(":module_utils")
 
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'

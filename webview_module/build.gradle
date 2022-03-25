@@ -39,6 +39,6 @@ dependencies {
     implementation deps["constraint_layout"]
     implementation deps["material"]
 
-    api project(":common_module")
+    api project(":module_common")
     implementation project(":module_recyclerview")
 }

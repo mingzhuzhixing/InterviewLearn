@@ -1,4 +1,4 @@
-package com.v.common_module;
+package com.v.module_common;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.v.common_module.test", appContext.getPackageName());
+        assertEquals("com.v.module_common.test", appContext.getPackageName());
     }
 }

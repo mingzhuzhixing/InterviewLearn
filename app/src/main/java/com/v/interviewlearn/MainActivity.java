@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.v.common_module.autoservice.IDialogService;
-import com.v.common_module.autoservice.IWebViewService;
-import com.v.common_module.autoserviceLoader.AutoServiceLoader;
 import com.v.event_dispatch.EventDispatchActivity;
 import com.v.module_bitmap.BitmapMainActivity;
+import com.v.module_common.autoservice.IDialogService;
+import com.v.module_common.autoservice.IWebViewService;
+import com.v.module_common.autoserviceLoader.AutoServiceLoader;
 import com.v.module_database.DatabaseMainActivity;
 import com.v.module_eventbus.EventBusMainActivity;
 import com.v.module_glide.GlideMainActivity;

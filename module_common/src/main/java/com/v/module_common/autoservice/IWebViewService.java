@@ -1,4 +1,4 @@
-package com.v.common_module.autoservice;
+package com.v.module_common.autoservice;
 
 import android.content.Context;
 
