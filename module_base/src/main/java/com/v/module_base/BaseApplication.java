@@ -11,7 +11,7 @@ import com.v.module_base.callback.EmptyCallback;
 import com.v.module_base.callback.ErrorCallback;
 import com.v.module_base.callback.LoadingCallback;
 import com.v.module_base.callback.TimeoutCallback;
-import com.v.thread_module.thread.ThreadPool;
+import com.v.module_thread.thread.ThreadPool;
 
 public class BaseApplication extends Application {
 
