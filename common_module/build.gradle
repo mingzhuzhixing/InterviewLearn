@@ -38,7 +38,7 @@ dependencies {
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
 
     api project(":module_base")
-    api project(":eventbus_module")
+    api project(":module_eventbus")
     api project(":network_module")
     api project(":database_module")
     api project(":bitmap_module")

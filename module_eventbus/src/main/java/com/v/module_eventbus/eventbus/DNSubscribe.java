@@ -1,4 +1,4 @@
-package com.youshu.eventbus_module.eventbus;
+package com.v.module_eventbus.eventbus;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

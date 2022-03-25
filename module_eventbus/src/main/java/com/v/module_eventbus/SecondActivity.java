@@ -1,12 +1,12 @@
-package com.youshu.eventbus_module;
+package com.v.module_eventbus;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
-import com.youshu.eventbus_module.bean.Friend;
-import com.youshu.eventbus_module.eventbus.DNEventbus;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.v.module_eventbus.bean.Friend;
+import com.v.module_eventbus.eventbus.DNEventbus;
 
 public class SecondActivity extends AppCompatActivity {
 

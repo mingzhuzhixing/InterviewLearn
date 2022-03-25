@@ -1,6 +1,7 @@
-package com.youshu.eventbus_module;
+package com.v.module_eventbus;
 
 import android.content.Context;
+
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -20,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.youshu.eventbus_module.test", appContext.getPackageName());
+        assertEquals("com.v.module_eventbus.test", appContext.getPackageName());
     }
 }

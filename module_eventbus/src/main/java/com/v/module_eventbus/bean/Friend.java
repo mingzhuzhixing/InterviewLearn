@@ -1,4 +1,4 @@
-package com.youshu.eventbus_module.bean;
+package com.v.module_eventbus.bean;
 
 public class Friend {
     private String name;

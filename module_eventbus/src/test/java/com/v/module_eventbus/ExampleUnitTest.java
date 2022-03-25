@@ -1,4 +1,4 @@
-package com.youshu.eventbus_module;
+package com.v.module_eventbus;
 
 import org.junit.Test;
 
