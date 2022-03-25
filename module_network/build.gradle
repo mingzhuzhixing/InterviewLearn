@@ -10,7 +10,7 @@ android {
         minSdkVersion androidV.minSdkVersion
         targetSdkVersion androidV.targetSdkVersion
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -20,28 +20,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation deps["appcompat_x"]
-    implementation deps["constraint_layout"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
 
-    //autoservice
-    api deps["auto_service"]
-    annotationProcessor deps["auto_service"]
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"
+    implementation 'org.xutils:xutils:3.3.36'
 
-    api project(":module_base")
-    api project(":module_eventbus")
-    api project(":module_network")
-    api project(":module_database")
-    api project(":module_bitmap")
-    api project(":module_recyclerview")
-    api project(":module_handler")
+    api project(":module_retrofit")
+    api project(":module_rxjava")
 }

@@ -1,6 +1,6 @@
 include ':module_widget'
 include ':module_retrofit'
-include ':network_module'
+include ':module_network'
 include ':module_eventbus'
 include ':design_pattern_module'
 include ':arithmetic_module'

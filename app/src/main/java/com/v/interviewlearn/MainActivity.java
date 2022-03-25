@@ -24,7 +24,8 @@ import com.v.module_telephony.TelephonyManagerActivity;
 import com.v.module_textview.TextviewMainActivity;
 import com.v.module_widget.CustomViewMainActivity;
 import com.v.video_module.VideoMainActivity;
-import com.youshu.network_module.NetworkMainActivity;
+
+import comv.module_network.NetworkMainActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
