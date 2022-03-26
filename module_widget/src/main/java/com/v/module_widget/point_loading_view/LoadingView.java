@@ -7,6 +7,9 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.widget.RelativeLayout;
 
 import com.v.module_utils.DensityUtils;
@@ -23,7 +26,7 @@ public class LoadingView extends RelativeLayout {
     private CircleView mLeftView, mMiddleView, mRightView;
     //移动距离
     private int mTranslationDistance = 20;
-    private final int DURATION_TIME = 350;
+    private final int DURATION_TIME = 300;
 
     public LoadingView(Context context) {
         this(context, null);
@@ -40,7 +43,7 @@ public class LoadingView extends RelativeLayout {
 
         mLeftView = getCircleView(context, Color.RED);
         mMiddleView = getCircleView(context, Color.BLUE);
-        mRightView = getCircleView(context, Color.YELLOW);
+        mRightView = getCircleView(context, Color.GREEN);
 
         addView(mLeftView);
         addView(mRightView);
@@ -73,6 +76,7 @@ public class LoadingView extends RelativeLayout {
 
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(DURATION_TIME);
+        animatorSet.setInterpolator(new DecelerateInterpolator(2f));
         animatorSet.playTogether(leftAnimator, rightAnimator);
         animatorSet.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -92,6 +96,7 @@ public class LoadingView extends RelativeLayout {
 
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(DURATION_TIME);
+        animatorSet.setInterpolator(new AccelerateInterpolator(2f));
         animatorSet.playTogether(leftAnimator, rightAnimator);
         animatorSet.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -116,11 +121,14 @@ public class LoadingView extends RelativeLayout {
                 view.exchangeColor(Color.BLUE);
                 break;
             case Color.BLUE:
-                view.exchangeColor(Color.YELLOW);
+                view.exchangeColor(Color.GREEN);
                 break;
-            case Color.YELLOW:
+            case Color.GREEN:
                 view.exchangeColor(Color.RED);
                 break;
         }
     }
+
+    //优化。。。。。
+    //动画释放
 }
