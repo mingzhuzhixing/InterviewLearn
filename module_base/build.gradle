@@ -39,6 +39,5 @@ dependencies {
     api deps["butterknife"]
     annotationProcessor deps["butterknife_compiler"]
 
-    api project(":module_thread")
     api project(":module_resource")
 }

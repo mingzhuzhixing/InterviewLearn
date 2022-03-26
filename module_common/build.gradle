@@ -44,4 +44,5 @@ dependencies {
     api project(":module_bitmap")
     api project(":module_recyclerview")
     api project(":module_handler")
+    api project(":module_thread")
 }

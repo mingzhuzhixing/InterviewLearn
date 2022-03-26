@@ -1,4 +1,4 @@
-package com.v.async_task_module;
+package com.v.module_thread.async_task;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
@@ -7,10 +7,13 @@ import android.widget.ProgressBar;
 
 import java.net.URL;
 
+/**
+ * AsyncTask 异步任务
+ */
 public class MyAsyncTask extends AsyncTask<URL, Integer, Long> {
     private final String TAG = this.getClass().getSimpleName();
 
-    private ProgressBar mProgressBar;
+    private final ProgressBar mProgressBar;
 
     public MyAsyncTask(ProgressBar progressBar) {
         this.mProgressBar = progressBar;
@@ -36,7 +39,7 @@ public class MyAsyncTask extends AsyncTask<URL, Integer, Long> {
             if (isCancelled()) {
                 return null;
             }
-            SystemClock.sleep(500);
+            SystemClock.sleep(300);
             publishProgress(i);//当调用此方法时，系统才会调用onProgressUpdate方法，参数即是onProgressUpdate的参数
         }
 

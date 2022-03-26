@@ -2,4 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v.module_thread">
 
+    <application>
+        <activity
+            android:name=".ThreadMainActivity"
+            android:exported="true" />
+        <activity android:name=".async_task.AsyncTaskActivity" />
+    </application>
+
 </manifest>

@@ -22,6 +22,7 @@ import com.v.module_retrofit.RetrofitMainActivity;
 import com.v.module_rxjava.RxJavaMainActivity;
 import com.v.module_telephony.TelephonyManagerActivity;
 import com.v.module_textview.TextviewMainActivity;
+import com.v.module_thread.ThreadMainActivity;
 import com.v.module_widget.CustomViewMainActivity;
 import com.v.video_module.VideoMainActivity;
 
@@ -115,6 +116,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void retrofitFrame(View view) {
         startActivity(new Intent(this, RetrofitMainActivity.class));
+    }
+
+    /**
+     * 线程(Thread)/异步
+     */
+    public void threadClick(View view) {
+        startActivity(new Intent(this, ThreadMainActivity.class));
     }
 
     /**

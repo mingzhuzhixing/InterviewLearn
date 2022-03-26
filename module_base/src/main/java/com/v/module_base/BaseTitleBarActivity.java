@@ -1,6 +1,8 @@
 package com.v.module_base;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -75,6 +77,12 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * startActivity
+     */
+    public void startActivity(Class zclass) {
+        startActivity(new Intent(this, zclass));
+    }
 
     @Override
     protected void onDestroy() {

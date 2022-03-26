@@ -61,6 +61,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="threadClick"
+            android:text="线程(Thread)/异步"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="handlerSignal"
             android:text="Handler通信机制"
             android:textAllCaps="false" />
