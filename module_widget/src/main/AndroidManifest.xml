@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".draw_water_view.MessageBubbleViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".point_loading_view.LoadingViewActivity"
             android:exported="true" />
         <activity

@@ -99,4 +99,11 @@
         android:onClick="loadingViewClick"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="消息气泡拖拽view"
+        android:onClick="messageBubbleViewClick"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

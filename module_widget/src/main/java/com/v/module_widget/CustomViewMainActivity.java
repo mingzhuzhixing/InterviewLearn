@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
+import com.v.module_widget.draw_water_view.MessageBubbleViewActivity;
 import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.like_view.KsgLikeViewActivity;
 import com.v.module_widget.point_loading_view.LoadingViewActivity;
@@ -125,5 +126,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void loadingViewClick(View view) {
         startActivity(new Intent(this, LoadingViewActivity.class));
+    }
+
+    /**
+     * 消息气泡拖拽view
+     */
+    public void messageBubbleViewClick(View view) {
+        startActivity(new Intent(this, MessageBubbleViewActivity.class));
     }
 }
