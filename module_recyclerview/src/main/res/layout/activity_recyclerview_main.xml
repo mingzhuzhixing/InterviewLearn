@@ -41,4 +41,11 @@
         android:onClick="waterfallFlowClick"
         android:text="瀑布流"
         android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="swipeRefreshLayoutClick"
+        android:text="自定义下拉刷新,上拉加载"
+        android:textAllCaps="false" />
 </LinearLayout>
