@@ -1,10 +1,12 @@
 package com.v.interviewlearn;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,12 +25,14 @@ import com.v.module_rxjava.RxJavaMainActivity;
 import com.v.module_telephony.TelephonyManagerActivity;
 import com.v.module_textview.TextviewMainActivity;
 import com.v.module_thread.ThreadMainActivity;
+import com.v.module_utils.PackageUtils;
 import com.v.module_widget.CustomViewMainActivity;
 import com.v.video_module.VideoMainActivity;
 
 import comv.module_network.NetworkMainActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     private TextView mTextView;
 
     @Override
@@ -214,5 +218,23 @@ public class MainActivity extends AppCompatActivity {
      */
     public void customViewClick(View view) {
         startActivity(new Intent(this, CustomViewMainActivity.class));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG,"onStop():"+ PackageUtils.isApplicationBroughtToBackground(this));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG,"onPause():"+ PackageUtils.isApplicationBroughtToBackground(this));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG,"onDestroy():"+ PackageUtils.isApplicationBroughtToBackground(this));
     }
 }

@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".flow_layout.FlowlayoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".draw_water_view.MessageBubbleViewActivity"
             android:exported="true" />
         <activity

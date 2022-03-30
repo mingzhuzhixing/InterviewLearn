@@ -106,4 +106,11 @@
         android:onClick="messageBubbleViewClick"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义自动换行功能的LinearLayout"
+        android:onClick="flowlayoutClick"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

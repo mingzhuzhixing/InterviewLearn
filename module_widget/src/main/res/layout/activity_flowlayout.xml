@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".flow_layout.FlowlayoutActivity">
+
+    <com.v.module_widget.flow_layout.Flowlayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:paddingTop="@dimen/y40"
+        android:paddingRight="@dimen/x42"
+        android:paddingBottom="@dimen/y40"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y175"
+            android:layout_marginLeft="@dimen/x42"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_collection"
+                android:layout_width="@dimen/x85"
+                android:layout_height="@dimen/y85"
+                android:src="@drawable/more_collect_icon" />
+
+            <TextView
+                android:id="@+id/tv_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:text="收藏"
+                android:textColor="#808080"
+                android:textSize="@dimen/y22" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_change_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x100"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x85"
+                android:layout_height="@dimen/y85"
+                android:src="@drawable/player_icon_fontsize" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:text="调节字号"
+                android:textColor="#808080"
+                android:textSize="@dimen/y22" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x100"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_plan"
+                android:layout_width="@dimen/x85"
+                android:layout_height="@dimen/y85"
+                android:src="@drawable/play_icon_addlearn" />
+
+            <TextView
+                android:id="@+id/tv_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:textColor="#808080"
+                android:textSize="@dimen/y22"
+                android:text="加入学习" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_projection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x100"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/x85"
+                android:layout_height="@dimen/y85"
+                android:src="@drawable/tanc_touping_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:text="投屏"
+                android:textColor="#808080"
+                android:textSize="@dimen/y22" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_backstage_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x42"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_backstage_icon"
+                android:layout_width="@dimen/x85"
+                android:layout_height="@dimen/y85"
+                android:src="@drawable/tanc_houtaibofang_g_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:text="后台播放"
+                android:textColor="#808080"
+                android:textSize="@dimen/y22" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_change_video_or_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x100"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/x85"
+                android:layout_height="@dimen/y85"
+                android:src="@drawable/tanc_qiehuanyinpin_icon" />
+
+            <TextView
+                android:id="@+id/tv_change_video_or_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:text="切换音频"
+                android:textColor="#808080"
+                android:textSize="@dimen/y22" />
+        </LinearLayout>
+
+    </com.v.module_widget.flow_layout.Flowlayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
