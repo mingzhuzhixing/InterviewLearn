@@ -12,6 +12,8 @@ import com.v.module_widget.draw_water_view.MessageBubbleViewActivity;
 import com.v.module_widget.flow_layout.FlowlayoutActivity;
 import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.like_view.KsgLikeViewActivity;
+import com.v.module_widget.love_layout.LoveLayout;
+import com.v.module_widget.love_layout.LoveLayoutActivity;
 import com.v.module_widget.point_loading_view.LoadingViewActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
@@ -141,5 +143,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void flowlayoutClick(View view) {
         startActivity(new Intent(this, FlowlayoutActivity.class));
+    }
+
+    /**
+     * 点赞效果
+     */
+    public void loveLayoutClick(View view) {
+        startActivity(new Intent(this, LoveLayoutActivity.class));
     }
 }

@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".love_layout.LoveLayoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".flow_layout.FlowlayoutActivity"
             android:exported="true" />
         <activity
