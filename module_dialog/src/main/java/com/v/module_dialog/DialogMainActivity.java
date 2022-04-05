@@ -38,6 +38,9 @@ import com.v.module_dialog.fragment.CustomDialogFragment;
 import com.v.module_dialog.popup.CustomPop;
 import com.v.module_dialog.popup.CustomPopupWindow;
 import com.v.module_dialog.snackbar.SnackBarUtils;
+import com.v.module_dialog.system_dialog.GeneralConstants;
+import com.v.module_dialog.system_dialog.GeneralSystemDialog;
+import com.v.module_dialog.system_dialog.ShareChannelBean;
 import com.v.module_dialog.toast.ToastUtils;
 
 import java.util.ArrayList;
@@ -76,6 +79,7 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
         mBinding.tv4.setOnClickListener(this);
         mBinding.tv51.setOnClickListener(this);
         mBinding.tv52.setOnClickListener(this);
+        mBinding.tv53.setOnClickListener(this);
         mBinding.tv61.setOnClickListener(this);
         mBinding.tv62.setOnClickListener(this);
         mBinding.tv7.setOnClickListener(this);
@@ -137,6 +141,8 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
             showDialogFragment();
         } else if (id == R.id.tv_52) {
             showDialogFragment2();
+        } else if (id == R.id.tv_53) {
+            showDialogFragment3();
         } else if (id == R.id.tv_61) {
             showCustomDialog2();
         } else if (id == R.id.tv_62) {
@@ -285,8 +291,8 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
 
     private void showDialogFragment2() {
         final List<DialogBean> list = new ArrayList<>();
-        for(int a=0 ; a<20 ; a++){
-            DialogBean dialogBean = new DialogBean("ooo","杨充","title");
+        for (int a = 0; a < 20; a++) {
+            DialogBean dialogBean = new DialogBean("ooo", "杨充", "title");
             list.add(dialogBean);
         }
 
@@ -329,6 +335,63 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
                 .show();
     }
 
+    private GeneralSystemDialog mGeneralSystemDialog;
+
+    private void showDialogFragment3() {
+        List<ShareChannelBean> featureList = new ArrayList<>();
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_COLLECT, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_DOWNLOAD, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_INTRODUCTION, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_TO_A_FRIEND, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_CLOCK_IN_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_CLOCK_IN_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_SIGN_IN_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }));
+
+//        mGeneralSystemDialog = new GeneralSystemDialog(this, featureList);
+        mGeneralSystemDialog = new GeneralSystemDialog(this, featureList, 1, 4);
+        mGeneralSystemDialog.show();
+    }
 
     private void showCustomDialog() {
         final List<String> names = new ArrayList<>();
@@ -351,7 +414,7 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
     private void showCustomBottomDialog() {
         new CustomBottomDialog(DialogMainActivity.this)
                 .title("这个是标题")
-                .setCancel(true,"取消选择")
+                .setCancel(true, "取消选择")
                 .orientation(CustomBottomDialog.VERTICAL)
                 .inflateMenu(R.menu.menu_share, new OnItemClickListener() {
                     @Override
@@ -367,7 +430,7 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
      * 这个位置可以自定义的，上下左右都行，很灵活
      */
     private void showPopupWindow1() {
-        View contentView = LayoutInflater.from(this).inflate(R.layout.pop_layout,null);
+        View contentView = LayoutInflater.from(this).inflate(R.layout.pop_layout, null);
         //处理popWindow 显示内容,自定义布局
         handleLogic(contentView);
         //处理popWindow 显示内容,recycleView
@@ -396,7 +459,7 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
                 //创建弹窗
                 .create()
                 //传入x，y值位置展示
-                .showAsDropDown(mBinding.tv33,0,10);
+                .showAsDropDown(mBinding.tv33, 0, 10);
     }
 
 
@@ -406,20 +469,21 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
                         .setView(R.layout.view_pop_custom)
                         .setBgDarkAlpha(0.5f)
                         .create();
-        popWindow .showAsDropDown(mBinding.tv33,0,  - (mBinding.tv33.getHeight() + popWindow.getHeight()));
+        popWindow.showAsDropDown(mBinding.tv33, 0, -(mBinding.tv33.getHeight() + popWindow.getHeight()));
         //popWindow.showAtLocation(mButton1, Gravity.NO_GRAVITY,0,0);
     }
 
 
     /**
      * 处理弹出显示内容、点击事件等逻辑
-     * @param contentView           view
+     *
+     * @param contentView view
      */
-    private void handleLogic(View contentView){
+    private void handleLogic(View contentView) {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(popWindow!=null){
+                if (popWindow != null) {
                     popWindow.dismiss();
                 }
                 String showContent = "";

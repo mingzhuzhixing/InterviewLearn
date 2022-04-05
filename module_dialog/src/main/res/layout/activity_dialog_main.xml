@@ -151,6 +151,14 @@
                 android:padding="10dp"
                 android:text="5.2 自定义弹窗dialogFragment，填充recyclerView" />
 
+            <TextView
+                android:id="@+id/tv_53"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:padding="10dp"
+                android:text="5.3 自定义底部弹框的dialog" />
 
             <LinearLayout
                 android:layout_width="match_parent"

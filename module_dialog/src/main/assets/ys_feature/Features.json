@@ -1,0 +1,148 @@
+{
+  "style": {
+    "text_size": "11",
+    "text_color": "#808080"
+  },
+  "data": [
+    {
+      "type": 7,
+      "type_name": "收藏",
+      "name": "收藏",
+      "icon": "more_collect_icon",
+      "sub_icon": "more_collect_click_icon"
+    },
+    {
+      "type": 102,
+      "type_name": "下载",
+      "name": "下载",
+      "icon": "tanc_xiazai_icon",
+      "sub_icon": ""
+    },
+    {
+      "type": 103,
+      "type_name": "内容介绍",
+      "name": "内容介绍",
+      "icon": "tanc_neirongjies_icon",
+      "sub_icon": "icon_content"
+    },
+    {
+      "type": 104,
+      "type_name": "送给好友",
+      "name": "送给好友",
+      "icon": "tanc_songgeihaoyou_icon",
+      "sub_icon": "icon_gift"
+    },
+    {
+      "type": 105,
+      "type_name": "打卡日历",
+      "name": "打卡日历",
+      "icon": "tanc_dakarili_icon",
+      "sub_icon": "icon_date"
+    },
+    {
+      "type": 106,
+      "type_name": "签到日历",
+      "name": "签到日历",
+      "icon": "tanc_dakarili_icon",
+      "sub_icon": "icon_date"
+    },
+    {
+      "type": 107,
+      "type_name": "学习日历",
+      "name": "学习日历",
+      "icon": "tanc_dakarili_icon",
+      "sub_icon": "icon_date"
+    },
+    {
+      "type": 8,
+      "type_name": "加入学习",
+      "name": "加入学习",
+      "icon": "icon_addlearn",
+      "sub_icon": "icon_addlearn"
+    },
+    {
+      "type": 9,
+      "type_name": "移除学习",
+      "name": "移除学习",
+      "icon": "tanc_yichuxuexi_icon",
+      "sub_icon": "icon_remove"
+    },
+    {
+      "type": 109,
+      "type_name": "再学一遍",
+      "name": "再学一遍",
+      "icon": "icon_addlearn",
+      "sub_icon": "icon_addlearn"
+    },
+    {
+      "type": 110,
+      "type_name": "调节字号",
+      "name": "调节字号",
+      "icon": "player_icon_fontsize",
+      "sub_icon": ""
+    },
+    {
+      "type": 111,
+      "type_name": "班级群",
+      "name": "班级群",
+      "icon": "icon_classgroup",
+      "sub_icon": "icon_classgroup"
+    },
+    {
+      "type": 112,
+      "type_name": "打卡规则",
+      "name": "打卡规则",
+      "icon": "icon_rule",
+      "sub_icon": "icon_rule"
+    },
+    {
+      "type": 113,
+      "type_name": "共读书单",
+      "name": "共读书单",
+      "icon": "icon_booklist",
+      "sub_icon": "icon_booklist"
+    },
+    {
+      "type": 114,
+      "type_name": "小助理",
+      "name": "小助理",
+      "icon": "ys_icon_live_tabbar_kefu",
+      "sub_icon": "ys_icon_live_tabbar_kefu"
+    },
+    {
+      "type": 115,
+      "type_name": "只看老师",
+      "name": "只看老师",
+      "icon": "ys_icon_live_tabbar_teacher_on",
+      "sub_icon": "ys_icon_live_tabbar_teacher_on"
+    },
+    {
+      "type": 116,
+      "type_name": "送礼物",
+      "name": "送礼物",
+      "icon": "ys_icon_live_tabbar_gift",
+      "sub_icon": "ys_icon_live_tabbar_gift"
+    },
+    {
+      "type": 117,
+      "type_name": "奖学金",
+      "name": "奖学金",
+      "icon": "icon_scholarship",
+      "sub_icon": "icon_scholarship"
+    },
+    {
+      "type": 118,
+      "type_name": "课程提醒",
+      "name": "课程提醒",
+      "icon": "tanc_shijian_icon",
+      "sub_icon": "tanc_shijian_icon"
+    },
+    {
+      "type": 119,
+      "type_name": "分享",
+      "name": "分享",
+      "icon": "ys_icon_live_tabbar_share",
+      "sub_icon": "ys_icon_live_tabbar_share"
+    }
+  ]
+}

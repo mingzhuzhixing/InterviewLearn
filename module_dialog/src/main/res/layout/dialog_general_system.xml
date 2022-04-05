@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bg_white_top_r10"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y40"
+        android:fadingEdge="none"
+        android:overScrollMode="never" />
+
+    <View
+        android:id="@+id/v_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y16"
+        android:layout_marginTop="@dimen/y38"
+        android:background="@color/text_f5f5f5" />
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        style="@style/P5_S30_4_4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y120"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/text_b3" />
+</LinearLayout>

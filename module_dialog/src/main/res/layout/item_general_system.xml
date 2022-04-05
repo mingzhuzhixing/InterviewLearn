@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x50"
+    android:paddingRight="@dimen/x50">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/x85"
+        android:layout_height="@dimen/y85"
+        android:src="@drawable/more_collect_icon" />
+
+    <TextView
+        android:id="@+id/tv_icon_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y15"
+        android:text="收藏"
+        android:textColor="#808080"
+        android:textSize="@dimen/y22" />
+</LinearLayout>
