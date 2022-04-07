@@ -80,6 +80,8 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
         mBinding.tv51.setOnClickListener(this);
         mBinding.tv52.setOnClickListener(this);
         mBinding.tv53.setOnClickListener(this);
+        mBinding.tv54.setOnClickListener(this);
+        mBinding.tv55.setOnClickListener(this);
         mBinding.tv61.setOnClickListener(this);
         mBinding.tv62.setOnClickListener(this);
         mBinding.tv7.setOnClickListener(this);
@@ -143,6 +145,10 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
             showDialogFragment2();
         } else if (id == R.id.tv_53) {
             showDialogFragment3();
+        } else if (id == R.id.tv_54) {
+            showDialogFragment4();
+        } else if (id == R.id.tv_55) {
+            showDialogFragment5();
         } else if (id == R.id.tv_61) {
             showCustomDialog2();
         } else if (id == R.id.tv_62) {
@@ -335,62 +341,200 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
                 .show();
     }
 
-    private GeneralSystemDialog mGeneralSystemDialog;
 
     private void showDialogFragment3() {
         List<ShareChannelBean> featureList = new ArrayList<>();
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_COLLECT, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dismissDialog3();
             }
         }));
 
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_DOWNLOAD, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dismissDialog3();
             }
         }));
 
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_INTRODUCTION, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dismissDialog3();
+            }
+        }));
 
+        if (mGeneralSystemDialog3 == null) {
+            mGeneralSystemDialog3 = new GeneralSystemDialog(this, featureList);
+        }
+        if (!mGeneralSystemDialog3.isShowing()) {
+            mGeneralSystemDialog3.show();
+        }
+    }
+
+    private GeneralSystemDialog mGeneralSystemDialog3;
+
+    private void dismissDialog3() {
+        if (mGeneralSystemDialog3.isShowing()) {
+            mGeneralSystemDialog3.dismiss();
+        }
+    }
+
+    private void showDialogFragment4() {
+        List<ShareChannelBean> featureList = new ArrayList<>();
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_COLLECT, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog4();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_DOWNLOAD, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog4();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_INTRODUCTION, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog4();
             }
         }));
 
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_TO_A_FRIEND, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dismissDialog4();
             }
         }));
 
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_CLOCK_IN_CALENDAR, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dismissDialog4();
             }
         }));
 
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_CLOCK_IN_CALENDAR, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dismissDialog4();
             }
         }));
 
         featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_SIGN_IN_CALENDAR, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dismissDialog4();
+            }
+        }));
 
+        if (mGeneralSystemDialog4 == null) {
+            mGeneralSystemDialog4 = new GeneralSystemDialog(this, featureList);
+        }
+        if (!mGeneralSystemDialog4.isShowing()) {
+            mGeneralSystemDialog4.show();
+        }
+    }
+
+    private GeneralSystemDialog mGeneralSystemDialog4;
+
+    private void dismissDialog4() {
+        if (mGeneralSystemDialog4.isShowing()) {
+            mGeneralSystemDialog4.dismiss();
+        }
+    }
+
+    private void showDialogFragment5() {
+        List<ShareChannelBean> featureList = new ArrayList<>();
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_COLLECT, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_DOWNLOAD, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_INTRODUCTION, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_TO_A_FRIEND, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_CLOCK_IN_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_CLOCK_IN_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_SIGN_IN_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_STUDY_CALENDAR, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_JOIN_LEARNING, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
+            }
+        }));
+
+        featureList.add(new ShareChannelBean(GeneralConstants.FEATURE_LEARN_IT_AGAIN, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog5();
             }
         }));
 
 //        mGeneralSystemDialog = new GeneralSystemDialog(this, featureList);
-        mGeneralSystemDialog = new GeneralSystemDialog(this, featureList, 1, 4);
-        mGeneralSystemDialog.show();
+        if (mGeneralSystemDialog5 == null) {
+            mGeneralSystemDialog5 = new GeneralSystemDialog(this, featureList, 1, 4);
+        }
+        if (!mGeneralSystemDialog5.isShowing()) {
+            mGeneralSystemDialog5.show();
+        }
+    }
+
+    private GeneralSystemDialog mGeneralSystemDialog5;
+
+    private void dismissDialog5() {
+        if (mGeneralSystemDialog5.isShowing()) {
+            mGeneralSystemDialog5.dismiss();
+        }
     }
 
     private void showCustomDialog() {

@@ -17,6 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.v.module_dialog.R;
+import com.v.module_recyclerview.decoration.GridItemCenterDecoration;
+import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
+import com.v.module_recyclerview.decoration.VerticalDividerItemDecoration;
+import com.v.module_utils.DensityUtils;
+import com.v.module_utils.ScreenUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -84,11 +89,25 @@ public class GeneralSystemDialog extends Dialog {
             GridLayoutManager layoutManager = new GridLayoutManager(context, mSpanCount);
             // layoutManager.setOrientation(GridLayoutManager.HORIZONTAL);  mSpanCount是行数 否则是列数
             recyclerView.setLayoutManager(layoutManager);
+            //设置分割线
+            RecyclerView.ItemDecoration itemDecoration = new HorizontalDividerItemDecoration.Builder(context)
+                    .colorResId(R.color.transparent)
+                    .sizeResId(R.dimen.y40)
+                    .build();
+            recyclerView.addItemDecoration(itemDecoration);
         } else {
             LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
             recyclerView.setLayoutManager(layoutManager);
+            //设置分割线
+            RecyclerView.ItemDecoration itemDecoration = new VerticalDividerItemDecoration.Builder(context)
+                    .colorResId(R.color.transparent)
+                    .sizeResId(R.dimen.y80)
+                    .showFirstDivider(R.dimen.y40)
+                    .showLastDivider(R.dimen.y40)
+                    .build();
+            recyclerView.addItemDecoration(itemDecoration);
         }
-        GeneralSystemAdapter adapter = new GeneralSystemAdapter(context, list, mFeatureBeanMap);
+        GeneralSystemAdapter adapter = new GeneralSystemAdapter(context, list, mFeatureBeanMap, mStyle);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

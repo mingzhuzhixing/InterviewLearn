@@ -25,18 +25,21 @@ import java.util.List;
 import java.util.Map;
 
 public class GeneralSystemAdapter extends RecyclerView.Adapter<GeneralSystemAdapter.ViewHolder> {
-    private LayoutInflater layoutInflater;
+    private final LayoutInflater layoutInflater;
+    private final List<ShareChannelBean> mList;
+    private final Map<Integer, ShareFeatureModel.ShareFeatureBean> mElements;
+    private final Context mContext;
+    /**
+     * 表格 线性
+     */
+    private int mStyle = 0;
 
-    private List<ShareChannelBean> mList;
-
-    private Map<Integer, ShareFeatureModel.ShareFeatureBean> mElements;
-    private Context mContext;
-
-    public GeneralSystemAdapter(Context context, List<ShareChannelBean> list, Map<Integer, ShareFeatureModel.ShareFeatureBean> elements) {
+    public GeneralSystemAdapter(Context context, List<ShareChannelBean> list, Map<Integer, ShareFeatureModel.ShareFeatureBean> elements, int style) {
         layoutInflater = LayoutInflater.from(context);
         this.mList = list;
         this.mContext = context;
         this.mElements = elements;
+        this.mStyle = style;
     }
 
     @Override
@@ -56,6 +59,13 @@ public class GeneralSystemAdapter extends RecyclerView.Adapter<GeneralSystemAdap
         ShareChannelBean bean = mList.get(position);
         if (bean == null || bean.shareType <= 0) {
             return;
+        }
+        if (mStyle == 1) {
+            //表格
+            viewHolder.llIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        } else {
+            //横向列表
+            viewHolder.llIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         }
         viewHolder.llIcon.setOnClickListener(bean.onClickListener);
         if (mElements.containsKey(bean.shareType)) {
