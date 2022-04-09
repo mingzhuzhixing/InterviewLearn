@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".VideoMainActivity"
+            android:name="com.v.module_video.VideoMainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
             android:screenOrientation="portrait"

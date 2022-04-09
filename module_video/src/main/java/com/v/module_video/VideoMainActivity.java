@@ -1,4 +1,4 @@
-package com.v.video_module;
+package com.v.module_video;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -20,7 +20,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.v.module_utils.DensityUtils;
 import com.v.module_utils.ScreenUtils;
-import com.v.module_video.R;
 import com.v.module_video.adapter.ViewPagerAdapter;
 import com.v.module_video.fragment.LiveChatFragment;
 import com.v.module_video.fragment.LiveTeacherFragment;

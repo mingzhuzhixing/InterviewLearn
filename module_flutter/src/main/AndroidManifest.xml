@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.module_flutter">
+
+    <application>
+        <activity
+            android:name=".FlutterChildActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FlutterFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FlutterMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.flutter.embedding.android.FlutterActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:theme="@style/Theme.AppCompat"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

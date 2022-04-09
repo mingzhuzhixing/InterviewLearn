@@ -17,6 +17,7 @@ import com.v.module_common.autoservice.IWebViewService;
 import com.v.module_common.autoserviceLoader.AutoServiceLoader;
 import com.v.module_database.DatabaseMainActivity;
 import com.v.module_eventbus.EventBusMainActivity;
+import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_glide.GlideMainActivity;
 import com.v.module_handler.HandlerMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
@@ -26,8 +27,9 @@ import com.v.module_telephony.TelephonyManagerActivity;
 import com.v.module_textview.TextviewMainActivity;
 import com.v.module_thread.ThreadMainActivity;
 import com.v.module_utils.PackageUtils;
+import com.v.module_video.VideoMainActivity;
 import com.v.module_widget.CustomViewMainActivity;
-import com.v.video_module.VideoMainActivity;
+import com.v.module_video.VideoMainActivity;
 
 import comv.module_network.NetworkMainActivity;
 
@@ -218,6 +220,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void customViewClick(View view) {
         startActivity(new Intent(this, CustomViewMainActivity.class));
+    }
+
+    /**
+     * flutter
+     */
+    public void flutterClick(View view){
+        startActivity(new Intent(this, FlutterMainActivity.class));
     }
 
     @Override
