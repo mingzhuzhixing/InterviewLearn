@@ -23,10 +23,25 @@ buildscript {
 }
 
 allprojects {
+    String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url 'E:\\AndroidWorkspace\\InterviewLearn\\flutter_module\\build\\host\\outputs\\repo'
+        }
+        maven {
+            url "$storageUrl/download.flutter.io"
+        }
+
+        repositories {
+            flatDir { dirs 'libs' }
+        }
+
+        flatDir {
+            dirs 'libs'
+            dirs project(':module_flutter').file('libs')
+        }
     }
 }
 

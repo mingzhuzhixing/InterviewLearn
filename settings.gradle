@@ -31,9 +31,9 @@ include ':module_base'
 include ':module_flutter'
 
 // 加入下面配置
-setBinding(new Binding([gradle: this]))
-evaluate(new File(
-        settingsDir.parentFile,
-        //E:\AndroidWorkspace\InterviewLearn\flutter_module
-        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
-))
+//setBinding(new Binding([gradle: this]))
+//evaluate(new File(
+//        settingsDir.parentFile,
+//        //E:\AndroidWorkspace\InterviewLearn\flutter_module
+//        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
+//))

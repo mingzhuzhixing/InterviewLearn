@@ -23,11 +23,19 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        profile {
+            initWith debug
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+repositories {
+    flatDir { dirs 'libs' }
 }
 
 dependencies {
@@ -38,5 +46,21 @@ dependencies {
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
 
-    api project(':flutter')
+//    api project(':flutter')
+
+//    api(name: 'flutter-debug', ext: 'aar')
+//    api(name: 'flutter-profile', ext: 'aar')
+//    api(name: 'flutter-release', ext: 'aar')
+
+//    api(name: 'libs/flutter_debug-1.0', ext: 'aar')
+//    api(name: 'libs/flutter_profile-1.0', ext: 'aar')
+//    api(name: 'libs/flutter_release-1.0', ext: 'aar')
+
+//    api  files("libs/flutter_debug-1.0.aar")
+//    api  files("libs/flutter_profile-1.0.aar")
+//    api  files("libs/flutter_release-1.0.aar")
+
+    debugApi 'com.v.flutter_module:flutter_debug:1.0'
+    profileImplementation 'com.v.flutter_module:flutter_profile:1.0'
+    releaseImplementation 'com.v.flutter_module:flutter_release:1.0'
 }
