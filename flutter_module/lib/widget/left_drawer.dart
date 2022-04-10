@@ -32,9 +32,12 @@ class _LeftDrawerState extends State<LeftDrawer> {
           padding: const EdgeInsets.all(0.0),
           itemBuilder: (context, index) {
             if (index == 0) {
-              return Image.asset(
-                widget.imgPath,
-                fit: BoxFit.cover,
+              return SizedBox(
+                height: 300.0,
+                child: Image.asset(
+                  widget.imgPath,
+                  fit: BoxFit.cover,
+                ),
               );
             }
             index -= 1;

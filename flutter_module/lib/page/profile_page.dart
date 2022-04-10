@@ -1,6 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_module/page/login_page.dart';
+import 'package:flutter_module/utils/event_bus_utils.dart';
 
+import '../common/resources.dart';
+import '../utils/net_utils.dart';
+import '../utils/shared_preference_utils.dart';
 import '../widget/override_pending.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -13,10 +19,13 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   late List listTitle;
   late List listIcon;
+  var userName;
+  var userAvatar;
 
   @override
   void initState() {
     super.initState();
+    _showUerInfo();
     listTitle = ["我的消息", "阅读记录", "我的博客", "我的问答", "我的活动", "我的团队", "邀请好友"];
     listIcon = [
       Icons.message,
@@ -27,6 +36,20 @@ class _ProfilePageState extends State<ProfilePage> {
       Icons.group,
       Icons.share,
     ];
+
+    eventBus.on<LoginEvent>().listen((event) {
+      _getUserInfo();
+    });
+
+    eventBus.on<LogoutEvent>().listen((event) {
+      _showUerInfo();
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    eventBus.destroy();
   }
 
   @override
@@ -56,18 +79,31 @@ class _ProfilePageState extends State<ProfilePage> {
   ///头部信息
   Widget _buildHeader() {
     return Container(
-      padding: EdgeInsets.all(0.0),
+      padding: const EdgeInsets.all(0.0),
       height: 150,
       color: const Color(0xFF24CF5F),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(
-            child: Container(
-              width: 60,
-              height: 60,
-              child: Image.asset("assets/images/ic_avatar_default.png"),
-            ),
+            child: userAvatar != null
+                ? Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(userAvatar),
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    width: 60,
+                    height: 60,
+                    child: Image.asset("assets/images/ic_avatar_default.png"),
+                  ),
             onTap: () {
               _goToLogin();
             },
@@ -75,9 +111,9 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(
             height: 10.0,
           ),
-          const Text(
-            "点击头像登录",
-            style: TextStyle(color: Colors.white),
+          Text(
+            (userName == null) ? "点击头像登录" : userName,
+            style: const TextStyle(color: Colors.white),
           )
         ],
       ),
@@ -85,7 +121,45 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   ///登录
-  void _goToLogin() async{
-    Navigator.of(context).push(SlidePageRouteBuilder(const LoginPage()));
+  void _goToLogin() async {
+    var result = Navigator.of(context).push(SlidePageRouteBuilder(const LoginPage()));
+    if (result != null && result == "refresh") {
+      eventBus.fire(LoginEvent());
+    }
+  }
+
+  void _getUserInfo() async {
+    SharePreferenceUtils.getToken().then((value) {
+      Map<String, dynamic> params = Map();
+      params['access_token'] = value;
+      params['dataType'] = "json";
+      NetUtils.get(NetData.OPENAPI_USER, params).then((value) {
+        print('value=$value');
+        Map<String, dynamic> map = json.decode(value);
+        if (mounted) {
+          setState(() {
+            userAvatar = map['avatar'];
+            userName = map['name'];
+          });
+        }
+        SharePreferenceUtils.saveUserInfo(map);
+      });
+    });
+  }
+
+  _showUerInfo() {
+    SharePreferenceUtils.getUserInfo().then((user) {
+      if (mounted) {
+        setState(() {
+          if (user != null) {
+            userAvatar = user.avatar;
+            userName = user.name;
+          } else {
+            userAvatar = null;
+            userName = null;
+          }
+        });
+      }
+    });
   }
 }
