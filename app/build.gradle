@@ -22,7 +22,8 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                includeCompileClasspath = true }
+                includeCompileClasspath = true
+            }
         }
     }
 
@@ -40,8 +41,16 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            debuggable true
             minifyEnabled false
+            signingConfig signingConfigs.config
+        }
+
+        release {
+            debuggable false
+            minifyEnabled false
+            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

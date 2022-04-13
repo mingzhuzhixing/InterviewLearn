@@ -37,3 +37,6 @@ include ':module_flutter'
 //        //E:\AndroidWorkspace\InterviewLearn\flutter_module
 //        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 //))
+include ':module_protobuf'
+include ':module_button'
+include ':module_mqtt'
