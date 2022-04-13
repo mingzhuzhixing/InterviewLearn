@@ -29,8 +29,8 @@ allprojects {
         jcenter()
         maven {
             //url 'E:\\AndroidWorkspace\\InterviewLearn\\flutter_module\\build\\host\\outputs\\repo'
-            url '/Users/zhuming/Documents/android_demo/InterviewLearn/flutter_module/build/host/outputs/repo'
-            //url '../InterviewLearn/flutter_module/build/host/outputs/repo'
+            //url '/Users/zhuming/Documents/android_demo/InterviewLearn/flutter_module/build/host/outputs/repo'
+            url '../flutter_module/build/host/outputs/repo'
         }
         maven {
             url "$storageUrl/download.flutter.io"
