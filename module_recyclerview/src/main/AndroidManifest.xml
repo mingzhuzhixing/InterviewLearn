@@ -17,6 +17,7 @@
             android:exported="true" />
         <activity android:name=".RecyclerviewMainActivity" />
         <activity android:name=".snap_helper.SnapHelperActivity" />
+        <activity android:name=".drag_recyclerview.DragListviewActivity" />
     </application>
 
 </manifest>

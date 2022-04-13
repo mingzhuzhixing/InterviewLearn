@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
@@ -58,5 +59,12 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void swipeRefreshLayoutClick(View view) {
         startActivity(new Intent(this, SwipeRefreshLayoutActivity.class));
+    }
+
+    /**
+     * 列表拖拽
+     */
+    public void dragClick(View view) {
+        startActivity(new Intent(this, DragListviewActivity.class));
     }
 }

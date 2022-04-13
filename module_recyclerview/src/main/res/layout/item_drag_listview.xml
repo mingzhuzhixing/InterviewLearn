@@ -29,14 +29,4 @@
         app:layout_constraintLeft_toRightOf="@+id/iv_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_drag_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="@dimen/x30"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/icon_drag_menu"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
