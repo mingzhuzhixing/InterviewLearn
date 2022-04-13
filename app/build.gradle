@@ -26,6 +26,15 @@ android {
         }
     }
 
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword '12345678'
+            storeFile file('../interview.jks')
+            storePassword '12345678'
+        }
+    }
+
     dataBinding {
         enabled = true
     }
