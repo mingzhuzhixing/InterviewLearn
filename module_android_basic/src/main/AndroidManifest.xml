@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.module_android_basic">
+
+    <application>
+        <activity android:name=".hook.HookActivity" />
+        <activity android:name=".fragment_interface.FragmentMainActivity" />
+        <activity android:name=".hook.start_no_register_activity.TestHookRegisteredActivity" />
+        <activity android:name=".hook.start_no_register_activity.TestHookActivity" />
+        <activity
+            android:name=".config_changes.ConfigChangesActivity"
+            android:configChanges="orientation" />
+    </application>
+
+</manifest>

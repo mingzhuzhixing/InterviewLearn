@@ -26,18 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.v.config_changes.ConfigChangesActivity"
-            android:configChanges="orientation" />
-        <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
-        <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" />
         <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity" />
         <activity android:name="com.v.service.messenger.MessengerServiceActivity" />
         <activity android:name="com.v.service.aidl_service.AidlServiceActivity" />
-        <activity android:name="com.v.hook.HookActivity" />
         <activity android:name="com.v.modularization.ModularActivity" />
         <activity android:name="com.v.service.base_service.ServiceActivity" />
-        <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.ioc.IocActivity" />
 
         <service android:name="com.v.service.base_service.MyService" />
