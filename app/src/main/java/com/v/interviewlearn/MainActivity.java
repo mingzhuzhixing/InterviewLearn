@@ -29,7 +29,6 @@ import com.v.module_thread.ThreadMainActivity;
 import com.v.module_utils.PackageUtils;
 import com.v.module_video.VideoMainActivity;
 import com.v.module_widget.CustomViewMainActivity;
-import com.v.module_video.VideoMainActivity;
 
 import comv.module_network.NetworkMainActivity;
 
