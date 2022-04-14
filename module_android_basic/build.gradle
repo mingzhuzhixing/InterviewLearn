@@ -34,4 +34,7 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
     implementation deps["picker_view"]
     api deps["blankj_utilcode"]
+
+    implementation project(":module_resource")
+    implementation project(":module_utils")
 }

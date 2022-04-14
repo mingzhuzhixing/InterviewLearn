@@ -2,8 +2,10 @@ package com.v.module_android_basic.picker_view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,15 +20,19 @@ import java.util.Date;
 public class PickerViewActivity extends AppCompatActivity {
     private TextView tvSelectTime;
     private TimePickerBuilder pvTime;
+    private TextView tvLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picker_view);
-
         tvSelectTime = findViewById(R.id.tv_select_time);
+        tvLocation = findViewById(R.id.tv_location);
     }
 
+    /**
+     * 显示选择器
+     */
     public void showPickerView(View view) {
         Calendar selectedDate = Calendar.getInstance();
         Calendar startDate = Calendar.getInstance();
@@ -40,13 +46,15 @@ public class PickerViewActivity extends AppCompatActivity {
         pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {//选中事件回调
+                @SuppressLint("SimpleDateFormat")
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 tvSelectTime.setText(sdf.format(date));
             }
-        }).setType(new boolean[]{true, true, true, true, true, true})// 默认全部显示
+        });
+        pvTime.setType(new boolean[]{true, true, true, true, true, true})// 默认全部显示
                 .setCancelText("Cancel")//取消按钮文字
                 .setSubmitText("Sure")//确认按钮文字
-                //.setContentSize(18)//滚轮文字大小
+                .setContentTextSize(18)//滚轮文字大小
                 .setTitleSize(20)//标题文字大小
                 .setTitleText("Title")//标题文字
                 .setOutSideCancelable(false)//点击屏幕，点在控件外部范围时，是否取消显示
@@ -60,7 +68,24 @@ public class PickerViewActivity extends AppCompatActivity {
                 .setRangDate(startDate, endDate)//起始终止年月日设定
                 .setLabel("年", "月", "日", "时", "分", "秒")//默认设置为年月日时分秒
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
-                .isDialog(true);//是否显示为对话框样式
-        pvTime.build();
+                .isDialog(false);//是否显示为对话框样式
+        pvTime.build().show();
+    }
+
+    private SelectLocationPopupWindow locationPopupWindow;
+
+    /**
+     * 自定义地区选择器
+     */
+    public void customTimePickerView(View view) {
+        locationPopupWindow = new SelectLocationPopupWindow(this, new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.tv_location_submit) {
+                    tvLocation.setText(locationPopupWindow.getProvinceName() + " " + locationPopupWindow.getCityName());
+                    locationPopupWindow.dismiss();
+                }
+            }
+        });
+        locationPopupWindow.showAtLocation(this.findViewById(R.id.ll_container), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
     }
 }
