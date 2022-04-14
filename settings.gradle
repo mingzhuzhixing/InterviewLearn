@@ -29,6 +29,10 @@ include ':module_textview'
 include ':module_resource'
 include ':module_base'
 include ':module_flutter'
+include ':module_protobuf'
+include ':module_button'
+include ':module_mqtt'
+include ':module_android_basic'
 
 // 加入下面配置
 //setBinding(new Binding([gradle: this]))
@@ -37,7 +41,3 @@ include ':module_flutter'
 //        //E:\AndroidWorkspace\InterviewLearn\flutter_module
 //        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 //))
-include ':module_protobuf'
-include ':module_button'
-include ':module_mqtt'
-include ':module_android_basic'
