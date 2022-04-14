@@ -1,7 +1,6 @@
 package com.v.interviewlearn;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.v.event_dispatch.EventDispatchActivity;
+import com.v.module_widget.event_dispatch.EventDispatchActivity;
 import com.v.module_bitmap.BitmapMainActivity;
 import com.v.module_common.autoservice.IDialogService;
 import com.v.module_common.autoservice.IWebViewService;

@@ -48,10 +48,24 @@
         <activity
             android:name=".step_counter.StepCounterActivity"
             android:exported="true" />
-        <activity android:name=".CustomViewMainActivity" />
-        <activity android:name=".text_view.CustomTextViewActivity" />
-        <activity android:name=".watch_view.CustomWatchActivity" />
-        <activity android:name=".shape_view.ShapeViewActivity" />
+        <activity
+            android:name=".CustomViewMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".text_view.CustomTextViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".watch_view.CustomWatchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".shape_view.ShapeViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event_dispatch.EventDispatchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event_dispatch.EventDispatch2Activity"
+            android:exported="true" />
     </application>
 
 </manifest>

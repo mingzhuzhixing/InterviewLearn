@@ -29,6 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <activity android:name=".MainActivity" />
         <activity
@@ -36,16 +37,13 @@
             android:configChanges="orientation" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookRegisteredActivity" />
         <activity android:name="com.v.hook.start_no_register_activity.TestHookActivity" />
+=======
+>>>>>>> b1b605fb6850b38242574097d81eb7901b5284b0
         <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity" />
         <activity android:name="com.v.service.messenger.MessengerServiceActivity" />
         <activity android:name="com.v.service.aidl_service.AidlServiceActivity" />
-        <activity android:name="com.v.hook.HookActivity" />
         <activity android:name="com.v.modularization.ModularActivity" />
         <activity android:name="com.v.service.base_service.ServiceActivity" />
-        <activity android:name="com.v.ffmpeg.FFmpegActivity" />
-        <activity android:name="com.v.event_dispatch.EventDispatchActivity" />
-        <activity android:name="com.v.event_dispatch.EventDispatch2Activity" />
-        <activity android:name="com.v.fragment_interface.FragmentMainActivity" />
         <activity android:name="com.v.ioc.IocActivity" />
 
         <service android:name="com.v.service.base_service.MyService" />

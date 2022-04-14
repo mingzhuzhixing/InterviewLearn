@@ -9,5 +9,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".ffmpeg.FFmpegActivity" />
     </application>
 </manifest>
