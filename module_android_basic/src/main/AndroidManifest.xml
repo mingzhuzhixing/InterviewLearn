@@ -3,6 +3,12 @@
     package="com.v.module_android_basic">
 
     <application>
+        <activity
+            android:name=".picker_view.PickerViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AndroidBasicActivity"
+            android:exported="true" />
         <activity android:name=".hook.HookActivity" />
         <activity android:name=".fragment_interface.FragmentMainActivity" />
         <activity android:name=".hook.start_no_register_activity.TestHookRegisteredActivity" />

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.v.module_android_basic.AndroidBasicActivity;
 import com.v.module_widget.event_dispatch.EventDispatchActivity;
 import com.v.module_bitmap.BitmapMainActivity;
 import com.v.module_common.autoservice.IDialogService;
@@ -91,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
 //                mTextView.setText("你好");
 //            }
 //        }).run();
+    }
+
+    /**
+     * android 基础
+     */
+    public void androidBasicClick(View view){
+        startActivity(new Intent(this, AndroidBasicActivity.class));
     }
 
     /**

@@ -46,6 +46,8 @@ def deps = [
         auto_service           : 'com.google.auto.service:auto-service:1.0-rc6',
         lottie                 : "com.airbnb.android:lottie:2.7.0",
         gson                   : "com.google.code.gson:gson:2.8.5",
+        picker_view            : "com.contrarywind:Android-PickerView:4.1.9",
+        blankj_utilcode        : "com.blankj:utilcode:1.23.7",
 ]
 
 ext.androidV = androidVersion

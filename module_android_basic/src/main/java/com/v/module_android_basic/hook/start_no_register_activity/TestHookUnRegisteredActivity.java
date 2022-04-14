@@ -3,7 +3,7 @@ package com.v.module_android_basic.hook.start_no_register_activity;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.v.interviewlearn.R;
+import com.v.module_android_basic.R;
 
 public class TestHookUnRegisteredActivity extends AppCompatActivity {
 

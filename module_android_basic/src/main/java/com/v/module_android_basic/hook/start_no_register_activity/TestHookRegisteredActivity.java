@@ -3,7 +3,7 @@ package com.v.module_android_basic.hook.start_no_register_activity;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.v.interviewlearn.R;
+import com.v.module_android_basic.R;
 
 /**
  * TestHookRegisteredActivity是在AndroidManifest中注册的一个傀儡Activity，是个空的，没有实际功能

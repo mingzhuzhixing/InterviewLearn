@@ -27,7 +27,11 @@ android {
 
 dependencies {
     implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["material"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
+    implementation deps["picker_view"]
+    api deps["blankj_utilcode"]
 }

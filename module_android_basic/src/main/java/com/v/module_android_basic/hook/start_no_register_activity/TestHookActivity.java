@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.v.interviewlearn.R;
+import com.v.module_android_basic.R;
+
 
 public class TestHookActivity extends AppCompatActivity {
 
@@ -13,8 +14,6 @@ public class TestHookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_hook);
-
-
         HookActivityUtil hookActivityUtil = new HookActivityUtil(this,TestHookRegisteredActivity.class);
         try {
             hookActivityUtil.hookStartActivity();
