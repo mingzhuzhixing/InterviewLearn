@@ -77,7 +77,7 @@ public class PickerViewActivity extends AppCompatActivity {
     /**
      * 自定义地区选择器
      */
-    public void customTimePickerView(View view) {
+    public void customLocationPickerView(View view) {
         locationPopupWindow = new SelectLocationPopupWindow(this, new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.tv_location_submit) {
@@ -87,5 +87,21 @@ public class PickerViewActivity extends AppCompatActivity {
             }
         });
         locationPopupWindow.showAtLocation(this.findViewById(R.id.ll_container), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+    }
+
+    private SelectTimePopupWindow mTimePopupWindow;
+
+    /**
+     * 自定义选择日期时间
+     */
+    public void customTimePickerView(View view) {
+        mTimePopupWindow = new SelectTimePopupWindow(this, new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.tv_location_submit) {
+                    mTimePopupWindow.dismiss();
+                }
+            }
+        });
+        mTimePopupWindow.showAtLocation(this.findViewById(R.id.ll_container), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
     }
 }
