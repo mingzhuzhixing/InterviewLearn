@@ -33,6 +33,7 @@ dependencies {
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
     implementation deps["picker_view"]
+    //implementation deps["wheelview"]
     api deps["blankj_utilcode"]
 
     implementation project(":module_resource")

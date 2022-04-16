@@ -46,4 +46,31 @@
         android:onClick="showPickerView"
         android:text="选择的时间"/>
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="customTimePickerView2"
+        android:text="自定义地区选择器"/>
+
+    <TextView
+        android:id="@+id/tv_custom_time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="选择的时间"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="customTimePickerView3"
+        android:text="自定义地区选择器"/>
+
+    <TextView
+        android:id="@+id/tv_custom_time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="选择的时间"/>
+
 </LinearLayout>

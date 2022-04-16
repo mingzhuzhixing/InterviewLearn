@@ -48,6 +48,7 @@ def deps = [
         gson                   : "com.google.code.gson:gson:2.8.5",
         picker_view            : "com.contrarywind:Android-PickerView:4.1.9",
         blankj_utilcode        : "com.blankj:utilcode:1.23.7",
+        wheelview        : "com.contrarywind:wheelview:4.1.0",
 ]
 
 ext.androidV = androidVersion
