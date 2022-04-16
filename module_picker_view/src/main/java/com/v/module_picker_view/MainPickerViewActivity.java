@@ -22,13 +22,14 @@ import java.util.Date;
 public class MainPickerViewActivity extends AppCompatActivity {
     private TextView tvSelectTime;
     private TimePickerBuilder pvTime;
-    private TextView tvLocation;
+    private TextView tvLocation, tvSelectTime3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picker_view);
         tvSelectTime = findViewById(R.id.tv_select_time);
+        tvSelectTime3 = findViewById(R.id.tv_custom_time3);
         tvLocation = findViewById(R.id.tv_location);
     }
 
@@ -118,6 +119,7 @@ public class MainPickerViewActivity extends AppCompatActivity {
         mPickerTimePopupWindow = new PickerTimePopupWindow(this, new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.tv_location_submit) {
+                    tvSelectTime3.setText(String.format("%s %s %s %s", mPickerTimePopupWindow.getSelectYear(), mPickerTimePopupWindow.getSelectMonth(), mPickerTimePopupWindow.getSelectDay(), mPickerTimePopupWindow.getSelectWeek()));
                     mPickerTimePopupWindow.dismiss();
                 }
             }

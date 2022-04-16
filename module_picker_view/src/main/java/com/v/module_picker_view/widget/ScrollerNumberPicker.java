@@ -13,6 +13,7 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
 import com.v.module_picker_view.R;
 
 import java.util.ArrayList;
@@ -150,22 +151,20 @@ public class ScrollerNumberPicker extends View {
                 downTime = System.currentTimeMillis();
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (y>=0 && y < controlHeight) {
-                    actionMove(y - downY);
-//                    onSelectListener();
-                }
+                actionMove(y - downY);
+                onSelectListener();
                 break;
             case MotionEvent.ACTION_UP:
                 // 移动距离的绝对值
                 int move = (y - downY);
                 move = move > 0 ? move : move * (-1);
                 // 判断段时间移动的距离
-//                if (System.currentTimeMillis() - downTime < goonTime && move > goonDistence) {
-//                    goonMove(y - downY);
-//                } else {
-//                    actionUp(y - downY);
-//                }
-//                noEmpty();
+                if (System.currentTimeMillis() - downTime < goonTime && move > goonDistence) {
+                    goonMove(y - downY);
+                } else {
+                    actionUp(y - downY);
+                }
+                noEmpty();
                 isScrolling = false;
                 break;
             default:
@@ -252,7 +251,6 @@ public class ScrollerNumberPicker extends View {
         for (ItemObject item : itemList) {
             if (item.isSelected()) {
                 if (onSelectListener != null) {
-                    //Log.i("SelectTimePopupWindow", "11111endSelect");
                     onSelectListener.endSelect(item.id, item.itemText);
                 }
                 break;
@@ -267,7 +265,6 @@ public class ScrollerNumberPicker extends View {
         isClearing = true;
         itemList.clear();
         for (int i = 0; i < dataList.size(); i++) {
-            //Log.i("SelectTimePopupWindow", "month updateDayData  i:" + i + " dataList.get(i):" + dataList.get(i));
             ItemObject itmItemObject = new ItemObject();
             itmItemObject.id = i;
             itmItemObject.itemText = dataList.get(i);
@@ -312,7 +309,6 @@ public class ScrollerNumberPicker extends View {
                 if (itemList.get(i).isSelected()) {
                     newMove = (int) itemList.get(i).moveToSelected();
                     if (onSelectListener != null) {
-                        //Log.i("SelectTimePopupWindow", "444444endSelect");
                         isExecuteFunction = true;
                         onSelectListener.endSelect(itemList.get(i).id, itemList.get(i).itemText);
                     }
@@ -324,7 +320,6 @@ public class ScrollerNumberPicker extends View {
                 if (itemList.get(i).isSelected()) {
                     newMove = (int) itemList.get(i).moveToSelected();
                     if (onSelectListener != null) {
-                        //Log.i("SelectTimePopupWindow", "333333endSelect");
                         isExecuteFunction = true;
                         onSelectListener.endSelect(itemList.get(i).id, itemList.get(i).itemText);
                     }
@@ -343,8 +338,6 @@ public class ScrollerNumberPicker extends View {
 
     /**
      * 缓慢移动
-     *
-     * @param move
      */
     private synchronized void slowMove(final int move) {
         new Thread(new Runnable() {
@@ -387,7 +380,6 @@ public class ScrollerNumberPicker extends View {
                 for (ItemObject item : itemList) {
                     if (item.isSelected()) {
                         if (onSelectListener != null && !isExecuteFunction) {
-                            //Log.i("SelectTimePopupWindow", "22222endSelect");
                             onSelectListener.endSelect(item.id, item.itemText);
                         }
                         isExecuteFunction = false;

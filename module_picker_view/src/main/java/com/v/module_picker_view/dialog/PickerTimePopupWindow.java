@@ -16,6 +16,7 @@ import com.v.module_picker_view.R;
 import com.v.module_picker_view.wheel_view.ArrayWheelAdapter;
 import com.v.module_picker_view.wheel_view.OnItemSelectedListener;
 import com.v.module_picker_view.wheel_view.WheelView;
+import com.v.module_utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -40,10 +41,12 @@ public class PickerTimePopupWindow extends PopupWindow {
     private ArrayWheelAdapter mMonthAdapter;
     private ArrayWheelAdapter mDayAdapter;
 
-    //当前选择的年
+    //当前选择的年 2003
     private String mCurSelectYear;
-    //当前选择的月
+    //当前选择的月 23
     private String mCurSelectMonth;
+    //当前选择的日
+    private String mCurSelectDay;
 
     //当前时间的年份
     private int mCurrentYear;
@@ -56,7 +59,6 @@ public class PickerTimePopupWindow extends PopupWindow {
 
     /**
      * context 上下文
-     * <p>
      * itemsOnClick 点击事件
      */
     public PickerTimePopupWindow(Context context, OnClickListener itemsOnClick) {
@@ -138,14 +140,13 @@ public class PickerTimePopupWindow extends PopupWindow {
         snp_popupwindow_year.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                Log.i(TAG, "" + mYearList.get(index));
-                mCurSelectYear = mYearList.get(index);
+                //Log.i(TAG, "" + mYearList.get(index));
                 if (index == 0) {
                     initMonthData();
                 } else {
                     updateMonthData();
                 }
-                updateDayData(mCurSelectYear, mCurSelectMonth);
+                updateDayData(mYearList.get(index), mCurSelectMonth);
             }
         });
     }
@@ -171,7 +172,7 @@ public class PickerTimePopupWindow extends PopupWindow {
         snp_popupwindow_month.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                Log.i(TAG, "" + mMonthList.get(index));
+                //Log.i(TAG, "" + mMonthList.get(index));
                 updateDayData(mCurSelectYear, mMonthList.get(index));
             }
         });
@@ -196,6 +197,7 @@ public class PickerTimePopupWindow extends PopupWindow {
     private void initDayData() {
         mDayList.clear();
         int currentDayCount = getDays(mCurrentYear, mCurrentMonth);
+        mCurSelectDay = mCurrentDay + "";
         for (int i = mCurrentDay; i <= currentDayCount; i++) {
             String week = getWeek(mCurrentYear, mCurrentMonth, i);
             mDayList.add(i + "日" + week);
@@ -208,7 +210,14 @@ public class PickerTimePopupWindow extends PopupWindow {
         snp_popupwindow_day.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                Log.i(TAG, "" + mDayList.get(index));
+                //Log.i(TAG, "" + mDayList.get(index));
+                String dayAndWeek = mDayList.get(index);
+                if (!TextUtils.isEmpty(dayAndWeek) && dayAndWeek.contains("日")) {
+                    String[] split = dayAndWeek.split("日");
+                    mCurSelectDay = split[0];
+                } else {
+                    mCurSelectDay = dayAndWeek;
+                }
             }
         });
     }
@@ -221,13 +230,16 @@ public class PickerTimePopupWindow extends PopupWindow {
         if (!TextUtils.isEmpty(currentYear) && currentYear.contains("年")) {
             currentYear = currentYear.substring(0, currentYear.indexOf("年"));
         }
+        mCurSelectYear = currentYear;
         if (!TextUtils.isEmpty(currentMonth) && currentMonth.contains("月")) {
             currentMonth = currentMonth.substring(0, currentMonth.indexOf("月"));
         }
+        mCurSelectMonth = currentMonth;
         int year = !TextUtils.isEmpty(currentYear) ? Integer.parseInt(currentYear) : 0;
         int month = !TextUtils.isEmpty(currentYear) ? Integer.parseInt(currentMonth) : 0;
         int currentDayCount = getDays(year, month);
         int currentDay = year == mCurrentYear && month == mCurrentMonth ? mCurrentDay : 1;
+        mCurSelectDay = currentDay + "";
         //Log.i(TAG, "month updateDayData  currentDay:" + currentDay + " currentDayCount:" + currentDayCount + " year" + year + " month:" + month);
         for (int i = currentDay; i <= currentDayCount; i++) {
             String week = getWeek(year, month, i);
@@ -323,5 +335,40 @@ public class PickerTimePopupWindow extends PopupWindow {
                 break;
         }
         return result;
+    }
+
+    public String getSelectYear() {
+        return mCurSelectYear;
+    }
+
+    public String getSelectMonth() {
+        return mCurSelectMonth;
+    }
+
+    public String getSelectDay() {
+        return mCurSelectDay;
+    }
+
+    public String getSelectWeek() {
+        if (TextUtils.isEmpty(mCurSelectYear) || TextUtils.isEmpty(mCurSelectMonth) || TextUtils.isEmpty(mCurSelectDay)) {
+            return "";
+        }
+        int year, month, day;
+        if (StringUtils.checkIsNum(mCurSelectYear)) {
+            year = Integer.parseInt(mCurSelectYear);
+        } else {
+            return "";
+        }
+        if (StringUtils.checkIsNum(mCurSelectMonth)) {
+            month = Integer.parseInt(mCurSelectMonth);
+        } else {
+            return "";
+        }
+        if (StringUtils.checkIsNum(mCurSelectDay)) {
+            day = Integer.parseInt(mCurSelectDay);
+        } else {
+            return "";
+        }
+        return getWeek(year, month, day);
     }
 }
