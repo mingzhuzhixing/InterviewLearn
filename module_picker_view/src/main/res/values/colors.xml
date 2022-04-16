@@ -9,7 +9,7 @@
     <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
     <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
     <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
-    <dimen name="pickerview_textsize">20sp</dimen>
+    <dimen name="pickerview_textsize">15sp</dimen>
     <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
     <dimen name="pickerview_topbar_height">44dp</dimen>
     <dimen name="pickerview_topbar_padding">20dp</dimen>
