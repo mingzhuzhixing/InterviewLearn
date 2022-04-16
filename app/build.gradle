@@ -91,4 +91,5 @@ dependencies {
     implementation project(":module_widget")
     implementation project(":module_flutter")
     implementation project(":module_android_basic")
+    implementation project(":module_picker_view")
 }

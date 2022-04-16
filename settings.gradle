@@ -41,3 +41,4 @@ include ':module_android_basic'
 //        //E:\AndroidWorkspace\InterviewLearn\flutter_module
 //        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 //))
+include ':module_picker_view'

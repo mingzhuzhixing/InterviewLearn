@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.v.module_picker_view.MainPickerViewActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="显示选择器"/>
+
+    <TextView
+        android:id="@+id/tv_select_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择的时间"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="customLocationPickerView"
+        android:text="自定义地区选择器"/>
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="选择的地区"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="customTimePickerView"
+        android:text="自定义地区选择器"/>
+
+    <TextView
+        android:id="@+id/tv_custom_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="选择的时间"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="customTimePickerView2"
+        android:text="自定义地区选择器"/>
+
+    <TextView
+        android:id="@+id/tv_custom_time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="选择的时间"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="customTimePickerView3"
+        android:text="自定义地区选择器"/>
+
+    <TextView
+        android:id="@+id/tv_custom_time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerView"
+        android:text="选择的时间"/>
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.v.module_android_basic.AndroidBasicActivity;
+import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_widget.event_dispatch.EventDispatchActivity;
 import com.v.module_bitmap.BitmapMainActivity;
 import com.v.module_common.autoservice.IDialogService;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * android 基础
      */
-    public void androidBasicClick(View view){
+    public void androidBasicClick(View view) {
         startActivity(new Intent(this, AndroidBasicActivity.class));
     }
 
@@ -108,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, EventDispatchActivity.class));
     }
 
+    /**
+     * 时间选择器
+     */
+    public void pickerTimeClick(View view) {
+        startActivity(new Intent(this, MainPickerViewActivity.class));
+    }
 
     /**
      * 网络请求框架
@@ -231,25 +238,25 @@ public class MainActivity extends AppCompatActivity {
     /**
      * flutter
      */
-    public void flutterClick(View view){
+    public void flutterClick(View view) {
         startActivity(new Intent(this, FlutterMainActivity.class));
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i(TAG,"onStop():"+ PackageUtils.isApplicationBroughtToBackground(this));
+        Log.i(TAG, "onStop():" + PackageUtils.isApplicationBroughtToBackground(this));
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(TAG,"onPause():"+ PackageUtils.isApplicationBroughtToBackground(this));
+        Log.i(TAG, "onPause():" + PackageUtils.isApplicationBroughtToBackground(this));
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i(TAG,"onDestroy():"+ PackageUtils.isApplicationBroughtToBackground(this));
+        Log.i(TAG, "onDestroy():" + PackageUtils.isApplicationBroughtToBackground(this));
     }
 }

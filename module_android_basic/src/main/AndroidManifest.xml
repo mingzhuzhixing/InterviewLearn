@@ -4,9 +4,6 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <application>
         <activity
-            android:name=".picker_view.PickerViewActivity"
-            android:exported="true" />
-        <activity
             android:name=".AndroidBasicActivity"
             android:exported="true" />
         <activity android:name=".hook.HookActivity" />
