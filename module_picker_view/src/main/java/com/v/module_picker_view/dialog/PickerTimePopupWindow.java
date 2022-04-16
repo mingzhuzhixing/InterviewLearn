@@ -133,6 +133,7 @@ public class PickerTimePopupWindow extends PopupWindow {
         mYearList.add(mCurrentYear + "年");
         mYearList.add((mCurrentYear + 1) + "年");
         snp_popupwindow_year.setCyclic(false);
+        snp_popupwindow_year.setCurrentItem(0);
         if (mYearAdapter == null) {
             mYearAdapter = new ArrayWheelAdapter(mYearList);
         }
@@ -156,6 +157,7 @@ public class PickerTimePopupWindow extends PopupWindow {
      */
     private void initMonthData() {
         snp_popupwindow_month.setCyclic(false);
+        snp_popupwindow_month.setCurrentItem(0);
         if (mMonthAdapter == null) {
             mMonthAdapter = new ArrayWheelAdapter();
         }
@@ -188,6 +190,7 @@ public class PickerTimePopupWindow extends PopupWindow {
             mMonthList.add(i + "月");
         }
         mMonthAdapter.setItems(mMonthList);
+        snp_popupwindow_month.setCurrentItem(0);
         snp_popupwindow_month.setAdapter(mMonthAdapter);
     }
 
@@ -203,6 +206,7 @@ public class PickerTimePopupWindow extends PopupWindow {
             mDayList.add(i + "日" + week);
         }
         snp_popupwindow_day.setCyclic(false);
+        snp_popupwindow_day.setCurrentItem(0);
         if (mDayAdapter == null) {
             mDayAdapter = new ArrayWheelAdapter(mDayList);
         }
@@ -246,6 +250,7 @@ public class PickerTimePopupWindow extends PopupWindow {
             mDayList.add(i + "日" + week);
         }
         mDayAdapter.setItems(mDayList);
+        snp_popupwindow_day.setCurrentItem(0);
         snp_popupwindow_day.setAdapter(mDayAdapter);
     }
 
