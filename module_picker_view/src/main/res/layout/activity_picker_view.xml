@@ -4,73 +4,88 @@
     android:id="@+id/ll_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.v.module_picker_view.MainPickerViewActivity"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context="com.v.module_picker_view.MainPickerViewActivity">
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="showPickerView"
-        android:text="显示选择器"/>
+        android:text="TimePickerView  年月日时分秒 选择器"
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tv_select_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="选择的时间"/>
+        android:text="选择的时间" />
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerViewYMD"
+        android:text="TimePickerView年月日选择器"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_select_time_ymd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="选择的时间" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showPickerViewSFM"
+        android:text="TimePickerView时分秒选择器"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_select_time_sfm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择的时间" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showLocationPickerView"
+        android:layout_marginTop="@dimen/y20"
+        android:text="TimePickerView地区选择器"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_select_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择的地区" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y20"
         android:onClick="customLocationPickerView"
-        android:text="自定义地区选择器"/>
+        android:text="自定义滑动地区选择器" />
 
     <TextView
         android:id="@+id/tv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="showPickerView"
-        android:text="选择的地区"/>
-
+        android:text="选择的地区" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y20"
         android:onClick="customTimePickerView"
-        android:text="自定义地区选择器"/>
+        android:text="自定义数据，使用WheelView滑动时间选择器"
+        android:textAllCaps="true"/>
 
     <TextView
         android:id="@+id/tv_custom_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="showPickerView"
-        android:text="选择的时间"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="customTimePickerView2"
-        android:text="自定义地区选择器"/>
-
-    <TextView
-        android:id="@+id/tv_custom_time2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="showPickerView"
-        android:text="选择的时间"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="customTimePickerView3"
-        android:text="自定义地区选择器"/>
-
-    <TextView
-        android:id="@+id/tv_custom_time3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="showPickerView"
-        android:text="选择的时间"/>
+        android:text="选择的时间" />
 
 </LinearLayout>

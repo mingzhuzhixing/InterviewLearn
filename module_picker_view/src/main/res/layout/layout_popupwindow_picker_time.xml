@@ -67,7 +67,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:wheelview_dividerColor="@color/transparent"
-                app:wheelview_lineSpacingMultiplier="3" />
+                app:wheelview_lineSpacingMultiplier="3"
+                app:wheelview_visibleItemCount="7" />
 
             <com.v.module_picker_view.wheel_view.WheelView
                 android:id="@+id/snp_popupwindow_month"
@@ -75,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:wheelview_dividerColor="@color/transparent"
-                app:wheelview_lineSpacingMultiplier="3" />
+                app:wheelview_lineSpacingMultiplier="3"
+                app:wheelview_visibleItemCount="7" />
 
             <com.v.module_picker_view.wheel_view.WheelView
                 android:id="@+id/snp_popupwindow_day"
@@ -83,7 +85,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:wheelview_dividerColor="@color/transparent"
-                app:wheelview_lineSpacingMultiplier="3" />
+                app:wheelview_lineSpacingMultiplier="3"
+                app:wheelview_visibleItemCount="7" />
         </LinearLayout>
     </LinearLayout>
 

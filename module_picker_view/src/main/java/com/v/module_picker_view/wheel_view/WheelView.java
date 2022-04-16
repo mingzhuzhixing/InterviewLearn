@@ -84,7 +84,7 @@ public class WheelView extends View {
         this.mExecutor = Executors.newSingleThreadScheduledExecutor();
         this.typeface = Typeface.MONOSPACE;
         this.lineSpacingMultiplier = 1.6F;
-        this.itemsVisible = 11;
+        this.itemsVisible = 9;
         this.mOffset = 0;
         this.previousY = 0.0F;
         this.startTime = 0L;
@@ -113,6 +113,7 @@ public class WheelView extends View {
             this.dividerWidth = a.getDimensionPixelSize(R.styleable.pickerview_wheelview_dividerWidth, 2);
             this.textSize = a.getDimensionPixelOffset(R.styleable.pickerview_wheelview_textSize, this.textSize);
             this.lineSpacingMultiplier = a.getFloat(R.styleable.pickerview_wheelview_lineSpacingMultiplier, this.lineSpacingMultiplier);
+            this.itemsVisible = a.getInt(R.styleable.pickerview_wheelview_visibleItemCount, this.itemsVisible);
             a.recycle();
         }
         this.judgeLineSpace();
