@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class HttpResponse<T>(val data: T) {
 
-    @SerializedName("errcode")
+    @SerializedName(value = "errcode", alternate = ["errorCode"])
     var errorCode: Int = 0
 
-    @SerializedName("errMsg")
+    @SerializedName(value = "errMsg", alternate = ["errorMsg"])
     var errorMsg: String = ""
 }

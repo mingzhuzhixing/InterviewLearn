@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f7f7f7"
     android:orientation="vertical"
     tools:context=".KotlinMainActivity">
 
@@ -16,17 +17,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/iv_ad"
+            <com.stx.xhb.xbanner.XBanner
+                android:id="@+id/x_banner"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="fitXY"
-                tools:src="@mipmap/ic_launcher" />
+                android:layout_height="220dp"
+                android:clipChildren="false"
+                app:AutoPlayTime="3000"
+                app:clipChildrenLeftRightMargin="20dp"
+                app:isClipChildrenMode="true"
+                app:isShowNumberIndicator="false"
+                app:pointsVisibility="true"
+                app:tipTextColor="@color/red"
+                app:tipTextSize="@dimen/y28" />
 
             <com.v.kotlin.fragment.layout.HomeCategoryLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/y20"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

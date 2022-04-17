@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion androidV.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidV.minSdkVersion
+        targetSdkVersion androidV.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+        externalNativeBuild {
+            cmake {
+                //cppFlags ""
+                abiFilters 'armeabi-v7a'
+            }
+        }
+
+        lintOptions {
+            checkReleaseBuilds false
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+
+    externalNativeBuild {
+        cmake {
+            //print("src/main/cpp/CMakeLists.txt")
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.6.0"
+        }
+    }
+}
+
+dependencies {
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["material"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
+}

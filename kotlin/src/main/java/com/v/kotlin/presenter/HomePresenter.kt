@@ -1,6 +1,7 @@
 package com.v.kotlin.presenter
 
 import com.v.kotlin.base.IBasePresenter
+import com.v.kotlin.bean.BannerDataBean
 import com.v.kotlin.bean.HomeDataBean
 import com.v.kotlin.ivew.IHomeView
 import com.v.kotlin.model.HomeModelImpl
@@ -14,8 +15,11 @@ import com.v.kotlin.model.HomeModelImpl
  */
 interface IHomePresenter : IBasePresenter {
     fun getHomeData()
+    fun getBannerData()
 
     interface HomeListener {
+        fun onGainBannerSuccess(list: List<BannerDataBean>)
+        fun onGainBannerFailure(msg: String)
         fun onGainSuccess(dataBean: HomeDataBean)
         fun onGainFailure(msg: String)
     }
@@ -23,7 +27,11 @@ interface IHomePresenter : IBasePresenter {
 
 class HomePresenterImpl(var homeView: IHomeView?) : IHomePresenter, IHomePresenter.HomeListener {
 
-    val homeModel = HomeModelImpl()
+    private val homeModel = HomeModelImpl()
+
+    override fun getBannerData() {
+        homeModel.requestBannerData(this)
+    }
 
     override fun getHomeData() {
         homeModel.requestHomeData(this)
@@ -32,6 +40,13 @@ class HomePresenterImpl(var homeView: IHomeView?) : IHomePresenter, IHomePresent
     override fun unAttachView() {
         homeView = null
         homeModel.requestCancel()
+    }
+
+    override fun onGainBannerSuccess(list: List<BannerDataBean>) {
+        homeView?.onBannerSuccess(list)
+    }
+
+    override fun onGainBannerFailure(msg: String) {
     }
 
     override fun onGainSuccess(dataBean: HomeDataBean) {

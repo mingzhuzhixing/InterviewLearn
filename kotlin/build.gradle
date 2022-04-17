@@ -50,6 +50,11 @@ dependencies {
     // Retrofit库
     implementation project(":module_retrofit")
 
+    //x_banner
+    implementation deps["x_banner"]
+
     //引入包
     implementation project(":module_common")
+
+    annotationProcessor deps["auto_service"]
 }

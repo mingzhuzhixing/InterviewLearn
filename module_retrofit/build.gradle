@@ -30,9 +30,9 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     // Retrofit库
-    implementation deps["retrofit"]
-    implementation deps["rxjava"]
-    implementation deps["rxandroid"]
-    implementation deps["adapter_rxjava"]
-    implementation deps["converter_gson"]
+    api deps["retrofit"]
+    api deps["rxjava"]
+    api deps["rxandroid"]
+    api deps["adapter_rxjava"]
+    api deps["converter_gson"]
 }

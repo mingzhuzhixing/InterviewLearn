@@ -1,0 +1,63 @@
+协程：
+本质：多线程 jvm
+协程-->线程
+处理耗时操作：
+Java:
+开子线程  处理好事操作 -->回调返回结果
+
+遇到回调嵌套问题：登录接口为例
+getSomething(){
+    .....
+}
+getToken(){
+    callback->{
+        login()->{
+            loginbean->{
+            }
+        }
+    }
+}
+
+RxJava:
+操作符：很多 很难
+
+
+并发：同时处理很多事情
+不行：同时执行很多事情
+
+为什么使用协程：简单直观
+让异步执行的代码写的和同步一样，更加符合人类思维
+
+会了协程，还需要学习rxjava吗？
+rxjava是响应式编程，学习思想
+
+
+协程的基础：
+java:
+new Thread(new Runable(){
+    public void run(){
+          print("hello world);
+    }
+}).start();
+
+kotlin:
+Thread{
+    print("hello world);
+}.start();
+
+coroutines：
+runBlocking{
+    launch{
+        print("hello world);
+    }
+}
+
+GlobalScope.launch{
+    print("hello world);
+}
+
+CoroutineContext:上下文
+CoroutineStart:启动模式
+
+异步编程的同步写法（个人理解）
+

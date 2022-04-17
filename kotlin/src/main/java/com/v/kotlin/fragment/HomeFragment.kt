@@ -1,23 +1,44 @@
 package com.v.kotlin.fragment
 
-import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.stx.xhb.xbanner.XBanner
 import com.v.kotlin.R
+import com.v.kotlin.adapter.HomeAdapter
 import com.v.kotlin.base.BaseFragment
+import com.v.kotlin.bean.BannerDataBean
 import com.v.kotlin.bean.HomeDataBean
 import com.v.kotlin.ivew.IHomeView
-import com.v.kotlin.presenter.EmptyPresenter
 import com.v.kotlin.presenter.HomePresenterImpl
+import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration
+import com.v.module_recyclerview.decoration.VerticalDividerItemDecoration
 import kotlinx.android.synthetic.main.fragment_home.*
+
 
 /**
  * 首页
+ * https://github.com/xiaohaibin/XBanner
  */
 class HomeFragment : BaseFragment<HomePresenterImpl>(), IHomeView {
+    lateinit var mAdapter: HomeAdapter;
     override fun getLayoutId() = R.layout.fragment_home
 
     override fun initData() {
+        mAdapter = HomeAdapter(requireActivity())
 
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
+            adapter = mAdapter
+        }
+        //设置分割线
+        val itemDecoration: RecyclerView.ItemDecoration = HorizontalDividerItemDecoration.Builder(requireActivity())
+                .colorResId(R.color.color_4bba95)
+                .sizeResId(R.dimen.y2)
+                .build()
+        recyclerView.addItemDecoration(itemDecoration)
     }
 
     override fun createPresenter(): HomePresenterImpl {
@@ -25,11 +46,26 @@ class HomeFragment : BaseFragment<HomePresenterImpl>(), IHomeView {
     }
 
     override fun processLogical() {
+        mPresenter?.getBannerData()
         mPresenter?.getHomeData()
     }
 
     override fun onSuccessData(data: HomeDataBean) {
-        Log.i("zm123", "data:${data.toString()}")
-        Glide.with(mActivity).load(data.ad_list[0].image).into(iv_ad)
+        mAdapter.setClearAndData(data.datas)
+    }
+
+    override fun onBannerSuccess(data: List<BannerDataBean>) {
+        val images = mutableListOf<String>()
+        val titles = mutableListOf<String>()
+        for (item in data) {
+            images.add(item.imagePath)
+            titles.add(item.title)
+        }
+        x_banner.setData(images, titles)
+        x_banner.loadImage(object : XBanner.XBannerAdapter {
+            override fun loadBanner(banner: XBanner?, model: Any?, view: View, position: Int) {
+                Glide.with(activity!!).load(images[position]).into(view as ImageView)
+            }
+        })
     }
 }

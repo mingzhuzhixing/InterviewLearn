@@ -33,7 +33,7 @@ include ':module_protobuf'
 include ':module_button'
 include ':module_mqtt'
 include ':module_android_basic'
-
+include ':module_picker_view'
 // 加入下面配置
 //setBinding(new Binding([gradle: this]))
 //evaluate(new File(
@@ -41,4 +41,3 @@ include ':module_android_basic'
 //        //E:\AndroidWorkspace\InterviewLearn\flutter_module
 //        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 //))
-include ':module_picker_view'

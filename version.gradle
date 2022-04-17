@@ -4,7 +4,7 @@ ext.isUserApplication = false
 def androidVersion = [
         compileSdkVersion  : 28,
         buildToolsVersion  : '28.0.3',
-        minSdkVersion      : 26,
+        minSdkVersion      : 21,
         targetSdkVersion   : 28,
         versionCode        : 1,
         versionName        : "1.0",
@@ -48,7 +48,8 @@ def deps = [
         gson                   : "com.google.code.gson:gson:2.8.5",
         picker_view            : "com.contrarywind:Android-PickerView:4.1.9",
         blankj_utilcode        : "com.blankj:utilcode:1.23.7",
-        wheelview        : "com.contrarywind:wheelview:4.1.0",
+        wheelview              : "com.contrarywind:wheelview:4.1.0",
+        x_banner               : "com.xhb:xbanner:1.5.1",
 ]
 
 ext.androidV = androidVersion

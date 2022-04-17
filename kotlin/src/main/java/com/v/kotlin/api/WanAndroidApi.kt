@@ -27,4 +27,22 @@ interface WanAndroidApi {
                  @Field("password") pwd: String,
                  @Field("repassword") rePwd: String): Observable<HttpResponse<LoginBean>>
 
+    //todo ------------------------------------------------------------------------下面是协程api
+    /**
+     * 协程 登录
+     */
+    @POST("user/login")
+    @FormUrlEncoded
+    suspend fun loginCoroutine(@Field("username") name: String,
+              @Field("password") pwd: String): HttpResponse<LoginBean>
+
+    /**
+     * 协程 注册
+     * username,password,repassword
+     */
+    @POST("user/register")
+    @FormUrlEncoded
+    suspend fun registerCoroutine(@Field("username") name: String,
+                 @Field("password") pwd: String,
+                 @Field("repassword") rePwd: String): HttpResponse<LoginBean>
 }

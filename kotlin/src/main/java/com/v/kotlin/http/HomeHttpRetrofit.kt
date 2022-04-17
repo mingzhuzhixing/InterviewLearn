@@ -13,7 +13,7 @@ class HomeHttpRetrofit {
     }
 
     companion object {
-        private const val BASE_URL: String = "http://v2.ffu365.com/"
+        private const val BASE_URL: String = "https://www.wanandroid.com/"
         fun getInstance(): HomeHttpRetrofit = Holder.instance;
     }
 
