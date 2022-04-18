@@ -30,4 +30,6 @@ dependencies {
     implementation deps["constraint_layout"]
 
     api deps['glide']
+
+    implementation project(":module_resource")
 }

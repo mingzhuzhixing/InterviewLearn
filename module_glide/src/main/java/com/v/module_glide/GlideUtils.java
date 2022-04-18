@@ -1,5 +1,6 @@
 package com.v.module_glide;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -25,39 +26,26 @@ import java.util.concurrent.Executors;
  * Date:2018-08-22 10:27
  * Description:
  */
+@SuppressLint("CheckResult")
 public class GlideUtils {
     public static int SCALETYPE_FITCENTER = 0;
     public static int SCALETYPE_CENTERCROP = 1;
     public static int SCALETYPE_NOTHING = 2;
-    public static final int DEFALT_ID = R.color.gray;
+    public static final int DEFAULT_ID = R.drawable.icon_placeholder;
 
-    public static void loadImage(Activity activity, String url, ImageView iv, int ScaleType, int error_resid) {
-        try {
-            if (activity == null || activity.isDestroyed()) {
-                return;
-            }
-            RequestBuilder<Bitmap> load = Glide.with(activity).asBitmap().load(url);
-            if (SCALETYPE_FITCENTER == ScaleType) {
-                load.fitCenter();
-            } else if (SCALETYPE_CENTERCROP == ScaleType) {
-                load.centerCrop();
-            } else {
-                load.centerCrop();
-            }
-            if (error_resid != 0) {
-                load.placeholder(error_resid);
-            } else {
-                load.placeholder(DEFALT_ID);
-            }
-            load.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
-            //load.skipMemoryCache(true);
-            load.dontAnimate().into(iv);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public static void loadImage(Context context, String url, ImageView iv) {
+        loadImage(context, url, iv, SCALETYPE_NOTHING, 2, 2);
     }
 
-    public static void loadImage(Context context, String url, ImageView iv, int ScaleType, int error_resid) {
+    public static void loadImage(Context context, String url, ImageView iv, int scaleType) {
+        loadImage(context, url, iv, scaleType, 2, 2);
+    }
+
+    public static void loadImage(Context context, String url, ImageView iv, int scaleType, int placeholderId) {
+        loadImage(context, url, iv, scaleType, placeholderId, 2);
+    }
+
+    public static void loadImage(Context context, String url, ImageView iv, int ScaleType, int placeholderId, int errorId) {
         try {
             if (context == null) {
                 return;
@@ -68,14 +56,25 @@ public class GlideUtils {
             } else if (SCALETYPE_CENTERCROP == ScaleType) {
                 load.centerCrop();
             } else if (SCALETYPE_NOTHING == ScaleType) {
-
+                //不设置
             } else {
                 load.centerCrop();
             }
-            if (error_resid != 0) {
-                load.placeholder(error_resid);
+
+            if (placeholderId == 2) {
+                //不设置
+            } else if (placeholderId != 0) {
+                load.placeholder(placeholderId);
             } else {
-                load.placeholder(DEFALT_ID);
+                load.placeholder(DEFAULT_ID);
+            }
+
+            if (errorId == 2) {
+                //不设置
+            } else if (errorId != 0) {
+                load.error(placeholderId);
+            } else {
+                load.error(DEFAULT_ID);
             }
             load.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
             load.dontAnimate().into(iv);
@@ -97,7 +96,7 @@ public class GlideUtils {
         if (error_resid != 0) {
             bitmapTypeRequest.placeholder(error_resid);
         } else {
-            bitmapTypeRequest.placeholder(DEFALT_ID);
+            bitmapTypeRequest.placeholder(DEFAULT_ID);
         }
         bitmapTypeRequest.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
         bitmapTypeRequest.dontAnimate();
@@ -117,7 +116,7 @@ public class GlideUtils {
         if (error_resid != 0) {
             bitmapTypeRequest.placeholder(error_resid);
         } else {
-            bitmapTypeRequest.placeholder(DEFALT_ID);
+            bitmapTypeRequest.placeholder(DEFAULT_ID);
         }
         bitmapTypeRequest.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
         bitmapTypeRequest.dontAnimate();
@@ -127,8 +126,6 @@ public class GlideUtils {
 
     /**
      * 清除内存缓存
-     *
-     * @param context
      */
     public static void clearImageMemory(Context context) {
         if (context != null) {
@@ -195,7 +192,6 @@ public class GlideUtils {
             //正常容错逻辑，不需要上报
             e.printStackTrace();
         }
-
     }
 
     public static void loadRoundImage(final Context context, final int cornerRadius, String url, int resId, final ImageView imageView) {
@@ -224,7 +220,6 @@ public class GlideUtils {
             //正常容错逻辑，不需要上报
             e.printStackTrace();
         }
-
     }
 
     public static void loadOvalImage(final Activity activity, String url, int resId, final ImageView imageView) {
@@ -262,7 +257,6 @@ public class GlideUtils {
                         }
                     });
         }
-
     }
 
 
@@ -343,31 +337,6 @@ public class GlideUtils {
             }
         } catch (Exception e) {
             //正常容错逻辑，不需要上报
-            e.printStackTrace();
-        }
-
-
-    }
-
-    public static void loadImageBitmap(Activity activity, String url, ImageView iv, int ScaleType, int error_resid) {
-        try {
-            RequestBuilder<Bitmap> load = Glide.with(activity).asBitmap().load(url);
-
-            if (SCALETYPE_FITCENTER == ScaleType) {
-                load.fitCenter();
-            } else if (SCALETYPE_CENTERCROP == ScaleType) {
-                load.centerCrop();
-            } else {
-                load.centerCrop();
-            }
-            if (error_resid != 0) {
-                load.placeholder(error_resid);
-            } else {
-                load.placeholder(DEFALT_ID);
-            }
-            load.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
-            load.dontAnimate().into(iv);
-        } catch (Exception e) {
             e.printStackTrace();
         }
     }

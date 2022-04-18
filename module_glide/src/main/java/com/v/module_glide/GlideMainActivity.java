@@ -18,9 +18,15 @@ public class GlideMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glide_main);
-
         img = findViewById(R.id.img);
-
         Glide.with(this).load(url).into(img);
+
+        ImageView img_2 = findViewById(R.id.img_2);
+        //loadImage(Context context, String url, ImageView iv, int ScaleType, int error_resid)
+        String path = "http://feed.youshu.cc/readwith/media/picture/625d354029313.png";
+        GlideUtils.loadImage(this, path, img_2, GlideUtils.SCALETYPE_NOTHING, -1);
+
+        ImageView img_3 = findViewById(R.id.img_3);
+        Glide.with(this).load(path).into(img_3);
     }
 }
