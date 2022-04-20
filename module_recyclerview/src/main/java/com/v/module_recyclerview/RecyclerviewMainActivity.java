@@ -11,6 +11,7 @@ import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
+import com.v.module_recyclerview.swipe_refresh_layout.SwipeNoRefreshLayoutActivity;
 import com.v.module_recyclerview.swipe_refresh_layout.SwipeRefreshLayoutActivity;
 import com.v.module_recyclerview.waterfall_flow.WaterfallFlowActivity;
 
@@ -59,6 +60,13 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void swipeRefreshLayoutClick(View view) {
         startActivity(new Intent(this, SwipeRefreshLayoutActivity.class));
+    }
+
+    /**
+     * 自定义下拉刷新,上拉加载
+     */
+    public void swipeNoRefreshLayoutClick(View view) {
+        startActivity(new Intent(this, SwipeNoRefreshLayoutActivity.class));
     }
 
     /**

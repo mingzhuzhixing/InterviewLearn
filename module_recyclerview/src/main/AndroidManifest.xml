@@ -18,6 +18,7 @@
         <activity android:name=".RecyclerviewMainActivity" />
         <activity android:name=".snap_helper.SnapHelperActivity" />
         <activity android:name=".drag_recyclerview.DragListviewActivity" />
+        <activity android:name=".swipe_refresh_layout.SwipeNoRefreshLayoutActivity" />
     </application>
 
 </manifest>
