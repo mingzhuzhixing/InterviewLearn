@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.Base64;
@@ -121,6 +122,29 @@ public class GlideUtils {
         bitmapTypeRequest.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
         bitmapTypeRequest.dontAnimate();
         bitmapTypeRequest.into(target);
+    }
+
+    public static void loadBitmap(Context context, String imageUrl, Target<Bitmap> target) {
+        if (!TextUtils.isEmpty(imageUrl) && imageUrl.startsWith("http")) {
+            RequestBuilder<Bitmap> bitmapTypeRequest = Glide.with(context).asBitmap().load(imageUrl);
+            bitmapTypeRequest.placeholder(R.color.gray_ebebeb);
+            bitmapTypeRequest.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
+            bitmapTypeRequest.dontAnimate();
+            bitmapTypeRequest.into(target);
+        } else {
+//            ThreadPool.runOnUi(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try {
+//                        int resId = ResourcesUtils.getDrawable(context, imageUrl);
+//                        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resId);
+//                        target.onResourceReady(bitmap, null);
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+        }
     }
 
 

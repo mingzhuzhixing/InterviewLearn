@@ -48,4 +48,6 @@ dependencies {
     implementation deps['lottie']
 
     implementation project(":module_base")
+
+    implementation project(":module_glide")
 }

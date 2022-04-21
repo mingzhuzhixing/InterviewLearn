@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.ColorRes;
@@ -13,10 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 public class GridItemDecoration extends RecyclerView.ItemDecoration {
-
-    Paint mVerPaint, mHorPaint;
-    Builder mBuilder;
-
+    private Paint mVerPaint, mHorPaint;
+    private Builder mBuilder;
 
     public GridItemDecoration(Builder builder) {
         init(builder);
@@ -77,19 +76,16 @@ public class GridItemDecoration extends RecyclerView.ItemDecoration {
         int spanCount = -1;
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager instanceof GridLayoutManager) {
-
             spanCount = ((GridLayoutManager) layoutManager).getSpanCount();
         } else if (layoutManager instanceof StaggeredGridLayoutManager) {
-            spanCount = ((StaggeredGridLayoutManager) layoutManager)
-                    .getSpanCount();
+            spanCount = ((StaggeredGridLayoutManager) layoutManager).getSpanCount();
         }
         return spanCount;
     }
 
     private boolean isFirstRaw(RecyclerView parent, int pos, int spanCount, int childCount) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
-        if (layoutManager instanceof GridLayoutManager
-                || layoutManager instanceof StaggeredGridLayoutManager) {
+        if (layoutManager instanceof GridLayoutManager || layoutManager instanceof StaggeredGridLayoutManager) {
             if (pos < spanCount)
                 return true;
         }
@@ -99,22 +95,28 @@ public class GridItemDecoration extends RecyclerView.ItemDecoration {
     private boolean isLastRaw(RecyclerView parent, int pos, int spanCount, int childCount) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager instanceof GridLayoutManager) {
-            childCount = childCount - childCount % spanCount;
-            if (pos >= childCount)
-                return true;
+//            childCount = childCount - childCount % spanCount;
+//            if (pos >= childCount)
+//                return true;
+            int residual = childCount % spanCount; //取余数
+            int rounding = childCount / spanCount; //取整数  行数
+            if (residual > 0) {
+                if (pos >= rounding * spanCount && pos < childCount) {
+                    return true;
+                }
+            } else {
+                if (pos >= (childCount - spanCount) && pos < childCount) {
+                    return true;
+                }
+            }
         } else if (layoutManager instanceof StaggeredGridLayoutManager) {
-            int orientation = ((StaggeredGridLayoutManager) layoutManager)
-                    .getOrientation();
+            int orientation = ((StaggeredGridLayoutManager) layoutManager).getOrientation();
             // StaggeredGridLayoutManager 且纵向滚动
             if (orientation == StaggeredGridLayoutManager.VERTICAL) {
                 childCount = childCount - childCount % spanCount;
-
                 if (pos >= childCount)
                     return true;
-            } else
-            // StaggeredGridLayoutManager 且横向滚动
-            {
-
+            } else {// StaggeredGridLayoutManager 且横向滚动
                 if ((pos + 1) % spanCount == 0) {
                     return true;
                 }
@@ -157,9 +159,12 @@ public class GridItemDecoration extends RecyclerView.ItemDecoration {
         if (isFirstRaw(parent, itemPosition, spanCount, childCount) && mBuilder.isShowFirstDivider)
             top = mBuilder.dividerHorSize;
 
-        if (!(isLastRaw(parent, itemPosition, spanCount, childCount) && !mBuilder.isShowLastDivider))
+//        if (!(isLastRaw(parent, itemPosition, spanCount, childCount) && !mBuilder.isShowLastDivider))
+//            bottom = mBuilder.dividerHorSize;
+        boolean isLastRaw = isLastRaw(parent, itemPosition, spanCount, childCount);
+        if (!(isLastRaw && !mBuilder.isShowLastDivider)) {
             bottom = mBuilder.dividerHorSize;
-
+        }
         outRect.set(left, top, right, bottom);
         marginOffsets(outRect, spanCount, itemPosition);
     }
@@ -181,7 +186,7 @@ public class GridItemDecoration extends RecyclerView.ItemDecoration {
         int dividerHorSize;
         int dividerVerSize;
         int marginLeft, marginRight;
-        boolean isShowLastDivider = false;
+        boolean isShowLastDivider = true;
         boolean isShowFirstDivider = false;
         boolean isExistHeadView = false;
         boolean isShowHeadDivider = false;

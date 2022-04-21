@@ -38,6 +38,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="gridviewFullClick"
+        android:text="gridviewFull"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="waterfallFlowClick"
         android:text="瀑布流"
         android:textAllCaps="false" />

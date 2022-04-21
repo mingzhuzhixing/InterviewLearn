@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
+import com.v.module_recyclerview.gridview.GridviewFullActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
 import com.v.module_recyclerview.swipe_refresh_layout.SwipeNoRefreshLayoutActivity;
@@ -46,6 +47,13 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void gridviewClick(View view) {
         startActivity(new Intent(this, GridviewActivity.class));
+    }
+
+    /**
+     * gridview
+     */
+    public void gridviewFullClick(View view) {
+        startActivity(new Intent(this, GridviewFullActivity.class));
     }
 
     /**
