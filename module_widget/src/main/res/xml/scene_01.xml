@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <!--
+     alpha
+     visibility
+     elevation
+     rotation, rotation[X/Y]
+     translation[X/Y/Z]
+     scaleX/Y-->
+    <Transition
+        motion:constraintSetEnd="@layout/motion_01_cl_end"
+        motion:constraintSetStart="@layout/motion_01_cl_start"
+        motion:duration="1000">
+
+        <!--
+           touchAnchorId ： 需要跟踪的对象(这里，我们使用@+id/button)
+           touchAnchorSide: 应该跟踪你手指的物体的侧面（right/left/top/bottom）
+           dragDirection: 我们拖动物体的方向(dragRight/dragLeft/dragUp/dragDown) 将会定义滑动的完成度(0-1)
+           -->
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/button"
+            motion:touchAnchorSide="right" />
+    </Transition>
+
+</MotionScene>

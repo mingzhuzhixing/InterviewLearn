@@ -122,5 +122,12 @@
             android:onClick="loveLayoutClick"
             android:text="直播点赞效果"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="motionLayoutClick"
+            android:text="新控件MotionLayout"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

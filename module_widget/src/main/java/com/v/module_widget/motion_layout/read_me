@@ -1,0 +1,57 @@
+一、简介
+MotionLayout是一个非常新的类，它来自ConstraintLayout 2.0库中，主要目的是为了帮助Android开发人员在应用中降低使用手势和组件动画的难度。[题外话：这和jetpack的初衷是一致的，都是为了更好、更快的开发app而生]。
+MotionLayout，就像它的名字所陈述的一样，首先它是一个Layout，它可以为元素提供布局的功能。实际上它就是ConstraintLayout的子类，有强大并且丰富的布局功能。
+MotionLayout的设计是为了连接布局过渡与复杂的手势处理。你可以把它想象成属性动画框架、过渡动画管理和CoordinatorLayout三种能力集于一身的框架。
+
+二、MotionLayout的限制
+MotionLayout只能对其直属的子View提供各种变换功能，这一点相对于可以作用布局层级和Activity之间转换的TransitionManager来说，的确是一个劣势。
+
+三、什么时候使用MotionLayout
+当你使用MotionLayout，我们预想的情景是这样的：当你想移动、缩放或者缩放页面上的UI元素，就像那些按钮、titlebar等等，那些需要交互的元素。
+当用户需要与UI元素交互时，就可以使用MotionLayout
+
+四、使用
+添加ConstraintLayout 2.0到gradle 文件中
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha2'
+}
+
+五、ConstraintLayout 与MotionLayout区别
+ConstraintLayout 与MotionLayout 最大的区别在于XML层级上面，实际上MotionLayout 并没有包含在布局文件中。
+当然啦，MotionLayout非常有特色的将所有的信息保存在了一个独立的XML文件中，保存在XML文件中的信息优先级将会比layout文件中要高。
+所以，这个布局文件仅仅只包含了View和它的属性，并没有包含他们的定位或者运动情况。
+
+六、ConstraintSets
+ConstraintSet是跟随ConstraintLayout 一起的，它封装了layout中的布局规则信息。你可以使用多个ConstraintSet，你可以决定使用哪些布局规则作用到你的layout上，此时并不需要你重新创建View，只需要改变它们的位置或者大小即可。
+相比于TransitionManager，在ConstraintLayout 中 ConstraintSet提供了一个相对容易的方式来创建动画。
+MotionLayout本质上就是基于以上想法的，在将来这些概念将会被扩展。
+
+七、MotionScene
+就像已经讲过的，与layouts布局相反，MotionLayout保存的规则就是存放到独立的XML文件中，MotionScene，存放在你的res/xml目录中。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

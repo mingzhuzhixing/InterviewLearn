@@ -14,6 +14,7 @@ import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.like_view.KsgLikeViewActivity;
 import com.v.module_widget.love_layout.LoveLayout;
 import com.v.module_widget.love_layout.LoveLayoutActivity;
+import com.v.module_widget.motion_layout.MotionLayoutActivity;
 import com.v.module_widget.point_loading_view.LoadingViewActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
@@ -150,5 +151,13 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void loveLayoutClick(View view) {
         startActivity(new Intent(this, LoveLayoutActivity.class));
+    }
+
+
+    /**
+     * 新控件MotionLayout
+     */
+    public void motionLayoutClick(View view) {
+        startActivity(new Intent(this, MotionLayoutActivity.class));
     }
 }

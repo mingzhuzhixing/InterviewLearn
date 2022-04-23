@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".motion_layout.MotionLayoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".love_layout.LoveLayoutActivity"
             android:exported="true" />
         <activity

@@ -42,4 +42,6 @@ dependencies {
     // Butterknife
     implementation deps["butterknife"]
     annotationProcessor deps["butterknife_compiler"]
+
+    //implementation deps["constraint_layout_2"]
 }
