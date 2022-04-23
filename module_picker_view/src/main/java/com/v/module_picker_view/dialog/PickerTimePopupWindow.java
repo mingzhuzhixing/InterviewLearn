@@ -11,12 +11,11 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.v.module_picker_view.R;
-import com.v.module_picker_view.wheel_view.ArrayWheelAdapter;
-import com.v.module_picker_view.wheel_view.OnItemSelectedListener;
-import com.v.module_picker_view.wheel_view.WheelView;
 import com.v.module_utils.StringUtils;
+import com.v.wheelview.adapter.ArrayWheelAdapter;
+import com.v.wheelview.listener.OnItemSelectedListener;
+import com.v.wheelview.view.WheelView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,13 +32,13 @@ public class PickerTimePopupWindow extends PopupWindow {
     private final WheelView snp_popupwindow_month;
     private final WheelView snp_popupwindow_day;
 
-    private final ArrayList<String> mYearList = new ArrayList<String>();
-    private final ArrayList<String> mMonthList = new ArrayList<String>();
-    private final ArrayList<String> mDayList = new ArrayList<String>();
+    private final ArrayList<String> mYearList = new ArrayList<>();
+    private final ArrayList<String> mMonthList = new ArrayList<>();
+    private final ArrayList<String> mDayList = new ArrayList<>();
     private final int mMaxMonth = 12;
-    private ArrayWheelAdapter mYearAdapter;
-    private ArrayWheelAdapter mMonthAdapter;
-    private ArrayWheelAdapter mDayAdapter;
+    private ArrayWheelAdapter<String> mYearAdapter;
+    private ArrayWheelAdapter<String>  mMonthAdapter;
+    private ArrayWheelAdapter<String>  mDayAdapter;
 
     //当前选择的年 2003
     private String mCurSelectYear;
@@ -54,8 +53,6 @@ public class PickerTimePopupWindow extends PopupWindow {
     private int mCurrentMonth;
     //今天
     private int mCurrentDay;
-    //当前时间的星期
-    private int mCurrentWeek;
 
     /**
      * context 上下文
@@ -118,7 +115,6 @@ public class PickerTimePopupWindow extends PopupWindow {
         mCurrentYear = calendar.get(Calendar.YEAR);
         mCurrentMonth = calendar.get(Calendar.MONTH) + 1;
         mCurrentDay = calendar.get(Calendar.DAY_OF_MONTH);
-        mCurrentWeek = calendar.get(Calendar.DAY_OF_WEEK);
         initYearData();
         initMonthData();
         initDayData();
@@ -135,7 +131,7 @@ public class PickerTimePopupWindow extends PopupWindow {
         snp_popupwindow_year.setCyclic(false);
         snp_popupwindow_year.setCurrentItem(0);
         if (mYearAdapter == null) {
-            mYearAdapter = new ArrayWheelAdapter(mYearList);
+            mYearAdapter = new ArrayWheelAdapter<>(mYearList);
         }
         snp_popupwindow_year.setAdapter(mYearAdapter);
         snp_popupwindow_year.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -159,7 +155,7 @@ public class PickerTimePopupWindow extends PopupWindow {
         snp_popupwindow_month.setCyclic(false);
         snp_popupwindow_month.setCurrentItem(0);
         if (mMonthAdapter == null) {
-            mMonthAdapter = new ArrayWheelAdapter();
+            mMonthAdapter = new ArrayWheelAdapter<>();
         }
 
         Calendar calendar = Calendar.getInstance();
@@ -208,7 +204,7 @@ public class PickerTimePopupWindow extends PopupWindow {
         snp_popupwindow_day.setCyclic(false);
         snp_popupwindow_day.setCurrentItem(0);
         if (mDayAdapter == null) {
-            mDayAdapter = new ArrayWheelAdapter(mDayList);
+            mDayAdapter = new ArrayWheelAdapter<>(mDayList);
         }
         snp_popupwindow_day.setAdapter(mDayAdapter);
         snp_popupwindow_day.setOnItemSelectedListener(new OnItemSelectedListener() {

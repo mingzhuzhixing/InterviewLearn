@@ -36,6 +36,8 @@ allprojects {
             url "$storageUrl/download.flutter.io"
         }
 
+        maven { url 'https://jitpack.io' }
+
         repositories {
             flatDir { dirs 'libs' }
         }

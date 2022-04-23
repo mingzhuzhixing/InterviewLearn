@@ -37,4 +37,6 @@ dependencies {
 
     implementation project(":module_resource")
     implementation project(":module_utils")
+
+    implementation "com.github.mingzhuzhixing:Android-WheelView:1.0.7"
 }
