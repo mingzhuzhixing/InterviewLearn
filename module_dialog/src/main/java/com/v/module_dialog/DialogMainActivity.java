@@ -1,6 +1,7 @@
 package com.v.module_dialog;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -95,6 +96,7 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
         mBinding.tv104.setOnClickListener(this);
         mBinding.tv105.setOnClickListener(this);
         mBinding.tv106.setOnClickListener(this);
+        mBinding.tv121.setOnClickListener(this);
     }
 
     @Override
@@ -263,6 +265,8 @@ public class DialogMainActivity extends AppCompatActivity implements View.OnClic
                     .setDuration(SnackBarUtils.DurationType.LENGTH_INDEFINITE)
                     .build()
                     .show();
+        } else if (id == R.id.tv_121) {
+            startActivity(new Intent(DialogMainActivity.this, EditTextDialogActivity.class));
         }
     }
 

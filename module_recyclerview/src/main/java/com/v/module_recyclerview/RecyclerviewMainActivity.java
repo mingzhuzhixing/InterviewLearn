@@ -11,6 +11,7 @@ import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.gridview.GridviewFullActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
+import com.v.module_recyclerview.overscroll.OverscrollRecyclerViewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
 import com.v.module_recyclerview.swipe_refresh_layout.SwipeNoRefreshLayoutActivity;
 import com.v.module_recyclerview.swipe_refresh_layout.SwipeRefreshLayoutActivity;
@@ -82,5 +83,12 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void dragClick(View view) {
         startActivity(new Intent(this, DragListviewActivity.class));
+    }
+
+    /**
+     * 阻尼效果
+     */
+    public void overScrollClick(View view) {
+        startActivity(new Intent(this, OverscrollRecyclerViewActivity.class));
     }
 }

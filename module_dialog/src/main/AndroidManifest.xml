@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v.module_dialog">
+
     <application>
-        <activity android:name=".DialogMainActivity"/>
+        <activity
+            android:name=".EditTextDialogActivity"
+            android:exported="true" />
+
+        <activity android:name=".DialogMainActivity" />
     </application>
+
 </manifest>

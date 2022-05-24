@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.StyleRes;
 
+import com.v.module_base.BaseApplication;
 import com.v.module_dialog.R;
 
 /**
@@ -61,9 +64,6 @@ public class BaseDialog<T> extends Dialog {
 
     /**
      * 设置动画样式
-     *
-     * @param animId
-     * @return
      */
     public T setWindowAnimation(int animId) {
         mAnimId = animId;
@@ -73,9 +73,6 @@ public class BaseDialog<T> extends Dialog {
 
     /**
      * 设置显示位置
-     *
-     * @param gravity
-     * @return
      */
     public T setLocation(int gravity) {
         mGravity = gravity;
@@ -84,9 +81,6 @@ public class BaseDialog<T> extends Dialog {
 
     /**
      * 设置全屏幕显示
-     *
-     * @param flag
-     * @return
      */
     public T setFullScreen(boolean flag) {
         isFullScreen = flag;
@@ -126,5 +120,40 @@ public class BaseDialog<T> extends Dialog {
             return;
         }
         super.dismiss();
+    }
+
+    /**
+     * 初始化背景透明度
+     */
+    private float mAlpha = 0.5f;
+
+    /**
+     * 弹框位置
+     */
+    private int mGravityType = Gravity.CENTER;
+
+    public void setAlpha(float alpha) {
+        this.mAlpha = alpha;
+    }
+
+    public void setGravityType(int gravityType) {
+        this.mGravityType = gravityType;
+    }
+
+    /**
+     * 设置widown的属性
+     */
+    public void initWindowAttribute() {
+        Window window = getWindow();
+        if (null == window) {
+            return;
+        }
+        WindowManager.LayoutParams lp = window.getAttributes();
+        DisplayMetrics dm = mContext.getResources().getDisplayMetrics();
+        lp.width = dm.widthPixels;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.gravity = mGravityType;
+        lp.dimAmount = mAlpha;
+        window.setAttributes(lp);
     }
 }
