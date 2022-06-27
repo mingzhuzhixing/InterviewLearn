@@ -33,4 +33,5 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     implementation project(":module_base")
+    implementation project(":module_rxjava")
 }

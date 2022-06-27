@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".blocking_queue.BlockingQueueActivity"
+            android:exported="true" />
+        <activity
             android:name=".ThreadMainActivity"
             android:exported="true" />
         <activity android:name=".async_task.AsyncTaskActivity" />

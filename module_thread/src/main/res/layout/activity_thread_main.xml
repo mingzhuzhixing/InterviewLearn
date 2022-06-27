@@ -16,29 +16,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="priorityBlockingQueueClick"
-        android:text="PriorityBlockingQueue"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="priorityBlockingQueueClick2"
-        android:text="PriorityBlockingQueue_bean2"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="priorityBlockingQueueClick3"
-        android:text="PriorityBlockingQueue_bean3"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="stop"
-        android:text="stop"
+        android:onClick="startPriorityBlockingQueueClick"
+        android:text="开启PriorityBlockingQueue"
         android:textAllCaps="false" />
 
 </LinearLayout>
