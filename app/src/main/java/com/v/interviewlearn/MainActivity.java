@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.v.module_android_basic.AndroidBasicActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
+import com.v.module_protobuf.ProtobufMainActivity;
 import com.v.module_widget.event_dispatch.EventDispatchActivity;
 import com.v.module_bitmap.BitmapMainActivity;
 import com.v.module_common.autoservice.IDialogService;
@@ -240,6 +241,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void flutterClick(View view) {
         startActivity(new Intent(this, FlutterMainActivity.class));
+    }
+
+
+    public void protobufClick(View view) {
+        startActivity(new Intent(this, ProtobufMainActivity.class));
     }
 
     @Override

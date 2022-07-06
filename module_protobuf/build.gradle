@@ -2,6 +2,32 @@ plugins {
     id 'com.android.library'
 }
 
+apply plugin: 'com.google.protobuf'
+
+protobuf {
+    protoc {
+        // You still need protoc like in the non-Android case
+        artifact = 'com.google.protobuf:protoc:3.19.2'
+    }
+
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.23.0" // 也可以配置本地编译器路径
+        }
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+            task.builtins {
+                java {} // 生产java源码
+            }
+        }
+    }
+}
+
 android {
     compileSdkVersion androidV.compileSdkVersion
 
@@ -11,6 +37,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+            proto {
+                //指定proto文件位置,你的proto文件放置在此文件夹中
+                srcDir 'src/main/proto'
+                include '**/*.proto'
+            }
+        }
     }
 
     buildTypes {
@@ -23,11 +62,26 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {
+        exclude 'META-INF/*******'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
 }
 
 dependencies {
     implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["material"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
+
+    implementation 'com.google.protobuf:protobuf-java:3.21.2'
+    implementation 'com.google.protobuf:protoc:3.19.2'
+    implementation 'io.grpc:grpc-protobuf:1.47.0'
+    implementation "io.grpc:grpc-stub:1.47.0"
+    implementation 'com.googlecode.protobuf-java-format:protobuf-java-format:1.2'
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
 }

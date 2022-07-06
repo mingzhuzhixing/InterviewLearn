@@ -27,6 +27,9 @@ android {
         }
     }
 
+    //Solution:No version of NDK matched the requested version 21.0.6113669. Versions available locally: 20.1.5948944
+    ndkVersion '22.1.7171670'
+
     signingConfigs {
         config {
             keyAlias 'key0'
@@ -92,4 +95,5 @@ dependencies {
     implementation project(":module_flutter")
     implementation project(":module_android_basic")
     implementation project(":module_picker_view")
+    implementation project(":module_protobuf")
 }
