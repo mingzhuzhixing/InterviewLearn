@@ -2,9 +2,12 @@ package com.v.module_protobuf;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.v.module_protobuf.ui.ProtobufLoginActivity;
 
 public class ProtobufMainActivity extends AppCompatActivity {
 
@@ -29,6 +32,13 @@ public class ProtobufMainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        findViewById(R.id.btn_protobuf_retrofit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProtobufMainActivity.this, ProtobufLoginActivity.class));
             }
         });
     }

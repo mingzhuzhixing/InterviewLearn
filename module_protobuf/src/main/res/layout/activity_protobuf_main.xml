@@ -4,18 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProtobufMainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ProtobufMainActivity">
 
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取protobuf对象内容"/>
+        android:text="获取protobuf对象内容"
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_protobuf_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Rxjava_Retrofit_protobuf"
+        android:textAllCaps="false" />
 
 </LinearLayout>
