@@ -1,5 +1,6 @@
 package com.v.module_video.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -20,8 +21,8 @@ import java.lang.ref.WeakReference;
  * @package_name com.v.url_module
  * @date 2022/2/14 2:06 下午
  */
-public class LiveVideoView extends RelativeLayout {
-    private Context mContext;
+public class LiveVideoView extends RelativeLayout implements com.v.url_module.MediaControllerInterface {
+    private Activity mActivity;
     private MediaControllerView controller_view;
     private boolean isShowControllerView = false;
 
@@ -39,7 +40,7 @@ public class LiveVideoView extends RelativeLayout {
     }
 
     public void initView(Context context) {
-        this.mContext = context;
+        this.mActivity = (Activity) context;
         View view = LayoutInflater.from(context).inflate(R.layout.layout_live_video_view, this, true);
         controller_view = view.findViewById(R.id.controller_view);
         view.findViewById(R.id.fl_video_container).setOnClickListener(new OnClickListener() {
@@ -48,6 +49,15 @@ public class LiveVideoView extends RelativeLayout {
                 setHideControllerView();
             }
         });
+    }
+
+    /**
+     * 初始化controller_view
+     */
+    private void initControllerView(){
+        AllScreenTopView allScreenTopView = new AllScreenTopView(getContext()) ;
+        allScreenTopView.setMediaController(this);
+
     }
 
 
@@ -96,5 +106,33 @@ public class LiveVideoView extends RelativeLayout {
             isShowControllerView = true;
             mHideHandler.sendEmptyMessage(0);
         }
+    }
+
+    @Override
+    public void onBack() {
+        //返回
+        if (mActivity != null) {
+            mActivity.finish();
+        }
+    }
+
+    @Override
+    public void onSetting() {
+
+    }
+
+    @Override
+    public void onShare() {
+
+    }
+
+    @Override
+    public void onQuality() {
+
+    }
+
+    @Override
+    public void onAttention() {
+
     }
 }

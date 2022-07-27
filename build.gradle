@@ -10,13 +10,17 @@ buildscript {
         maven {
             url 'https://maven.aliyun.com/repository/public/'
         }
+        //central
+        maven { url 'https://maven.aliyun.com/repository/central'}
+        //jecenter
+        jcenter() { url 'https://maven.aliyun.com/repository/public' }
         mavenLocal()
         mavenCentral()
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:4.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         //Butterknife 插件
