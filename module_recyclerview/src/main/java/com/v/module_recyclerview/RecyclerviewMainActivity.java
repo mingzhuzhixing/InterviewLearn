@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.gridview.GridviewFullActivity;
+import com.v.module_recyclerview.gridview.GridviewHorizontalActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.overscroll.OverscrollRecyclerViewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
@@ -48,6 +49,13 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void gridviewClick(View view) {
         startActivity(new Intent(this, GridviewActivity.class));
+    }
+
+    /**
+     * gridview 横向摆列
+     */
+    public void gridviewHorClick(View view) {
+        startActivity(new Intent(this, GridviewHorizontalActivity.class));
     }
 
     /**
