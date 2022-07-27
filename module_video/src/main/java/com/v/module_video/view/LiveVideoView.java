@@ -1,17 +1,24 @@
 package com.v.module_video.view;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.v.module_video.R;
+import com.v.module_video.R2;
+import com.v.module_video.VideoGestureRelativeLayout;
+import com.v.module_video.VideoPlayer;
 
 import java.lang.ref.WeakReference;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * ClassName: LiveVideoView
@@ -21,10 +28,25 @@ import java.lang.ref.WeakReference;
  * @package_name com.v.url_module
  * @date 2022/2/14 2:06 下午
  */
+@SuppressLint("NonConstantResourceId")
 public class LiveVideoView extends RelativeLayout implements com.v.url_module.MediaControllerInterface {
+    //视频
+    @BindView(R2.id.sv_mediaplayer_surfaceView)
+    public SurfaceView sv_mediaplayer_surfaceView;
+    //手势
+    @BindView(R2.id.gesture_view)
+    public VideoGestureRelativeLayout mGestureView;
+
+    @BindView(R2.id.controller_view)
+    public MediaControllerView controller_view;
+
     private Activity mActivity;
-    private MediaControllerView controller_view;
     private boolean isShowControllerView = false;
+
+    /**
+     * 阿里播放器
+     */
+    public VideoPlayer mVideoView;
 
     public LiveVideoView(Context context) {
         this(context, null);
@@ -41,9 +63,9 @@ public class LiveVideoView extends RelativeLayout implements com.v.url_module.Me
 
     public void initView(Context context) {
         this.mActivity = (Activity) context;
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_live_video_view, this, true);
-        controller_view = view.findViewById(R.id.controller_view);
-        view.findViewById(R.id.fl_video_container).setOnClickListener(new OnClickListener() {
+        inflate(context,R.layout.layout_live_video_view, this);
+        ButterKnife.bind(this);
+        controller_view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setHideControllerView();
@@ -57,7 +79,6 @@ public class LiveVideoView extends RelativeLayout implements com.v.url_module.Me
     private void initControllerView(){
         AllScreenTopView allScreenTopView = new AllScreenTopView(getContext()) ;
         allScreenTopView.setMediaController(this);
-
     }
 
 

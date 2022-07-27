@@ -40,4 +40,8 @@ dependencies {
     // Butterknife
     api deps["butterknife"]
     annotationProcessor deps["butterknife_compiler"]
+
+    //api 'com.aliyun.dpa:oss-android-sdk:2.7.0'
+    api 'com.aliyun.sdk.android:AliyunPlayer:5.4.0-full'
+    api 'com.alivc.conan:AlivcConan:1.0.4'
 }

@@ -102,7 +102,7 @@
 
         </RelativeLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/civ_topview_headimg"
             android:layout_width="@dimen/x50"
             android:layout_height="@dimen/x50"

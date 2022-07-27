@@ -2,6 +2,7 @@ package com.v.module_video.view;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
@@ -13,8 +14,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.v.module_video.R;
+import com.v.module_video.R2;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
+@SuppressLint("NonConstantResourceId")
 public class AllScreenTopView extends RelativeLayout {
     @BindView(R2.id.iv_allsceen_topview_back)
     public ImageView iv_allsceen_topview_back;
@@ -38,7 +43,7 @@ public class AllScreenTopView extends RelativeLayout {
     public TextView tv_topview_attention;
 
     @BindView(R2.id.civ_topview_headimg)
-    public CircleImageView civ_topview_headimg;
+    public ImageView civ_topview_headimg;
 
 
     com.v.url_module.MediaControllerInterface mediaController;
@@ -128,26 +133,26 @@ public class AllScreenTopView extends RelativeLayout {
         });
     }
 
-    public void setData(LiveRoomFeedbackMessage bean) {
-        tv_allsceen_topview_title.setText(bean.live_title);
-        GlideUtils.loadImage(Utilities.getApplicationContext(), bean.anchor_avatar_url, civ_topview_headimg, -1, 0);
-        tv_topview_speakername.setText(bean.anchor_name);
-        //关注状态
-        changAttentionState(bean);
-    }
+//    public void setData(LiveRoomFeedbackMessage bean) {
+//        tv_allsceen_topview_title.setText(bean.live_title);
+//        GlideUtils.loadImage(Utilities.getApplicationContext(), bean.anchor_avatar_url, civ_topview_headimg, -1, 0);
+//        tv_topview_speakername.setText(bean.anchor_name);
+//        //关注状态
+//        changAttentionState(bean);
+//    }
 
 
-    public void changAttentionState(LiveRoomFeedbackMessage bean) {
-        if ("1".equals(bean.anchor_is_follow)) {
-            tv_topview_attention.setText("已关注");
-            tv_topview_attention.setTextColor(Color.WHITE);
-            tv_topview_attention.setBackgroundResource(R.drawable.bg_liveallsceen_attentioned);
-        } else {
-            tv_topview_attention.setText("关注");
-            tv_topview_attention.setTextColor(Color.WHITE);
-            tv_topview_attention.setBackgroundResource(R.drawable.bg_liveallsceen_attention);
-        }
-    }
+//    public void changAttentionState(LiveRoomFeedbackMessage bean) {
+//        if ("1".equals(bean.anchor_is_follow)) {
+//            tv_topview_attention.setText("已关注");
+//            tv_topview_attention.setTextColor(Color.WHITE);
+//            tv_topview_attention.setBackgroundResource(R.drawable.bg_liveallsceen_attentioned);
+//        } else {
+//            tv_topview_attention.setText("关注");
+//            tv_topview_attention.setTextColor(Color.WHITE);
+//            tv_topview_attention.setBackgroundResource(R.drawable.bg_liveallsceen_attention);
+//        }
+//    }
 
     public void updateQuality(String title) {
         tv_allsceen_topview_quality.setText(title);
@@ -177,8 +182,6 @@ public class AllScreenTopView extends RelativeLayout {
                     AllScreenTopView.this.setVisibility(View.GONE);
                 } catch (Exception e) {
                     //正常容错逻辑，不需要上报
-                    logger.warn(AllScreenTopView.class.getSimpleName() +" Excetion", e);
-
                 }
             }
 
