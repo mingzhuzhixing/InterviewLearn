@@ -19,7 +19,7 @@ import com.v.module_common.autoservice.IWebViewService;
 import com.v.module_common.autoserviceLoader.AutoServiceLoader;
 import com.v.module_database.DatabaseMainActivity;
 import com.v.module_eventbus.EventBusMainActivity;
-import com.v.module_flutter.FlutterMainActivity;
+//import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_glide.GlideMainActivity;
 import com.v.module_handler.HandlerMainActivity;
 import com.v.module_recyclerview.RecyclerviewMainActivity;
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
      * flutter
      */
     public void flutterClick(View view) {
-        startActivity(new Intent(this, FlutterMainActivity.class));
+        //startActivity(new Intent(this, FlutterMainActivity.class));
     }
 
 

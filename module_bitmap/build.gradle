@@ -39,4 +39,7 @@ dependencies {
     annotationProcessor deps["butterknife_compiler"]
 
     api project(":module_glide")
+    implementation project(":module_android_basic")
+
+    //implementation 'com.blankj:utilcodex:1.30.6'
 }

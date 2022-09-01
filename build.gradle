@@ -62,7 +62,7 @@ allprojects {
 
         flatDir {
             dirs 'libs'
-            dirs project(':module_flutter').file('libs')
+            //dirs project(':module_flutter').file('libs')
         }
     }
 }

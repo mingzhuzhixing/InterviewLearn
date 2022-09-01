@@ -2,6 +2,7 @@ package com.v.module_bitmap;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,10 +11,14 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.ImageUtils;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.v.module_bitmap.utils.BitmapHelper;
+import com.v.module_bitmap.utils.BitmapUtils;
 import com.v.module_glide.GlideUtils;
+
+import java.io.ByteArrayInputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,27 +72,83 @@ public class BitmapMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bitmap_main);
         unbinder = ButterKnife.bind(this);
 
-        Bitmap bitmap = BitmapHelper.getAssetsBitmap(this, "image_2.jpg");
-        ivAssetsImage.setImageBitmap(bitmap);
-
-        Bitmap resourceBitmap = BitmapHelper.getResourceBitmap(this, R.drawable.icon_image);
-        ivResourceImage.setImageBitmap(resourceBitmap);
-
-        Bitmap sdcardBitmap = BitmapHelper.getSdCardBitmap("meinu.jpg");
-        ivSdcardImage.setImageBitmap(sdcardBitmap);
+//        Bitmap bitmap = BitmapHelper.getAssetsBitmap(this, "image_2.jpg");
+//        ivAssetsImage.setImageBitmap(bitmap);
+//
+//        Bitmap resourceBitmap = BitmapHelper.getResourceBitmap(this, R.drawable.icon_image);
+//        ivResourceImage.setImageBitmap(resourceBitmap);
+//
+//        Bitmap sdcardBitmap = BitmapHelper.getSdCardBitmap("meinu.jpg");
+//        ivSdcardImage.setImageBitmap(sdcardBitmap);
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Bitmap netWorkBitmap = BitmapHelper.getNetWorkBitmap(array[array.length - 1]);
-                ivNetworkImage.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        ivNetworkImage.setImageBitmap(netWorkBitmap);
-                    }
-                });
+//                Bitmap netWorkBitmap = BitmapHelper.getNetWorkBitmap(array[array.length - 1]);
+//                ivNetworkImage.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        ivNetworkImage.setImageBitmap(netWorkBitmap);
+//                    }
+//                });
             }
         }).start();
+
+        String posterPath = "https://avatar.youshu.cc/rd/wx/act/20200806/5f2ba19e788f62278.jpg";
+        GlideUtils.loadImageForTarget(this, posterPath, R.drawable.zhanweitu13, new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(Bitmap resource, Transition<? super Bitmap> glideAnimation) {
+                try {
+                    if (ivCover == null) {
+                        return;
+                    }
+                    if (null == resource) {
+                        ivCover.setImageResource(R.drawable.zhanweitu13);
+                        return;
+                    }
+                    int width = resource.getWidth();
+                    int height = resource.getHeight();
+                    try {
+                        if (bitmapCut != null && !bitmapCut.isRecycled()) {
+                            bitmapCut.recycle();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    Bitmap afterBitmap = BitmapUtils.compressBySampleSize(resource, 2);
+                    Bitmap afterBitmap2 = BitmapUtils.compressByQuality(resource, false);
+                    Bitmap bitmapConfig = BitmapUtils.compressByConfig(resource, Bitmap.Config.ARGB_4444);
+
+                    if (width < height) {
+                        bitmapCut = Bitmap.createBitmap(afterBitmap, 0, 0, width, width);
+                    } else if (width > height) {
+                        bitmapCut = Bitmap.createBitmap(resource, 0, 0, height, height);
+                    } else {
+                        bitmapCut = Bitmap.createBitmap(resource);
+                    }
+                    Log.i("wechat", "压缩后图片的大小5:" + (bitmapCut.getByteCount() / 1024) + "kb 宽度为" + bitmapCut.getWidth() + "高度为" + bitmapCut.getHeight());
+
+                    if (null == bitmapCut) {
+                        ivCover.setImageResource(R.drawable.zhanweitu13);
+                    } else {
+                        ivCover.setImageBitmap(bitmapCut);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onLoadFailed(Drawable errorDrawable) {
+                super.onLoadFailed(errorDrawable);
+                try {
+                    ivCover.setImageResource(R.drawable.zhanweitu13);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
     }
 
     public void showBimap(View view) {

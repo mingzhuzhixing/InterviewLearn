@@ -17,10 +17,10 @@ import com.v.module_thread.thread.ThreadPool;
 
 import comv.module_network.HttpHelper;
 import comv.module_network.xutils.XutilsProcessor;
-import io.flutter.embedding.engine.FlutterEngine;
-import io.flutter.embedding.engine.FlutterEngineCache;
-import io.flutter.embedding.engine.dart.DartExecutor;
-import io.flutter.view.FlutterMain;
+//import io.flutter.embedding.engine.FlutterEngine;
+//import io.flutter.embedding.engine.FlutterEngineCache;
+//import io.flutter.embedding.engine.dart.DartExecutor;
+//import io.flutter.view.FlutterMain;
 
 
 public class MyApplication extends BaseApplication {
@@ -74,12 +74,12 @@ public class MyApplication extends BaseApplication {
      * flutterEngine.destroy()
      */
     private void initFlutterEngine() {
-        FlutterEngine flutterEngine = new FlutterEngine(this);
-        flutterEngine.getDartExecutor().executeDartEntrypoint(
-                DartExecutor.DartEntrypoint.createDefault()
-        );
-        // Cache the FlutterEngine to be used by FlutterActivity.
-        FlutterEngineCache.getInstance().put("my_engine_id", flutterEngine);
+//        FlutterEngine flutterEngine = new FlutterEngine(this);
+//        flutterEngine.getDartExecutor().executeDartEntrypoint(
+//                DartExecutor.DartEntrypoint.createDefault()
+//        );
+//        // Cache the FlutterEngine to be used by FlutterActivity.
+//        FlutterEngineCache.getInstance().put("my_engine_id", flutterEngine);
 
         //fluterboost
 //        FlutterBoost.instance().setup(this, new FlutterBoostDelegate() {

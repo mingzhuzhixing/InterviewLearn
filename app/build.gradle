@@ -92,7 +92,7 @@ dependencies {
     implementation project(":module_video")
     implementation project(":module_textview")
     implementation project(":module_widget")
-    implementation project(":module_flutter")
+    //implementation project(":module_flutter")
     implementation project(":module_android_basic")
     implementation project(":module_picker_view")
     implementation project(":module_protobuf")

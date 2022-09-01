@@ -47,7 +47,7 @@ def deps = [
         lottie                 : "com.airbnb.android:lottie:2.7.0",
         gson                   : "com.google.code.gson:gson:2.8.5",
         picker_view            : "com.contrarywind:Android-PickerView:4.1.9",
-        blankj_utilcode        : "com.blankj:utilcode:1.23.7",
+        blankj_utilcode        : "com.blankj:utilcode:1.30.6",
         wheelview              : "com.contrarywind:wheelview:4.1.0",
         x_banner               : "com.xhb:xbanner:1.5.1",
         constraint_layout_2    : "com.android.support.constraint:constraint-layout:2.0.0-alpha2",
