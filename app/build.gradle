@@ -96,4 +96,5 @@ dependencies {
     implementation project(":module_android_basic")
     implementation project(":module_picker_view")
     implementation project(":module_protobuf")
+    implementation project(":module_animator")
 }

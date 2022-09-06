@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.module_animator">
+
+    <application>
+
+        <activity
+            android:name=".AnimatorMainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".translate.TranslateActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".rotate.RotateActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".scale.ScaleActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".alpha.AlphaActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

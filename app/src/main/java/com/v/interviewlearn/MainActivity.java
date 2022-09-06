@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.v.module_android_basic.AndroidBasicActivity;
+import com.v.module_animator.AnimatorMainActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_protobuf.ProtobufMainActivity;
 import com.v.module_widget.event_dispatch.EventDispatchActivity;
@@ -246,6 +247,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void protobufClick(View view) {
         startActivity(new Intent(this, ProtobufMainActivity.class));
+    }
+
+    /**
+     * 动画
+     */
+    public void animatorClick(View view) {
+        startActivity(new Intent(this, AnimatorMainActivity.class));
     }
 
     @Override
