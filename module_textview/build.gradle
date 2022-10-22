@@ -36,4 +36,5 @@ dependencies {
     annotationProcessor deps["butterknife_compiler"]
 
     implementation project(":textUtilsLib")
+    //implementation files("libs/textUtilsLib-release.aar")
 }

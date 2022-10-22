@@ -361,19 +361,19 @@ public class RichTextActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case REQUEST_USER_CODE_CLICK:
-                    richEditText.resolveAtResult((UserModel) data.getSerializableExtra(UserListActivity.DATA));
+                    richEditText.resolveAtResult(data.getParcelableExtra(UserListActivity.DATA));
                     break;
 
                 case REQUEST_USER_CODE_INPUT:
-                    richEditText.resolveAtResultByEnterAt((UserModel) data.getSerializableExtra(UserListActivity.DATA));
+                    richEditText.resolveAtResultByEnterAt(data.getParcelableExtra(UserListActivity.DATA));
                     break;
 
                 case REQUEST_TOPIC_CODE_INPUT:
-                    richEditText.resolveTopicResultByEnter((TopicModel) data.getSerializableExtra(TopicListActivity.DATA));
+                    richEditText.resolveTopicResultByEnter(data.getParcelableExtra(TopicListActivity.DATA));
                     break;
 
                 case REQUEST_TOPIC_CODE_CLICK:
-                    richEditText.resolveTopicResult((TopicModel) data.getSerializableExtra(TopicListActivity.DATA));
+                    richEditText.resolveTopicResult(data.getParcelableExtra(TopicListActivity.DATA));
                     break;
             }
         }
