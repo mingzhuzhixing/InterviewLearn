@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion androidV.compileSdkVersion
@@ -31,4 +32,8 @@ dependencies {
     implementation deps["constraint_layout"]
 
     implementation project(":module_base")
+
+    annotationProcessor deps["butterknife_compiler"]
+
+    implementation project(":textUtilsLib")
 }

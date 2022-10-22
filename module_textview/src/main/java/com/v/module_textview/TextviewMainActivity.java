@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.v.module_textview.at.RichTextActivity;
 import com.v.module_textview.marquee.MarqueeActivity;
 import com.v.module_textview.tagview.HtmlTextViewActivity;
 import com.v.module_textview.tagview.SpannableStringActivity;
@@ -45,5 +46,9 @@ public class TextviewMainActivity extends AppCompatActivity {
      */
     public void URLQueryParamsClick(View view) {
         startActivity(new Intent(this, UrlQueryParameterActivity.class));
+    }
+
+    public void atUserClick(View view) {
+        startActivity(new Intent(this, RichTextActivity.class));
     }
 }

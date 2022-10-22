@@ -17,6 +17,11 @@
             android:exported="true" />
         <activity android:name=".tagview.TagTextViewActivity" />
         <activity android:name=".tagview.SpannableStringActivity" />
+        <activity
+            android:name=".at.RichTextActivity"
+            android:exported="true" />
+        <activity android:name=".at.UserListActivity" />
+        <activity android:name=".at.TopicListActivity" />
     </application>
 
 </manifest>
