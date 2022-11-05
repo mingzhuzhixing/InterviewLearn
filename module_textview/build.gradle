@@ -35,6 +35,9 @@ dependencies {
 
     annotationProcessor deps["butterknife_compiler"]
 
-    implementation project(":textUtilsLib")
-    //implementation files("libs/textUtilsLib-release.aar")
+    //使用本地狗lib包 注意：需要打开settings.gradle中的include
+    //implementation project(":textUtilsLib")
+
+    //使用aar包
+    implementation files("libs/textUtilsLib-release.aar")
 }

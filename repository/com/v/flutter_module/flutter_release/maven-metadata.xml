@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.v.flutter_module</groupId>
+  <artifactId>flutter_release</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20221105052014</lastUpdated>
+  </versioning>
+</metadata>

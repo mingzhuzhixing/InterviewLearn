@@ -48,19 +48,7 @@ dependencies {
 
 //    api project(':flutter')
 
-//    api(name: 'flutter-debug', ext: 'aar')
-//    api(name: 'flutter-profile', ext: 'aar')
-//    api(name: 'flutter-release', ext: 'aar')
-
-//    api(name: 'libs/flutter_debug-1.0', ext: 'aar')
-//    api(name: 'libs/flutter_profile-1.0', ext: 'aar')
-//    api(name: 'libs/flutter_release-1.0', ext: 'aar')
-
-//    api  files("libs/flutter_debug-1.0.aar")
-//    api  files("libs/flutter_profile-1.0.aar")
-//    api  files("libs/flutter_release-1.0.aar")
-
-    debugApi 'com.v.flutter_module:flutter_debug:1.0'
-    profileImplementation 'com.v.flutter_module:flutter_profile:1.0'
-    releaseImplementation 'com.v.flutter_module:flutter_release:1.0'
+    api 'com.flutter_webview_plugin:flutter_webview_plugin_release:1.0.0-SNAPSHOT'
+    api 'io.flutter.plugins.sharedpreferences:shared_preferences_android_release:1.0.0-SNAPSHOT'
+    api 'com.v.flutter_module:flutter_release:1.0.0-SNAPSHOT'
 }

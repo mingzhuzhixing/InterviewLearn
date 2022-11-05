@@ -1,4 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+String tempProjectDir = projectDir
 
 buildscript {
     apply from: 'version.gradle'
@@ -19,6 +20,9 @@ buildscript {
         mavenCentral()
         google()
         jcenter()
+        maven {
+            url "file://${projectDir}/repository/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.2'
@@ -45,10 +49,14 @@ allprojects {
         mavenCentral()
         google()
         jcenter()
+//        maven {
+//            //url 'E:\\AndroidWorkspace\\InterviewLearn\\flutter_module\\build\\host\\outputs\\repo'
+//            //url '/Users/zhuming/Documents/android_demo/InterviewLearn/flutter_module/build/host/outputs/repo'
+//            url '../flutter_module/build/host/outputs/repo'
+//        }
+
         maven {
-            //url 'E:\\AndroidWorkspace\\InterviewLearn\\flutter_module\\build\\host\\outputs\\repo'
-            //url '/Users/zhuming/Documents/android_demo/InterviewLearn/flutter_module/build/host/outputs/repo'
-            url '../flutter_module/build/host/outputs/repo'
+            url "file://${tempProjectDir}/repository/"
         }
         maven {
             url "$storageUrl/download.flutter.io"

@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.v.module_android_basic.AndroidBasicActivity;
 import com.v.module_animator.AnimatorMainActivity;
+import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_protobuf.ProtobufMainActivity;
 import com.v.module_widget.event_dispatch.EventDispatchActivity;
@@ -241,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
      * flutter
      */
     public void flutterClick(View view) {
-        //startActivity(new Intent(this, FlutterMainActivity.class));
+        startActivity(new Intent(this, FlutterMainActivity.class));
     }
 
 

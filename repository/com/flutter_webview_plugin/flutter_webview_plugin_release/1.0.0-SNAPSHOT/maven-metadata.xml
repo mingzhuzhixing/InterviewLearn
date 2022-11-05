@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.flutter_webview_plugin</groupId>
+  <artifactId>flutter_webview_plugin_release</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20221105.051941</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20221105051941</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>aar</extension>
+        <value>1.0.0-20221105.051941-1</value>
+        <updated>20221105051941</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0.0-20221105.051941-1</value>
+        <updated>20221105051941</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
