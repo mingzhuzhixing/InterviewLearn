@@ -1,5 +1,6 @@
 #!/bin/bash
 # This is flutter build
+# 打包命令 sh flutter.sh
 
 # 初始化记录项目pwd
 echo -------初始化文件夹目录完成
