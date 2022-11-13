@@ -1,87 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="center"
+        android:onClick="loadBimap"
+        android:text="显示的图片" />
 
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="显示assets文件中的图片" />
-
-        <ImageView
-            android:id="@+id/iv_assets_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="显示资源文件中的图片 drawable" />
-
-        <ImageView
-            android:id="@+id/iv_resource_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="显示sdcard的图片" />
-
-        <ImageView
-            android:id="@+id/iv_sdcard_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="显示网络的图片" />
-
-        <ImageView
-            android:id="@+id/iv_network_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter" />
-
-        <Button
-            android:id="@+id/btn_bitmap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="showBimap"
-            android:text="bitmap"
-            app:layout_constraintBottom_toTopOf="@+id/btn_gc" />
-
-        <Button
-            android:id="@+id/btn_gc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="gcRecycled"
-            android:text="gc回收"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-    </LinearLayout>
-</ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="recycleBitmap"
+        android:text="图片回收测试" />
+</LinearLayout>

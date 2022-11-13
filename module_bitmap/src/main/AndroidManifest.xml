@@ -9,5 +9,13 @@
         <activity
             android:name=".BitmapMainActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".load.LoadBitmapActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".recycle.RecycleBitmapActivity"
+            android:exported="true" />
     </application>
 </manifest>
