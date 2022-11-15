@@ -129,5 +129,19 @@
             android:onClick="motionLayoutClick"
             android:text="新控件MotionLayout"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="circleLayoutClick"
+            android:text="圆形菜单"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="circleLayout2Click"
+            android:text="圆形菜单2"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

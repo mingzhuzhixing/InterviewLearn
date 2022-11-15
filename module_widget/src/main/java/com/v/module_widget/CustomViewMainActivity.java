@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.v.module_widget.circle_menu.CircleMenu2Activity;
+import com.v.module_widget.circle_menu.CircleMenuActivity;
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
 import com.v.module_widget.draw_water_view.MessageBubbleViewActivity;
@@ -153,11 +155,24 @@ public class CustomViewMainActivity extends AppCompatActivity {
         startActivity(new Intent(this, LoveLayoutActivity.class));
     }
 
-
     /**
      * 新控件MotionLayout
      */
     public void motionLayoutClick(View view) {
         startActivity(new Intent(this, MotionLayoutActivity.class));
+    }
+
+    /**
+     * 新控件MotionLayout
+     */
+    public void circleLayoutClick(View view) {
+        startActivity(new Intent(this, CircleMenuActivity.class));
+    }
+
+    /**
+     * 新控件MotionLayout
+     */
+    public void circleLayout2Click(View view) {
+        startActivity(new Intent(this, CircleMenu2Activity.class));
     }
 }

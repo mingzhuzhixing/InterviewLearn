@@ -69,6 +69,12 @@
         <activity
             android:name=".event_dispatch.EventDispatch2Activity"
             android:exported="true" />
+        <activity
+            android:name=".circle_menu.CircleMenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".circle_menu.CircleMenu2Activity"
+            android:exported="true" />
     </application>
 
 </manifest>
