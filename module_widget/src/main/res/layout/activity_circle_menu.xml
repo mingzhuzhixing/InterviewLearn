@@ -1,35 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:layout_height="match_parent">
 
-    <com.v.module_widget.circle_menu.CircleMenuLayout
-        android:id="@+id/id_menulayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/circle_bg3"
-        android:padding="100dp">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/id_circle_menu_item_center"
-            android:layout_width="wrap_content"
+        <com.v.module_widget.circle_menu.CircleMenuLayout
+            android:id="@+id/id_menulayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="104.0dip"
-                android:layout_height="104.0dip"
-                android:layout_centerInParent="true"
-                android:background="@drawable/turnplate_center_unlogin" />
+            <!--中间大园-->
+            <LinearLayout
+                android:id="@+id/id_circle_menu_item_center"
+                android:layout_width="@dimen/y230"
+                android:layout_height="@dimen/y230"
+                android:background="@drawable/bg_gradient_ffe_ffd_oval"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="116.0dip"
-                android:layout_height="116.0dip"
-                android:layout_centerInParent="true"
-                android:background="@drawable/turnplate_mask_unlogin_normal" />
-        </RelativeLayout>
-    </com.v.module_widget.circle_menu.CircleMenuLayout>
+                <TextView
+                    android:id="@+id/tv_lehuo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30%"
+                    android:textColor="#1f1f1f"
+                    android:textSize="@dimen/y36" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/tv_lehuo_1"
+                    style="@style/T2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="健康养生"
+                    android:textColor="#1f1f1f" />
+            </LinearLayout>
+
+        </com.v.module_widget.circle_menu.CircleMenuLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show1Click"
+            android:text="显示一个" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show2Click"
+            android:text="显示2个" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show3Click"
+            android:text="显示3个" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show4Click"
+            android:text="显示4个" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show5Click"
+            android:text="显示5个" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show6Click"
+            android:text="显示6个" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

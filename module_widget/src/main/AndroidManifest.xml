@@ -70,10 +70,10 @@
             android:name=".event_dispatch.EventDispatch2Activity"
             android:exported="true" />
         <activity
-            android:name=".circle_menu.CircleMenuActivity"
+            android:name=".circle_menu.CircleMenuCCBActivity"
             android:exported="true" />
         <activity
-            android:name=".circle_menu.CircleMenu2Activity"
+            android:name=".circle_menu.CircleMenuActivity"
             android:exported="true" />
     </application>
 

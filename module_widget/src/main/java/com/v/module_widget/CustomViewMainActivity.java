@@ -6,15 +6,14 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.v.module_widget.circle_menu.CircleMenu2Activity;
 import com.v.module_widget.circle_menu.CircleMenuActivity;
+import com.v.module_widget.circle_menu.CircleMenuCCBActivity;
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
 import com.v.module_widget.draw_water_view.MessageBubbleViewActivity;
 import com.v.module_widget.flow_layout.FlowlayoutActivity;
 import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.like_view.KsgLikeViewActivity;
-import com.v.module_widget.love_layout.LoveLayout;
 import com.v.module_widget.love_layout.LoveLayoutActivity;
 import com.v.module_widget.motion_layout.MotionLayoutActivity;
 import com.v.module_widget.point_loading_view.LoadingViewActivity;
@@ -166,13 +165,13 @@ public class CustomViewMainActivity extends AppCompatActivity {
      * 新控件MotionLayout
      */
     public void circleLayoutClick(View view) {
-        startActivity(new Intent(this, CircleMenuActivity.class));
+        startActivity(new Intent(this, CircleMenuCCBActivity.class));
     }
 
     /**
      * 新控件MotionLayout
      */
     public void circleLayout2Click(View view) {
-        startActivity(new Intent(this, CircleMenu2Activity.class));
+        startActivity(new Intent(this, CircleMenuActivity.class));
     }
 }
