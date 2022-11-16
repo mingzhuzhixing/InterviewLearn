@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".marquee.MarqueeActivity">
 
-    <com.v.textview_module.marquee.MarqueeTextView
+    <com.v.module_textview.marquee.MarqueeTextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

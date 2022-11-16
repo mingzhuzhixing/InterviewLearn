@@ -35,6 +35,8 @@ include ':module_mqtt'
 include ':module_android_basic'
 include ':module_picker_view'
 include ':module_animator'
+include ':module_calendar'
+include ':ncalendar'
 //include ':textUtilsLib'
 
 // 加入下面配置
@@ -44,3 +46,4 @@ include ':module_animator'
 //        //E:\AndroidWorkspace\InterviewLearn\flutter_module
 //        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 //))
+

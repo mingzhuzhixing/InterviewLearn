@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
 
-    <com.v.textview_module.tagview.lib.TagTextView
+    <com.v.module_textview.tagview.lib.TagTextView
         android:id="@+id/tv_with_tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,7 +14,7 @@
         android:textColor="@color/text_color"
         android:textSize="16sp" />
 
-    <com.v.textview_module.tagview.lib.TagTextView
+    <com.v.module_textview.tagview.lib.TagTextView
         android:id="@+id/tv_with_single_tags_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +23,7 @@
         android:textColor="@color/text_color"
         android:textSize="16sp" />
 
-    <com.v.textview_module.tagview.lib.TagTextView
+    <com.v.module_textview.tagview.lib.TagTextView
         android:id="@+id/tv_with_multiple_tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +32,7 @@
         android:textColor="@color/text_color"
         android:textSize="16sp" />
 
-    <com.v.textview_module.tagview.lib.TagTextView
+    <com.v.module_textview.tagview.lib.TagTextView
         android:id="@+id/tv_with_single_tags_anyway"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +41,7 @@
         android:textColor="@color/text_color"
         android:textSize="16sp" />
 
-    <com.v.textview_module.tagview.lib.TagTextView
+    <com.v.module_textview.tagview.lib.TagTextView
         android:id="@+id/tv_with_image_tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

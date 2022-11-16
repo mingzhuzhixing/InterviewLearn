@@ -97,4 +97,5 @@ dependencies {
     implementation project(":module_picker_view")
     implementation project(":module_protobuf")
     implementation project(":module_animator")
+    implementation project(":module_calendar")
 }

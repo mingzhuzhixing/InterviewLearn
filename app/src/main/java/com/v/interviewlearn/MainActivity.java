@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.v.module_android_basic.AndroidBasicActivity;
 import com.v.module_animator.AnimatorMainActivity;
+import com.v.module_calendar.CalendarMainActivity;
 import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_protobuf.ProtobufMainActivity;
@@ -255,6 +256,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void animatorClick(View view) {
         startActivity(new Intent(this, AnimatorMainActivity.class));
+    }
+
+    /**
+     * 日历控件
+     */
+    public void calendarClick(View view) {
+        startActivity(new Intent(this, CalendarMainActivity.class));
     }
 
     @Override
