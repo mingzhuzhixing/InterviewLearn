@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <com.v.module_widget.slide_layout.slide.SlideLayout
+        android:id="@+id/laySlide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        app:widget_disable_slider_refresh="true">
+
+        <com.v.module_widget.slide_layout.slide.MinVerticalMarginFrameLayout
+            android:id="@+id/layHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:widget_min_vertical_margin="70dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/layout_debug_slide_header" />
+            </androidx.core.widget.NestedScrollView>
+        </com.v.module_widget.slide_layout.slide.MinVerticalMarginFrameLayout>
+
+        <com.v.module_widget.slide_layout.slide.MinVerticalMarginFrameLayout
+            android:id="@+id/laySlider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.v.module_widget.slide_layout.slide.SlideBarLayout
+                    android:id="@+id/laySlideBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#e4583e"
+                    android:minHeight="44dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="scroll bar" />
+                </com.v.module_widget.slide_layout.slide.SlideBarLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </com.v.module_widget.slide_layout.slide.MinVerticalMarginFrameLayout>
+
+        <com.v.module_widget.slide_layout.refresh.RefreshViewLayout
+            android:id="@+id/layRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.v.module_widget.slide_layout.slide.SlideLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#000000"
+        app:title="debug slide"
+        app:titleTextColor="#ffffff" />
+</FrameLayout>

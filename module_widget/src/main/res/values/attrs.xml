@@ -81,4 +81,14 @@
         <!--路径动画 时长-->
         <attr name="ksg_curve_duration" format="integer"/>
     </declare-styleable>
+
+    <!-- SlideLayout -->
+    <declare-styleable name="WidgetSlideLayout">
+        <attr name="widget_slide_overlay_distance" format="dimension" />
+        <attr name="widget_disable_slider_refresh" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="WidgetMinVerticalMarginFrameLayout">
+        <attr name="widget_min_vertical_margin" format="dimension" />
+    </declare-styleable>
 </resources>

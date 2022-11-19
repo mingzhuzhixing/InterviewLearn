@@ -143,5 +143,12 @@
             android:onClick="circleLayout2Click"
             android:text="圆形菜单"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="slideLayoutClick"
+            android:text="SlideLayout 双列表页面"
+            android:textAllCaps="false" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

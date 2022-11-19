@@ -21,6 +21,7 @@ import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
 import com.v.module_widget.screem_view.ListDataScreenViewActivity;
 import com.v.module_widget.shape_view.ShapeViewActivity;
+import com.v.module_widget.slide_layout.SlideLayoutActivity;
 import com.v.module_widget.step_counter.StepCounterActivity;
 import com.v.module_widget.tag_layout.TagLayoutActivity;
 import com.v.module_widget.text_view.CustomTextViewActivity;
@@ -173,5 +174,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void circleLayout2Click(View view) {
         startActivity(new Intent(this, CircleMenuActivity.class));
+    }
+
+    /**
+     * SlideLayout 双列表页面
+     */
+    public void slideLayoutClick(View view) {
+        startActivity(new Intent(this, SlideLayoutActivity.class));
     }
 }
