@@ -1,4 +1,6 @@
 //获取首页主题内容
+// ignore_for_file: avoid_print
+
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter_shop/service/service_url.dart';
