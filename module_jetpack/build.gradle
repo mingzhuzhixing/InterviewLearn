@@ -40,4 +40,15 @@ dependencies {
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
+
+    implementation project(":module_base")
+    implementation project(":module_network")
+
+    //paging
+//    def paging_version = "1.0.0"
+    implementation 'androidx.paging:paging-runtime:3.0.0-beta01'
+//    implementation "android.arch.paging:runtime:$paging_version"
+//    testImplementation "android.arch.paging:common:$paging_version"
+    implementation "android.arch.paging:rxjava2:1.0.0-rc1"
+
 }
