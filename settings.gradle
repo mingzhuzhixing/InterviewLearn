@@ -38,6 +38,7 @@ include ':module_animator'
 include ':module_calendar'
 include ':ncalendar'
 //include ':textUtilsLib'
+include ':module_jetpack'
 
 // 加入下面配置
 //setBinding(new Binding([gradle: this]))

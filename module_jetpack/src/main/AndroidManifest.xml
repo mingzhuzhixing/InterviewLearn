@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.v.module_bitmap" >
+
+    <application>
+        <activity
+            android:name=".JetpackMainActivity"
+            android:exported="false" >
+        </activity>
+    </application>
+
+</manifest>
