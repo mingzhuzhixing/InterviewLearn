@@ -63,12 +63,16 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
     /**
      * 初始化数据
      */
-    protected abstract void initData();
+    protected void initData(){
+
+    }
 
     /**
      * 处理逻辑
      */
-    protected abstract void processLogical();
+    protected void processLogical(){
+
+    }
 
     /**
      * 是否需要ButterKnife

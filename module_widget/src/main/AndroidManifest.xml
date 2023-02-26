@@ -75,6 +75,12 @@
         <activity
             android:name=".circle_menu.CircleMenuActivity"
             android:exported="true" />
+        <activity
+            android:name=".slide_layout.SlideLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".slide_layout.DebugSlideActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

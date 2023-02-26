@@ -12,7 +12,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_slide_layout);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};

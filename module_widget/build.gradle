@@ -3,6 +3,8 @@ plugins {
 }
 
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion androidV.compileSdkVersion
@@ -44,4 +46,7 @@ dependencies {
     annotationProcessor deps["butterknife_compiler"]
 
     //implementation deps["constraint_layout_2"]
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.0.2'
 }
