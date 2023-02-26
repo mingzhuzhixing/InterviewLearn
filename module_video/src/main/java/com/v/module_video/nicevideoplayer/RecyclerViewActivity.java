@@ -1,0 +1,55 @@
+package com.v.module_video.nicevideoplayer;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.v.module_nicevideoplayer.NiceVideoPlayer;
+import com.v.module_nicevideoplayer.NiceVideoPlayerManager;
+import com.v.module_video.R;
+import com.v.module_video.nicevideoplayer.adapter.VideoAdapter;
+import com.v.module_video.nicevideoplayer.adapter.holder.VideoViewHolder;
+import com.v.module_video.nicevideoplayer.util.DataUtil;
+
+public class RecyclerViewActivity extends AppCompatActivity {
+
+    private RecyclerView mRecyclerView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recycler_view);
+        init();
+    }
+
+    private void init() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setHasFixedSize(true);
+        VideoAdapter adapter = new VideoAdapter(this, DataUtil.getVideoListData());
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setRecyclerListener(new RecyclerView.RecyclerListener() {
+            @Override
+            public void onViewRecycled(RecyclerView.ViewHolder holder) {
+                NiceVideoPlayer niceVideoPlayer = ((VideoViewHolder) holder).mVideoPlayer;
+                if (niceVideoPlayer == NiceVideoPlayerManager.instance().getCurrentNiceVideoPlayer()) {
+                    NiceVideoPlayerManager.instance().releaseNiceVideoPlayer();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        NiceVideoPlayerManager.instance().releaseNiceVideoPlayer();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (NiceVideoPlayerManager.instance().onBackPressd()) return;
+        super.onBackPressed();
+    }
+}

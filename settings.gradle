@@ -39,6 +39,7 @@ include ':module_calendar'
 include ':ncalendar'
 //include ':textUtilsLib'
 include ':module_jetpack'
+include ':module_nicevideoplayer'
 
 // 加入下面配置
 //setBinding(new Binding([gradle: this]))

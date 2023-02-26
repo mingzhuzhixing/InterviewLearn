@@ -34,11 +34,14 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     implementation project(":module_utils")
-
     implementation project(":module_resource")
+    implementation project(":module_nicevideoplayer")
+
+    implementation deps['glide']
+    implementation deps['recyclerview']
 
     // Butterknife
-    api deps["butterknife"]
+    implementation deps["butterknife"]
     annotationProcessor deps["butterknife_compiler"]
 
     //api 'com.aliyun.dpa:oss-android-sdk:2.7.0'

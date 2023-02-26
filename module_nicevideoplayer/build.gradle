@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion androidV.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidV.minSdkVersion
+        targetSdkVersion androidV.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation deps["appcompat_x"]
+    implementation deps["constraint_layout"]
+    implementation deps["material"]
+
+    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.3'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.3'
+}

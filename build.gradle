@@ -45,6 +45,7 @@ allprojects {
         maven { url "https://maven.aliyun.com/nexus/content/repositories/releases" }
         //central
         maven { url 'https://maven.aliyun.com/repository/central'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
         mavenLocal()
         mavenCentral()
         google()

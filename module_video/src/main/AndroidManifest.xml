@@ -10,5 +10,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity android:name=".ffmpeg.FFmpegActivity" />
+        <activity android:name=".ali_player.AliVideoActivity" />
+        <activity android:name=".nicevideoplayer.ChangeClarityActivity" />
+        <activity android:name=".nicevideoplayer.RecyclerViewActivity" />
+        <activity android:name=".nicevideoplayer.TinyWindowPlayActivity" />
+        <activity android:name=".nicevideoplayer.UseInFragActivity" />
     </application>
 </manifest>

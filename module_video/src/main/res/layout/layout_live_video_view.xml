@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.v.module_video.VideoGestureRelativeLayout
+        <com.v.module_video.ali_player.view.VideoGestureRelativeLayout
             android:id="@+id/gesture_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -34,7 +34,7 @@
         android:text="弹幕位置弹幕位置弹幕位置弹幕位置弹幕位置弹幕位置"
         android:textColor="@color/white" />
 
-    <com.v.module_video.view.MediaControllerView
+    <com.v.module_video.ali_player.view.MediaControllerView
         android:id="@+id/controller_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
