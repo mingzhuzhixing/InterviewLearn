@@ -6,40 +6,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TextviewMainActivity">
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="tagTextView"
-        android:onClick="tagTextView"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="htmlTextView"
-        android:onClick="htmlTextView"/>
+        android:onClick="tagTextView"
+        android:text="tagTextView" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="spannableStringTextView"
-        android:onClick="spannableStringTextView"/>
+        android:onClick="htmlTextView"
+        android:text="htmlTextView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="spannableStringTextView"
+        android:text="spannableStringTextView" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跑马灯"
-        android:onClick="marqueeClick"/>
+        android:onClick="marqueeClick"
+        android:text="跑马灯" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取url中的参数值"
-        android:onClick="URLQueryParamsClick"/>
+        android:onClick="URLQueryParamsClick"
+        android:text="获取url中的参数值" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取@用户"
-        android:onClick="atUserClick"/>
+        android:onClick="atUserClick"
+        android:text="获取@用户" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="singleLineClick"
+        android:text="单行" />
 
 </LinearLayout>

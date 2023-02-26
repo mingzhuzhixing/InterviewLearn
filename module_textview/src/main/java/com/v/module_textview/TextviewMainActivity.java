@@ -51,4 +51,8 @@ public class TextviewMainActivity extends AppCompatActivity {
     public void atUserClick(View view) {
         startActivity(new Intent(this, RichTextActivity.class));
     }
+
+    public void singleLineClick(View view) {
+        startActivity(new Intent(this, SingleLineActivity.class));
+    }
 }
