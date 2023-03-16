@@ -99,4 +99,5 @@ dependencies {
     implementation project(":module_animator")
     implementation project(":module_calendar")
     implementation project(":module_jetpack")
+    implementation project(":module_viewpager")
 }

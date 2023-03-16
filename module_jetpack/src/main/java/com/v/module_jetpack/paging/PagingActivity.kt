@@ -18,6 +18,8 @@ import kotlinx.coroutines.launch
 /**
  * Paging 库可帮助您加载和显示来自本地存储或网络中更大的数据集中的数据页面。此方法可让您的应用更高效地利用网络带宽和系统资源。
  * https://blog.csdn.net/Alexwll/article/details/83246201
+ *
+ * https://guolin.blog.csdn.net/article/details/114707250?spm=1001.2014.3001.5502
  */
 class PagingActivity : BaseTitleBarActivity() {
 

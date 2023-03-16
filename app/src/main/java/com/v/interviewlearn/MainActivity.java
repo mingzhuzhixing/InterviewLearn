@@ -16,6 +16,7 @@ import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_jetpack.JetpackMainActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_protobuf.ProtobufMainActivity;
+import com.v.module_viewpager.MainViewpagerActivity;
 import com.v.module_widget.event_dispatch.EventDispatchActivity;
 import com.v.module_bitmap.BitmapMainActivity;
 import com.v.module_common.autoservice.IDialogService;
@@ -271,6 +272,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jetPackClick(View view) {
         startActivity(new Intent(this, JetpackMainActivity.class));
+    }
+
+    /**
+     * ViewPager 组件
+     */
+    public void viewPagerClick(View view) {
+        startActivity(new Intent(this, MainViewpagerActivity.class));
     }
 
     @Override

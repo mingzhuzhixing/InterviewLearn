@@ -40,6 +40,7 @@ include ':ncalendar'
 //include ':textUtilsLib'
 include ':module_jetpack'
 include ':module_nicevideoplayer'
+include ':module_viewpager'
 
 // 加入下面配置
 //setBinding(new Binding([gradle: this]))
@@ -48,4 +49,3 @@ include ':module_nicevideoplayer'
 //        //E:\AndroidWorkspace\InterviewLearn\flutter_module
 //        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 //))
-

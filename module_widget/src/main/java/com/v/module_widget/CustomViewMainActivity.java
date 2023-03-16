@@ -12,6 +12,7 @@ import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
 import com.v.module_widget.draw_water_view.MessageBubbleViewActivity;
 import com.v.module_widget.flow_layout.FlowlayoutActivity;
+import com.v.module_widget.global_view.MusicBarActivity;
 import com.v.module_widget.letter_side_bar.LetterSideBarActivity;
 import com.v.module_widget.like_view.KsgLikeViewActivity;
 import com.v.module_widget.love_layout.LoveLayoutActivity;
@@ -181,5 +182,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void slideLayoutClick(View view) {
         startActivity(new Intent(this, SlideLayoutActivity.class));
+    }
+
+    /**
+     * musicBar 双列表页面
+     */
+    public void musicBarClick(View view) {
+        startActivity(new Intent(this, MusicBarActivity.class));
     }
 }
