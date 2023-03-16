@@ -4,6 +4,13 @@
 
     <application>
         <activity
+            android:name=".SingleLineActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".url_parse.UrlQueryParameterActivity"
             android:exported="true" />
         <activity

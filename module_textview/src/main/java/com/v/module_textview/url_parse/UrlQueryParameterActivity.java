@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.v.module_base.BaseTitleBarActivity;
@@ -38,18 +39,45 @@ public class UrlQueryParameterActivity extends BaseTitleBarActivity {
         TextView tvUrl = findViewById(R.id.tv_url);
         tvUrl.setText("url:" + url);
 
-        Uri uri = Uri.parse(url);
-        String content = uri.getQueryParameter("back");
-        TextView textView = findViewById(R.id.tv_content);
-        textView.setText("获取参数back值：" + content);
+//        Uri uri = Uri.parse(url);
+//        String content = uri.getQueryParameter("back");
+//        TextView textView = findViewById(R.id.tv_content);
+//        textView.setText("获取参数back值：" + content);
+//
+//        TextView textKeyValue = findViewById(R.id.tv_content_key_value);
+//        Map<String, String> map = getParams(url);
+//        StringBuilder builder = new StringBuilder();
+//        for (Map.Entry<String, String> entry : map.entrySet()) {
+//            builder.append("key:").append(entry.getKey()).append("---value:").append(entry.getValue()).append("\n");
+//        }
+//        textKeyValue.setText(builder.toString());
 
-        TextView textKeyValue = findViewById(R.id.tv_content_key_value);
-        Map<String, String> map = getParams(url);
-        StringBuilder builder = new StringBuilder();
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            builder.append("key:").append(entry.getKey()).append("---value:").append(entry.getValue()).append("\n");
+
+
+
+        //String scheme = "youshuapp://jump_mini_program?work_path=pages/article/article.html?articleUrl=https%3A%2F%2Fzaiadev.laidan.com%2Fmp%2Fentry%3Furl_code%3Djoin_class%26stage_id%3D5BRV7AMXZP\\u0026work_username=gh_c0cc2ecae660";
+
+        String scheme = "youshuapp://jump_mini_program?work_path=pages/article/article.html?articleUrl=https%3A%2F%2Fzaiadev.laidan.com%2Fmp%2Fentry%3Furl_code%3Djoin_class%26stage_id%3D5BRV7AMXZP\u0026work_username=gh_c0cc2ecae660";
+        Uri uri = Uri.parse(scheme);
+        String work_path = getSchemeQueryParameter(uri, "work_path");
+        String work_username = getSchemeQueryParameter(uri, "work_username");
+
+        Log.i("zm1234", "work_path: "+work_path);
+
+        if(work_path.contains("articleUrl=")){
+            Uri uriUrl = Uri.parse(work_path);
+            String articleUrl = getSchemeQueryParameter(uriUrl, "articleUrl");
+            Log.i("zm1234", "articleUrl: "+articleUrl);
         }
-        textKeyValue.setText(builder.toString());
+
+        Log.i("zm1234", "work_username: "+work_username);
+        //System.out.println("work_username:"+work_username);
+    }
+
+    public String getSchemeQueryParameter(Uri uri, String key) {
+        String content = uri.getQueryParameter(key);
+        String str = TextUtils.isEmpty(content) ? "" : content;
+        return str;
     }
 
     @Override
