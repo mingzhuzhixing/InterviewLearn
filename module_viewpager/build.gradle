@@ -2,10 +2,6 @@ plugins {
     id 'com.android.library'
 }
 
-apply plugin: 'com.jakewharton.butterknife'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
 android {
     compileSdkVersion androidV.compileSdkVersion
 
@@ -13,7 +9,7 @@ android {
         minSdkVersion androidV.minSdkVersion
         targetSdkVersion androidV.targetSdkVersion
 
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -23,7 +19,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -31,24 +26,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation deps["appcompat_x"]
     implementation deps["constraint_layout"]
     implementation deps["material"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
 
     implementation project(":module_common")
-    implementation project(":module_utils")
-
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
-
-    // Butterknife
-    implementation deps["butterknife"]
-    annotationProcessor deps["butterknife_compiler"]
-
-    //implementation deps["constraint_layout_2"]
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.0.2'
-
-    api 'com.github.Petterpx:FloatingX:1.1.4'
 }

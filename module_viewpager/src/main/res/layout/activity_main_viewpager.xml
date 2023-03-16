@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.v.module_viewpager.MainViewpagerActivity"
+    tools:ignore="HardcodedText,UsingOnClickInXml">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onViewPagerClick"
+        android:text="viewpager嵌套fragment嵌套viewpager" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onViewPager2Click"
+        android:text="viewpager2嵌套fragment嵌套viewpager" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onViewPagerAViewPager"
+        android:text="viewpager嵌套viewpager" />
+
+</LinearLayout>

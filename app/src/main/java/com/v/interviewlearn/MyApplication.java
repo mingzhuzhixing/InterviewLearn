@@ -3,6 +3,8 @@ package com.v.interviewlearn;
 import android.content.Context;
 
 import com.google.gson.Gson;
+import com.petterp.floatingx.FloatingX;
+import com.petterp.floatingx.assist.helper.AppHelper;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
@@ -58,6 +60,13 @@ public class MyApplication extends BaseApplication {
         //初始化线程
         ThreadPool.startup();
         initFlutterEngine();
+
+        //浮窗初始化
+//        AppHelper helper = AppHelper.builder()
+//                .setLayout(com.v.module_widget.R.layout.window_float_layout)
+//                .enableFx()
+//                .build();
+//        FloatingX.init(helper);
     }
 
     /**

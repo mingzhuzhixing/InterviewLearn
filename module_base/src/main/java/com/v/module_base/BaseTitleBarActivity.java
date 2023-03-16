@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -23,14 +24,19 @@ import butterknife.Unbinder;
 public abstract class BaseTitleBarActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
+    protected FrameLayout mFlContainer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_title_bar);
 
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        View floatView = LayoutInflater.from(this).inflate(R.layout.window_float_layout, null);
+        addContentView(floatView, params);
+
         //设置布局
-        FrameLayout mFlContainer = findViewById(R.id.fl_container);
+        mFlContainer = findViewById(R.id.fl_container);
         if (getLayoutId() > 0) {
             mFlContainer.addView(getLayoutInflater().inflate(getLayoutId(), null));
             if (isNeedButterKnife()) {

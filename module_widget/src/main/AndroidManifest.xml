@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v.module_widget">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application>
         <activity
             android:name=".motion_layout.MotionLayoutActivity"
@@ -81,6 +83,12 @@
         <activity
             android:name=".slide_layout.DebugSlideActivity"
             android:exported="true" />
+        <activity
+            android:name=".global_view.MusicBarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".global_view.MusicBarSecondActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
