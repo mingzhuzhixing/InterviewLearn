@@ -2,17 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_00"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/green"
         android:layout_gravity="center"
-        android:text="我是子fragemnt" />
+        android:background="@color/green"
+        android:text="我是子fragemnt2" />
 
-    <androidx.viewpager.widget.ViewPager
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/view_pager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <com.v.module_viewpager.widget.ChildViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

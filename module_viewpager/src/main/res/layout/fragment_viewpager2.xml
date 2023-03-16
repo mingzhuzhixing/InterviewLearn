@@ -14,9 +14,14 @@
         android:text="viewpager2 嵌套fragment 嵌套viewpager"
         tools:ignore="HardcodedText" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager2"
+    <com.v.module_viewpager.widget.ViewPager2Container
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.v.module_viewpager.widget.ViewPager2Container>
 
 </LinearLayout>
