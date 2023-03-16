@@ -89,6 +89,9 @@
         <activity
             android:name=".global_view.MusicBarSecondActivity"
             android:exported="false" />
+        <activity
+            android:name=".curve_circle.CurveCircleActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

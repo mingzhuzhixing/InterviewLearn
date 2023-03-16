@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.v.module_widget.curve_circle.CurveCircleLayout
+        android:id="@+id/circle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.v.module_widget.curve_circle.WaveProgressView
+        android:id="@+id/progressView"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+    <com.v.module_widget.curve_circle.WaveProgressView2
+        android:id="@+id/progressView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:backgroundColor="@color/white"
+        app:circleColor="@color/gray"
+        app:circleWidth="10dp"
+        app:waveAmplitude="20dp"
+        app:waveColor="@color/blue_1b4c85"
+        app:waveDirection="-1"
+        app:waveHeight="30dp"
+        app:waveInterval="40"
+        app:waveSpeed="10" />
+
+    <com.v.module_widget.curve_circle.WaveProgressView3
+        android:id="@+id/progressView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:backgroundColor="@color/white"
+        app:circleColor="@color/gray"
+        app:circleWidth="10dp"
+        app:waveAmplitude="20dp"
+        app:waveColor="@color/blue_1b4c85"
+        app:waveDirection="-1"
+        app:waveHeight="30dp"
+        app:waveInterval="40"
+        app:waveSpeed="10" />
+
+</LinearLayout>

@@ -91,4 +91,16 @@
     <declare-styleable name="WidgetMinVerticalMarginFrameLayout">
         <attr name="widget_min_vertical_margin" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="WaveProgressView">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="circleWidth" format="dimension"/>
+        <attr name="waveColor" format="color"/>
+        <attr name="waveHeight" format="dimension"/>
+        <attr name="waveAmplitude" format="dimension"/>
+        <attr name="waveSpeed" format="integer"/>
+        <attr name="waveDirection" format="integer"/>
+        <attr name="waveInterval" format="integer"/>
+    </declare-styleable>
 </resources>

@@ -10,6 +10,7 @@ import com.v.module_widget.circle_menu.CircleMenuActivity;
 import com.v.module_widget.circle_menu.CircleMenuCCBActivity;
 import com.v.module_widget.color_track.ColorTrackTextViewActivity;
 import com.v.module_widget.color_track.ViewPageActivity;
+import com.v.module_widget.curve_circle.CurveCircleActivity;
 import com.v.module_widget.draw_water_view.MessageBubbleViewActivity;
 import com.v.module_widget.flow_layout.FlowlayoutActivity;
 import com.v.module_widget.global_view.MusicBarActivity;
@@ -189,5 +190,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void musicBarClick(View view) {
         startActivity(new Intent(this, MusicBarActivity.class));
+    }
+
+    /**
+     * 圆形波浪线进度图
+     */
+    public void curveCircleClick(View view) {
+        startActivity(new Intent(this, CurveCircleActivity.class));
     }
 }
