@@ -18,12 +18,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onViewPager2Click"
-        android:text="viewpager2嵌套fragment嵌套viewpager" />
+        android:text="viewpager2嵌套fragment中viewpager冲突" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onViewPagerAViewPager"
         android:text="viewpager嵌套viewpager" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onViewpager2RecyclerviewClick"
+        android:text="viewpager2嵌套fragment中recyclerview冲突"
+        android:autoText="false"/>
 
 </LinearLayout>

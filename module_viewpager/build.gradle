@@ -37,4 +37,6 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     implementation project(":module_common")
+
+    implementation project(":module_recyclerview")
 }

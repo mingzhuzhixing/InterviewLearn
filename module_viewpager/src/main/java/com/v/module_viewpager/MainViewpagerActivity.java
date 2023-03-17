@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.v.module_viewpager.viewpager2_fragment.ViewPager2Activity;
+import com.v.module_viewpager.viewpager2_recyclerview.Viewpager2RecyclerviewActivity;
 import com.v.module_viewpager.viewpager_fragment.ViewPagerActivity;
 import com.v.module_viewpager.viewpager_to_viewpager.ViewPagerInViewPagerActivity;
 
@@ -28,5 +29,9 @@ public class MainViewpagerActivity extends AppCompatActivity {
 
     public void onViewPagerAViewPager(View view) {
         startActivity(new Intent(this, ViewPagerInViewPagerActivity.class));
+    }
+
+    public void onViewpager2RecyclerviewClick(View view) {
+        startActivity(new Intent(this, Viewpager2RecyclerviewActivity.class));
     }
 }

@@ -16,7 +16,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent" />-->
 
-    <com.v.module_viewpager.widget.ChildViewPager
+    <com.v.module_viewpager.widget.DispatchTouchViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -3,11 +3,11 @@
     package="com.v.module_viewpager">
 
     <application>
-        <activity android:name=".MainViewpagerActivity"/>
-
-        <activity android:name=".viewpager_to_viewpager.ViewPagerInViewPagerActivity"/>
+        <activity android:name=".MainViewpagerActivity" />
+        <activity android:name=".viewpager_to_viewpager.ViewPagerInViewPagerActivity" />
         <activity android:name=".viewpager_fragment.ViewPagerActivity" />
         <activity android:name=".viewpager2_fragment.ViewPager2Activity" />
+        <activity android:name=".viewpager2_recyclerview.Viewpager2RecyclerviewActivity" />
     </application>
 
 </manifest>

@@ -31,9 +31,10 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_title_bar);
 
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        View floatView = LayoutInflater.from(this).inflate(R.layout.window_float_layout, null);
-        addContentView(floatView, params);
+        //全局悬浮框
+//        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        View floatView = LayoutInflater.from(this).inflate(R.layout.window_float_layout, null);
+//        addContentView(floatView, params);
 
         //设置布局
         mFlContainer = findViewById(R.id.fl_container);
@@ -69,14 +70,14 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
     /**
      * 初始化数据
      */
-    protected void initData(){
+    protected void initData() {
 
     }
 
     /**
      * 处理逻辑
      */
-    protected void processLogical(){
+    protected void processLogical() {
 
     }
 
