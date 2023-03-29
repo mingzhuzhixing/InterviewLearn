@@ -5,5 +5,7 @@
     <application>
         <activity android:name=".SecondActivity" />
         <activity android:name=".EventBusMainActivity" />
+        <activity android:name=".observable.ObserverObservableActivity"/>
     </application>
+
 </manifest>

@@ -3,6 +3,7 @@
     package="com.v.module_video">
 
     <application>
+
         <activity
             android:name="com.v.module_video.VideoMainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -15,5 +16,8 @@
         <activity android:name=".nicevideoplayer.RecyclerViewActivity" />
         <activity android:name=".nicevideoplayer.TinyWindowPlayActivity" />
         <activity android:name=".nicevideoplayer.UseInFragActivity" />
+        <activity android:name=".media_audio.MediaAudioActivity"/>
+        <activity android:name=".media_audio.MediaVideoActivity" />
     </application>
+
 </manifest>

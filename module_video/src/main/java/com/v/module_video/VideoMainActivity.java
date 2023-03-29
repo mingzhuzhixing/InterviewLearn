@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.v.module_video.ali_player.AliVideoActivity;
+import com.v.module_video.media_audio.MediaAudioActivity;
+import com.v.module_video.media_audio.MediaVideoActivity;
 import com.v.module_video.nicevideoplayer.ChangeClarityActivity;
 import com.v.module_video.nicevideoplayer.RecyclerViewActivity;
 import com.v.module_video.nicevideoplayer.TinyWindowPlayActivity;
@@ -44,5 +46,13 @@ public class VideoMainActivity extends AppCompatActivity {
 
     public void onUseInFrag(View view) {
         startActivity(new Intent(this, UseInFragActivity.class));
+    }
+
+    public void onMediaAudioClick(View view) {
+        startActivity(new Intent(this, MediaAudioActivity.class));
+    }
+
+    public void onMediaVideoClick(View view) {
+        startActivity(new Intent(this, MediaVideoActivity.class));
     }
 }
