@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.v.module_textview.at.RichTextActivity;
+import com.v.module_textview.ellipsize_view.EllipsizeLayoutActivity;
 import com.v.module_textview.marquee.MarqueeActivity;
 import com.v.module_textview.tagview.HtmlTextViewActivity;
 import com.v.module_textview.tagview.SpannableStringActivity;
@@ -54,5 +55,12 @@ public class TextviewMainActivity extends AppCompatActivity {
 
     public void singleLineClick(View view) {
         startActivity(new Intent(this, SingleLineActivity.class));
+    }
+
+    /**
+     *  Android开发中，在LinearLayout中如何让左边TextView显示省略号，而右边的空间正常显示，完美解决方案：EllipsizeLayout
+     */
+    public void ellipsizeClick(View view) {
+        startActivity(new Intent(this, EllipsizeLayoutActivity.class));
     }
 }

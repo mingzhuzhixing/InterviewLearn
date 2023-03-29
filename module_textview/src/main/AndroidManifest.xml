@@ -4,6 +4,13 @@
 
     <application>
         <activity
+            android:name=".EllipsizeLayoutActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SingleLineActivity"
             android:exported="false">
             <meta-data
@@ -29,6 +36,7 @@
             android:exported="true" />
         <activity android:name=".at.UserListActivity" />
         <activity android:name=".at.TopicListActivity" />
+        <activity android:name=".ellipsize_view.EllipsizeLayoutActivity" />
     </application>
 
 </manifest>
