@@ -24,6 +24,7 @@
         <activity android:name=".swipe_refresh_layout.SwipeNoRefreshLayoutActivity" />
         <activity android:name=".gridview.GridviewFullActivity" />
         <activity android:name=".gridview.GridviewHorizontalActivity" />
+        <activity android:name=".expand_recyclerview.ExpandRecyclerViewActivity" />
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
+import com.v.module_recyclerview.expand_recyclerview.ExpandRecyclerViewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.gridview.GridviewFullActivity;
 import com.v.module_recyclerview.gridview.GridviewHorizontalActivity;
@@ -98,5 +99,13 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void overScrollClick(View view) {
         startActivity(new Intent(this, OverscrollRecyclerViewActivity.class));
+    }
+
+
+    /**
+     * 可展开二级列表expand效果
+     */
+    public void expandRecyclerViewClick(View view) {
+        startActivity(new Intent(this, ExpandRecyclerViewActivity.class));
     }
 }

@@ -83,4 +83,10 @@
         android:onClick="overScrollClick"
         android:text="recyclerview阻尼效果"
         android:textAllCaps="false" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="expandRecyclerViewClick"
+        android:text="可展开二级列表expand效果"
+        android:textAllCaps="false" />
 </LinearLayout>
