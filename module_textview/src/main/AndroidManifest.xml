@@ -11,7 +11,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SingleLineActivity"
+            android:name=".ellipsize_view.SingleLineActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

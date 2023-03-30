@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.v.module_textview.at.RichTextActivity;
 import com.v.module_textview.ellipsize_view.EllipsizeLayoutActivity;
+import com.v.module_textview.ellipsize_view.SingleLineActivity;
 import com.v.module_textview.marquee.MarqueeActivity;
 import com.v.module_textview.tagview.HtmlTextViewActivity;
 import com.v.module_textview.tagview.SpannableStringActivity;

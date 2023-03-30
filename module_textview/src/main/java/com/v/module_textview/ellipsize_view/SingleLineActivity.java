@@ -1,8 +1,9 @@
-package com.v.module_textview;
+package com.v.module_textview.ellipsize_view;
 
 import android.widget.TextView;
 
 import com.v.module_base.BaseTitleBarActivity;
+import com.v.module_textview.R;
 
 public class SingleLineActivity extends BaseTitleBarActivity {
 
