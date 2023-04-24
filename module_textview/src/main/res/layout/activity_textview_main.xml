@@ -49,4 +49,11 @@
         android:onClick="singleLineClick"
         android:text="单行" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ellipsizeClick"
+        android:textAllCaps="false"
+        android:text="在LinearLayout中如何让左边TextView显示省略号，而右边的空间正常显示" />
+
 </LinearLayout>

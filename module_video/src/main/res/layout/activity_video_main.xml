@@ -9,30 +9,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onAliVideo"
-        android:text="阿里播放器" />
+        android:text="阿里播放器"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onNiceRecyclerView"
-        android:text="nice RecyclerView 播放器 列表" />
+        android:text="nice RecyclerView 播放器 列表"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onChangeClarity"
-        android:text="nice ChangeClarity 阿里播放器" />
+        android:text="nice ChangeClarity 阿里播放器"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onTinyWindowPlay"
-        android:text="nice TinyWindowPlay 播放器" />
+        android:text="nice TinyWindowPlay 播放器"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onUseInFrag"
-        android:text="nice UseInFrag 播放器" />
+        android:text="nice UseInFrag 播放器"
+        android:textAllCaps="false" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onMediaAudioClick"
+        android:text="MediaPlayer音频播放器"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onMediaVideoClick"
+        android:text="MediaPlayer视频播放器"
+        android:textAllCaps="false" />
 </LinearLayout>

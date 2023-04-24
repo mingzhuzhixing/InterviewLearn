@@ -12,6 +12,7 @@ import com.v.module_eventbus.bean.Friend;
 import com.v.module_eventbus.eventbus.DNEventbus;
 import com.v.module_eventbus.eventbus.DNSubscribe;
 import com.v.module_eventbus.eventbus.DNThreadMode;
+import com.v.module_eventbus.observable.ObserverObservableActivity;
 
 
 public class EventBusMainActivity extends AppCompatActivity {
@@ -29,6 +30,10 @@ public class EventBusMainActivity extends AppCompatActivity {
 
     public void change(View view) {
         startActivity(new Intent(this, SecondActivity.class));
+    }
+
+    public void onObservableClick(View view) {
+        startActivity(new Intent(this, ObserverObservableActivity.class));
     }
 
 
