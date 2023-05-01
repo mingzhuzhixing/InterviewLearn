@@ -32,6 +32,12 @@ dependencies:
   event_bus: ^1.1.1
   flutter_webview_plugin: ^0.3.10
 
+  #相册选择照片相关
+  path_provider: ^0.4.0
+  image_picker: ^0.6.0+8
+  crop_your_image: ^0.6.0+1
+#  flutter_easyloading: ^3.0.3
+
 #  webview_flutter: ^3.0.2
 #  flutter_webview_plugin:
 #    git: https://github.com/nuc134r/flutter_webview_plugin.git
