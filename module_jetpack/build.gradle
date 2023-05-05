@@ -36,7 +36,7 @@ dependencies {
     implementation deps["appcompat_x"]
     implementation deps["constraint_layout"]
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.google.android.material:material:1.4.+'
+    implementation deps["material"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]

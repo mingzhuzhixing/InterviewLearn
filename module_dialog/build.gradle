@@ -34,7 +34,7 @@ dependencies {
 
     api project(":module_common")
     implementation project(":module_recyclerview")
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation deps["material"]
 
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
 

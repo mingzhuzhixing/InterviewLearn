@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".scroll_number.ScrollNumberActivity">
 
-    <top.wuhaojie.library.MultiScrollNumber
-        android:id="@+id/scroll_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <!--    <top.wuhaojie.library.MultiScrollNumber-->
+    <!--        android:id="@+id/scroll_number"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        onClick="add"/>
+        android:onClick="clickAdd"
+        android:text="add"
+        android:textAllCaps="false"
+        tools:ignore="UsingOnClickInXml" />
 
 </LinearLayout>

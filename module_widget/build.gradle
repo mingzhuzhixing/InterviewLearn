@@ -53,5 +53,5 @@ dependencies {
 
     api 'com.github.Petterpx:FloatingX:1.1.4'
 
-    implementation 'top.wuhaojie:scrollnumber:1.0.0'
+    //implementation 'top.wuhaojie:scrollnumber:1.0.0'
 }
