@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommonAppBar extends AppBar {
   CommonAppBar(
@@ -16,7 +15,7 @@ class CommonAppBar extends AppBar {
             elevation: elevation,
             centerTitle: true,
             leading: Padding(
-              padding: EdgeInsets.only(left: 10.w, right: 23.w),
+              padding: EdgeInsets.only(left: 10, right: 23),
               child: IconButton(
                 onPressed: () {
                   Navigator.pop(context);

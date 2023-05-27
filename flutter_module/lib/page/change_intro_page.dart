@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/utils/shared_preference_utils.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/loading_dialog.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 /// 修改个人签名
@@ -17,23 +16,18 @@ class ChangeIntroPage extends StatefulWidget {
 class _ChangeIntroPageState extends State<ChangeIntroPage> {
   bool _hasText = false;
   final int counter = 60;
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     SharePreferenceUtils.getUserInfo().then((value){
-      _controller.text = "fajfjdaskfdad";
+      String name = value.name ??= "";
+      _controller.text = name;
       setState(() {
-        _hasText = "fajfjdaskfdad".isNotEmpty;
+        _hasText = name.isNotEmpty;
       });
     });
-    // UserInfoUtil.getUserInfo(UserInfoUtil.KEY_INTRO).then((onValue) {
-    //   _controller.text = onValue;
-    //   setState(() {
-    //     _hasText = onValue.isNotEmpty;
-    //   });
-    // });
   }
 
   @override
@@ -56,8 +50,8 @@ class _ChangeIntroPageState extends State<ChangeIntroPage> {
                     "保存",
                     textScaleFactor: 1.0,
                     style: TextStyle(
-                        color: _hasText ? const Color(0xff666666) : const Color(0xffb2b2b2),
-                        fontSize: 15.sp),
+                        color: _hasText ? const Color(0xffc82507) : const Color(0xffb2b2b2),
+                        fontSize: 15),
                   ),
                 ),
               ))
@@ -96,7 +90,7 @@ class _ChangeIntroPageState extends State<ChangeIntroPage> {
                   margin: const EdgeInsets.only(top: 125, right: 10),
                   child: Text(
                     "${counter - _controller.text.length}",
-                    style: TextStyle(fontSize: 13.sp, color: const Color(0xff989898)),
+                    style: TextStyle(fontSize: 13, color: const Color(0xff989898)),
                   ),
                 ),
               ),

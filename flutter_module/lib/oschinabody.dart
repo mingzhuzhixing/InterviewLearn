@@ -4,12 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_module/page/about_page.dart';
 import 'package:flutter_module/page/confine_page.dart';
-import 'package:flutter_module/page/discover_page.dart';
-import 'package:flutter_module/page/news_page.dart';
-import 'package:flutter_module/page/profile_page.dart';
+import 'package:flutter_module/page/tab_page/discover_page.dart';
+import 'package:flutter_module/page/tab_page/news_page.dart';
+import 'package:flutter_module/page/tab_page/profile_page.dart';
 import 'package:flutter_module/page/publish_trends_page.dart';
 import 'package:flutter_module/page/setting_page.dart';
-import 'package:flutter_module/page/tweet_page.dart';
+import 'package:flutter_module/page/tab_page/tweet_page.dart';
 import 'package:flutter_module/widget/bottom_item.dart';
 import 'package:flutter_module/widget/left_drawer.dart';
 
@@ -64,28 +64,28 @@ class _OsChinaBodyState extends State<OsChinaBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        child: Offstage(
-          offstage: _current != 0,
-          child: AppBar(
-            title: Text("${_listTitle[_current]}"),
-            //自定义菜单图标
-            leading: Builder(
-              builder: (context) {
-                return IconButton(
-                    onPressed: () {
-                      _openDrawer(context);
-                    },
-                    icon: const Icon(
-                      Icons.menu,
-                      color: Colors.white,
-                    ));
-              },
-            ),
-          ),
-        ),
-        preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.07),
-      ),
+      // appBar: PreferredSize(
+      //   child: Offstage(
+      //     offstage: false,
+      //     child: AppBar(
+      //       title: Text("${_listTitle[_current]}"),
+      //       //自定义菜单图标
+      //       leading: Builder(
+      //         builder: (context) {
+      //           return IconButton(
+      //               onPressed: () {
+      //                 _openDrawer(context);
+      //               },
+      //               icon: const Icon(
+      //                 Icons.menu,
+      //                 color: Colors.white,
+      //               ));
+      //         },
+      //       ),
+      //     ),
+      //   ),
+      //   preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.07),
+      // ),
       body: PageView.builder(
         itemBuilder: (context, index) {
           return _listPage[index];

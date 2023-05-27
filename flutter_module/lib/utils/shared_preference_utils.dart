@@ -100,6 +100,7 @@ class SharePreferenceUtils {
     SharedPreferences sp = await SharedPreferences.getInstance();
     bool? isLogin = sp.getBool(IS_LOGIN);
     User user = User();
+    user.name = "获取用户信息";
     if (isLogin == null || !isLogin) {
       return user;
     }

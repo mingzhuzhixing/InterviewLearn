@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 /// 自定义 loading
@@ -22,7 +21,7 @@ class LoadingDialog {
                 alignment: Alignment.center,
                 width: double.infinity,
                 height: double.infinity,
-                child: Lottie.asset("assets/loading.json", width: 38.w, height: 40.h),
+                child: Lottie.asset("assets/loading.json", width: 38, height: 40),
               ),
             ),
           );

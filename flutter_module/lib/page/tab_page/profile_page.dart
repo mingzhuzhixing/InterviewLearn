@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_module/page/change_intro_page.dart';
-import 'package:flutter_module/page/login_page.dart';
+import 'package:flutter_module/page/login_page/login_page.dart';
 import 'package:flutter_module/utils/event_bus_utils.dart';
 
-import '../common/resources.dart';
-import '../utils/net_utils.dart';
-import '../utils/shared_preference_utils.dart';
-import '../widget/override_pending.dart';
+import '../../common/resources.dart';
+import '../../utils/net_utils.dart';
+import '../../utils/shared_preference_utils.dart';
+import '../../widget/override_pending.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

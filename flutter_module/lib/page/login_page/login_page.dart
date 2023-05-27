@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/common/resources.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-import '../utils/net_utils.dart';
-import '../utils/shared_preference_utils.dart';
+import '../../utils/net_utils.dart';
+import '../../utils/shared_preference_utils.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
