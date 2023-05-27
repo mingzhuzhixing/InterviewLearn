@@ -64,21 +64,27 @@ class _OsChinaBodyState extends State<OsChinaBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("${_listTitle[_current]}"),
-        //自定义菜单图标
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-                onPressed: () {
-                  _openDrawer(context);
-                },
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ));
-          },
+      appBar: PreferredSize(
+        child: Offstage(
+          offstage: _current != 0,
+          child: AppBar(
+            title: Text("${_listTitle[_current]}"),
+            //自定义菜单图标
+            leading: Builder(
+              builder: (context) {
+                return IconButton(
+                    onPressed: () {
+                      _openDrawer(context);
+                    },
+                    icon: const Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    ));
+              },
+            ),
+          ),
         ),
+        preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.07),
       ),
       body: PageView.builder(
         itemBuilder: (context, index) {

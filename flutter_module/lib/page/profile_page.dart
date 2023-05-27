@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_module/page/change_intro_page.dart';
 import 'package:flutter_module/page/login_page.dart';
 import 'package:flutter_module/utils/event_bus_utils.dart';
 
@@ -26,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
   void initState() {
     super.initState();
     _showUerInfo();
-    listTitle = ["我的消息", "阅读记录", "我的博客", "我的问答", "我的活动", "我的团队", "邀请好友"];
+    listTitle = ["我的消息", "阅读记录", "我的博客", "我的问答", "我的活动", "我的团队", "邀请好友", "个人简介"];
     listIcon = [
       Icons.message,
       Icons.menu_book,
@@ -35,6 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
       Icons.local_activity,
       Icons.group,
       Icons.share,
+      Icons.format_paint_rounded,
     ];
 
     eventBus.on<LoginEvent>().listen((event) {
@@ -64,6 +66,14 @@ class _ProfilePageState extends State<ProfilePage> {
           title: Text(listTitle[index]),
           leading: Icon(listIcon[index]),
           trailing: const Icon(Icons.arrow_forward_ios),
+          onTap: (){
+            if (index == 7) {
+              //个人简介
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ChangeIntroPage();
+              }));
+            }
+          },
         );
       },
       separatorBuilder: (context, index) {
