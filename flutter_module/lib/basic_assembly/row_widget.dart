@@ -32,9 +32,9 @@ class RowWidgetPage extends StatelessWidget {
               print("点击蓝色按钮");
             },
             color: const Color(0xff000099),
-            child: Text(
+            child: const Text(
               "蓝色按钮",
-              style: TextStyle(color: const Color(0xffffffff)),
+              style: TextStyle(color: Color(0xffffffff)),
             ),
           ),
           RaisedButton(

@@ -1,6 +1,7 @@
 // @dart=2.9
 // 必须在dart文件的第一行,可以加在任何dart文件中
 import 'package:flutter/material.dart';
+import 'package:flutter_module/basic_assembly/splash_screen_widget.dart';
 import 'package:flutter_module/oschinabody.dart';
 
 void main() => runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OsChinaBody(),
+      home: const SplashScreenWidgetPage(),
     );
   }
 }

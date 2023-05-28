@@ -16,7 +16,7 @@ class StackWidgetPage extends StatelessWidget {
           Container(
             width: 300.0,
             height: 300.0,
-            color: Colors.red,
+            color: Colors.yellowAccent,
           ),
           const Text("我是一个文本"),
           const Text("我是一个文本1"),
