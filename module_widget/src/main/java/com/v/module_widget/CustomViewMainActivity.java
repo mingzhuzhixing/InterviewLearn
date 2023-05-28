@@ -21,6 +21,7 @@ import com.v.module_widget.motion_layout.MotionLayoutActivity;
 import com.v.module_widget.point_loading_view.LoadingViewActivity;
 import com.v.module_widget.progess_bar.ProgressBarActivity;
 import com.v.module_widget.rating_bar.RatingBarActivity;
+import com.v.module_widget.scroll_number.ScrollNumberActivity;
 import com.v.module_widget.screem_view.ListDataScreenViewActivity;
 import com.v.module_widget.shape_view.ShapeViewActivity;
 import com.v.module_widget.slide_layout.SlideLayoutActivity;
@@ -197,5 +198,12 @@ public class CustomViewMainActivity extends AppCompatActivity {
      */
     public void curveCircleClick(View view) {
         startActivity(new Intent(this, CurveCircleActivity.class));
+    }
+
+    /**
+     * 滚动数字控件ScrollNumber
+     */
+    public void scrollNumberClick(View view) {
+        startActivity(new Intent(this, ScrollNumberActivity.class));
     }
 }

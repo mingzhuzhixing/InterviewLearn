@@ -99,6 +99,8 @@
         <activity
             android:name=".curve_circle.CurveCircleActivity"
             android:exported="false" />
+        <activity android:name=".scroll_number.ScrollNumberActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

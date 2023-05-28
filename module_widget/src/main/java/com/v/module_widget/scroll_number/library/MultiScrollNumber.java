@@ -1,4 +1,4 @@
-package com.v.module_widget.scoll_number.library;
+package com.v.module_widget.scroll_number.library;
 
 import android.content.Context;
 import android.content.res.TypedArray;

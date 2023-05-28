@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".scroll_number.ScrollNumberActivity">
 
-    <!--    <top.wuhaojie.library.MultiScrollNumber-->
-    <!--        android:id="@+id/scroll_number"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"/>-->
+    <com.v.module_widget.scroll_number.library.MultiScrollNumber
+        android:id="@+id/scroll_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingClass" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickAdd"
-        android:text="add"
-        android:textAllCaps="false"
-        tools:ignore="UsingOnClickInXml" />
+        android:text="增加"
+        android:onClick="addClick"/>
 
 </LinearLayout>
