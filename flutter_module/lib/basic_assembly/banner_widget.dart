@@ -23,7 +23,7 @@ class _BannerWidgetPageState extends State<BannerWidgetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUtils.appBar("banner widget"),
+      appBar: CommonAppBar(context, "banner widget"),
       body: Container(
         padding: EdgeInsets.all(16),
         child: Align(

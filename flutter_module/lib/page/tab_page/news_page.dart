@@ -34,6 +34,7 @@ import 'package:flutter_module/basic_assembly/text_widget.dart';
 import 'package:flutter_module/basic_assembly/textfield_widget.dart';
 import 'package:flutter_module/basic_assembly/tooltip_widget.dart';
 import 'package:flutter_module/basic_assembly/top_tabbar_widget.dart';
+import 'package:flutter_module/basic_assembly/vertical_text_widget.dart';
 import 'package:flutter_module/basic_assembly/wrap_widget.dart';
 
 ///咨询
@@ -101,6 +102,7 @@ class _NewsPageState extends State<NewsPage> {
     ItemEntity("tooltip", TooltipWidgetPage()),
     ItemEntity("top_tabbar_widget", TopTabBarPage()),
     ItemEntity("top_tabbar_controller_widget", TabBarControllerPage()),
+    ItemEntity("vertical_text_widget", VerticalTextPage()),
   ];
 
   @override

@@ -26,7 +26,7 @@ class _LinearProgressIndicatorWidgetPageState extends State<LinearProgressIndica
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUtils.appBar("LinearProgressIndicator widget"),
+      appBar: CommonAppBar(context, "LinearProgressIndicator widget"),
       body: Column(
         children: [
           const SizedBox(height: 20),
