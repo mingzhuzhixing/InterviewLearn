@@ -9,7 +9,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 /**
  * 下拉刷新加载
- *
+ * 手写效果：https://blog.csdn.net/weixin_44911775/article/details/124985084
  * https://www.jianshu.com/p/7bb0c735ba3a
  * https://www.6hu.cc/archives/75328.html
  * https://blog.csdn.net/u013491829/article/details/122308775
