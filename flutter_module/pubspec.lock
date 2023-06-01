@@ -91,7 +91,7 @@ packages:
       name: event_bus
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.1"
+    version: "2.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -127,6 +127,13 @@ packages:
       url: "https://github.com/yasseralsamman/flutter-cupertino-date-picker.git"
     source: git
     version: "1.0.26+2"
+  flutter_inappwebview:
+    dependency: "direct main"
+    description:
+      name: flutter_inappwebview
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.6.0+2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -165,13 +172,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_webview_plugin:
-    dependency: "direct main"
-    description:
-      name: flutter_webview_plugin
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.3.11"
   fluttertoast:
     dependency: "direct main"
     description:
@@ -249,13 +249,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.0"
-  path_provider:
-    dependency: "direct main"
-    description:
-      name: path_provider
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.4.1"
   path_provider_linux:
     dependency: transitive
     description:

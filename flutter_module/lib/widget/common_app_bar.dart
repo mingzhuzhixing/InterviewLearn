@@ -7,7 +7,7 @@ class CommonAppBar extends AppBar {
     Color backgroundColor = Colors.white,
     Color arrowColor = Colors.black,
     double elevation = 1,
-    required List<Widget> actions,
+    List<Widget>? actions,
   }) : super(key: key,
             backgroundColor: backgroundColor,
             brightness: Brightness.dark,
@@ -22,7 +22,7 @@ class CommonAppBar extends AppBar {
                 },
                 icon: const Icon(
                   Icons.arrow_back_ios_new,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),

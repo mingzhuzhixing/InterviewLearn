@@ -8,6 +8,7 @@ import 'package:flutter_module/basic_assembly/column_widget.dart';
 import 'package:flutter_module/basic_assembly/container_widget.dart';
 import 'package:flutter_module/basic_assembly/datetime_picker_widget.dart';
 import 'package:flutter_module/basic_assembly/dialog_widget.dart';
+import 'package:flutter_module/basic_assembly/event_bus_widget.dart';
 import 'package:flutter_module/basic_assembly/file_storage_widget.dart';
 import 'package:flutter_module/basic_assembly/gesture_detector_widget.dart';
 import 'package:flutter_module/basic_assembly/gridview_widget.dart';
@@ -83,6 +84,7 @@ class _NewsPageState extends State<NewsPage> {
     ItemEntity("linear_progress_indicator_widget", LinearProgressIndicatorWidgetPage()),
     ItemEntity("positioned_widget", PositionedWidgetPage()),
     ItemEntity("pull_to_refresh", PullToRefreshPage()),
+    ItemEntity("eventbus_widget", EventBusWidgetPage()),
     ItemEntity("expanded_widget", ExpandedWidgetPage()),
     ItemEntity("offstage_widget", OffstageWidgetPage()),
     ItemEntity("gesture_detector_widget", GestureDetectorWidgetPage()),
