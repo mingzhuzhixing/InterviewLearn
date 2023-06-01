@@ -21,6 +21,7 @@ import 'package:flutter_module/basic_assembly/listview_widget_build.dart';
 import 'package:flutter_module/basic_assembly/offstage_widget.dart';
 import 'package:flutter_module/basic_assembly/padding_widget.dart';
 import 'package:flutter_module/basic_assembly/positioned_widget.dart';
+import 'package:flutter_module/basic_assembly/pull_to_refresh_widget.dart';
 import 'package:flutter_module/basic_assembly/radio_widget.dart';
 import 'package:flutter_module/basic_assembly/radiolisttile_widget.dart';
 import 'package:flutter_module/basic_assembly/row_widget.dart';
@@ -81,6 +82,7 @@ class _NewsPageState extends State<NewsPage> {
     ItemEntity("indexstack_widget", IndexedStackWidgetPage()),
     ItemEntity("linear_progress_indicator_widget", LinearProgressIndicatorWidgetPage()),
     ItemEntity("positioned_widget", PositionedWidgetPage()),
+    ItemEntity("pull_to_refresh", PullToRefreshPage()),
     ItemEntity("expanded_widget", ExpandedWidgetPage()),
     ItemEntity("offstage_widget", OffstageWidgetPage()),
     ItemEntity("gesture_detector_widget", GestureDetectorWidgetPage()),
