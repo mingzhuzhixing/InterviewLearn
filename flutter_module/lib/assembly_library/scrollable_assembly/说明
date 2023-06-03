@@ -1,0 +1,4 @@
+可滚动Widget
+SingleChildScrollView，ListView，GridView，CustomScrollView，滚动监听和控制ScrollController。
+
+当内容超过显示窗口(ViewPort)的时候，Flutter就会提示Overflow错误，因此需要滚动Widget，可滚动的Widget都直接或者间接包含Scrollable widget。

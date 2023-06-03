@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
 
 class CustomScrollViewPage extends StatefulWidget {
   const CustomScrollViewPage({Key? key}) : super(key: key);

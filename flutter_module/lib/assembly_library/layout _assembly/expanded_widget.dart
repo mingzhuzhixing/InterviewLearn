@@ -10,10 +10,37 @@ class ExpandedWidgetPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("expanded widget"),
       ),
-      body: Row(
+      body: Column(
         children: [
-          getExpended(Icons.home, Colors.orange, 1),
-          getExpended(Icons.search, Colors.blue, 2),
+          Row(
+            children: [
+              getExpended(Icons.home, Colors.orange, 1),
+              getExpended(Icons.search, Colors.blue, 2),
+            ],
+          ),
+          SizedBox(height: 10),
+          //Expanded继承字Flexible，fit参数固定为FlexFit.tight，也就是说Expanded必须（强制）填满剩余空间。上面的OutlineButton想要充满剩余空间可以使用Expanded：
+          Row(
+            children: <Widget>[
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 100,
+              ),
+              Expanded(
+                child: OutlineButton(
+                  onPressed: () {},
+                  child: Text('OutlineButton'),
+                ),
+              ),
+              Container(
+                color: Colors.blue,
+                height: 50,
+                width: 100,
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
         ],
       ),
     );

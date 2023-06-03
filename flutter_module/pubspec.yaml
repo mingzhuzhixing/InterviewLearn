@@ -36,10 +36,13 @@ dependencies:
   event_bus: ^2.0.0
 
   # flutter_webview 库
-  # flutter_webview_plugin: ^0.3.10
+  flutter_webview_plugin: ^0.3.10
   # flutter_inappwebview: ^5.6.0
-  flutter_inappwebview:
-    git: https://github.com/pichillilorenzo/flutter_inappwebview.git
+#  flutter_inappwebview:
+#    git: https://github.com/pichillilorenzo/flutter_inappwebview.git
+#  webview_flutter: ^3.0.2
+#  flutter_webview_plugin:
+#    git: https://github.com/nuc134r/flutter_webview_plugin.git
 
   # flutter toast
   fluttertoast: any
@@ -54,7 +57,7 @@ dependencies:
   flutter_swiper: ^1.1.6
 
   #相册选择照片相关
-  #path_provider: ^0.4.0
+  path_provider: ^0.4.0
 
   #图片选择
   image_picker: ^0.6.0+8
@@ -78,9 +81,8 @@ dependencies:
 
 #  flutter_easyloading: ^3.0.3
 
-#  webview_flutter: ^3.0.2
-#  flutter_webview_plugin:
-#    git: https://github.com/nuc134r/flutter_webview_plugin.git
+  #屏幕尺寸工具类 不适用^表示固定版本号，不会改变
+  flutter_screenutil: 5.7.0
 
 
 dev_dependencies:
