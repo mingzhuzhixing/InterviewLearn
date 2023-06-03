@@ -1,0 +1,3 @@
+布局类组件
+
+Row(水平线性布局)，Column(垂直线性布局)，Flex(弹性布局)，Wrap|Flow(流式布局)，Stack|Positioned(层叠布局)

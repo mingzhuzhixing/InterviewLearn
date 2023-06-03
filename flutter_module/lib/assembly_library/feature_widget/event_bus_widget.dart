@@ -6,8 +6,6 @@ import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 
-import 'event_bus/GCUserInfo.dart';
-
 //EventBus
 
 /**
@@ -27,6 +25,12 @@ import 'event_bus/GCUserInfo.dart';
  *   https://www.jianshu.com/p/7b5e85d28751
  */
 final EventBus eventBus = EventBus();
+//传递的对象
+class GCUserInfo {
+  GCUserInfo(this.name, this.age);
+  final String name;
+  final int age;
+}
 
 class EventBusWidgetPage extends StatefulWidget {
   const EventBusWidgetPage({Key? key}) : super(key: key);

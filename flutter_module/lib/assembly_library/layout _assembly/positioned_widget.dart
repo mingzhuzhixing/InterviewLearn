@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-///Positioned布局
-///
-/// Positioned widget 用于定位 Stack 的子 widget。  Positioned 仅用作 Stack 的直接(或后代)子部件
-/// 使用控制Widget的位置，通过他可以随意摆放一个组件，有点像绝对布局
+/**
+ * Positioned布局
+ *
+ * Positioned widget 用于定位 Stack 的子 widget。  Positioned 仅用作 Stack 的直接(或后代)子部件
+ * 使用控制Widget的位置，通过他可以随意摆放一个组件，有点像绝对布局
+ */
 class PositionedWidgetPage extends StatelessWidget {
   const PositionedWidgetPage({Key? key}) : super(key: key);
 

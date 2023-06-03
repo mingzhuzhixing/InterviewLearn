@@ -1,9 +1,8 @@
 // ignore_for_file: slash_for_doc_comments
 
 import 'package:flutter/material.dart';
+import 'package:flutter_module/oschinabody.dart';
 import 'package:splashscreen/splashscreen.dart';
-
-import '../oschinabody.dart';
 
 /**
  * SplashScreenWidgetPage

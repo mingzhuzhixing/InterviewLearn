@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-///stack
+/**
+ * Stack
+ *
+ * Stack类似Android中的FrameLayout，子Widget根据到四个角的位置来确定本身的位置，允许子Widget堆叠。
+ */
 class StackWidgetPage extends StatelessWidget {
   const StackWidgetPage({Key? key}) : super(key: key);
 
