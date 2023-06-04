@@ -50,6 +50,16 @@ class DialogWidgetPage extends StatelessWidget {
               color: Colors.red,
               highlightColor: Colors.redAccent,
               disabledColor: Colors.redAccent,
+            ),
+            MaterialButton(
+              minWidth: 200,
+              onPressed: () {
+                _showAboutDialog(context);
+              },
+              child: const Text("AboutDialog"),
+              color: Colors.red,
+              highlightColor: Colors.purpleAccent,
+              disabledColor: Colors.purple,
             )
           ],
         ));
@@ -176,5 +186,36 @@ void modalBottomSheetDialog(BuildContext context) {
         ),
       );
     },
+  );
+}
+
+/**
+ * AboutDialog用于描述当前App信息，底部提供2个按钮：查看许可按钮和关闭按钮。AboutDialog需要和showAboutDialog配合使用，
+ */
+void _showAboutDialog(BuildContext context) {
+  showAboutDialog(
+    context: context,
+    applicationIcon: Image.asset(
+      'assets/images/cover_img.jpg',
+      height: 100,
+      width: 100,
+    ),
+    applicationName: '应用程序',
+    applicationVersion: '1.0.0',
+    applicationLegalese: 'copyright 老孟，一枚有态度的程序员',
+    children: <Widget>[
+      Container(
+        height: 30,
+        color: Colors.red,
+      ),
+      Container(
+        height: 30,
+        color: Colors.blue,
+      ),
+      Container(
+        height: 30,
+        color: Colors.green,
+      )
+    ],
   );
 }

@@ -1,30 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/assembly_library/basic_assembly/expandicon_widget.dart';
-import 'package:flutter_module/assembly_library/scrollable_assembly/webview_widget.dart';
-import 'package:flutter_module/assembly_library/container_assembly/align_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/banner_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/button_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/card_widget.dart';
-import 'package:flutter_module/assembly_library/container_assembly/center_widget.dart';
-import 'package:flutter_module/assembly_library/container_assembly/decoratedbox_widget.dart';
-import 'package:flutter_module/assembly_library/container_assembly/dotted_border_widget.dart';
-import 'package:flutter_module/assembly_library/feature_widget/datetime_picker_widget.dart';
-import 'package:flutter_module/assembly_library/feature_widget/dialog_widget.dart';
-import 'package:flutter_module/assembly_library/feature_widget/event_bus_widget.dart';
-import 'package:flutter_module/assembly_library/feature_widget/gesture_detector_widget.dart';
+import 'package:flutter_module/assembly_library/basic_assembly/expandicon_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/icon_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/image_widget.dart';
-import 'package:flutter_module/assembly_library/feature_widget/willpopscope_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/expanded_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/flex_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/flexible_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/flow_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/indexedstack_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/linear_progress_indicator_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/offstage_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/spacer_widget.dart';
-import 'package:flutter_module/assembly_library/layout%20_assembly/visibility_widget.dart';
-import 'package:flutter_module/assembly_library/scrollable_assembly/pull_to_refresh_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/radio_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/radiolisttile_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/swiper_widget.dart';
@@ -35,21 +16,42 @@ import 'package:flutter_module/assembly_library/basic_assembly/tooltip_widget.da
 import 'package:flutter_module/assembly_library/basic_assembly/top_tabbar_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/vertical_text_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/wrap_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/align_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/aspectratio_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/center_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/constrainedbox_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/container_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/decoratedbox_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/dotted_border_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/fractionallysizedbox_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/padding_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/sizebox_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/datetime_picker_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/dialog_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/event_bus_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/file_storage_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/gesture_detector_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/sp_storage_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/sqflite_storage_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/willpopscope_widget.dart';
 import 'package:flutter_module/assembly_library/layout%20_assembly/column_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/expanded_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/flex_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/flexible_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/flow_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/indexedstack_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/offstage_widget.dart';
 import 'package:flutter_module/assembly_library/layout%20_assembly/positioned_widget.dart';
 import 'package:flutter_module/assembly_library/layout%20_assembly/row_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/spacer_widget.dart';
 import 'package:flutter_module/assembly_library/layout%20_assembly/stack_widget.dart';
+import 'package:flutter_module/assembly_library/layout%20_assembly/visibility_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/customscrollview_vidget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/gridview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget_build.dart';
+import 'package:flutter_module/assembly_library/scrollable_assembly/pull_to_refresh_widget.dart';
+import 'package:flutter_module/assembly_library/scrollable_assembly/webview_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///咨询
@@ -87,11 +89,13 @@ class _NewsPageState extends State<NewsPage> {
     //-----------------------------------------------------------------------------------
     ItemEntity("容器类组件", null, type: "1"),
     ItemEntity("align_widget", AlignWidgetPage()),
+    ItemEntity("aspectradio_widget", AspectRatioWidgetPage()),
     ItemEntity("center_widget", CenterWidgetPage()),
     ItemEntity("constrainedbox_widget", ConstrainedBoxWidgetPage()),
     ItemEntity("container_widget", ContainerWidgetPage()),
     ItemEntity("decoratedbox_widget", DecoratedBoxWidgetPage()),
     ItemEntity("dotted_border_widget", DottedBorderWidgetPage()),
+    ItemEntity("fractionallysizedbox_widget", FractionallySizedBoxWidgetPage()),
     ItemEntity("padding_widget", PaddingWidgetPage()),
     ItemEntity("sizebox_widget", SizeBoxWidgetPage()),
     //-----------------------------------------------------------------------------------

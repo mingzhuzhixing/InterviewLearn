@@ -7,6 +7,7 @@ linter:
     prefer_const_constructors: false
     avoid_print: false
     slash_for_doc_comments: false
+    prefer_const_literals_to_create_immutables: false
 #    file_names: false
 #    public_member_api_docs: false
 #    lines_longer_than_80_chars: false

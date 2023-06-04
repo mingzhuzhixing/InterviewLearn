@@ -37,7 +37,7 @@ dependencies:
 
   # flutter_webview 库
   flutter_webview_plugin: ^0.3.10
-  flutter_inappwebview: ^5.6.0
+#  flutter_inappwebview: 5.6.0
 #  flutter_inappwebview:
 #    git: https://github.com/pichillilorenzo/flutter_inappwebview.git
 #  webview_flutter: ^3.0.2

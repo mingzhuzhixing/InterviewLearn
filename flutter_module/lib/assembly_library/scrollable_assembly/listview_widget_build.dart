@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 ///可复用的ListView长列表
@@ -28,6 +29,7 @@ class ListViewWidgetBuildPage extends StatefulWidget {
 
 class _MyListViewWidgetBuildPage extends State<ListViewWidgetBuildPage> {
   List<ItemEntity> entityList = [];
+  List<ItemEntity> entityChildList = [];
 
   /*
    * 初始化状态
@@ -38,6 +40,9 @@ class _MyListViewWidgetBuildPage extends State<ListViewWidgetBuildPage> {
     for (int i = 0; i < 30; i++) {
       entityList.add(ItemEntity("Item $i", Icons.accessibility));
     }
+    for (int i = 0; i < 3; i++) {
+      entityChildList.add(ItemEntity("Item $i", Icons.accessibility));
+    }
   }
 
   @override
@@ -46,9 +51,10 @@ class _MyListViewWidgetBuildPage extends State<ListViewWidgetBuildPage> {
       appBar: AppBar(
         title: Text("ListView 动态数据"),
       ),
+      backgroundColor: Colors.white,
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          return ItemView(entityList[index]);
+          return ItemView(entityList[index], entityChildList);
         },
         itemCount: entityList.length,
       ),
@@ -71,8 +77,9 @@ class ItemEntity {
  */
 class ItemView extends StatelessWidget {
   ItemEntity itemEntity;
+  List<ItemEntity> entityChildList;
 
-  ItemView(this.itemEntity);
+  ItemView(this.itemEntity, this.entityChildList);
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +91,28 @@ class ItemView extends StatelessWidget {
             leading: Icon(itemEntity.iconData),
             title: Text(itemEntity.title),
             subtitle: Text("长列表"),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 30.w, right: 30.w),
+            padding: EdgeInsets.only(left: 30.w, top: 20.w, right: 30.w, bottom: 20.w),
+            decoration: BoxDecoration(
+              color: Color(0xfff7f7f7),
+              borderRadius: BorderRadius.all(Radius.circular(15.w)),
+            ),
+            child: ListView.builder(
+              shrinkWrap: true,
+              physics: BouncingScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return Row(
+                  children: [
+                    Text("左边"),
+                    Spacer(),
+                    Text(entityChildList[index].title),
+                  ],
+                );
+              },
+              itemCount: entityChildList.length,
+            ),
           ),
           SizedBox(
             height: 0.2,

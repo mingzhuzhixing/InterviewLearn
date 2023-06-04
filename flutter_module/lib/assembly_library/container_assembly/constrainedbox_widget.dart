@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
-import 'package:flutter_screenutil/src/size_extension.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/**
+ * ConstrainedBox组件约束子组件的最大宽高和最小宽高，假如一个组件宽高都是300，包裹在ConstrainedBox中，并给ConstrainedBox添加最大宽高约束，
+ */
 class ConstrainedBoxWidgetPage extends StatefulWidget {
   const ConstrainedBoxWidgetPage({Key? key}) : super(key: key);
 
