@@ -10,9 +10,12 @@ class ImageWidgetPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            Image.network("https://p1.ssl.qhmsg.com/dr/220__/t01d5ccfbf9d4500c75.jpg",
-                width: 200, height: 100),
-            Image.asset("images/account_huawei_icon.png"),
+            Image.network(
+                "https://p1.ssl.qhmsg.com/dr/220__/t01d5ccfbf9d4500c75.jpg",
+                width: 200,
+                height: 100),
+            Image.asset("images/ic_avatar_default.png",
+                height: 100, width: 100, scale: 1.0),
             const ClipOvalWidget(),
           ],
         ),

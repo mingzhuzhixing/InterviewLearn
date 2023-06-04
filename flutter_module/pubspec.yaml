@@ -37,7 +37,7 @@ dependencies:
 
   # flutter_webview 库
   flutter_webview_plugin: ^0.3.10
-  # flutter_inappwebview: ^5.6.0
+  flutter_inappwebview: ^5.6.0
 #  flutter_inappwebview:
 #    git: https://github.com/pichillilorenzo/flutter_inappwebview.git
 #  webview_flutter: ^3.0.2
@@ -83,6 +83,9 @@ dependencies:
 
   #屏幕尺寸工具类 不适用^表示固定版本号，不会改变
   flutter_screenutil: 5.7.0
+
+  # 路径绘画
+  path_drawing: ^1.0.0
 
 
 dev_dependencies:

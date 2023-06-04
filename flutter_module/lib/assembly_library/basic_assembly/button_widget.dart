@@ -13,132 +13,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 class ButtonWidgetPage extends StatelessWidget {
   const ButtonWidgetPage({Key? key}) : super(key: key);
 
-  /**
-   *    Column(
-      children: <Widget>[
-      OutlineButton(
-      onPressed: () {
-      print("OutlineButton");
-      },
-      child: Text("OutlineButton"),
-      ),
-      OutlineButton(
-      onPressed: () {},
-      textColor: Colors.blue,
-      highlightedBorderColor: Colors.deepOrange,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      borderSide: BorderSide(color: Colors.blueAccent),
-      child: Text("OutlineButton"),
-      ),
-      FloatingActionButton(
-      onPressed: () {
-      print("FloatingActionButton");
-      },
-      child: Text("FAB"),
-      backgroundColor: Colors.blueAccent,
-      foregroundColor: Colors.red,
-      ),
-      RaisedButton(
-      onPressed: () {},
-      child: Text("RaisedButton"),
-      padding: EdgeInsets.all(15.0),
-      ),
-      MaterialButton(
-      onPressed: () {},
-      child: Text("MaterialButton"),
-      ),
-      Container(
-      height: 180.h,
-      child: MaterialButton(
-      onPressed: () {},
-      child: Text("MaterialButton", style: TextStyle(fontSize: 14, color: Colors.white)),
-      ),
-      decoration: BoxDecoration(
-      color: Colors.red,
-      border: Border(
-      top: BorderSide(width: 2.0, color: Color(0xFF000000), style: BorderStyle.solid),
-      left: BorderSide(width: 2.0, color: Color(0xFF000000)),
-      right: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
-      bottom: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
-      ),
-      //borderRadius: BorderRadius.all(Radius.circular(15)),
-      ),
-      ),
-      TextButton(
-      onPressed: () {},
-      child: Text("TextButton"),
-      style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
-      RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-      )),
-      ),
-      TextButton(
-      onPressed: () {},
-      child: Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
-      style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
-      RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.w))),
-      ),
-      padding: MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
-      ),
-      ),
-      Container(
-      height: 60.w,
-      width: 120.w,
-      child: TextButton(
-      onPressed: () {},
-      child: Text("确定", style: TextStyle(fontSize: 22.sp, color: Colors.white)),
-      style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
-      RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.w))),
-      ),
-      ),
-      ),
-      ),
-      Container(
-      height: 100.w,
-      width: 1.sw,
-      margin: EdgeInsets.only(left: 20.w, right: 20.w),
-      child: TextButton(
-      onPressed: () {},
-      child: Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
-      style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
-      RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.w))),
-      ),
-      padding: MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
-      ),
-      ),
-      ),
-      Row(
-      children: [
-      Expanded(
-      child: Container(
-      height: 100.w,
-      margin: EdgeInsets.only(left: 20.w, right: 20.w),
-      child: TextButton(
-      onPressed: () {},
-      child: Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
-      style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
-      RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(50.w))),
-      ),
-      padding: MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
-      ),
-      ),
-      ),
-      ),
-      ],
-      )
-      ],
-      ),
-   */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -163,7 +37,8 @@ class ButtonWidgetPage extends StatelessWidget {
                       onPressed: () {},
                       textColor: Colors.blue,
                       highlightedBorderColor: Colors.deepOrange,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0)),
                       borderSide: BorderSide(color: Colors.blueAccent),
                       child: Text("OutlineButton"),
                     ),
@@ -189,7 +64,8 @@ class ButtonWidgetPage extends StatelessWidget {
                         child: Text("RaisedButton"),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20.0),
-                            side: BorderSide(width: 2.0, color: Color(0xFF000000))),
+                            side: BorderSide(
+                                width: 2.0, color: Color(0xFF000000))),
                       ),
                     ),
                     MaterialButton(
@@ -201,7 +77,8 @@ class ButtonWidgetPage extends StatelessWidget {
                       child: Text("MaterialButton"),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
-                          side: BorderSide(width: 2.0, color: Color(0xFF000000))),
+                          side:
+                              BorderSide(width: 2.0, color: Color(0xFF000000))),
                     ),
                     MaterialButton(
                       onPressed: () {},
@@ -219,46 +96,57 @@ class ButtonWidgetPage extends StatelessWidget {
                       child: MaterialButton(
                         onPressed: () {},
                         child: Text("MaterialButton",
-                            style: TextStyle(fontSize: 14, color: Colors.white)),
+                            style:
+                                TextStyle(fontSize: 14, color: Colors.white)),
                       ),
                       decoration: BoxDecoration(
                         color: Colors.red,
                         border: Border(
                           top: BorderSide(
-                              width: 2.0, color: Color(0xFF000000), style: BorderStyle.solid),
-                          left: BorderSide(width: 2.0, color: Color(0xFF000000)),
-                          right: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
-                          bottom: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
+                              width: 2.0,
+                              color: Color(0xFF000000),
+                              style: BorderStyle.solid),
+                          left:
+                              BorderSide(width: 2.0, color: Color(0xFF000000)),
+                          right:
+                              BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
+                          bottom:
+                              BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
                         ),
                         //borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
                     Container(
-                      child: IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+                      child: IconButton(
+                          onPressed: () {}, icon: Icon(Icons.settings)),
                       color: Colors.blue,
                     ),
                     TextButton(
                       onPressed: () {},
                       child: Text("TextButton"),
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.yellow),
                           shape: MaterialStateProperty.all<OutlinedBorder>(
                             RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(10))),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
                           )),
                     ),
                     TextButton(
                       onPressed: () {},
-                      child:
-                          Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
+                      child: Text("TextButton",
+                          style: TextStyle(fontSize: 14, color: Colors.white)),
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.deepOrange),
                         shape: MaterialStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(50.w))),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50.w))),
                         ),
-                        padding:
-                            MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.only(left: 40.w, right: 40.w)),
                       ),
                     ),
                     Container(
@@ -266,12 +154,16 @@ class ButtonWidgetPage extends StatelessWidget {
                       width: 120.w,
                       child: TextButton(
                         onPressed: () {},
-                        child: Text("确定", style: TextStyle(fontSize: 22.sp, color: Colors.white)),
+                        child: Text("确定",
+                            style: TextStyle(
+                                fontSize: 22.sp, color: Colors.white)),
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.blue),
                           shape: MaterialStateProperty.all<OutlinedBorder>(
                             RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(50.w))),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50.w))),
                           ),
                         ),
                       ),
@@ -283,16 +175,19 @@ class ButtonWidgetPage extends StatelessWidget {
                       margin: EdgeInsets.only(left: 20.w, right: 20.w),
                       child: TextButton(
                         onPressed: () {},
-                        child:
-                            Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
+                        child: Text("TextButton",
+                            style:
+                                TextStyle(fontSize: 14, color: Colors.white)),
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.green),
                           shape: MaterialStateProperty.all<OutlinedBorder>(
                             RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(50.w))),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50.w))),
                           ),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
+                          padding: MaterialStateProperty.all(
+                              EdgeInsets.only(left: 40.w, right: 40.w)),
                         ),
                       ),
                     ),
@@ -306,13 +201,17 @@ class ButtonWidgetPage extends StatelessWidget {
                             child: TextButton(
                               onPressed: () {},
                               child: Text("TextButton",
-                                  style: TextStyle(fontSize: 14, color: Colors.white)),
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.white)),
                               style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStateProperty.all<Color>(Colors.deepOrange),
-                                shape: MaterialStateProperty.all<OutlinedBorder>(
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.deepOrange),
+                                shape:
+                                    MaterialStateProperty.all<OutlinedBorder>(
                                   RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(50.w))),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(50.w))),
                                 ),
                                 padding: MaterialStateProperty.all(
                                     EdgeInsets.only(left: 40.w, right: 40.w)),
@@ -321,7 +220,17 @@ class ButtonWidgetPage extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    SizedBox(height: 10),
+                    IconButton(
+                      icon: Icon(Icons.thumb_up),
+                      onPressed: () {},
+                    ),
+                    SizedBox(height: 10),
+                    RaisedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(Icons.send),
+                        label: Text("发送")),
                   ],
                 );
               },

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/expandicon_widget.dart';
+import 'package:flutter_module/assembly_library/scrollable_assembly/webview_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/align_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/banner_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/button_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/card_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/center_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/decoratedbox_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/dotted_border_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/datetime_picker_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/dialog_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/event_bus_widget.dart';
@@ -47,7 +50,7 @@ import 'package:flutter_module/assembly_library/scrollable_assembly/customscroll
 import 'package:flutter_module/assembly_library/scrollable_assembly/gridview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget_build.dart';
-import 'package:flutter_screenutil/src/size_extension.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///咨询
 class NewsPage extends StatefulWidget {
@@ -84,11 +87,13 @@ class _NewsPageState extends State<NewsPage> {
     //-----------------------------------------------------------------------------------
     ItemEntity("容器类组件", null, type: "1"),
     ItemEntity("align_widget", AlignWidgetPage()),
+    ItemEntity("center_widget", CenterWidgetPage()),
     ItemEntity("constrainedbox_widget", ConstrainedBoxWidgetPage()),
     ItemEntity("container_widget", ContainerWidgetPage()),
+    ItemEntity("decoratedbox_widget", DecoratedBoxWidgetPage()),
+    ItemEntity("dotted_border_widget", DottedBorderWidgetPage()),
     ItemEntity("padding_widget", PaddingWidgetPage()),
     ItemEntity("sizebox_widget", SizeBoxWidgetPage()),
-    ItemEntity("center_widget", CenterWidgetPage()),
     //-----------------------------------------------------------------------------------
     ItemEntity("布局类组件-layout_widget", null, type: "1"),
     ItemEntity("column_widget", ColumnWidgetPage()),
@@ -111,6 +116,7 @@ class _NewsPageState extends State<NewsPage> {
     ItemEntity("gridview_widget", GridViewWidgetPage()),
     ItemEntity("listview_widget", ListViewWidgetPage()),
     ItemEntity("listview_widget_build", ListViewWidgetBuildPage()),
+    ItemEntity("webview_widget", WebviewWidgetPage()),
     //-----------------------------------------------------------------------------------
     ItemEntity("功能型组件-feature_widget", null, type: "1"),
     ItemEntity("datepicker_widget", DateTimePickerBottomSheetPage()),
