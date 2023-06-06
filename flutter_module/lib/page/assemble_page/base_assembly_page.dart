@@ -12,6 +12,7 @@ import 'package:flutter_module/assembly_library/basic_assembly/swiper_widget.dar
 import 'package:flutter_module/assembly_library/basic_assembly/tab_tabbar_controller_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/text_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/textfield_widget.dart';
+import 'package:flutter_module/assembly_library/basic_assembly/togglebuttons_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/tooltip_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/top_tabbar_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/vertical_text_widget.dart';
@@ -43,6 +44,7 @@ class _BaseAssemblyPageState extends State<BaseAssemblyPage> {
     ItemButtonEntity("expandicon_widget", ExpandIconWidgetPage()),
     ItemButtonEntity("text_widget", TextWidgetPage()),
     ItemButtonEntity("textfield_widget", TextFieldWidgetPage()),
+    ItemButtonEntity("togglebuttons_widget", ToggleButtonsWidgetPage()),
     ItemButtonEntity("icon_widget", IconWidgetPage()),
     ItemButtonEntity("image_widget", ImageWidgetPage()),
     ItemButtonEntity("linear_progress_indicator_widget",
