@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 
 /**
  * 流式布局(Wrap、Flow)

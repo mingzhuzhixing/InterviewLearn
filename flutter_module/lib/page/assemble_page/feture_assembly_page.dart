@@ -8,9 +8,8 @@ import 'package:flutter_module/assembly_library/feature_widget/sp_storage_widget
 import 'package:flutter_module/assembly_library/feature_widget/sqflite_storage_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/willpopscope_widget.dart';
 import 'package:flutter_module/bean/item_entity.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /**
  * 功能型组件

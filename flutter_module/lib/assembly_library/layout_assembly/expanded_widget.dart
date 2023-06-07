@@ -28,7 +28,7 @@ class ExpandedWidgetPage extends StatelessWidget {
                 width: 100,
               ),
               Expanded(
-                child: OutlineButton(
+                child: MaterialButton(
                   onPressed: () {},
                   child: Text('OutlineButton'),
                 ),

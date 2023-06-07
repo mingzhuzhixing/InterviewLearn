@@ -12,7 +12,7 @@ class NetUtils {
     });
     stringBuffer.toString().substring(0, stringBuffer.length - 1);
     url += stringBuffer.toString();
-    http.Response response = await http.get(url);
+    http.Response response = await http.get(Uri.http(url));
     return response.body;
   }
 
@@ -21,7 +21,7 @@ class NetUtils {
     if (url.isEmpty) {
       throw "地址不能为空";
     }
-    http.Response response = await http.post(url, body: params);
+    http.Response response = await http.post(Uri.http(url), body: params);
     return response.body;
   }
 }

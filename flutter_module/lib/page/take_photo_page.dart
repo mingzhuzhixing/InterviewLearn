@@ -18,7 +18,7 @@ class _TakePhotoPageState extends State<TakePhotoPage> {
   Future getImage(bool isTakePhoto) async {
     Navigator.pop(context);
     try {
-      var image = await ImagePicker.pickImage(
+      var image = await ImagePicker().pickImage(
           source: isTakePhoto ? ImageSource.camera : ImageSource.gallery);
       if (image == null) {
         return;

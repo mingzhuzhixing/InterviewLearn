@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 
 class SwiperWidgetPage extends StatefulWidget {
   const SwiperWidgetPage({Key? key}) : super(key: key);

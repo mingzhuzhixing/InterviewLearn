@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /**
@@ -38,20 +36,20 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
                     _popupMenuButton(),
                     BackButton(),
                     CloseButton(),
-                    OutlineButton(
+                    MaterialButton(
                       onPressed: () {
                         print("OutlineButton");
                       },
                       child: Text("OutlineButton"),
                     ),
-                    OutlineButton(
-                      onPressed: () {},
-                      textColor: Colors.blue,
-                      highlightedBorderColor: Colors.deepOrange,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-                      borderSide: BorderSide(color: Colors.blueAccent),
-                      child: Text("OutlineButton"),
-                    ),
+                    // MaterialButton(
+                    //   onPressed: () {},
+                    //   textColor: Colors.blue,
+                    //   highlightedBorderColor: Colors.deepOrange,
+                    //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                    //   borderSide: BorderSide(color: Colors.blueAccent),
+                    //   child: Text("OutlineButton"),
+                    // ),
                     FloatingActionButton(
                       onPressed: () {
                         print("FloatingActionButton");
@@ -60,7 +58,7 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
                       backgroundColor: Colors.blueAccent,
                       foregroundColor: Colors.red,
                     ),
-                    RaisedButton(
+                    MaterialButton(
                       onPressed: () {},
                       child: Text("RaisedButton"),
                       padding: EdgeInsets.all(15.0),
@@ -69,7 +67,7 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
                     Container(
                       height: 70.w,
                       width: 1.sw * 0.8,
-                      child: RaisedButton(
+                      child: MaterialButton(
                         onPressed: () {},
                         child: Text("RaisedButton"),
                         shape: RoundedRectangleBorder(
@@ -213,11 +211,11 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
                       onPressed: () {},
                     ),
                     SizedBox(height: 10),
-                    RaisedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.send),
-                      label: Text("发送"),
-                    ),
+                    // RaisedButton.icon(
+                    //   onPressed: () {},
+                    //   icon: Icon(Icons.send),
+                    //   label: Text("发送"),
+                    // ),
                     Container(
                       child: Text(
                         "取消",

@@ -31,7 +31,7 @@ class _OffstageWidgetPageState extends State<OffstageWidgetPage> {
   }
 
   _firstWidget() {
-    return FlatButton(
+    return MaterialButton(
       onPressed: () {
         setState(() {
           _offStage = !_offStage;

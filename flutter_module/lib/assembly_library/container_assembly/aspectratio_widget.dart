@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 
 /**
  * AspectRatio组件是固定宽高比的组件，如果组件的宽度固定，希望高是宽的1/2，可以用AspectRatio实现此效果

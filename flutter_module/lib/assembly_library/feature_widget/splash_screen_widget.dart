@@ -1,8 +1,4 @@
-// ignore_for_file: slash_for_doc_comments
-
 import 'package:flutter/material.dart';
-import 'package:flutter_module/oschinabody.dart';
-import 'package:splashscreen/splashscreen.dart';
 
 /**
  * SplashScreenWidgetPage
@@ -24,18 +20,19 @@ class SplashScreenWidgetPage extends StatefulWidget {
 class _SplashScreenWidgetPageState extends State<SplashScreenWidgetPage> {
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(
-      seconds: 4,
-      navigateAfterSeconds: OsChinaBody(),
-      backgroundColor: Colors.white,
-      title: const Text(
-        'yiibai.com',
-        textScaleFactor: 2,
-      ),
-      image: Image.network('https://s3.o7planning.com/images/triceratops/image1.png'),
-      loadingText: const Text("Loading"),
-      photoSize: 110.0,
-      loaderColor: Colors.red,
-    );
+    // return SplashScreen(
+    //   seconds: 4,
+    //   navigateAfterSeconds: OsChinaBody(),
+    //   backgroundColor: Colors.white,
+    //   title: const Text(
+    //     'yiibai.com',
+    //     textScaleFactor: 2,
+    //   ),
+    //   image: Image.network('https://s3.o7planning.com/images/triceratops/image1.png'),
+    //   loadingText: const Text("Loading"),
+    //   photoSize: 110.0,
+    //   loaderColor: Colors.red,
+    // );
+    return Spacer();
   }
 }

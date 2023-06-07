@@ -100,12 +100,12 @@ void alertDialog(BuildContext context) {
         title: const Text("标题"),
         content: const Text("内容区域"),
         actions: <Widget>[
-          FlatButton(
+          MaterialButton(
               onPressed: () {
                 print("点击了确定");
               },
               child: const Text("确定")),
-          FlatButton(
+          MaterialButton(
               onPressed: () {
                 print("点击了取消");
               },

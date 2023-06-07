@@ -5,9 +5,8 @@ import 'package:flutter_module/assembly_library/scrollable_assembly/listview_wid
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget_build.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/pull_to_refresh_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/webview_widget.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_module/bean/item_entity.dart';
 
 /**

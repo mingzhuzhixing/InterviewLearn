@@ -1,8 +1,5 @@
-// ignore_for_file: slash_for_doc_comments
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/pull_refresh_footer.dart';
 import 'package:flutter_module/widget/pull_refresh_header.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';

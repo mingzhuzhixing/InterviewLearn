@@ -1,8 +1,5 @@
-// ignore_for_file: slash_for_doc_comments
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 
 /**
  * 1、LinearProgressIndicator是ProgressIndicator的子类。它会创建水平进度条指示器，但是如果将其放置在旋转90度的RotatedBox中，也可以创建垂直进度条指示器。

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 
 /**
  * 当我们需要一个控件的尺寸是相对尺寸时，比如当前按钮的宽度占父组件的70%，可以使用FractionallySizedBox来实现此效果。
@@ -22,7 +22,7 @@ class _FractionallySizedBoxWidgetPageState extends State<FractionallySizedBoxWid
         children: [
           FractionallySizedBox(
             widthFactor: .5,
-            child: RaisedButton(
+            child: MaterialButton(
               onPressed: () {  },
               child: Text('button'),
             ),
@@ -32,7 +32,7 @@ class _FractionallySizedBoxWidgetPageState extends State<FractionallySizedBoxWid
           FractionallySizedBox(
             widthFactor: .7,
             alignment: Alignment.center,
-            child: RaisedButton(
+            child: MaterialButton(
               onPressed: () {  },
               child: Text('button'),
             ),

@@ -17,9 +17,8 @@ import 'package:flutter_module/assembly_library/basic_assembly/tooltip_widget.da
 import 'package:flutter_module/assembly_library/basic_assembly/top_tabbar_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/vertical_text_widget.dart';
 import 'package:flutter_module/bean/item_entity.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /**
  * 基础组件

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 
 /**
  * WillPopScope 组件
@@ -63,7 +63,7 @@ class OnePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          child: RaisedButton(
+          child: MaterialButton(
             child: Text('去下一个页面'),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {

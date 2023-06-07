@@ -17,7 +17,7 @@ class _SettingPageState extends State<SettingPage> {
       appBar: AppBar(
         title: const Text("设置"),
       ),
-      body: RaisedButton(
+      body: MaterialButton(
         child: const Text('退出登录'),
         onPressed: () {
           SharePreferenceUtils.clearLoginInfo();

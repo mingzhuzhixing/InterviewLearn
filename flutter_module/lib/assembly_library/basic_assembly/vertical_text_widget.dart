@@ -1,7 +1,5 @@
-// ignore_for_file: slash_for_doc_comments
-
 import 'package:flutter/material.dart';
-import 'package:flutter_module/utils/appbar_utils.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/vertical_text.dart';
 
 class VerticalTextPage extends StatefulWidget {

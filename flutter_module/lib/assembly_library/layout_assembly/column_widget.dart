@@ -15,11 +15,11 @@ class ColumnWidgetPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
+          MaterialButton(
             onPressed: () {},
             child: Text("第一行的按钮"),
           ),
-          RaisedButton(
+          MaterialButton(
             onPressed: () {},
             child: Text("第二行的按钮"),
           ),

@@ -24,7 +24,7 @@ class _SizeBoxWidgetPageState extends State<SizeBoxWidgetPage> {
           SizedBox(
             height: 60,
             width: 200,
-            child: RaisedButton(
+            child: MaterialButton(
               onPressed: () {  },
               child: Text('this is SizedBox'),
             ),

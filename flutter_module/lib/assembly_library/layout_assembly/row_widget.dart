@@ -20,14 +20,14 @@ class RowWidgetPage extends StatelessWidget {
         //spaceEvenly：将主轴方向上的空白区域均分，使得children之间的空白区域相等，包括首尾child；
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          RaisedButton(
+          MaterialButton(
             onPressed: () {
               print("红色按钮");
             },
             color: const Color(0xffff0000),
             child: Text("红色按钮"),
           ),
-          RaisedButton(
+          MaterialButton(
             onPressed: () {
               print("点击蓝色按钮");
             },
@@ -37,7 +37,7 @@ class RowWidgetPage extends StatelessWidget {
               style: TextStyle(color: Color(0xffffffff)),
             ),
           ),
-          RaisedButton(
+          MaterialButton(
             onPressed: () {
               print("点击粉色按钮");
             },

@@ -148,7 +148,7 @@ class _FlexibleWidgetPageState extends State<FlexibleWidgetPage> {
                 width: 100,
               ),
               Flexible(
-                child: OutlineButton(
+                child: MaterialButton(
                   onPressed: () {},
                   child: Text('OutlineButton'),
                 ),

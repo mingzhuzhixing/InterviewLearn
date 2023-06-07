@@ -10,7 +10,7 @@ class CommonAppBar extends AppBar {
     List<Widget>? actions,
   }) : super(key: key,
             backgroundColor: backgroundColor,
-            brightness: Brightness.dark,
+            //brightness: Brightness.dark,
             toolbarHeight: 44,
             elevation: elevation,
             centerTitle: true,
