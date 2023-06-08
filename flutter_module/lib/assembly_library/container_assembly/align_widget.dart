@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 ///align 布局
 /// Align即对齐控件，能将子控件按照所指定的方式对齐，并根据子控件的大小调整自己的大小

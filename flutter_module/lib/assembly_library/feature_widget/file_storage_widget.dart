@@ -37,10 +37,8 @@ class _MyStoragePageState extends State<FileStorageWidgetPage> {
   Future saveString() async {
     final file = await getFile(fileName);
     //写入字符串
-    var result = file.writeAsString(_textFieldController.value.text.toString());
-    if (result != null) {
-      Fluttertoast.showToast(msg: "存储数据成功", toastLength: Toast.LENGTH_SHORT);
-    }
+    file.writeAsString(_textFieldController.value.text.toString());
+    Fluttertoast.showToast(msg: "存储数据成功", toastLength: Toast.LENGTH_SHORT);
   }
 
   /*

@@ -1,6 +1,4 @@
-import 'dart:ffi';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_module/page/about_page.dart';
 import 'package:flutter_module/page/confine_page.dart';
@@ -24,8 +22,6 @@ class _OsChinaBodyState extends State<OsChinaBody> {
   //当前页面
   var _current = 0;
 
-  late List _listTitle;
-
   //底部按钮
   late List<BottomItem> _listBottom;
 
@@ -37,7 +33,6 @@ class _OsChinaBodyState extends State<OsChinaBody> {
   @override
   void initState() {
     super.initState();
-    _listTitle = ['资讯', '动弹', '发现', '我的'];
     _current = 0;
     _pageController = PageController(initialPage: _current);
     _listPage = [const NewsPage(), const TweetPage(), const DiscoverPage(), const ProfilePage()];

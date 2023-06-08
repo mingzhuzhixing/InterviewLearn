@@ -17,7 +17,7 @@ class SqfliteStorageWidgetPage extends StatefulWidget {
 }
 
 class _MyStoragePageState extends State<SqfliteStorageWidgetPage> {
-  final _textFieldController = new TextEditingController();
+  final _textFieldController = TextEditingController();
   var _storageString = "";
 
   //数据库名
@@ -29,15 +29,12 @@ class _MyStoragePageState extends State<SqfliteStorageWidgetPage> {
   Future saveString() async {
     final db = await getDatabase(dbName);
     //写入字符串
-    var result = db.transaction((trx) {
+    db.transaction((trx) {
       var sql =
           'insert into user(name) values("${_textFieldController.value.text.toString()}")';
       return trx.rawInsert(sql);
     });
-
-    if (result != null) {
-      Fluttertoast.showToast(msg: "保持成功", toastLength: Toast.LENGTH_SHORT);
-    }
+    Fluttertoast.showToast(msg: "保持成功", toastLength: Toast.LENGTH_SHORT);
   }
 
   /*
