@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /**
  * 广告开屏页
+ *
+ * https://www.jianshu.com/p/7693a192682b
  */
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -47,17 +49,12 @@ class _SplashPageState extends State<SplashPage> {
                 constraints: BoxConstraints.expand(),
                 color: Colors.white,
                 //未请求回来之前，用启动页图片作为占位图
-                child: netImgUrl.isNotEmpty
-                    ? Image.network(netImgUrl, fit: BoxFit.fill)
-                    : Image.asset("images/cover_img.png", fit: BoxFit.fill),
+                child: netImgUrl.isNotEmpty ? Image.network(netImgUrl, fit: BoxFit.fill) : null,
               ),
             ),
             Container(
-              height: 190.w,
-              width: 1.sw,
-              child: Image.asset("images/slogan.png", fit: BoxFit.fill),
-              color: Colors.white,
-            )
+                color: Colors.white,
+                child: Image.asset("assets/images/slogan.png", height: 218.w, fit: BoxFit.contain)),
           ],
         ),
         //倒计时：跳过

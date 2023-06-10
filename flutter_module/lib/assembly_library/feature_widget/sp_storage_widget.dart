@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -18,7 +17,7 @@ class SpStorageWidgetPage extends StatefulWidget {
 }
 
 class _StoragePage extends State<SpStorageWidgetPage> {
-  final _textFieldController = new TextEditingController();
+  final _textFieldController = TextEditingController();
   var _storageString = "";
   final STORAGE_KEY = 'storage_key';
 
