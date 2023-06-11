@@ -6,6 +6,7 @@ import 'package:flutter_module/assembly_library/scrollable_assembly/gridview_wid
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget_build.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/listview_widget_separated.dart';
+import 'package:flutter_module/assembly_library/scrollable_assembly/nestedscrollview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/pageview_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/pageview_widget_cache.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/pull_to_refresh_widget.dart';
@@ -40,6 +41,7 @@ class _ScrollableAssemblyPageState extends State<ScrollableAssemblyPage> {
     ItemButtonEntity("ListView_widget", ListViewWidgetPage()),
     ItemButtonEntity("ListView_widget_build", ListViewWidgetBuildPage()),
     ItemButtonEntity("ListView_widget_separated", ListViewWidgetSeparatedPage()),
+    ItemButtonEntity("NestedScrollView_widget", NestedScrollViewWidgetPage()),
     ItemButtonEntity("PageView_widget", PageViewWidgetPage()),
     ItemButtonEntity("PageView_widget_cache", PageViewWidgetCachePage()),
     ItemButtonEntity("SmartRefresher_widget", PullToRefreshPage()),

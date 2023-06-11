@@ -19,6 +19,7 @@ import 'package:flutter_module/assembly_library/basic_assembly/vertical_text_wid
 import 'package:flutter_module/bean/item_entity.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
+import 'package:flutter_module/widget/no_scroll_behavior.dart';
 
 /**
  * 基础组件
@@ -37,23 +38,23 @@ class _BaseAssemblyPageState extends State<BaseAssemblyPage> {
   ];
 
   List<ItemButtonEntity> entityList = [
-    ItemButtonEntity("banner_widget", BannerWidgetPage()),
-    ItemButtonEntity("button_widget", ButtonWidgetPage()),
-    ItemButtonEntity("card_widget", CardWidgetPage()),
-    ItemButtonEntity("checkbox_widget", CheckboxWidgetPage()),
-    ItemButtonEntity("expandicon_widget", ExpandIconWidgetPage()),
-    ItemButtonEntity("text_widget", TextWidgetPage()),
-    ItemButtonEntity("textfield_widget", TextFieldWidgetPage()),
-    ItemButtonEntity("togglebuttons_widget", ToggleButtonsWidgetPage()),
-    ItemButtonEntity("icon_widget", IconWidgetPage()),
-    ItemButtonEntity("image_widget", ImageWidgetPage()),
-    ItemButtonEntity("progress_indicator_widget", ProgressIndicatorWidget()),
-    ItemButtonEntity("swiper_widget", SwiperWidgetPage()),
-    ItemButtonEntity("switch_widget", SwitchWidgetPage()),
-    ItemButtonEntity("radio_widget", RadioWidgetPage()),
-    ItemButtonEntity("radiolisttile_widget", RadioListTileWidgetPage()),
-    ItemButtonEntity("tooltip", TooltipWidgetPage()),
-    ItemButtonEntity("vertical_text_widget", VerticalTextPage()),
+    ItemButtonEntity("Banner_widget", BannerWidgetPage()),
+    ItemButtonEntity("Button_widget", ButtonWidgetPage()),
+    ItemButtonEntity("Card_widget", CardWidgetPage()),
+    ItemButtonEntity("CheckBox_widget", CheckboxWidgetPage()),
+    ItemButtonEntity("ExpandIcon_widget", ExpandIconWidgetPage()),
+    ItemButtonEntity("Text_widget", TextWidgetPage()),
+    ItemButtonEntity("TextField_widget", TextFieldWidgetPage()),
+    ItemButtonEntity("ToggleButtons_widget", ToggleButtonsWidgetPage()),
+    ItemButtonEntity("Icon_widget", IconWidgetPage()),
+    ItemButtonEntity("Image_widget", ImageWidgetPage()),
+    ItemButtonEntity("ProgressIndicator_widget", ProgressIndicatorWidget()),
+    ItemButtonEntity("Swiper_widget", SwiperWidgetPage()),
+    ItemButtonEntity("Switch_widget", SwitchWidgetPage()),
+    ItemButtonEntity("Radio_widget", RadioWidgetPage()),
+    ItemButtonEntity("RadioListTile_widget", RadioListTileWidgetPage()),
+    ItemButtonEntity("ToolTip", TooltipWidgetPage()),
+    ItemButtonEntity("VerticalText_widget", VerticalTextPage()),
   ];
 
   @override
@@ -61,14 +62,15 @@ class _BaseAssemblyPageState extends State<BaseAssemblyPage> {
     return Scaffold(
       appBar: CommonAppBar(context, "基础组件"),
       body: ListView.separated(
-          itemBuilder: (BuildContext context, int index) {
-            return ItemButton(entityList[index].title, entityList[index].widget ?? Spacer(),
-                type: entityList[index].type ?? "", index: index);
-          },
-          separatorBuilder: (BuildContext context, int index) {
-            return const Divider(height: 0.0, color: Colors.transparent);
-          },
-          itemCount: entityList.length),
+        itemBuilder: (BuildContext context, int index) {
+          return ItemButton(entityList[index].title, entityList[index].widget ?? Spacer(),
+              type: entityList[index].type ?? "", index: index);
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return const Divider(height: 0.0, color: Colors.transparent);
+        },
+        itemCount: entityList.length,
+      ),
     );
   }
 }

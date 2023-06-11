@@ -10,5 +10,3 @@
 主题(Theme)
 Theme widget可以为Material App定义主题数据(ThemeData)，Material组件库里很多Widget都使用了主题数据，如导航栏颜色、标题字体、Icon样式等。Theme会通过InheritedWidget来为其子树widget共享样式数据。
 可定义的主题数据都在ThemeData中，可以通过Theme.of(context)获取当前的ThemeData。
-
-更多更新关注微信公众号“Flutter入门”

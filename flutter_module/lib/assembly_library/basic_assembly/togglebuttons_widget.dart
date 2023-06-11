@@ -6,56 +6,118 @@ class ToggleButtonsWidgetPage extends StatefulWidget {
   const ToggleButtonsWidgetPage({Key? key}) : super(key: key);
 
   @override
-  State<ToggleButtonsWidgetPage> createState() =>
-      _ToggleButtonsWidgetPageState();
+  State<ToggleButtonsWidgetPage> createState() => _ToggleButtonsWidgetPageState();
 }
 
 class _ToggleButtonsWidgetPageState extends State<ToggleButtonsWidgetPage> {
-  List<Widget> children = [];
-  String selectId = "";
+  List<SelectData> selectData = [];
+
+  List<bool> isSelected = [true, false, false];
+  List<bool> isSelected2 = [true, false, false];
+  List<bool> isSelected3 = [true, false, false];
+  List<Icon> icons = [
+    Icon(Icons.ac_unit),
+    Icon(Icons.call),
+    Icon(Icons.cake),
+  ];
 
   @override
   void initState() {
     super.initState();
-     print("zm1234 初始化initState");
+    for (int i = 0; i < 6; i++) {
+      selectData.add(SelectData("$i", i == 1));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    print("zm1234 执行build");
-    children.clear();
-     for (int i = 0; i < 6; i++) {
-      children.add(itemButton("$i", selectId == "$i" ? true : false));
-    }
     return Scaffold(
       appBar: CommonAppBar(context, "ToggleButtons Widget"),
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: GridView.count(
-          scrollDirection: Axis.vertical,
-          crossAxisCount: 3, //一行多少个
-          crossAxisSpacing: 10, //水平间隔
-          mainAxisSpacing: 10, //垂直间隔
-          childAspectRatio: 204 / 136, //宽高比 默认1
-          children: children,
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          firstToggleButton(),
+          SizedBox(height: 40.w),
+          secondToggleButton(),
+          SizedBox(height: 40.w),
+          selectItem(),
+        ],
       ),
     );
   }
 
-  Widget itemButton(String id, bool isSelectid) {
+  /**
+   * 第一种，可以多选
+   */
+  Widget firstToggleButton() {
+    return ToggleButtons(
+      children: icons,
+      onPressed: (int index) {
+        setState(() {
+          isSelected[index] = !isSelected[index];
+        });
+      },
+      isSelected: isSelected,
+    );
+  }
+
+  Widget secondToggleButton() {
+    return ToggleButtons(
+      children: icons,
+      onPressed: (int index) {
+        setState(() {
+          for (int buttonIndex = 0; buttonIndex < isSelected2.length; buttonIndex++) {
+            if (buttonIndex == index) {
+              isSelected2[buttonIndex] = !isSelected2[buttonIndex];
+            } else {
+              isSelected2[buttonIndex] = false;
+            }
+          }
+        });
+      },
+      isSelected: isSelected2,
+    );
+  }
+
+  /**
+   * 单选
+   */
+  Widget selectItem() {
+    return Container(
+      height: 360.w,
+      color: Color(0x4d64DD17),
+      padding: EdgeInsets.all(10),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          childAspectRatio: 204 / 136, //宽高比 默认1
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return itemButton(selectData[index]);
+        },
+        itemCount: selectData.length,
+      ),
+    );
+  }
+
+  Widget itemButton(SelectData data) {
     return GestureDetector(
       onTap: () {
         setState(() {
-          selectId = id;
-          print("zm1234 id:$id");
+          for (int i = 0; i < selectData.length; i++) {
+            selectData[i].status = false;
+          }
+          data.status = true;
         });
       },
       child: Container(
         decoration: BoxDecoration(
-          color: isSelectid ? Color(0xFFFEF6F4) : Color(0xFFFFFFFF),
+          color: data.status ? Color(0xFFFEF6F4) : Color(0xFFFFFFFF),
           border: Border.all(
-              color: Color(0xffDFDFDF), width: isSelectid ? 4.w : 2.w),
+              color: data.status ? Color(0xffE65F3C) : Color(0xffDFDFDF),
+              width: data.status ? 4.w : 2.w),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Column(
@@ -63,20 +125,25 @@ class _ToggleButtonsWidgetPageState extends State<ToggleButtonsWidgetPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "$id有书币",
+              "${data.id}有书币",
               style: TextStyle(
-                  fontSize: 32.sp,
-                  color: isSelectid ? Color(0xffE65F3C) : Color(0xff444444)),
+                  fontSize: 32.sp, color: data.status ? Color(0xffE65F3C) : Color(0xff444444)),
             ),
             Text(
-              "$id元",
+              "${data.id}元",
               style: TextStyle(
-                  fontSize: 24.sp,
-                  color: isSelectid ? Color(0xffFA8364) : Color(0xFFb3b3b3)),
+                  fontSize: 24.sp, color: data.status ? Color(0xffFA8364) : Color(0xFFb3b3b3)),
             ),
           ],
         ),
       ),
     );
   }
+}
+
+class SelectData {
+  String id;
+  bool status;
+
+  SelectData(this.id, this.status);
 }

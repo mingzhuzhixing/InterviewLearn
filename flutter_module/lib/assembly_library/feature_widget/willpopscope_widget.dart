@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 /**
  * WillPopScope 组件
@@ -25,7 +26,23 @@ class _WillPopScopeWidgetPageState extends State<WillPopScopeWidgetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(context,"WillPopScopeWidget"),
+      appBar: CommonAppBar(
+        context,
+        "WillPopScopeWidget",
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+                return WillPopScopeRoute();
+              }));
+            },
+            child: Container(
+              alignment: Alignment.center,
+              child: Text("两次返回", style: TextStyle(color: Colors.black)),
+            ),
+          )
+        ],
+      ),
       body: WillPopScope(
           onWillPop: () async {
             if (_key.currentState!.canPop()) {
@@ -84,6 +101,40 @@ class TwoPage extends StatelessWidget {
       body: Center(
         child: Container(
           child: Text('这是第二个页面'),
+        ),
+      ),
+    );
+  }
+}
+
+class WillPopScopeRoute extends StatefulWidget {
+  @override
+  WillPopScopeRouteState createState() {
+    return WillPopScopeRouteState();
+  }
+}
+
+class WillPopScopeRouteState extends State<WillPopScopeRoute> {
+  DateTime? _lastPressedAt; //上次点击时间
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CommonAppBar(context, "续按点击两次返回键退出"),
+      body: WillPopScope(
+        onWillPop: () async {
+          if (_lastPressedAt == null ||
+              DateTime.now().difference(_lastPressedAt!) > Duration(seconds: 2)) {
+            //两次点击间隔超过1秒则重新计时
+            _lastPressedAt = DateTime.now();
+            Fluttertoast.showToast(msg: "您确定要退出吗", gravity: ToastGravity.CENTER);
+            return false;
+          }
+          return true;
+        },
+        child: Container(
+          alignment: Alignment.center,
+          child: Text("2秒内连续按两次返回键退出"),
         ),
       ),
     );
