@@ -6,8 +6,8 @@ class ItemButton extends StatelessWidget {
   String type;
   Widget widget;
   int index;
-  ItemButton(this.title, this.widget,
-      {Color color = Colors.grey, this.type = "2", this.index = 0});
+
+  ItemButton(this.title, this.widget, {Color color = Colors.grey, this.type = "2", this.index = 0});
 
   List<Color> colorList = [
     Color(0xffd9d9d9),
@@ -17,6 +17,7 @@ class ItemButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 1.sw,
       margin: const EdgeInsets.only(left: 2, right: 2),
       child: type == "1"
           ? Container(
@@ -43,10 +44,8 @@ class ItemButton extends StatelessWidget {
               elevation: 0.0,
               child: Text(
                 title,
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+                style:
+                    const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
               ),
               color: colorList[index % colorList.length],
             ),

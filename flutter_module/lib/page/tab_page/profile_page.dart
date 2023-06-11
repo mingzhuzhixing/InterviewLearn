@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_module/page/change_intro_page.dart';
 import 'package:flutter_module/page/login_page/login_page.dart';
@@ -133,7 +132,7 @@ class _ProfilePageState extends State<ProfilePage> {
   ///登录
   void _goToLogin() async {
     var result = Navigator.of(context).push(SlidePageRouteBuilder(const LoginPage()));
-    if (result != null && result == "refresh") {
+    if ("refresh"== result) {
       eventBus.fire(LoginEvent());
     }
   }
@@ -161,13 +160,8 @@ class _ProfilePageState extends State<ProfilePage> {
     SharePreferenceUtils.getUserInfo().then((user) {
       if (mounted) {
         setState(() {
-          if (user != null) {
             userAvatar = user.avatar;
             userName = user.name;
-          } else {
-            userAvatar = null;
-            userName = null;
-          }
         });
       }
     });

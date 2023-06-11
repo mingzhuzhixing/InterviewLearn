@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 ///ListView属性
 // ListView({
-// Key key,
-// Axis scrollDirection: Axis.vertical,//滚动方向
-// bool reverse: false,//是否反向显示数据
-// ScrollController controller,
-// bool primary,
-// ScrollPhysics physics,//物理滚动
-// bool shrinkWrap: false,
-// EdgeInsetsGeometry padding,
-// this.itemExtent,//item有效范围
-// bool addAutomaticKeepAlives: true,//自动保存视图缓存
-// bool addRepaintBoundaries: true,//添加重绘边界
-// List<Widget> children: const <Widget>[],
+//   Key key,
+//   Axis scrollDirection: Axis.vertical,//滚动方向
+//   bool reverse: false,//是否反向显示数据
+//   ScrollController controller,
+//   bool primary,
+//   ScrollPhysics physics,//物理滚动
+//   bool shrinkWrap: false,
+//   EdgeInsetsGeometry padding,
+//   this.itemExtent,//item有效范围
+//   bool addAutomaticKeepAlives: true,//自动保存视图缓存
+//   bool addRepaintBoundaries: true,//添加重绘边界
+//   List<Widget> children: const <Widget>[],
 // })
 class ListViewWidgetPage extends StatelessWidget {
   const ListViewWidgetPage({Key? key}) : super(key: key);

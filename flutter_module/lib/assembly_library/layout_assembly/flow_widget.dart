@@ -5,7 +5,8 @@ import 'package:flutter_module/widget/common_app_bar.dart';
 
 /**
  * 流式布局(Wrap、Flow)
- *
+ *   https://book.flutterchina.club/chapter4/wrap_and_flow.html#_4-5-1-wrap
+ *   
  * 说明：Flow需要自己算，性能较好，换行规则自己定  Flow因为计算复杂使用较少，优先考虑Wrap是否能实现 详细
  * Flow({
     Key key,

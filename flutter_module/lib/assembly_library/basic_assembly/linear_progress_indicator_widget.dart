@@ -19,7 +19,22 @@ class LinearProgressIndicatorWidgetPage extends StatefulWidget {
       _LinearProgressIndicatorWidgetPageState();
 }
 
-class _LinearProgressIndicatorWidgetPageState extends State<LinearProgressIndicatorWidgetPage> {
+class _LinearProgressIndicatorWidgetPageState extends State<LinearProgressIndicatorWidgetPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    //动画执行时间3秒
+    _animationController = AnimationController(
+      vsync: this, //注意State类需要混入SingleTickerProviderStateMixin（提供动画帧计时/触发器）
+      duration: Duration(seconds: 3),
+    );
+    _animationController.forward();
+    _animationController.addListener(() => setState(() => {}));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +50,11 @@ class _LinearProgressIndicatorWidgetPageState extends State<LinearProgressIndica
           const SizedBox(height: 20),
           LinearProgressIndicator4(),
           const SizedBox(height: 20),
-          LinearProgressIndicator5()
+          LinearProgressIndicator5(),
+          const SizedBox(height: 20),
+          LinearProgressIndicator6(),
+          const SizedBox(height: 20),
+          linearProgressIndicator7()
         ],
       ),
     );
@@ -150,7 +169,7 @@ class _LinearProgressIndicatorWidgetPageState extends State<LinearProgressIndica
     return RotatedBox(
       quarterTurns: -1,
       child: SizedBox(
-        width: 250,
+        width: 150,
         height: 25,
         child: LinearProgressIndicator(
           backgroundColor: Colors.cyan[100],
@@ -158,5 +177,38 @@ class _LinearProgressIndicatorWidgetPageState extends State<LinearProgressIndica
         ),
       ),
     );
+  }
+
+  /**
+   * 线性进度条高度指定为3
+   */
+  Widget LinearProgressIndicator6() {
+    return SizedBox(
+      height: 3,
+      child: LinearProgressIndicator(
+        backgroundColor: Colors.grey[200],
+        valueColor: AlwaysStoppedAnimation(Colors.blue),
+        value: .7,
+      ),
+    );
+  }
+
+  //动画进度条
+  Widget linearProgressIndicator7() {
+    return Padding(
+      padding: EdgeInsets.all(16),
+      child: LinearProgressIndicator(
+        backgroundColor: Colors.grey[200],
+        valueColor: ColorTween(begin: Colors.grey, end: Colors.blue)
+            .animate(_animationController), // 从灰色变成蓝色
+        value: _animationController.value,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 }

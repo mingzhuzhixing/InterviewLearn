@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/assembly_library/basic_assembly/wrap_widget.dart';
+import 'package:flutter_module/assembly_library/layout_assembly/clip_wdiget.dart';
+import 'package:flutter_module/assembly_library/layout_assembly/rotatedbox_widget.dart';
+import 'package:flutter_module/assembly_library/layout_assembly/transform_widget.dart';
+import 'package:flutter_module/assembly_library/layout_assembly/wrap_widget.dart';
 import 'package:flutter_module/assembly_library/layout_assembly/column_widget.dart';
 import 'package:flutter_module/assembly_library/layout_assembly/expanded_widget.dart';
 import 'package:flutter_module/assembly_library/layout_assembly/flex_widget.dart';
@@ -33,15 +36,18 @@ class _LayoutAssemblyPageState extends State<LayoutAssemblyPage> {
   ];
 
   List<ItemButtonEntity> entityList = [
+    ItemButtonEntity("clip_widget", ClipWidgetPage()),
     ItemButtonEntity("column_widget", ColumnWidgetPage()),
     ItemButtonEntity("expanded_widget", ExpandedWidgetPage()),
     ItemButtonEntity("flex_widget", FlexWidgetPage()),
     ItemButtonEntity("flexible_widget", FlexibleWidgetPage()),
     ItemButtonEntity("flow_widget", FlowWidgetPage()),
     ItemButtonEntity("positioned_widget", PositionedWidgetPage()),
+    ItemButtonEntity("rotated_box_widget", RotatedBoxWidgetPage()),
     ItemButtonEntity("row_widget", RowWidgetPage()),
     ItemButtonEntity("spacer_widget", SpacerWidgetPage()),
     ItemButtonEntity("stack_widget", StackWidgetPage()),
+    ItemButtonEntity("transform_widget", TransformWidgetPage()),
     ItemButtonEntity("visibility_widget", VisibilityWidgetPage()),
     ItemButtonEntity("indexstack_widget", IndexedStackWidgetPage()),
     ItemButtonEntity("offstage_widget", OffstageWidgetPage()),
