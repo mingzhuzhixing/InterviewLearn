@@ -19,7 +19,6 @@ import 'package:flutter_module/assembly_library/basic_assembly/vertical_text_wid
 import 'package:flutter_module/bean/item_entity.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
-import 'package:flutter_module/widget/no_scroll_behavior.dart';
 
 /**
  * 基础组件

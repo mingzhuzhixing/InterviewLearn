@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemButton extends StatelessWidget {
-  String title;
-  String type;
-  Widget widget;
-  int index;
+  final String title;
+  final String type;
+  final Widget widget;
+  final int index;
 
   ItemButton(this.title, this.widget, {Color color = Colors.grey, this.type = "2", this.index = 0});
 
-  List<Color> colorList = [
+  final List<Color> colorList = [
     Color(0xffd9d9d9),
     Colors.grey,
   ];

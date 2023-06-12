@@ -56,9 +56,9 @@ Widget getExpended(IconData icon, Color color, int flex) {
 }
 
 class MyIconContainer extends StatelessWidget {
-  Color colors = Colors.red;
-  IconData icons;
-  double size = 45.0;
+  final Color colors;
+  final IconData icons;
+  final double size = 45.0;
 
   MyIconContainer(this.icons, this.colors, {Key? key}) : super(key: key);
 

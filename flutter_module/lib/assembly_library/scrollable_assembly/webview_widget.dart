@@ -22,8 +22,8 @@ import 'package:flutter_module/widget/common_app_bar.dart';
  * https://blog.csdn.net/u013038616/article/details/119034807
  */
 class WebviewWidgetPage extends StatefulWidget {
-  String url = "http:wwww.baidu.com";
-  String title = "百度";
+  final String url = "http:wwww.baidu.com";
+  final String title = "百度";
 
   WebviewWidgetPage({Key? key}) : super(key: key);
 

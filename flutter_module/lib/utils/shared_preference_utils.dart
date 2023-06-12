@@ -24,9 +24,6 @@ class SharePreferenceUtils {
 
   //存储返回数据
   static Future<void> saveData(Map<String, dynamic> values) async {
-    if (values == null) {
-      throw '数据为空';
-    }
     SharedPreferences sp = await SharedPreferences.getInstance();
     sp
       ..setString(ACCESS_TOKEN, values[ACCESS_TOKEN])
@@ -63,7 +60,7 @@ class SharePreferenceUtils {
 
   //{"gender":"male","name":"Damon2019","location":"湖南 长沙","id":2006874,"avatar":"https://oscimg.oschina.net/oscnet/up-21zvuaor7bbvi8h2a4g93iv9vve2wrnz.jpg!/both/50x50?t=1554975223000","email":"3262663349@qq.com","url":"https://my.oschina.net/damon007"}
   static saveUserInfo(Map<String, dynamic> map) async {
-    if (map != null && map.isNotEmpty) {
+    if (map.isNotEmpty) {
       SharedPreferences sp = await SharedPreferences.getInstance();
       String gender = map[SP_USER_GENDER];
       String name = map[SP_USER_NAME];

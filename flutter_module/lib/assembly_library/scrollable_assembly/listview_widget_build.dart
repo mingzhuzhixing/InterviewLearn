@@ -89,8 +89,8 @@ class ItemEntity {
  * itemView
  */
 class ItemView extends StatelessWidget {
-  ItemEntity itemEntity;
-  List<ItemEntity> entityChildList;
+  final ItemEntity itemEntity;
+  final List<ItemEntity> entityChildList;
 
   ItemView(this.itemEntity, this.entityChildList);
 

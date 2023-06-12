@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, unnecessary_null_comparison
+
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
@@ -20,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
 
   late FlutterWebviewPlugin _flutterWebviewPlugin;
 
+  @override
   void initState() {
     super.initState();
     _flutterWebviewPlugin = FlutterWebviewPlugin()

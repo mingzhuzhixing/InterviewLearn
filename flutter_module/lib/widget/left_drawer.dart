@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'override_pending.dart';
 
 class LeftDrawer extends StatefulWidget {
-  dynamic imgPath;
-  List listTitle;
-  List listIcon;
-  List listPage;
+  final dynamic imgPath;
+  final List listTitle;
+  final List listIcon;
+  final List listPage;
 
   LeftDrawer(
       {Key? key,

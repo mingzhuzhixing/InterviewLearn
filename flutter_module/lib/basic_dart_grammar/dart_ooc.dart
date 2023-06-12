@@ -1,6 +1,6 @@
 void main() {
   var person = Person();
-  print("1234");
+  print("1234"+person.getName);
 }
 
 ///1、类的定义

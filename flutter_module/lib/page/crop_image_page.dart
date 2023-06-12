@@ -9,8 +9,8 @@ typedef CallBackFuture = void Function(String path);
 
 /// 图片裁剪
 class CropImagePage extends StatefulWidget {
-  Uint8List imageByte;
-  CallBackFuture _callBackFuture;
+  final Uint8List imageByte;
+  final CallBackFuture _callBackFuture;
 
   CropImagePage(this.imageByte, this._callBackFuture);
 
@@ -30,9 +30,7 @@ class CropImageState extends State<CropImagePage> {
             '${tempDir.path}/image_${DateTime.now().millisecondsSinceEpoch}.jpg')
         .create();
     file.writeAsBytesSync(imageByte);
-    if (widget._callBackFuture != null) {
-      widget._callBackFuture(file.path);
-    }
+    widget._callBackFuture(file.path);
   }
 
   @override
