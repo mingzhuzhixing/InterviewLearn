@@ -1,10 +1,8 @@
-// ignore_for_file: slash_for_doc_comments
-
-import 'dart:math';
-
-import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_module/utils/eventbus_utils.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 //EventBus
 
@@ -24,7 +22,8 @@ import 'package:flutter_module/widget/common_app_bar.dart';
  *
  *   https://www.jianshu.com/p/7b5e85d28751
  */
-final EventBus eventBus = EventBus();
+// final EventBus eventBus = EventBus();
+
 //传递的对象
 class GCUserInfo {
   GCUserInfo(this.name, this.age);
@@ -40,6 +39,21 @@ class EventBusWidgetPage extends StatefulWidget {
 }
 
 class _EventBusWidgetPageState extends State<EventBusWidgetPage> {
+  String info = "Hello world!";
+
+  @override
+  void initState() {
+    super.initState();
+    EventBusUtils.eventBus.on<GCUserInfo>().listen((event) {
+      setState(() {
+        info = "${event.name}-----${event.age}";
+        print("zm1234:" + info);
+        Fluttertoast.showToast(
+            msg: "${event.name}:${event.age}", toastLength: Toast.LENGTH_SHORT);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,55 +62,60 @@ class _EventBusWidgetPageState extends State<EventBusWidgetPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(info, style: const TextStyle(fontSize: 18)),
             TextButton(
               onPressed: () {
-                final userInfo = GCUserInfo("Steven", Random().nextInt(100));
-                //发出事件
-                eventBus.fire(userInfo);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return EventBusSecondPage();
+                }));
               },
-              child: const Text("按钮", style: TextStyle(fontSize: 18)),
+              child: const Text("跳转第二页", style: TextStyle(fontSize: 18)),
             ),
-            GCText()
           ],
         ),
       ),
-    );
-  }
-}
-
-class GCText extends StatefulWidget {
-  const GCText({Key? key}) : super(key: key);
-
-  @override
-  State<GCText> createState() => _GCTextState();
-}
-
-class _GCTextState extends State<GCText> {
-  String info = "Hello world!";
-  late final _event;
-
-  @override
-  void initState() {
-    super.initState();
-    //3.监听相应类型的事件
-    _event = eventBus.on<GCUserInfo>().listen((event) {
-      setState(() {
-        info = "${event.name}-----${event.age}";
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      info,
-      style: const TextStyle(fontSize: 18),
     );
   }
 
   @override
   void dispose() {
     super.dispose();
-    _event.dispose();
+    print("zm1234 dispose()");
+    EventBusUtils.onDestroy();
+  }
+}
+
+/**
+ * EventBus 第二页
+ */
+class EventBusSecondPage extends StatefulWidget {
+  const EventBusSecondPage({Key? key}) : super(key: key);
+
+  @override
+  State<EventBusSecondPage> createState() => _EventBusSecondPageState();
+}
+
+class _EventBusSecondPageState extends State<EventBusSecondPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CommonAppBar(context, "EventBus 第二页"),
+      body: Container(
+        width: 1.sw,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TextButton(
+              onPressed: () {
+                EventBusUtils.eventBus.fire(GCUserInfo("Steven", 100));
+                Navigator.pop(context);
+              },
+              child: Text("EventBus 开始发送消息", style: TextStyle(fontSize: 18)),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
