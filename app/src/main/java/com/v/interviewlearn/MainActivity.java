@@ -14,6 +14,7 @@ import com.v.module_animator.AnimatorMainActivity;
 import com.v.module_calendar.CalendarMainActivity;
 import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_jetpack.JetpackMainActivity;
+import com.v.module_optimize.MainOptimizeActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_protobuf.ProtobufMainActivity;
 import com.v.module_viewpager.MainViewpagerActivity;
@@ -279,6 +280,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void viewPagerClick(View view) {
         startActivity(new Intent(this, MainViewpagerActivity.class));
+    }
+
+    /**
+     * 性能优化
+     */
+    public void performanceOptimizeClick(View view) {
+        startActivity(new Intent(this, MainOptimizeActivity.class));
     }
 
     @Override

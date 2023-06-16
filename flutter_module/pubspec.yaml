@@ -48,7 +48,7 @@ dependencies:
 #    git: https://github.com/nuc134r/flutter_webview_plugin.git
 
   # flutter toast
-  fluttertoast: any
+  fluttertoast: 8.2.2
 
   # json动画库
   lottie: 1.2.2

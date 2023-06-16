@@ -29,7 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation" />
         <activity android:name="com.v.service.messenger.DoubleMessengerServiceActivity" />
         <activity android:name="com.v.service.messenger.MessengerServiceActivity" />
         <activity android:name="com.v.service.aidl_service.AidlServiceActivity" />

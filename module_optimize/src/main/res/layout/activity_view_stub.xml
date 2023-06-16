@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ViewStubActivity">
+
+    <!--子view的宽高是受viewstub的限制-->
+    <ViewStub
+        android:id="@+id/view_stub_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/layout_view_sub_1" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="viewStubClick"
+        android:text="测试ViewStub中view显示与隐藏"
+        android:textAllCaps="false" />
+
+    <ViewStub
+        android:id="@+id/view_stub_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/layout_view_sub_2" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="viewStubInflateClick"
+        android:text="测试ViewStub中view inflate"
+        android:textAllCaps="false" />
+
+</LinearLayout>

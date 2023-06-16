@@ -1,6 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/v/flutter_shop/BuildConfig.java
- com.v.flutter_shop.BuildConfig
-com/v/flutter_shop/MainActivity.java
- com.v.flutter_shop.MainActivity

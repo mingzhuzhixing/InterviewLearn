@@ -8,7 +8,8 @@ import 'package:flutter_module/assembly_library/basic_assembly/icon_widget.dart'
 import 'package:flutter_module/assembly_library/basic_assembly/image_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/radio_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/radiolisttile_widget.dart';
-import 'package:flutter_module/assembly_library/basic_assembly/rogressindicator_widget.dart';
+import 'package:flutter_module/assembly_library/basic_assembly/richtext_widget.dart';
+import 'package:flutter_module/assembly_library/basic_assembly/progress_indicator_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/swiper_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/switch_widget.dart';
 import 'package:flutter_module/assembly_library/basic_assembly/text_widget.dart';
@@ -52,6 +53,7 @@ class _BaseAssemblyPageState extends State<BaseAssemblyPage> {
     ItemButtonEntity("Switch_widget", SwitchWidgetPage()),
     ItemButtonEntity("Radio_widget", RadioWidgetPage()),
     ItemButtonEntity("RadioListTile_widget", RadioListTileWidgetPage()),
+    ItemButtonEntity("RichText_widget", RichTextWidgetPage()),
     ItemButtonEntity("ToolTip", TooltipWidgetPage()),
     ItemButtonEntity("VerticalText_widget", VerticalTextPage()),
   ];
