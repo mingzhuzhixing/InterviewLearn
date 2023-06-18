@@ -289,6 +289,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainOptimizeActivity.class));
     }
 
+    /**
+     * compose 组件
+     */
+    public void composeClick(View view) {
+//        startActivity(new Intent(this, MainComposeActivity.class));
+    }
+
     @Override
     protected void onStop() {
         super.onStop();

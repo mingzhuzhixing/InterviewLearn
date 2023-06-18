@@ -1,10 +1,7 @@
 package com.v.module_recyclerview.swipe_refresh_layout;
 
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,13 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.v.module_base.BaseTitleBarActivity;
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
 import com.v.module_recyclerview.listview.ListviewAdapter;
 import com.v.module_recyclerview.swipe_refresh_layout.refreshview.OnRefreshTextHelper;
 import com.v.module_recyclerview.swipe_refresh_layout.refreshview.VerticalMouldingHeaderJson;
-import com.v.module_recyclerview.widget.MyRecylcerView;
+import com.v.module_recyclerview.widget.MyRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +26,8 @@ import java.util.List;
  * Recyclerview + SwipeRefreshLayout, 打造上拉加载
  */
 public class SwipeNoRefreshLayoutActivity extends AppCompatActivity implements OnLoadMoreListener {
-    private MyRecylcerView mRecyclerView;
-    private MyRecylcerView mRvTodayPlan;
+    private MyRecyclerView mRecyclerView;
+    private MyRecyclerView mRvTodayPlan;
     private SmartRefreshLayout mSwipeRefreshLayout;
     private ListviewAdapter mAdapter;
     private ListviewAdapter mTodayAdapter;

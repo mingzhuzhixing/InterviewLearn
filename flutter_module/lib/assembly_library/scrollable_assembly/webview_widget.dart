@@ -4,19 +4,6 @@ import 'package:flutter_module/widget/common_app_bar.dart';
 /**
  * flutter_webview
  *
- * android项目配置：
-    android {
-    compileSdkVersion 29
-    defaultConfig {
-    minSdkVersion 19
-    targetSdkVersion 29
-    }
-    }
- *
- * gradle相应版本：
-    gradle插件版本 ：4.1.* 以及上
-    gradle版本 ：5.6 及以上
-
  * flutter_inappwebview需要依赖androidx和swift。
  *
  * https://blog.csdn.net/u013038616/article/details/119034807

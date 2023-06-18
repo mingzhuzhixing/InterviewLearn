@@ -5,21 +5,25 @@ buildscript {
     apply from: 'version.gradle'
 
     ext {
-        kotlin_version = '1.5.31'
+        kotlin_version = '1.6.10'
+        compose_ui_version = '1.1.1'
     }
     repositories {
-        maven {url 'https://maven.aliyun.com/repository/public/'}
+        maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "https://maven.aliyun.com/nexus/content/repositories/releases" }
-        maven { url 'https://maven.aliyun.com/repository/central'}
-        maven {url 'https://maven.aliyun.com/repository/jcenter'}
-
-        google()
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
+        //google()
         mavenCentral()
-        maven {url "file://${projectDir}/repository/"}
+        maven { url "file://${projectDir}/repository/" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
 
         //Butterknife 插件
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
@@ -32,11 +36,14 @@ buildscript {
 allprojects {
     String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
     repositories {
-        maven {url 'https://maven.aliyun.com/repository/public/'}
+        maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "https://maven.aliyun.com/nexus/content/repositories/releases" }
-        maven { url 'https://maven.aliyun.com/repository/central'}
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
-        google()
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
+        //google()
         mavenCentral()
 //        maven {
 //            //url 'E:\\AndroidWorkspace\\InterviewLearn\\flutter_module\\build\\host\\outputs\\repo'
@@ -44,8 +51,8 @@ allprojects {
 //            url '../flutter_module/build/host/outputs/repo'
 //        }
 
-        maven {url "file://${tempProjectDir}/repository/"}
-        maven {url "$storageUrl/download.flutter.io"}
+        maven { url "file://${tempProjectDir}/repository/" }
+        maven { url "$storageUrl/download.flutter.io" }
 
         maven { url 'https://jitpack.io' }
 

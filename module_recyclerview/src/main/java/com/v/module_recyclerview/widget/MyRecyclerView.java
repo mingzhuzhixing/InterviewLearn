@@ -10,17 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * Created by kjt on 2020/5/7
  */
-public class MyRecylcerView extends RecyclerView {
+public class MyRecyclerView extends RecyclerView {
 
-    public MyRecylcerView(Context context) {
+    public MyRecyclerView(Context context) {
         super(context);
     }
 
-    public MyRecylcerView(Context context, @Nullable AttributeSet attrs) {
+    public MyRecyclerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyRecylcerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public MyRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 

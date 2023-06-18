@@ -42,6 +42,7 @@ include ':module_jetpack'
 include ':module_nicevideoplayer'
 include ':module_viewpager'
 include ':module_optimize'
+//include ':module_compose'
 
 // 加入下面配置
 //include ':flutter_module'

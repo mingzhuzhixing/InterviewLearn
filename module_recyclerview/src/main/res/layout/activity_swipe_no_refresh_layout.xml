@@ -57,7 +57,7 @@
                         android:textColor="@color/C1"
                         android:textSize="28sp" />
 
-                    <com.v.module_recyclerview.widget.MyRecylcerView
+                    <com.v.module_recyclerview.widget.MyRecyclerView
                         android:id="@+id/rv_today_plan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                         android:textColor="@color/C1"
                         android:textSize="28sp" />
 
-                    <com.v.module_recyclerview.widget.MyRecylcerView
+                    <com.v.module_recyclerview.widget.MyRecyclerView
                         android:id="@+id/recyclerview"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

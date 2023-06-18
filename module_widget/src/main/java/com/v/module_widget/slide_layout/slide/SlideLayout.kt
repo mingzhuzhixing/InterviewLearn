@@ -181,6 +181,7 @@ class SlideLayout @JvmOverloads constructor(context: Context, attrs: AttributeSe
                 SlideGesture.REFRESH -> sliderOffsetHeaderWhenRefresh = 0
                 SlideGesture.SCROLL -> cancelHeaderAnimator()
                 SlideGesture.SLIDE -> cancelSliderAnimator()
+                else -> {}
             }
             val isRefresh = gesture == SlideGesture.REFRESH
             if (isRefresh) {
