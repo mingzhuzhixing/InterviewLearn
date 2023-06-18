@@ -59,6 +59,7 @@ dependencies {
     implementation composes["compose_foundation_layout"]
     implementation composes["compose_animation"]
     implementation composes["compose_navigation"]
+    implementation composes["compose_constraintlayout"]
 
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
