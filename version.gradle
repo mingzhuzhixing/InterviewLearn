@@ -1,4 +1,8 @@
 ext.isUserApplication = false
+ext {
+    kotlin_version = '1.6.20'
+    compose_version = '1.2.0-alpha08'
+}
 
 //版本名称为${conf.versionName}.${conf.versionCode}.${conf.date}"
 def androidVersion = [
@@ -53,5 +57,30 @@ def deps = [
         constraint_layout_2    : "com.android.support.constraint:constraint-layout:2.0.0-alpha2",
 ]
 
+def composes=[
+        //与activity结合使用
+        compose_activity: 'androidx.activity:activity-compose:1.4.0',
+        //或者添加 Material Design 2
+        compose_material: "androidx.compose.material:material:$compose_version",
+        compose_material3: "androidx.compose.material3:material3:1.0.0-alpha02",
+        compose_material3_size: "androidx.compose.material3:material3-window-size-class:1.0.0-alpha12",
+        compose_material_icon:"androidx.compose.material:material-icons-extended:$compose_version",
+
+        compose_runtime: "androidx.compose.runtime:runtime:$compose_version",
+        compose_runtime_livedata :"androidx.compose.runtime:runtime-livedata:$compose_version",
+
+        compose_ui: "androidx.compose.ui:ui:$compose_version",
+        compose_ui_preview: "androidx.compose.ui:ui-tooling-preview:$compose_version",
+        compose_ui_tooling: "androidx.compose.ui:ui-tooling:$compose_version",
+
+        compose_foundation :"androidx.compose.foundation:foundation:$compose_version",
+        compose_foundation_layout :"androidx.compose.foundation:foundation-layout:$compose_version",
+
+        compose_animation: "androidx.compose.animation:animation:$compose_version",
+
+        compose_navigation :'androidx.navigation:navigation-compose:2.4.2',
+]
+
 ext.androidV = androidVersion
 ext.deps = deps
+ext.composes = composes

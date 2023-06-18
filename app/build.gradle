@@ -20,11 +20,11 @@ android {
 //            }
 //        }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath = true
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                includeCompileClasspath = true
+//            }
+//        }
     }
 
     //Solution:No version of NDK matched the requested version 21.0.6113669. Versions available locally: 20.1.5948944
@@ -101,5 +101,5 @@ dependencies {
     implementation project(":module_jetpack")
     implementation project(":module_viewpager")
     implementation project(":module_optimize")
-//    implementation project(":module_compose")
+    implementation project(":module_compose")
 }
