@@ -9,28 +9,15 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="10dp"
         tools:context="com.v.interviewlearn.MainActivity">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="子线程更新ui"
-            android:textAllCaps="false" />
-
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="updateUI"
-            android:text="更细ui"
-            android:textAllCaps="false" />
+            android:onClick="androidBasicClick"
+            android:text="Android基础"
+            android:textAllCaps="false"/>
 
         <Button
             android:layout_width="match_parent"
@@ -43,12 +30,6 @@
             android:layout_height="wrap_content"
             android:onClick="pickerTimeClick"
             android:text="时间选择器" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="androidBasicClick"
-            android:text="android基础" />
 
         <Button
             android:layout_width="match_parent"

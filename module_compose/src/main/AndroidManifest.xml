@@ -4,6 +4,8 @@
 
     <application>
         <activity android:name=".MainComposeActivity" />
+        <activity android:name=".activity.ComposeButtonActivity"/>
+        <activity android:name=".activity.ComposeTextFieldActivity" />
     </application>
 
 </manifest>

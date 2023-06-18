@@ -43,64 +43,11 @@ import comv.module_network.NetworkMainActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mTextView = findViewById(R.id.tv_content);
-
-        workThreadUpdateUi();
-    }
-
-    /**
-     * Android中子线程真的不能更新UI吗？ 不是，极端的情况可以更新的
-     * <p>
-     * 原因参考：https://blog.csdn.net/xyh269/article/details/52728861
-     */
-    private void workThreadUpdateUi() {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(5000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                mTextView.setText("你好");
-//            }
-//        }).start();
-
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(5000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                mTextView.setText("你好");
-//            }
-//        }).run();
-    }
-
-
-    public void updateUI(View view) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mTextView.setText("你好3");
-            }
-        }).start();
-
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                mTextView.setText("你好");
-//            }
-//        }).run();
     }
 
     /**
