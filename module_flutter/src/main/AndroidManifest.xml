@@ -4,10 +4,10 @@
 
     <application>
         <activity
-            android:name=".FlutterChildActivity"
+            android:name=".flutter_native.FlutterChildActivity"
             android:exported="false" />
         <activity
-            android:name=".FlutterFragmentActivity"
+            android:name=".flutter_native.FlutterFragmentActivity"
             android:exported="false" />
         <activity
             android:name=".FlutterMainActivity"
@@ -18,6 +18,20 @@
             android:hardwareAccelerated="true"
             android:theme="@style/Theme.AppCompat"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.idlefish.flutterboost.containers.FlutterBoostActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize" >
+
+        </activity>
+        <meta-data android:name="flutterEmbedding"
+            android:value="2">
+        </meta-data>
+
+        <activity android:name=".flutter_boost.MyFlutterActivity" />
     </application>
 
 </manifest>

@@ -45,10 +45,10 @@ include ':module_optimize'
 include ':module_compose'
 
 // 加入下面配置
-//include ':flutter_module'
-//setBinding(new Binding([gradle: this]))
-//evaluate(new File(
-//        settingsDir.parentFile,
-//        //E:\AndroidWorkspace\InterviewLearn\flutter_module
-//        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
-//))
+include ':flutter_module'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        //E:\AndroidWorkspace\InterviewLearn\flutter_module
+        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
+))

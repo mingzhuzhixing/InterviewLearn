@@ -28,4 +28,11 @@
         android:text="打开FlutterFragment"
         android:textAllCaps="false" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="flutterBoostClick"
+        android:text="打开FlutterBoost"
+        android:textAllCaps="false" />
+
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.v.module_flutter;
+package com.v.module_flutter.flutter_native;
 
 import android.os.Bundle;
 import android.util.Log;

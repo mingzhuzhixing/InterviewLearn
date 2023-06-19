@@ -12,10 +12,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        ndk {
-            // Filter for architectures supported by Flutter.
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
-        }
+//        ndk {
+//            // Filter for architectures supported by Flutter.
+//            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+//        }
     }
 
     buildTypes {
@@ -45,10 +45,12 @@ dependencies {
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
+    implementation deps["converter_gson"]
 
-//    api project(':flutter')
+    api project(':flutter')
+    implementation project(':flutter_boost')
 
-    api 'com.flutter_webview_plugin:flutter_webview_plugin_release:1.0.0-SNAPSHOT'
-    api 'io.flutter.plugins.sharedpreferences:shared_preferences_android_release:1.0.0-SNAPSHOT'
-    api 'com.v.flutter_module:flutter_release:1.0.0-SNAPSHOT'
+//    api 'com.flutter_webview_plugin:flutter_webview_plugin_release:1.0.0-SNAPSHOT'
+//    api 'io.flutter.plugins.sharedpreferences:shared_preferences_android_release:1.0.0-SNAPSHOT'
+//    api 'com.v.flutter_module:flutter_release:1.0.0-SNAPSHOT'
 }

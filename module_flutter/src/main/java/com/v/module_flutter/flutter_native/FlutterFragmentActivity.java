@@ -1,13 +1,13 @@
-package com.v.module_flutter;
+package com.v.module_flutter.flutter_native;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.FrameLayout;
+
+import com.v.module_flutter.R;
 
 import io.flutter.embedding.android.FlutterFragment;
 

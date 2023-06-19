@@ -30,16 +30,16 @@ dependencies:
   http: ^0.13.0
 
   # 添加sharedPreference依赖
-  shared_preferences: ^2.1.2
+  shared_preferences: 2.1.2
 
   #处理第三方引用file版本低报错问题
-  file: ^6.1.4
+  file: 6.1.4
 
   # EventBus事件总线
-  event_bus: ^2.0.0
+  event_bus: 2.0.0
 
   # flutter_webview 库
-  flutter_webview_plugin: ^0.4.0
+#  flutter_webview_plugin: ^0.4.0
 #  flutter_inappwebview: 5.6.0
 #  flutter_inappwebview:
 #    git: https://github.com/pichillilorenzo/flutter_inappwebview.git
@@ -54,35 +54,35 @@ dependencies:
   lottie: 1.2.2
 
   # 添加Sqfile依赖
-  sqflite: ^2.2.8+4
+  sqflite: 2.2.8+4
 
   # 轮播图
-  flutter_swiper_null_safety: ^1.0.2
+  flutter_swiper_null_safety: 1.0.2
 
   #相册选择照片相关
-  path_provider: ^2.0.15
+  path_provider: 2.0.15
 
   #图片选择
-  image_picker: ^0.8.5
+  image_picker: 0.8.5
 
   #剪切图片
-  crop_your_image: ^0.6.0+1
+  crop_your_image: 0.6.0+1
 
   # 时间转换格式
-  date_format: ^2.0.7
+  date_format: 2.0.7
 
   # 第三方时间转换格式
   #flutter_cupertino_date_picker: ^^1.0.26+2
   #flutter_cupertino_date_picker:
   #  git: https://github.com/yasseralsamman/flutter-cupertino-date-picker.git
-  flutter_cupertino_date_picker_fork: ^1.0.7
+  flutter_cupertino_date_picker_fork: 1.0.7
 
   # splashscreen: ^1.3.5
   # flutter_splash_screen库
-  flutter_splash_screen: ^1.0.0+6
+  flutter_splash_screen: 1.0.0+6
 
   # 上下拉刷新库
-  pull_to_refresh: ^2.0.0
+  pull_to_refresh: 2.0.0
 
 #  flutter_easyloading: ^3.0.3
 
@@ -90,8 +90,13 @@ dependencies:
   flutter_screenutil: 5.7.0
 
   # 路径绘画
-  path_drawing: ^1.0.0
+  path_drawing: 1.0.0
 
+  # FlutterBoost
+  flutter_boost:
+    git:
+      url: 'https://github.com/alibaba/flutter_boost.git'
+      ref: '4.3.0'
 
 dev_dependencies:
   flutter_test:

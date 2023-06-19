@@ -118,10 +118,10 @@ class RefreshPresenter(private val refreshView: () -> RefreshViewLayout?, privat
                 if (height < refresh.heightCanRefresh || refresh.isRestore() || force) {
                     listener = object : Animator.AnimatorListener {
 
-                        override fun onAnimationRepeat(animation: Animator?) {
+                        override fun onAnimationRepeat(animation: Animator) {
                         }
 
-                        override fun onAnimationCancel(animation: Animator?) {
+                        override fun onAnimationCancel(animation: Animator) {
                         }
 
                         override fun onAnimationStart(animation: Animator) {

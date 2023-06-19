@@ -56,7 +56,7 @@ public class WebViewDefaultSettings {
 
         mWebSettings.setTextZoom(100);
         mWebSettings.setDatabaseEnabled(true);
-        mWebSettings.setAppCacheEnabled(true);
+//        mWebSettings.setAppCacheEnabled(true);
         //支持自动加载图片
         mWebSettings.setLoadsImagesAutomatically(true);
         //多窗口
@@ -96,8 +96,8 @@ public class WebViewDefaultSettings {
 
         String appCacheDir = webView.getContext().getDir("cache", Context.MODE_PRIVATE).getPath();
         mWebSettings.setDatabasePath(appCacheDir);
-        mWebSettings.setAppCachePath(appCacheDir);
-        mWebSettings.setAppCacheMaxSize(1024 * 1024 * 80);
+//        mWebSettings.setAppCachePath(appCacheDir);
+//        mWebSettings.setAppCacheMaxSize(1024 * 1024 * 80);
 
         //用户可以自己设置useragent
         //mWebSettings.setUserAgentString("webprogress/build you agent info");
