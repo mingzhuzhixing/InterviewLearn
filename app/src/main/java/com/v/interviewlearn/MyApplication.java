@@ -111,9 +111,13 @@ public class MyApplication extends BaseApplication {
 //                        .url(options.pageName())
 //                        .urlParams(options.arguments())
 //                        .build(FlutterBoost.instance().currentActivity());
-                Intent intent = new Intent(FlutterBoost.instance().currentActivity(), MyFlutterActivity.class);
-                intent.putExtra("params", new Gson().toJson(options));
-                FlutterBoost.instance().currentActivity().startActivity(intent);
+               try {
+                   Intent intent = new Intent(FlutterBoost.instance().currentActivity(), MyFlutterActivity.class);
+                   intent.putExtra("params", new Gson().toJson(options));
+                   FlutterBoost.instance().currentActivity().startActivity(intent);
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
             }
         }, engine -> {
         });
