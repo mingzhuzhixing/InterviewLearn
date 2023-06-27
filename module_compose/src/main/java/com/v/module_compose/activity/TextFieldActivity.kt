@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,13 +17,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.v.module_compose.ui.theme.InterviewLearnTheme
 import com.v.module_compose.widget.appBar
-import java.time.format.TextStyle
 
 /**
  * ClassName: ComposeTextFieldActivity
@@ -34,8 +31,9 @@ import java.time.format.TextStyle
  * @package_name com.v.module_compose.activity
  * @date 2023/6/18 17:42
  */
-class ComposeTextFieldActivity : ComponentActivity() {
-    lateinit var mActivity: Activity;
+class TextFieldActivity : ComponentActivity() {
+    lateinit var mActivity: Activity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mActivity = this

@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -26,7 +25,7 @@ import com.v.module_compose.R
 import com.v.module_compose.ui.theme.InterviewLearnTheme
 import com.v.module_compose.widget.appBar
 
-class ComposeButtonActivity : ComponentActivity() {
+class ButtonActivity : ComponentActivity() {
     lateinit var mActivity: Activity;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

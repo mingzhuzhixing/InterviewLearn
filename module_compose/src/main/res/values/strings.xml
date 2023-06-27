@@ -1,4 +1,6 @@
 <resources>
     <string name="title_activity_main222">Main222Activity</string>
     <string name="title_activity_main_compose">MainComposeActivity</string>
+    <string name="title_activity_lazy_column">LazyColumnActivity</string>
+    <string name="string_car">汽车</string>
 </resources>
