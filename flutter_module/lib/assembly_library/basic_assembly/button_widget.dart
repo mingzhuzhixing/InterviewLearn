@@ -265,7 +265,7 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
       height: 80.w,
       child: YsTextImage(
         "wode_baiding_dengji",
-        "文本文本文本文本文本文本文文本文本文本文本文文本文本文本文本文文本文本文本文本文",
+        "文本文本文本文本文本文本文文本文本文本文本文文本文本文本文本文文本文本文本文本文本文",
         direction: YsTextDirection.il_tr,
         textStyle: YsTextStyle(maxLines: 1, overflow: TextOverflow.ellipsis),
         imageStyle: YsImageStyle(width: 64.w, height: 25.w),
