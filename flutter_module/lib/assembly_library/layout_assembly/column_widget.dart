@@ -11,32 +11,157 @@ class ColumnWidgetPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Column Widget"),
       ),
-      body: Column(
+      extendBody: true,
+      body: _thirdWidget(),
+    );
+  }
+
+  Widget _firstWidget() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        MaterialButton(
+          onPressed: () {},
+          child: Text("第一行的按钮"),
+        ),
+        MaterialButton(
+          onPressed: () {},
+          child: Text("第二行的按钮"),
+        ),
+        Container(
+          height: 200.w,
+          width: 300.w,
+          color: Colors.lightBlue,
+          child: Column(
+            children: [
+              Text("第1行的按钮"),
+              Spacer(),
+              Text("第2行的按钮"),
+              Spacer(),
+              Text("第3行的按钮"),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget _secondWidget() {
+    return Container(
+      padding: EdgeInsets.all(10.0),
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          MaterialButton(
-            onPressed: () {},
-            child: Text("第一行的按钮"),
-          ),
-          MaterialButton(
-            onPressed: () {},
-            child: Text("第二行的按钮"),
-          ),
-          Container(
-            height: 200.w,
-            width: 300.w,
-            color: Colors.lightBlue,
-            child: Column(
-              children: [
-                Text("第1行的按钮"),
-                Spacer(),
-                Text("第2行的按钮"),
-                Spacer(),
-                Text("第3行的按钮"),
-              ],
+          Text(
+            'Restaurants nearby',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
             ),
-          )
+          ),
+          Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FilledButton(
+                child: Text('Enter restaurant manually'),
+                onPressed: () {
+                  print('Button pressed');
+                },
+              ),
+            ],
+          ),
+          Flexible(
+            child: ListView.builder(
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.cyan,
+                  ),
+                  title: Text('Test restaurant'),
+                  subtitle: Text('80m'),
+                );
+              },
+              itemCount: 15,
+            ),
+          ),
+          Text(
+            'Restaurants nearby',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _thirdWidget() {
+    return Container(
+      padding: EdgeInsets.all(10.0),
+      color: Colors.yellow,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Restaurants nearby',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FilledButton(
+                child: Text('Enter restaurant manually'),
+                onPressed: () {
+                  print('Button pressed');
+                },
+              ),
+            ],
+          ),
+          Expanded(
+            flex: 2,
+            child: ListView.builder(
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  height: 40.w,
+                  color: Colors.red,
+                  margin: EdgeInsets.all(5.w),
+                  child: Text('Test11'),
+                );
+              },
+              shrinkWrap: true,
+              itemCount: 15,
+              itemExtent: 100,
+              scrollDirection: Axis.horizontal,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _fourWidget() {
+    List<Widget> childWidget = [];
+    for (int i = 0; i < 15; i++) {
+      childWidget.add(Container(
+        height: 100.w,
+        child: Column(
+          children: [Text("item$i"), Text("item$i")],
+        ),
+      ));
+    }
+    return Container(
+      color: Colors.red,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: childWidget,
+        ),
       ),
     );
   }

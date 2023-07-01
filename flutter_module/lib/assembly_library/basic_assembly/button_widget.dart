@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/bean/card_button.dart';
+import 'package:flutter_module/widget/ys_card_button_view.dart';
+import 'package:flutter_module/widget/ys_image_style.dart';
+import 'package:flutter_module/widget/ys_text_direction.dart';
+import 'package:flutter_module/widget/ys_text_image.dart';
+import 'package:flutter_module/widget/ys_text_style.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /**
@@ -24,118 +30,156 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
       appBar: AppBar(
         title: Text("Button Widget"),
       ),
-      body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext content, int index) {
-                return Column(
-                  children: <Widget>[
-                    _buildButton(),
-                    _popupMenuButton(),
-                    BackButton(),
-                    CloseButton(),
-                    MaterialButton(
-                      onPressed: () {
-                        print("OutlineButton");
-                      },
-                      child: Text("OutlineButton"),
-                    ),
-                    // MaterialButton(
-                    //   onPressed: () {},
-                    //   textColor: Colors.blue,
-                    //   highlightedBorderColor: Colors.deepOrange,
-                    //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-                    //   borderSide: BorderSide(color: Colors.blueAccent),
-                    //   child: Text("OutlineButton"),
-                    // ),
-                    FloatingActionButton(
-                      onPressed: () {
-                        print("FloatingActionButton");
-                      },
-                      child: Text("FAB"),
-                      backgroundColor: Colors.blueAccent,
-                      foregroundColor: Colors.red,
-                    ),
-                    MaterialButton(
+      body: _buttonBasicWidget(),
+    );
+  }
+
+  /// 基础按钮
+  Widget _buttonBasicWidget() {
+    return CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      slivers: [
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext content, int index) {
+              return Column(
+                children: <Widget>[
+                  _buildButton(),
+                  _popupMenuButton(),
+                  BackButton(),
+                  CloseButton(),
+                  MaterialButton(
+                    onPressed: () {
+                      print("OutlineButton");
+                    },
+                    child: Text("OutlineButton"),
+                  ),
+                  // MaterialButton(
+                  //   onPressed: () {},
+                  //   textColor: Colors.blue,
+                  //   highlightedBorderColor: Colors.deepOrange,
+                  //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                  //   borderSide: BorderSide(color: Colors.blueAccent),
+                  //   child: Text("OutlineButton"),
+                  // ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      print("FloatingActionButton");
+                    },
+                    child: Text("FAB"),
+                    backgroundColor: Colors.blueAccent,
+                    foregroundColor: Colors.red,
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    child: Text("RaisedButton"),
+                    padding: EdgeInsets.all(15.0),
+                  ),
+                  SizedBox(height: 10.w),
+                  Container(
+                    height: 70.w,
+                    width: 1.sw * 0.8,
+                    child: MaterialButton(
                       onPressed: () {},
                       child: Text("RaisedButton"),
-                      padding: EdgeInsets.all(15.0),
-                    ),
-                    SizedBox(height: 10.w),
-                    Container(
-                      height: 70.w,
-                      width: 1.sw * 0.8,
-                      child: MaterialButton(
-                        onPressed: () {},
-                        child: Text("RaisedButton"),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                            side: BorderSide(width: 2.0, color: Color(0xFF000000))),
-                      ),
-                    ),
-                    MaterialButton(
-                      onPressed: () {},
-                      child: Text("MaterialButton"),
-                    ),
-                    MaterialButton(
-                      onPressed: () {},
-                      child: Text("MaterialButton"),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
                           side: BorderSide(width: 2.0, color: Color(0xFF000000))),
                     ),
-                    MaterialButton(
-                      onPressed: () {},
-                      child: Text(
-                        "MaterialButton",
-                        style: TextStyle(color: Colors.white, fontSize: 28.sp),
-                      ),
-                      shape: RoundedRectangleBorder(
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    child: Text("MaterialButton"),
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    child: Text("MaterialButton"),
+                    shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      color: Colors.blue,
+                        side: BorderSide(width: 2.0, color: Color(0xFF000000))),
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    child: Text(
+                      "MaterialButton",
+                      style: TextStyle(color: Colors.white, fontSize: 28.sp),
                     ),
-                    Container(
-                      height: 180.h,
-                      child: MaterialButton(
-                        onPressed: () {},
-                        child: Text("MaterialButton",
-                            style: TextStyle(fontSize: 14, color: Colors.white)),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        border: Border(
-                          top: BorderSide(
-                              width: 2.0, color: Color(0xFF000000), style: BorderStyle.solid),
-                          left: BorderSide(width: 2.0, color: Color(0xFF000000)),
-                          right: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
-                          bottom: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
-                        ),
-                        //borderRadius: BorderRadius.all(Radius.circular(15)),
-                      ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
-                    Container(
-                      child: IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-                      color: Colors.blue,
-                    ),
-                    TextButton(
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    height: 180.h,
+                    child: MaterialButton(
                       onPressed: () {},
-                      child: Text("TextButton"),
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
-                          shape: MaterialStateProperty.all<OutlinedBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(10))),
-                          )),
+                      child: Text("MaterialButton",
+                          style: TextStyle(fontSize: 14, color: Colors.white)),
                     ),
-                    TextButton(
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      border: Border(
+                        top: BorderSide(
+                            width: 2.0, color: Color(0xFF000000), style: BorderStyle.solid),
+                        left: BorderSide(width: 2.0, color: Color(0xFF000000)),
+                        right: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
+                        bottom: BorderSide(width: 2.0, color: Color(0xFF0D47A1)),
+                      ),
+                      //borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                  ),
+                  Container(
+                    child: IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+                    color: Colors.blue,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("TextButton"),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
+                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(10))),
+                        )),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+                      shape: MaterialStateProperty.all<OutlinedBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(50.w))),
+                      ),
+                      padding: MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
+                    ),
+                  ),
+                  Container(
+                    height: 60.w,
+                    width: 120.w,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text("确定", style: TextStyle(fontSize: 22.sp, color: Colors.white)),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(50.w))),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.w),
+                  Container(
+                    height: 100.w,
+                    width: 1.sw,
+                    margin: EdgeInsets.only(left: 20.w, right: 20.w),
+                    child: TextButton(
                       onPressed: () {},
                       child:
                           Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
                         shape: MaterialStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(50.w))),
@@ -144,96 +188,179 @@ class _ButtonWidgetPageState extends State<ButtonWidgetPage> {
                             MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
                       ),
                     ),
-                    Container(
-                      height: 60.w,
-                      width: 120.w,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text("确定", style: TextStyle(fontSize: 22.sp, color: Colors.white)),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                          shape: MaterialStateProperty.all<OutlinedBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(50.w))),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10.w),
-                    Container(
-                      height: 100.w,
-                      width: 1.sw,
-                      margin: EdgeInsets.only(left: 20.w, right: 20.w),
-                      child: TextButton(
-                        onPressed: () {},
-                        child:
-                            Text("TextButton", style: TextStyle(fontSize: 14, color: Colors.white)),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-                          shape: MaterialStateProperty.all<OutlinedBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(50.w))),
-                          ),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.only(left: 40.w, right: 40.w)),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10.w),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            height: 100.w,
-                            margin: EdgeInsets.only(left: 20.w, right: 20.w),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Text("TextButton",
-                                  style: TextStyle(fontSize: 14, color: Colors.white)),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(Colors.deepOrange),
-                                shape: MaterialStateProperty.all<OutlinedBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(50.w))),
-                                ),
-                                padding: MaterialStateProperty.all(
-                                    EdgeInsets.only(left: 40.w, right: 40.w)),
+                  ),
+                  SizedBox(height: 10.w),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 100.w,
+                          margin: EdgeInsets.only(left: 20.w, right: 20.w),
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text("TextButton",
+                                style: TextStyle(fontSize: 14, color: Colors.white)),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+                              shape: MaterialStateProperty.all<OutlinedBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(50.w))),
                               ),
+                              padding: MaterialStateProperty.all(
+                                  EdgeInsets.only(left: 40.w, right: 40.w)),
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    IconButton(
-                      icon: Icon(Icons.thumb_up),
-                      onPressed: () {},
-                    ),
-                    SizedBox(height: 10),
-                    // RaisedButton.icon(
-                    //   onPressed: () {},
-                    //   icon: Icon(Icons.send),
-                    //   label: Text("发送"),
-                    // ),
-                    Container(
-                      child: Text(
-                        "取消",
-                        style: TextStyle(fontSize: 32.sp),
                       ),
-                      padding: EdgeInsets.only(left: 40.w, top: 8.w, right: 40.w, bottom: 8.w),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.red, width: 1.w),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  IconButton(
+                    icon: Icon(Icons.thumb_up),
+                    onPressed: () {},
+                  ),
+                  SizedBox(height: 10),
+                  // RaisedButton.icon(
+                  //   onPressed: () {},
+                  //   icon: Icon(Icons.send),
+                  //   label: Text("发送"),
+                  // ),
+                  Container(
+                    child: Text(
+                      "取消",
+                      style: TextStyle(fontSize: 32.sp),
                     ),
-                    SizedBox(height: 20.w),
-                  ],
-                );
-              },
-              childCount: 1,
-            ),
+                    padding: EdgeInsets.only(left: 40.w, top: 8.w, right: 40.w, bottom: 8.w),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.red, width: 1.w),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                  ),
+                  SizedBox(height: 20.w),
+                  _buttonImageTextWidget(),
+                  SizedBox(height: 20.w),
+                  _cardButton1Widget(),
+                  SizedBox(height: 20.w),
+                  _cardButton2Widget(),
+                  SizedBox(height: 20.w),
+                  _cardButton3Widget(),
+                  SizedBox(height: 20.w),
+                  _cardButton4Widget(),
+                  SizedBox(height: 20.w),
+                  _cardButton5Widget(),
+                  SizedBox(height: 20.w),
+                  _cardButton6Widget()
+                ],
+              );
+            },
+            childCount: 1,
           ),
-        ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buttonImageTextWidget() {
+    return Container(
+      color: Colors.yellow,
+      child: YsTextImage(
+        "wode_baiding_dengji",
+        "文本文本文本文本文本文本文文本文本文本文本文文本文本文本文本文文本文本文本文本文",
+        direction: YsTextDirection.il_tr,
+        textStyle: YsTextStyle(maxLines: 1, overflow: TextOverflow.ellipsis),
+        matchParent: true,
+      ),
+    );
+  }
+
+  Widget _cardButton1Widget() {
+    CardButton cardButton = CardButton();
+    cardButton.label = "去学习1122";
+    return Container(
+      color: Colors.yellow,
+      child: TextCardButton(
+        cardButton,
+      ),
+    );
+  }
+
+  Widget _cardButton2Widget() {
+    CardButton cardButton = CardButton();
+    cardButton.label = "去学习";
+    return Container(
+      margin: EdgeInsets.all(20.w),
+      child: TextCardButton(
+        cardButton,
+        decoration: BoxDecoration(
+          color: Colors.teal,
+          borderRadius: BorderRadius.circular(8.w),
+        ),
+        padding: EdgeInsets.only(left: 15.w, top: 4.w, right: 15.w, bottom: 9.w),
+        textStyle: YsTextStyle(color: Colors.white),
+      ),
+    );
+  }
+
+  Widget _cardButton3Widget() {
+    CardButton cardButton = CardButton();
+    cardButton.label = "去学习";
+    return Container(
+      margin: EdgeInsets.all(20.w),
+      child: TextCardButton(
+        cardButton,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.purple, width: 1.w),
+          borderRadius: BorderRadius.circular(8.w),
+        ),
+        padding: EdgeInsets.only(left: 15.w, top: 4.w, right: 15.w, bottom: 9.w),
+        textStyle: YsTextStyle(color: Colors.purple),
+      ),
+    );
+  }
+
+  Widget _cardButton4Widget() {
+    CardButton cardButton = CardButton();
+    cardButton.icon = "ic_nav_discover_actived";
+    return Container(
+      margin: EdgeInsets.all(20.w),
+      color: Colors.red,
+      child: ImageCardButton(
+        cardButton,
+        imageStyle: YsImageStyle(width: 68.w, height: 68.w),
+      ),
+    );
+  }
+
+  Widget _cardButton5Widget() {
+    CardButton cardButton = CardButton();
+    cardButton.label = "去学习去学";
+    cardButton.icon = "ic_nav_discover_actived";
+    return UnconstrainedBox(
+      child: Container(
+        margin: EdgeInsets.all(20.w),
+        color: Colors.red,
+        child: ImageAndTextCardButton(
+          cardButton,
+          imageStyle: YsImageStyle(width: 68.w, height: 68.w),
+          textStyle: YsTextStyle(color: Colors.white, overflow: TextOverflow.ellipsis, maxLines: 1),
+          matchParent: false,
+        ),
+      ),
+    );
+  }
+
+  Widget _cardButton6Widget() {
+    CardButton cardButton = CardButton();
+    cardButton.label = "去学习去学去学习去学去学习去学去学习去学去学习去学去学习去学去学习去学";
+    cardButton.icon = "ic_nav_discover_actived";
+    return Container(
+      width: 1.sw,
+      margin: EdgeInsets.all(20.w),
+      color: Colors.red,
+      child: ImageAndTextCardButton(
+        cardButton,
+        imageStyle: YsImageStyle(width: 68.w, height: 68.w),
+        textStyle: YsTextStyle(color: Colors.white, overflow: TextOverflow.ellipsis, maxLines: 1),
+        matchParent: true,
       ),
     );
   }
