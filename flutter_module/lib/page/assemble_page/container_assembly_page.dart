@@ -6,8 +6,10 @@ import 'package:flutter_module/assembly_library/container_assembly/constrainedbo
 import 'package:flutter_module/assembly_library/container_assembly/container_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/decoratedbox_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/dotted_border_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/fitted_box.dart';
 import 'package:flutter_module/assembly_library/container_assembly/fractionallysizedbox_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/padding_widget.dart';
+import 'package:flutter_module/assembly_library/container_assembly/rotatedbox_widget.dart';
 import 'package:flutter_module/assembly_library/container_assembly/sizebox_widget.dart';
 import 'package:flutter_module/bean/item_entity.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
@@ -35,12 +37,14 @@ class _ContainerAssemblyPageState extends State<ContainerAssemblyPage> {
    ItemButtonEntity("align_widget", AlignWidgetPage()),
     ItemButtonEntity("aspectradio_widget", AspectRatioWidgetPage()),
     ItemButtonEntity("center_widget", CenterWidgetPage()),
+    ItemButtonEntity("fittedbox_widget", FittedBoxWidgetPage()),
     ItemButtonEntity("constrainedbox_widget", ConstrainedBoxWidgetPage()),
     ItemButtonEntity("container_widget", ContainerWidgetPage()),
     ItemButtonEntity("decoratedbox_widget", DecoratedBoxWidgetPage()),
     ItemButtonEntity("dotted_border_widget", DottedBorderWidgetPage()),
     ItemButtonEntity("fractionallysizedbox_widget", FractionallySizedBoxWidgetPage()),
     ItemButtonEntity("padding_widget", PaddingWidgetPage()),
+    ItemButtonEntity("rotated_box_widget", RotatedBoxWidgetPage()),
     ItemButtonEntity("sizebox_widget", SizeBoxWidgetPage()),
   ];
 

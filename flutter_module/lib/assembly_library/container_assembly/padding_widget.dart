@@ -11,7 +11,7 @@ class PaddingWidgetPage extends StatelessWidget {
         title: const Text("padding widget"),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 0, 10.0, 10.0),
+        padding: EdgeInsets.fromLTRB(10, 10, 20.0, 20.0),
         child: GridView.count(
           crossAxisCount: 2,
           childAspectRatio: 1.7,
@@ -39,10 +39,11 @@ class PaddingWidgetPage extends StatelessWidget {
  * 获取图片widget
  */
 Widget getImageWidget(String url) {
-  return new Padding(
-      padding: EdgeInsets.fromLTRB(10.0, 10.0, 0, 0),
-      child: Image.network(
-        url,
-        fit: BoxFit.cover,
-      ));
+  return Padding(
+    padding: EdgeInsets.fromLTRB(10.0, 10.0, 0, 0),
+    child: Image.network(
+      url,
+      fit: BoxFit.cover,
+    ),
+  );
 }
