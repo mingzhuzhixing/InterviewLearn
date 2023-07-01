@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 bool runType = false;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   if (runType) {
     ///这里的CustomFlutterBinding调用务必不可缺少，用于控制Boost状态的resume和pause
     CustomFlutterBinding();

@@ -4,6 +4,7 @@ import 'package:flutter_module/page/assemble_page/container_assembly_page.dart';
 import 'package:flutter_module/page/assemble_page/feture_assembly_page.dart';
 import 'package:flutter_module/page/assemble_page/layout_assembly_page.dart';
 import 'package:flutter_module/page/assemble_page/scrollable_assembly_page.dart';
+import 'package:flutter_module/page/assemble_page/third_assembly_page.dart';
 import 'package:flutter_module/widget/item_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,31 +28,12 @@ class _NewsPageState extends State<NewsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ItemButton(
-                "基础组件",
-                BaseAssemblyPage(),
-                index: 0,
-              ),
-              ItemButton(
-                "容器类组件",
-                ContainerAssemblyPage(),
-                index: 1,
-              ),
-              ItemButton(
-                "布局类组件",
-                LayoutAssemblyPage(),
-                index: 2,
-              ),
-              ItemButton(
-                "滚动组件",
-                ScrollableAssemblyPage(),
-                index: 3,
-              ),
-              ItemButton(
-                "功能型组件",
-                FetureAssemblyPage(),
-                index: 4,
-              ),
+              ItemButton("基础组件", BaseAssemblyPage(), index: 0),
+              ItemButton("容器类组件", ContainerAssemblyPage(), index: 1),
+              ItemButton("布局类组件", LayoutAssemblyPage(), index: 2),
+              ItemButton("滚动组件", ScrollableAssemblyPage(), index: 3),
+              ItemButton("功能型组件", FetureAssemblyPage(), index: 4),
+              ItemButton("第三方组件", ThirdAssemblyPage(), index: 5),
             ],
           ),
         ),
