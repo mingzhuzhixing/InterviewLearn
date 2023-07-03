@@ -12,7 +12,7 @@ class ColumnWidgetPage extends StatelessWidget {
         title: const Text("Column Widget"),
       ),
       extendBody: true,
-      body: _thirdWidget(),
+      body: _fiveWidget(),
     );
   }
 
@@ -162,6 +162,28 @@ class ColumnWidgetPage extends StatelessWidget {
         child: Row(
           children: childWidget,
         ),
+      ),
+    );
+  }
+
+  Widget _fiveWidget() {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          Row(
+            children: [Text("我是头部"), Spacer(), Text("我是尾部")],
+          ),
+          SizedBox(height: 20.w),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Image.asset(
+              "assets/images/icon_more.png",
+              width: 38.w,
+              height: 38.w,
+            ),
+          )
+        ],
       ),
     );
   }
