@@ -35,7 +35,7 @@ class _ScrollableAssemblyPageState extends State<ScrollableAssemblyPage> {
   ];
   List<ItemButtonEntity> entityList = [
     ItemButtonEntity("AnimatedList_widget", AnimatedListWidgetPage()),
-    ItemButtonEntity("CustomScrollView_widget", CustomScrollViewPage()),
+    ItemButtonEntity("CustomScrollView_widget", CustomScrollViewHomePage()),
     ItemButtonEntity("GridView_widget", GridViewWidgetPage()),
     ItemButtonEntity("GridView_widget_build", GridViewWidgetBuildPage()),
     ItemButtonEntity("ListView_widget", ListViewWidgetPage()),
