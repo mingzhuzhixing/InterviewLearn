@@ -29,8 +29,7 @@ class CustomScrollViewHomePage extends StatefulWidget {
   const CustomScrollViewHomePage({Key? key}) : super(key: key);
 
   @override
-  State<CustomScrollViewHomePage> createState() =>
-      _CustomScrollViewHomePageState();
+  State<CustomScrollViewHomePage> createState() => _CustomScrollViewHomePageState();
 }
 
 class _CustomScrollViewHomePageState extends State<CustomScrollViewHomePage> {
@@ -41,8 +40,7 @@ class _CustomScrollViewHomePageState extends State<CustomScrollViewHomePage> {
       body: Column(
         children: [
           ItemButton("CustomScrollViewPage", CustomScrollViewPage(), index: 0),
-          ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(),
-              index: 1),
+          ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(), index: 1),
         ],
       ),
     );
@@ -123,12 +121,10 @@ class CustomScrollViewSearchPage extends StatefulWidget {
   const CustomScrollViewSearchPage({Key? key}) : super(key: key);
 
   @override
-  State<CustomScrollViewSearchPage> createState() =>
-      _CustomScrollViewSearchPageState();
+  State<CustomScrollViewSearchPage> createState() => _CustomScrollViewSearchPageState();
 }
 
-class _CustomScrollViewSearchPageState
-    extends State<CustomScrollViewSearchPage> {
+class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage> {
   List<String> list = [];
   List<Widget> childrens = [];
 
@@ -168,8 +164,7 @@ class _CustomScrollViewSearchPageState
                     children: [
                       Text(
                         "搜索历史",
-                        style: TextStyle(
-                            fontSize: 34.sp, fontWeight: FontWeight.w600),
+                        style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
                       ),
                       Spacer(),
                       Icon(Icons.delete)
@@ -211,8 +206,7 @@ class _CustomScrollViewSearchPageState
                 ),
                 child: Text(
                   "搜索历史",
-                  style:
-                  TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -247,8 +241,7 @@ class _CustomScrollViewSearchPageState
       alignment: Alignment(1.03, -1.3),
       children: [
         Container(
-          padding:
-              EdgeInsets.only(left: 30.w, right: 30.w, top: 12.w, bottom: 12.w),
+          padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 12.w, bottom: 12.w),
           child: Text(text),
           decoration: BoxDecoration(
             color: Color(0xffF5F3F0),
@@ -271,7 +264,7 @@ class _CustomScrollViewSearchPageState
     );
   }
 
-  Widget _getBottomItem(){
+  Widget _getBottomItem() {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.only(left: 30.w, bottom: 20.w, right: 30.w),
