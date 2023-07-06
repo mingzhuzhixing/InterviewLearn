@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/bean/item_entity.dart';
-import 'package:flutter_module/page/assemble_page/base_assembly_page.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,12 +23,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
     SliverAppBar	                      对应 AppBar，主要是为了在 CustomScrollView 中使用。
     SliverToBoxAdapter	                一个适配器，可以将 RenderBox 适配为 Sliver，后面介绍。
     SliverPersistentHeader	            滑动到顶部时可以固定住，后面介绍。
+    SliverFillRemaining                 组件充满视口剩余空间                               Expanded
  */
 class CustomScrollViewHomePage extends StatefulWidget {
   const CustomScrollViewHomePage({Key? key}) : super(key: key);
 
   @override
-  State<CustomScrollViewHomePage> createState() => _CustomScrollViewHomePageState();
+  State<CustomScrollViewHomePage> createState() =>
+      _CustomScrollViewHomePageState();
 }
 
 class _CustomScrollViewHomePageState extends State<CustomScrollViewHomePage> {
@@ -41,7 +41,8 @@ class _CustomScrollViewHomePageState extends State<CustomScrollViewHomePage> {
       body: Column(
         children: [
           ItemButton("CustomScrollViewPage", CustomScrollViewPage(), index: 0),
-          ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(), index: 1),
+          ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(),
+              index: 1),
         ],
       ),
     );
@@ -122,17 +123,21 @@ class CustomScrollViewSearchPage extends StatefulWidget {
   const CustomScrollViewSearchPage({Key? key}) : super(key: key);
 
   @override
-  State<CustomScrollViewSearchPage> createState() => _CustomScrollViewSearchPageState();
+  State<CustomScrollViewSearchPage> createState() =>
+      _CustomScrollViewSearchPageState();
 }
 
-class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage> {
+class _CustomScrollViewSearchPageState
+    extends State<CustomScrollViewSearchPage> {
   List<String> list = [];
+  List<Widget> childrens = [];
 
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 15; i++) {
       list.add("第一个--->$i");
+      childrens.add(_getBottomItem());
     }
   }
 
@@ -163,7 +168,8 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                     children: [
                       Text(
                         "搜索历史",
-                        style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                            fontSize: 34.sp, fontWeight: FontWeight.w600),
                       ),
                       Spacer(),
                       Icon(Icons.delete)
@@ -205,113 +211,33 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                 ),
                 child: Text(
                   "搜索历史",
-                  style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
+                  style:
+                  TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
                 ),
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(childCount: list.length, (ctx, index) {
-              return Container(
-                color: Colors.white,
-                padding: EdgeInsets.only(left: 30.w, bottom: 20.w, right: 30.w),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      child: Image.asset(
-                        "assets/images/icon_cover.png",
-                        width: 148.w,
-                        height: 208.w,
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(8.w),
-                    ),
-                    SizedBox(width: 20.w),
-                    Expanded(
-                      child: SizedBox(
-                        height: 208.w,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "打造超级人脉",
-                              style: TextStyle(
-                                fontSize: 30.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff1F1F1F),
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(height: 20.w),
-                            Text(
-                              "他创造了太空歌剧的奇迹，也奠定了赛博朋克的基石，更预见了科技和未来。",
-                              style: TextStyle(
-                                fontSize: 26.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff969696),
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            Spacer(),
-                            Text(
-                              "作者：贾斯汀比伯",
-                              style: TextStyle(
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xffb3b3b3),
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              );
-            }),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                children: childrens,
+              ),
+            ),
           ),
-          // SliverToBoxAdapter(
-          //   child: Container(
-          //     width: 1.sw,
-          //     decoration: BoxDecoration(
-          //       borderRadius: BorderRadius.only(
-          //         bottomRight: Radius.zero,
-          //         bottomLeft: Radius.zero,
-          //         topLeft: Radius.circular(20.w),
-          //         topRight: Radius.circular(20.w),
-          //       ),
-          //       color: Colors.white,
-          //     ),
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Text("搜索历史"),
-          //
-          //         // Expanded(
-          //         //   child: ListView(
-          //         //     children: [
-          //         //       itemWarp("第一个"),
-          //         //       itemWarp("第二个二个二个按钮"),
-          //         //       itemWarp("第三个"),
-          //         //       itemWarp("第四个"),
-          //         //       itemWarp("第五个第五个第"),
-          //         //       itemWarp("第六个"),
-          //         //       itemWarp("第七个第七个第七个第七个"),
-          //         //     ],
-          //         //     shrinkWrap: true,
-          //         //     physics: NeverScrollableScrollPhysics(),
-          //         //   ),
-          //         // )
-          //       ],
-          //     ),
-          //   ),
-          // )
         ],
+      ),
+    );
+  }
+
+  Widget getSliverList() {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (ctx, int index) {
+          return _getBottomItem();
+        },
+        childCount: list.length,
       ),
     );
   }
@@ -321,7 +247,8 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
       alignment: Alignment(1.03, -1.3),
       children: [
         Container(
-          padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 12.w, bottom: 12.w),
+          padding:
+              EdgeInsets.only(left: 30.w, right: 30.w, top: 12.w, bottom: 12.w),
           child: Text(text),
           decoration: BoxDecoration(
             color: Color(0xffF5F3F0),
@@ -341,6 +268,70 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
           ),
         )
       ],
+    );
+  }
+
+  Widget _getBottomItem(){
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.only(left: 30.w, bottom: 20.w, right: 30.w),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            child: Image.asset(
+              "assets/images/icon_cover.png",
+              width: 148.w,
+              height: 208.w,
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(8.w),
+          ),
+          SizedBox(width: 20.w),
+          Expanded(
+            child: SizedBox(
+              height: 208.w,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "打造超级人脉",
+                    style: TextStyle(
+                      fontSize: 30.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff1F1F1F),
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 20.w),
+                  Text(
+                    "他创造了太空歌剧的奇迹，也奠定了赛博朋克的基石，更预见了科技和未来。",
+                    style: TextStyle(
+                      fontSize: 26.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff969696),
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Spacer(),
+                  Text(
+                    "作者：贾斯汀比伯",
+                    style: TextStyle(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xffb3b3b3),
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
