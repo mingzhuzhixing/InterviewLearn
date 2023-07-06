@@ -11,7 +11,7 @@ import 'package:flutter_module/assembly_library/scrollable_assembly/pageview_wid
 import 'package:flutter_module/assembly_library/scrollable_assembly/pageview_widget_cache.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/pull_to_refresh_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/singlechildscrollview_widget.dart';
-import 'package:flutter_module/assembly_library/scrollable_assembly/tabbar_widget_controller.dart';
+import 'package:flutter_module/assembly_library/scrollable_assembly/tabbar_view_widget.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/tabbar_widget_default.dart';
 import 'package:flutter_module/assembly_library/scrollable_assembly/webview_widget.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
@@ -46,7 +46,7 @@ class _ScrollableAssemblyPageState extends State<ScrollableAssemblyPage> {
     ItemButtonEntity("PageView_widget_cache", PageViewWidgetCachePage()),
     ItemButtonEntity("SmartRefresher_widget", PullToRefreshPage()),
     ItemButtonEntity("SingleChildScrollView_widget", SingleChildScrollViewWidgetPage()),
-    ItemButtonEntity("TabBar_widget_controller", TabBarControllerPage()),
+    ItemButtonEntity("TabBarView_widget", TabBarViewHomePage()),
     ItemButtonEntity("TabBar_widget_default", TabBarWidgetDefaultPage()),
     ItemButtonEntity("Webview_widget", WebviewWidgetPage()),
   ];
