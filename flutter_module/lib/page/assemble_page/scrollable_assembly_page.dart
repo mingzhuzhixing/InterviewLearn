@@ -41,7 +41,7 @@ class _ScrollableAssemblyPageState extends State<ScrollableAssemblyPage> {
     ItemButtonEntity("ListView_widget", ListViewWidgetPage()),
     ItemButtonEntity("ListView_widget_build", ListViewWidgetBuildPage()),
     ItemButtonEntity("ListView_widget_separated", ListViewWidgetSeparatedPage()),
-    ItemButtonEntity("NestedScrollView_widget", NestedScrollViewWidgetPage()),
+    ItemButtonEntity("NestedScrollView_widget", NestedScrollViewHomePage()),
     ItemButtonEntity("PageView_widget", PageViewWidgetPage()),
     ItemButtonEntity("PageView_widget_cache", PageViewWidgetCachePage()),
     ItemButtonEntity("SmartRefresher_widget", PullToRefreshPage()),

@@ -181,8 +181,6 @@ class _TabBarView2WidgetPageState extends State<TabBarView2WidgetPage>
       ),
     );
   }
-
-  void s() {}
 }
 
 // Tab 页面

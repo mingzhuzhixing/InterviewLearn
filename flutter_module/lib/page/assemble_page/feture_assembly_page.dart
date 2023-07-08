@@ -3,9 +3,10 @@ import 'package:flutter_module/assembly_library/feature_widget/datetime_picker_w
 import 'package:flutter_module/assembly_library/feature_widget/dialog_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/event_bus_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/file_storage_widget.dart';
-import 'package:flutter_module/assembly_library/feature_widget/gesture_detector_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/future_builder_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/sp_storage_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/sqflite_storage_widget.dart';
+import 'package:flutter_module/assembly_library/feature_widget/stream_builder_widget.dart';
 import 'package:flutter_module/assembly_library/feature_widget/willpopscope_widget.dart';
 import 'package:flutter_module/bean/item_entity.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
@@ -32,9 +33,10 @@ class _FetureAssemblyPageState extends State<FetureAssemblyPage> {
     ItemButtonEntity("dialog_widget", DialogWidgetPage()),
     ItemButtonEntity("eventbus_widget", EventBusWidgetPage()),
     ItemButtonEntity("file_storage_widget", FileStorageWidgetPage()),
+    ItemButtonEntity("future_builder_widget", FutureBuilderWidgetPage()),
     ItemButtonEntity("sp_storage_widget", SpStorageWidgetPage()),
-    ItemButtonEntity("gesture_detector_widget", GestureDetectorWidgetPage()),
     ItemButtonEntity("spflite_storage_widget", SqfliteStorageWidgetPage()),
+    ItemButtonEntity("stream_builder_widget", StreamBuilderWidgetPage()),
     ItemButtonEntity("willpopscope_widget", WillPopScopeWidgetPage()),
   ];
 

@@ -10,8 +10,9 @@ linter:
     slash_for_doc_comments: false
     prefer_const_literals_to_create_immutables: false
     prefer_typing_uninitialized_variables: false
-    #must_be_immutable: false
+    # must_be_immutable: false
     non_constant_identifier_names: false
+    # invalid_use_of_protected_member: false
     # file_names: false
     # public_member_api_docs: false
     # lines_longer_than_80_chars: false

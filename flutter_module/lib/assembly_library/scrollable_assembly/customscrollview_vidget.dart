@@ -41,12 +41,16 @@ class _CustomScrollViewHomePageState extends State<CustomScrollViewHomePage> {
         children: [
           ItemButton("CustomScrollViewPage", CustomScrollViewPage(), index: 0),
           ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(), index: 1),
+          ItemButton("SliverPersistentHeader", SliverPersistentHeaderPage(), index: 0),
         ],
       ),
     );
   }
 }
 
+/**
+ * 自定义滑动scrollview
+ */
 class CustomScrollViewPage extends StatefulWidget {
   const CustomScrollViewPage({Key? key}) : super(key: key);
 
@@ -326,5 +330,162 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
         ],
       ),
     );
+  }
+}
+
+/**
+ * SliverPersistentHeader
+ * 功能是当滑动到 CustomScrollView 的顶部时，可以将组件固定在顶部。
+ * SliverPersistentHeader({
+ *   Key? key,
+ *  required SliverPersistentHeaderDelegate delegate, // 构造 header 组件的委托
+ *  this.pinned = false, // header 滑动到可视区域顶部时是否固定在顶部
+ *  this.floating = false, // 正文部分介绍
+ *  })
+ */
+class SliverPersistentHeaderPage extends StatefulWidget {
+  const SliverPersistentHeaderPage({Key? key}) : super(key: key);
+
+  @override
+  State<SliverPersistentHeaderPage> createState() => _SliverPersistentHeaderPageState();
+}
+
+class _SliverPersistentHeaderPageState extends State<SliverPersistentHeaderPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CommonAppBar(context, "SliverPersistentHeader Widget"),
+      body: CustomScrollView(
+        slivers: [
+          buildSliverList(),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: SliverHeaderDelegate(
+              //有最大和最小高度
+              maxHeight: 80,
+              minHeight: 50,
+              child: buildHeader(1),
+            ),
+          ),
+          buildSliverList(),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: SliverHeaderDelegate.fixedHeight(
+              //固定高度
+              height: 50,
+              child: buildHeader(2),
+            ),
+          ),
+          buildSliverList(20),
+        ],
+      ),
+    );
+  }
+
+  // 构建固定高度的SliverList，count为列表项属相
+  Widget buildSliverList([int count = 5]) {
+    return SliverFixedExtentList(
+      itemExtent: 50,
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          return ListTile(title: Text('$index'));
+        },
+        childCount: count,
+      ),
+    );
+  }
+
+  // 构建 header
+  Widget buildHeader(int i) {
+    return Container(
+      color: Colors.lightBlue.shade200,
+      alignment: Alignment.centerLeft,
+      child: Text("PersistentHeader $i"),
+    );
+  }
+}
+
+typedef SliverHeaderBuilder = Widget Function(
+    BuildContext context, double shrinkOffset, bool overlapsContent);
+/**
+ *abstract class SliverPersistentHeaderDelegate {
+ *  // header 最大高度；pined为 true 时，当 header 刚刚固定到顶部时高度为最大高度。
+ *  double get maxExtent;
+ *
+ *  // header 的最小高度；pined为true时，当header固定到顶部，用户继续往上滑动时，header
+ *  // 的高度会随着用户继续上滑从 maxExtent 逐渐减小到 minExtent
+ *  double get minExtent;
+ *
+ *  // 构建 header。
+ *  // shrinkOffset取值范围[0,maxExtent],当header刚刚到达顶部时，shrinkOffset 值为0，
+ *  // 如果用户继续向上滑动列表，shrinkOffset的值会随着用户滑动的偏移减小，直到减到0时。
+ *  // overlapsContent：一般不建议使用，在使用时一定要小心，后面会解释。
+ *  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent);
+ *
+ *  // header 是否需要重新构建；通常当父级的 StatefulWidget 更新状态时会触发。
+ *  // 一般来说只有当 Delegate 的配置发生变化时，应该返回false，比如新旧的 minExtent、maxExtent
+ *  // 等其他配置不同时需要返回 true，其余情况返回 false 即可。
+ *  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate);
+ *
+ *  // 下面这几个属性是SliverPersistentHeader在SliverAppBar中时实现floating、snap
+ *  // 效果时会用到，平时开发过程很少使用到，读者可以先不用理会。
+ *  TickerProvider? get vsync => null;
+ *  FloatingHeaderSnapConfiguration? get snapConfiguration => null;
+ *  OverScrollHeaderStretchConfiguration? get stretchConfiguration => null;
+ *  PersistentHeaderShowOnScreenConfiguration? get showOnScreenConfiguration => null;
+ *}
+ */
+class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final double maxHeight;
+  final double minHeight;
+  final SliverHeaderBuilder builder;
+
+  // child 为 header
+  SliverHeaderDelegate({
+    required this.maxHeight,
+    this.minHeight = 0,
+    required Widget child,
+  })  : builder = ((a, b, c) => child),
+        assert(minHeight <= maxHeight && minHeight >= 0);
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    Widget child = builder(context, shrinkOffset, overlapsContent);
+    //测试代码：如果在调试模式，且子组件设置了key，则打印日志
+    assert(() {
+      if (child.key != null) {
+        print('${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
+      }
+      return true;
+    }());
+    // 让 header 尽可能充满限制的空间；宽度为 Viewport 宽度，
+    // 高度随着用户滑动在[minHeight,maxHeight]之间变化。
+    return SizedBox.expand(child: child);
+  }
+
+  //最大和最小高度相同
+  SliverHeaderDelegate.fixedHeight({
+    required double height,
+    required Widget child,
+  })  : builder = ((a, b, c) => child),
+        maxHeight = height,
+        minHeight = height;
+
+  //需要自定义builder时使用
+  SliverHeaderDelegate.builder({
+    required this.maxHeight,
+    this.minHeight = 0,
+    required this.builder,
+  });
+
+  @override
+  double get maxExtent => maxHeight;
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return oldDelegate.maxExtent != maxExtent || oldDelegate.minExtent != minExtent;
   }
 }
