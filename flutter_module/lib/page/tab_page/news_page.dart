@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/page/assemble_page/animation_assembly_page.dart';
 import 'package:flutter_module/page/assemble_page/base_assembly_page.dart';
 import 'package:flutter_module/page/assemble_page/container_assembly_page.dart';
 import 'package:flutter_module/page/assemble_page/event_notice_assembly_page.dart';
@@ -35,7 +36,8 @@ class _NewsPageState extends State<NewsPage> {
               ItemButton("滚动组件", ScrollableAssemblyPage(), index: 3),
               ItemButton("功能型组件", FetureAssemblyPage(), index: 4),
               ItemButton("事件处理与通知组件", EventNoticeAssemblyPage(), index: 5),
-              ItemButton("第三方组件", ThirdAssemblyPage(), index: 6),
+              ItemButton("动画组件", AnimationAssemblyPage(), index: 6),
+              ItemButton("第三方组件", ThirdAssemblyPage(), index: 7),
             ],
           ),
         ),
