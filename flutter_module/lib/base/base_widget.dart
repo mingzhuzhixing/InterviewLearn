@@ -9,6 +9,7 @@ abstract class BaseTitleBarWidget extends StatefulWidget {
 
   @override
   State<BaseTitleBarWidget> createState() {
+    initState();
     return state = _BaseTitleBarWidgetState();
   }
 
@@ -28,6 +29,10 @@ abstract class BaseTitleBarWidget extends StatefulWidget {
   //刷新状态
   void setState(VoidCallback fn) {
     state.setState(fn);
+  }
+
+  void initState(){
+
   }
 }
 
