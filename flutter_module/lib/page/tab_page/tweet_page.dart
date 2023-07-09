@@ -32,7 +32,9 @@ class _TweetPageState extends State<TweetPage> {
           SizedBox(height: 10.w),
           Card_85(1),
           SizedBox(height: 10.w),
-          Card_85(2)
+          Card_85(2),
+          SizedBox(height: 10.w),
+          Card_85(3)
         ],
       ),
     );

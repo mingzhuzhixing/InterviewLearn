@@ -513,6 +513,22 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.7.3"
+  power_image:
+    dependency: "direct main"
+    description:
+      name: power_image
+      sha256: "67dba06aa6bc2a4f8fea5cd3a682204ac2bf792a771c88abd579a5d2326a5959"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.0-pre.2"
+  power_image_ext:
+    dependency: "direct overridden"
+    description:
+      name: power_image_ext
+      sha256: debf68e7d9b94b62eeff899225283e802f54c38988b4408516372449cb73e0b5
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.0"
   process:
     dependency: transitive
     description:

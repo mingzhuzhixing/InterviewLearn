@@ -1,4 +1,5 @@
 // 必须在dart文件的第一行,可以加在任何dart文件中
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -6,8 +7,16 @@ import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_module/oschinabody.dart';
 import 'package:flutter_module/page/splash_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:power_image/power_image.dart';
 
 bool runType = false;
+
+class PowerImageBinding extends WidgetsFlutterBinding {
+  @override
+  ImageCache createImageCache() {
+    return ImageCacheExt();
+  }
+}
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,13 +25,15 @@ void main() {
     CustomFlutterBinding();
     runApp(FlutterBoostMyApp());
   } else {
+    //PowerImageBinding();
+    PowerImageLoader.instance.setup(PowerImageSetupOptions(renderingTypeTexture,
+        errorCallbackSamplingRate: 1.0, errorCallback: (PowerImageLoadException exception) {}));
     runApp(SeparateMyApp());
   }
 }
 
 ///创建一个自定义的Binding，继承和with的关系如下，里面什么都不用写
-class CustomFlutterBinding extends WidgetsFlutterBinding
-    with BoostFlutterBinding {}
+class CustomFlutterBinding extends WidgetsFlutterBinding with BoostFlutterBinding {}
 
 ///单独运行module
 class SeparateMyApp extends StatelessWidget {
@@ -45,9 +56,7 @@ class SeparateMyApp extends StatelessWidget {
           ),
           home: SplashPage(),
           // 初始化路由
-          routes: <String, WidgetBuilder>{
-            '/index': (BuildContext context) => OsChinaBody()
-          },
+          routes: <String, WidgetBuilder>{'/index': (BuildContext context) => OsChinaBody()},
         );
       },
     );

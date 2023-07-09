@@ -101,6 +101,12 @@ dependencies:
   # html
   flutter_html: 2.2.1
 
+  # 阿里图片加载框架
+  power_image: ^0.1.0-pre.2
+
+dependency_overrides:
+  power_image_ext: 3.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
