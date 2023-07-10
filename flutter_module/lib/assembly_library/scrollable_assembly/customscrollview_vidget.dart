@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 /**
  * CustomScrollView
@@ -40,8 +41,9 @@ class _CustomScrollViewHomePageState extends State<CustomScrollViewHomePage> {
       body: Column(
         children: [
           ItemButton("CustomScrollViewPage", CustomScrollViewPage(), index: 0),
-          ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(), index: 1),
+          ItemButton("CustomScrollViewPage2", CustomScrollViewSearchPage(), index: 0),
           ItemButton("SliverPersistentHeader", SliverPersistentHeaderPage(), index: 0),
+          ItemButton("书城", BookCityPage(), index: 0),
         ],
       ),
     );
@@ -407,6 +409,7 @@ class _SliverPersistentHeaderPageState extends State<SliverPersistentHeaderPage>
 
 typedef SliverHeaderBuilder = Widget Function(
     BuildContext context, double shrinkOffset, bool overlapsContent);
+
 /**
  *abstract class SliverPersistentHeaderDelegate {
  *  // header 最大高度；pined为 true 时，当 header 刚刚固定到顶部时高度为最大高度。
@@ -487,5 +490,158 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
     return oldDelegate.maxExtent != maxExtent || oldDelegate.minExtent != minExtent;
+  }
+}
+
+/**
+ * 书城
+ */
+class BookCityPage extends StatefulWidget {
+  const BookCityPage({Key? key}) : super(key: key);
+
+  @override
+  State<BookCityPage> createState() => _BookCityPageState();
+}
+
+class _BookCityPageState extends State<BookCityPage> {
+  late ScrollController scrollController;
+  double paddingLeft = 15;
+  double titleOpacity = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    //0-76
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      print("zm1234 监听到滚动...${scrollController.offset}");
+      double offset = scrollController.offset;
+      if (offset <= 42) {
+        setState(() {
+          paddingLeft = (offset / 42.0) * 30 + 15;
+          titleOpacity = 1 - (offset / 42.0);
+        });
+      } else if (offset <= 0) {
+        paddingLeft = 15;
+        paddingLeft = 1.0;
+      } else if (offset > 42) {
+        setState(() {
+          paddingLeft = 45;
+          titleOpacity = 0;
+        });
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: CustomScrollView(
+        controller: scrollController,
+        slivers: [
+          SliverAppBar(
+            leading: Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.black,
+            ),
+            backgroundColor: Color(0xffF5F3F0),
+            pinned: true,
+            title: Opacity(
+              opacity: titleOpacity,
+              child: Text(
+                "书城",
+                style: TextStyle(color: Color(0xff111111), fontSize: 34.sp),
+              ),
+            ),
+            centerTitle: true,
+            // 滑动到顶端时会固定住
+            expandedHeight: 208.w,
+            flexibleSpace: FlexibleSpaceBar(
+              title: getSearch(),
+              expandedTitleScale: 1,
+              titlePadding: EdgeInsets.only(left: paddingLeft, right: 15, bottom: 26.w),
+            ),
+          ),
+          SliverFixedExtentList(
+            itemExtent: 50.0,
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                //创建列表项
+                return Container(
+                  alignment: Alignment.center,
+                  color: Colors.lightBlue[100 * (index % 9)],
+                  child: Text('list item $index'),
+                );
+              },
+              childCount: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget getSearch() {
+    return Container(
+      ///控制高度
+      height: 68.w,
+      width: 1.sw,
+      child: TextField(
+        onChanged: (value) {
+          setState(() {});
+        },
+
+        ///输入内容文字样式, 设置该样式会和hintStyle样式相同，缩有对应不用的要设置
+        style: TextStyle(
+          color: Color(0xff75624B),
+          fontWeight: FontWeight.w500,
+          fontSize: 26.sp,
+        ),
+
+        ///输入框样式
+        decoration: InputDecoration(
+          ///提示文字
+          hintText: "搜索你想读的书",
+          hintStyle: TextStyle(
+            fontSize: 26.sp,
+            color: Color(0xff75624B),
+            fontWeight: FontWeight.w400,
+          ),
+
+          ///去掉输入框边框，设置角度为80，
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(80.w),
+          ),
+
+          ///设置背景色，可以修改背景色的只有fillColor这个属性。但是只设置fillColor属性是不行的，还必须同时设置filled为 true
+          filled: true,
+          fillColor: const Color(0xffffffff),
+
+          /// 输入框decoration属性
+          //contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          contentPadding: EdgeInsets.only(left: 0, top: 10, right: 0, bottom: 9),
+
+          /// 让文字垂直居中
+          isCollapsed: true,
+
+          ///输入框左边图片,只有设置了prefixIconConstraints后，width和height才生效
+          prefixIcon: GestureDetector(
+            onTap: () {
+              Fluttertoast.showToast(msg: "点击了左边搜索图标");
+            },
+            child: Padding(
+              padding: EdgeInsets.only(left: 20.w, right: 10.w),
+              child: Image.asset(
+                "assets/images/icon_search.png",
+                width: 38.w,
+                height: 38.w,
+              ),
+            ),
+          ),
+          prefixIconConstraints: BoxConstraints(),
+        ),
+      ),
+    );
   }
 }
