@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/assembly_library/third_assembly/flutter_toast.dart';
 import 'package:flutter_module/assembly_library/third_assembly/html.dart';
 import 'package:flutter_module/bean/item_entity.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
@@ -19,6 +20,7 @@ class _ThirdAssemblyPageState extends State<ThirdAssemblyPage> {
 
   List<ItemButtonEntity> entityList = [
     ItemButtonEntity("html_widget", HtmlWidgetPage()),
+    ItemButtonEntity("flutter_toast", FlutterToastPage()),
   ];
 
   @override
