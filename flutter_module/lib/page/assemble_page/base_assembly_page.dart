@@ -44,7 +44,7 @@ class _BaseAssemblyPageState extends State<BaseAssemblyPage> {
     ItemButtonEntity("CheckBox_widget", CheckboxWidgetPage()),
     ItemButtonEntity("ExpandIcon_widget", ExpandIconWidgetPage()),
     ItemButtonEntity("Text_widget", TextWidgetPage()),
-    ItemButtonEntity("TextField_widget", TextFieldWidgetPage()),
+    ItemButtonEntity("TextField_widget", TextFieldHomePage()),
     ItemButtonEntity("ToggleButtons_widget", ToggleButtonsWidgetPage()),
     ItemButtonEntity("Icon_widget", IconWidgetPage()),
     ItemButtonEntity("Image_widget", ImageWidgetPage()),

@@ -1,9 +1,30 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_module/base/base_widget.dart';
+import 'package:flutter_module/widget/common_app_bar.dart';
+import 'package:flutter_module/widget/item_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+///TextFiled 入口
+class TextFieldHomePage extends BaseTitleBarWidget {
+  @override
+  String title() {
+    return "TextFiled";
+  }
+
+  @override
+  Widget childWidget() {
+    return Column(
+      children: [
+        ItemButton("TextFiled 基本样式", TextFieldWidgetPage(), index: 0),
+        ItemButton("TextFiled软键盘冲突", TextFieldKeyboardPage(), index: 0),
+      ],
+    );
+  }
+}
 
 ///TextFiled
 class TextFieldWidgetPage extends BaseTitleBarWidget {
@@ -333,6 +354,52 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
   @override
   String title() {
     return "TextField Widget";
+  }
+}
+
+///TextFiled 和底部软键盘遮挡处理
+class TextFieldKeyboardPage extends StatefulWidget {
+  const TextFieldKeyboardPage({Key? key}) : super(key: key);
+
+  @override
+  State<TextFieldKeyboardPage> createState() => _TextFieldKeyboardPageState();
+}
+
+class _TextFieldKeyboardPageState extends State<TextFieldKeyboardPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
+      print("zm1234 isKeyboardVisible:$isKeyboardVisible");
+      return Scaffold(
+        appBar: CommonAppBar(context, "TextFiled和底部软键盘遮挡"),
+        body: Column(
+          children: [
+            Expanded(
+              child: Container(
+                color: Color(0xFFFFCDD2),
+                width: 200.w,
+                alignment: Alignment.center,
+                child: Text(
+                  "上部内容",
+                  style: TextStyle(fontSize: 50.sp, color: Colors.black),
+                ),
+              ),
+            ),
+            Container(
+              margin:
+                  EdgeInsets.only(bottom: isKeyboardVisible ? 540.w : 0.w),
+              color: Colors.yellow,
+              child: TextField(),
+            )
+          ],
+        ),
+      );
+    });
   }
 }
 

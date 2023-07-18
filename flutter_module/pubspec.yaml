@@ -104,6 +104,9 @@ dependencies:
   # 阿里图片加载框架
   power_image: ^0.1.0-pre.2
 
+  # 软键盘显示与隐藏的监听
+  flutter_keyboard_visibility: ^5.4.1
+
 dependency_overrides:
   power_image_ext: 3.0.0
 
