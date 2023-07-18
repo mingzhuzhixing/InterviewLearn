@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_module/oschinabody.dart';
 import 'package:flutter_module/page/splash_page.dart';
+import 'package:flutter_module/utils/sp_utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:power_image/power_image.dart';
 
@@ -20,6 +21,7 @@ class PowerImageBinding extends WidgetsFlutterBinding {
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SpUtils.preInit();
   if (runType) {
     ///这里的CustomFlutterBinding调用务必不可缺少，用于控制Boost状态的resume和pause
     CustomFlutterBinding();
@@ -43,6 +45,7 @@ class SeparateMyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(750, 1334),
+      // designSize: Size(375, 667),
       //设计稿中设备的尺寸(单位随意,建议dp,但在使用过程中必须保持一致)
       minTextAdapt: true,
       //是否根据宽度/高度中的最小值适配文字

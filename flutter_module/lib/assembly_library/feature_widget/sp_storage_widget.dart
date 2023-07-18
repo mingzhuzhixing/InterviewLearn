@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_module/utils/sp_utils.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 ///SharedPreferences数据存储
 
@@ -17,27 +18,10 @@ class SpStorageWidgetPage extends StatefulWidget {
 }
 
 class _StoragePage extends State<SpStorageWidgetPage> {
-  final _textFieldController = TextEditingController();
-  var _storageString = "";
-  final STORAGE_KEY = 'storage_key';
-
-  /*
-   * 利用SharedPreferences存储数据
-   */
-  Future saveString() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    sharedPreferences.setString(STORAGE_KEY, _textFieldController.value.text.toString());
-  }
-
-  /*
-   * 获取存在SharedPreferences中的数据
-   */
-  Future getString() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    setState(() {
-      _storageString = sharedPreferences.get(STORAGE_KEY).toString();
-    });
-  }
+  var value1;
+  var value2;
+  var value3;
+  var value4;
 
   @override
   Widget build(BuildContext context) {
@@ -47,29 +31,30 @@ class _StoragePage extends State<SpStorageWidgetPage> {
       ),
       body: Column(
         children: <Widget>[
-          const Text(
-            "shared_preferences 存储",
-            textAlign: TextAlign.center,
-          ),
-          TextField(
-            keyboardType: TextInputType.text,
-            controller: _textFieldController,
-          ),
           MaterialButton(
             onPressed: () {
-              saveString();
+              SpUtils.getInstance().save("key1", "hhahahahah");
+              SpUtils.getInstance().save("key2", 123);
+              SpUtils.getInstance().save("key3", false);
+              SpUtils.getInstance().save("key4", 11.1);
+              Fluttertoast.showToast(msg: "存储完成");
             },
-            child: const Text("存储"),
+            child: const Text("开始存储"),
             color: Colors.pink,
           ),
           MaterialButton(
             onPressed: () {
-              getString();
+              setState(() {
+                value1 = SpUtils.getInstance().get("key1");
+                value2 = SpUtils.getInstance().get("key2");
+                value3 = SpUtils.getInstance().get("key3");
+                value4 = SpUtils.getInstance().get("key4");
+              });
             },
             child: const Text("获取"),
             color: Colors.lightGreen,
           ),
-          Text("shared_preferences存储的值为：$_storageString")
+          Text("shared_preferences存储的值为：\n$value1\n$value2\n$value3\n$value4")
         ],
       ),
     );

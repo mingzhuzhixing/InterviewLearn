@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-///空间适配
+///空间适配 它根据指定的适合度缩放和定位子窗口小部件
 class FittedBoxWidgetPage extends StatefulWidget {
   const FittedBoxWidgetPage({Key? key}) : super(key: key);
 
