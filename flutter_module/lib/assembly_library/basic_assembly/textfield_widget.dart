@@ -1,8 +1,12 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_size/flutter_keyboard_size.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_module/base/base_widget.dart';
+import 'package:flutter_module/widget/KeyboardHeight.dart';
 import 'package:flutter_module/widget/common_app_bar.dart';
 import 'package:flutter_module/widget/item_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +25,7 @@ class TextFieldHomePage extends BaseTitleBarWidget {
       children: [
         ItemButton("TextFiled 基本样式", TextFieldWidgetPage(), index: 0),
         ItemButton("TextFiled软键盘冲突", TextFieldKeyboardPage(), index: 0),
+        ItemButton("TextFiled软键盘冲突2", TextFieldKeyboardPage2(), index: 0),
       ],
     );
   }
@@ -391,8 +396,7 @@ class _TextFieldKeyboardPageState extends State<TextFieldKeyboardPage> {
               ),
             ),
             Container(
-              margin:
-                  EdgeInsets.only(bottom: isKeyboardVisible ? 540.w : 0.w),
+              margin: EdgeInsets.only(bottom: isKeyboardVisible ? 540.w : 0.w),
               color: Colors.yellow,
               child: TextField(),
             )
@@ -400,6 +404,70 @@ class _TextFieldKeyboardPageState extends State<TextFieldKeyboardPage> {
         ),
       );
     });
+  }
+}
+
+///TextFiled 和底部软键盘遮挡处理
+class TextFieldKeyboardPage2 extends StatefulWidget {
+  const TextFieldKeyboardPage2({Key? key}) : super(key: key);
+
+  @override
+  State<TextFieldKeyboardPage2> createState() => _TextFieldKeyboardPage2State();
+}
+
+class _TextFieldKeyboardPage2State extends State<TextFieldKeyboardPage2>
+    with WidgetsBindingObserver, KeyboardHeight {
+  late StreamSubscription<bool> keyboardSubscription;
+  bool isKeyboardVisible = false;
+  double keyBoardHeight = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Subscribe
+    keyboardSubscription = KeyboardVisibilityController().onChange.listen((bool visible) {
+      print('Keyboard visibility update. Is visible: $visible');
+      setState(() {
+        isKeyboardVisible = visible;
+      });
+    });
+  }
+
+  @override
+  keyboardHeight(double height) {
+    // 高度
+    print('zm1234 keyboardHeight: $height');
+    setState(() {
+      keyBoardHeight = height;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CommonAppBar(context, "TextFiled和底部软键盘遮挡2"),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Color(0xFFFFCDD2),
+              width: 200.w,
+              alignment: Alignment.center,
+              child: Text(
+                "上部内容",
+                style: TextStyle(fontSize: 50.sp, color: Colors.black),
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(
+                bottom: isKeyboardVisible ? keyBoardHeight : 0.w),
+            color: Colors.yellow,
+            child: TextField(),
+          )
+        ],
+      ),
+    );
   }
 }
 
