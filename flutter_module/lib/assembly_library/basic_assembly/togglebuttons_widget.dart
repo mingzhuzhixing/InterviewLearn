@@ -37,9 +37,9 @@ class _ToggleButtonsWidgetPageState extends State<ToggleButtonsWidgetPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           firstToggleButton(),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           secondToggleButton(),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           selectItem(),
         ],
       ),
@@ -84,7 +84,7 @@ class _ToggleButtonsWidgetPageState extends State<ToggleButtonsWidgetPage> {
    */
   Widget selectItem() {
     return Container(
-      height: 360.w,
+      height: 180.w,
       color: Color(0x4d64DD17),
       padding: EdgeInsets.all(10),
       child: GridView.builder(
@@ -117,7 +117,7 @@ class _ToggleButtonsWidgetPageState extends State<ToggleButtonsWidgetPage> {
           color: data.status ? Color(0xFFFEF6F4) : Color(0xFFFFFFFF),
           border: Border.all(
               color: data.status ? Color(0xffE65F3C) : Color(0xffDFDFDF),
-              width: data.status ? 4.w : 2.w),
+              width: data.status ? 2.w : 1.w),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Column(
@@ -127,12 +127,12 @@ class _ToggleButtonsWidgetPageState extends State<ToggleButtonsWidgetPage> {
             Text(
               "${data.id}有书币",
               style: TextStyle(
-                  fontSize: 32.sp, color: data.status ? Color(0xffE65F3C) : Color(0xff444444)),
+                  fontSize: 16.sp, color: data.status ? Color(0xffE65F3C) : Color(0xff444444)),
             ),
             Text(
               "${data.id}元",
               style: TextStyle(
-                  fontSize: 24.sp, color: data.status ? Color(0xffFA8364) : Color(0xFFb3b3b3)),
+                  fontSize: 12.sp, color: data.status ? Color(0xffFA8364) : Color(0xFFb3b3b3)),
             ),
           ],
         ),

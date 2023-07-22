@@ -170,7 +170,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                     children: [
                       Text(
                         "搜索历史",
-                        style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
+                        style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600),
                       ),
                       Spacer(),
                       Icon(Icons.delete)
@@ -212,7 +212,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                 ),
                 child: Text(
                   "搜索历史",
-                  style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -296,7 +296,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                   Text(
                     "打造超级人脉",
                     style: TextStyle(
-                      fontSize: 30.sp,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w400,
                       color: Color(0xff1F1F1F),
                     ),
@@ -307,7 +307,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                   Text(
                     "他创造了太空歌剧的奇迹，也奠定了赛博朋克的基石，更预见了科技和未来。",
                     style: TextStyle(
-                      fontSize: 26.sp,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       color: Color(0xff969696),
                     ),
@@ -318,7 +318,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                   Text(
                     "作者：贾斯汀比伯",
                     style: TextStyle(
-                      fontSize: 24.sp,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                       color: Color(0xffb3b3b3),
                     ),
@@ -550,7 +550,7 @@ class _BookCityPageState extends State<BookCityPage> {
               opacity: titleOpacity,
               child: Text(
                 "书城",
-                style: TextStyle(color: Color(0xff111111), fontSize: 34.sp),
+                style: TextStyle(color: Color(0xff111111), fontSize: 17.sp),
               ),
             ),
             centerTitle: true,
@@ -595,7 +595,7 @@ class _BookCityPageState extends State<BookCityPage> {
         style: TextStyle(
           color: Color(0xff75624B),
           fontWeight: FontWeight.w500,
-          fontSize: 26.sp,
+          fontSize: 13.sp,
         ),
 
         ///输入框样式
@@ -603,7 +603,7 @@ class _BookCityPageState extends State<BookCityPage> {
           ///提示文字
           hintText: "搜索你想读的书",
           hintStyle: TextStyle(
-            fontSize: 26.sp,
+            fontSize: 13.sp,
             color: Color(0xff75624B),
             fontWeight: FontWeight.w400,
           ),

@@ -202,9 +202,9 @@ class MaterialButtonPage extends BaseTitleBarWidget {
             child: Text("MaterialButton"),
           ),
           MaterialButton(
-            height: 50.w,
-            padding: EdgeInsets.only(left: 10.w, right: 10.w),
-            minWidth: 20.w,
+            height: 25.w,
+            padding: EdgeInsets.only(left: 5.w, right: 5.w),
+            minWidth: 10.w,
             onPressed: () {},
             textColor: Colors.white,
             splashColor: Colors.transparent,
@@ -214,13 +214,13 @@ class MaterialButtonPage extends BaseTitleBarWidget {
             ),
             child: Text(
               "去学习",
-              style: TextStyle(fontSize: 24.sp),
+              style: TextStyle(fontSize: 12.sp),
             ),
             color: Colors.blue,
           ),
           MaterialButton(
-            height: 50.w,
-            padding: EdgeInsets.only(left: 10.w, right: 10.w),
+            height: 25.w,
+            padding: EdgeInsets.only(left: 5.w, right: 5.w),
             minWidth: 20.w,
             onPressed: () {},
             textColor: Colors.green,
@@ -232,7 +232,7 @@ class MaterialButtonPage extends BaseTitleBarWidget {
             ),
             child: Text(
               "去学习",
-              style: TextStyle(fontSize: 24.sp),
+              style: TextStyle(fontSize: 12.sp),
             ),
           ),
           Container(
@@ -259,7 +259,7 @@ class MaterialButtonPage extends BaseTitleBarWidget {
             onPressed: () {},
             child: Text(
               "MaterialButton",
-              style: TextStyle(color: Colors.white, fontSize: 28.sp),
+              style: TextStyle(color: Colors.white, fontSize: 14.sp),
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
@@ -343,7 +343,7 @@ class TextButtonPage extends BaseTitleBarWidget {
             width: 120.w,
             child: TextButton(
               onPressed: () {},
-              child: Text("确定", style: TextStyle(fontSize: 22.sp, color: Colors.white)),
+              child: Text("确定", style: TextStyle(fontSize: 11.sp, color: Colors.white)),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
@@ -357,7 +357,7 @@ class TextButtonPage extends BaseTitleBarWidget {
           SizedBox(height: 10.w),
           TextButton(
             onPressed: () {},
-            child: Text("确定2", style: TextStyle(fontSize: 22.sp, color: Colors.white)),
+            child: Text("确定2", style: TextStyle(fontSize: 11.sp, color: Colors.white)),
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
               shape: MaterialStateProperty.all<OutlinedBorder>(
@@ -504,7 +504,7 @@ class OtherButtonPage extends BaseTitleBarWidget {
                   Container(
                     child: Text(
                       "取消",
-                      style: TextStyle(fontSize: 32.sp),
+                      style: TextStyle(fontSize: 16.sp),
                     ),
                     padding: EdgeInsets.only(left: 40.w, top: 8.w, right: 40.w, bottom: 8.w),
                     decoration: BoxDecoration(

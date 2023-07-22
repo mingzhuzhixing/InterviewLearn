@@ -48,7 +48,7 @@ class _FittedBoxWidgetPageState extends State<FittedBoxWidgetPage> {
 
   // 直接使用Row
   Widget wRow(String text) {
-    Widget child = Text(text, style: TextStyle(fontSize: 44.sp));
+    Widget child = Text(text, style: TextStyle(fontSize: 22.sp));
     child = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [child, child, child],

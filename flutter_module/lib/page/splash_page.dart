@@ -54,7 +54,7 @@ class _SplashPageState extends State<SplashPage> {
             ),
             Container(
                 color: Colors.white,
-                child: Image.asset("assets/images/slogan.png", height: 218.w, fit: BoxFit.contain)),
+                child: Image.asset("assets/images/slogan.png", height: 109.w, fit: BoxFit.contain)),
           ],
         ),
         //倒计时：跳过

@@ -40,7 +40,7 @@ class YsToast {
           child: Container(
             alignment: Alignment.center,
             width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: AnimatedOpacity(
               opacity: 1.0, //目标透明度
               duration: Duration(milliseconds: 100),
@@ -69,22 +69,22 @@ class YsToast {
     if (uiStyle == 1) {
       return Card(
         color: Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.w)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.w)),
         child: SizedBox(
-          width: 210.w,
-          height: 210.w,
+          width: 105.w,
+          height: 105.w,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 "assets/images/succeed_icon.png",
-                width: 74.w,
-                height: 74.w,
+                width: 37.w,
+                height: 37.w,
               ),
-              SizedBox(height: 10.w),
+              SizedBox(height: 5.w),
               Text(
                 _text,
-                style: TextStyle(fontSize: 30.sp, color: Colors.white),
+                style: TextStyle(fontSize: 15.sp, color: Colors.white),
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -96,12 +96,12 @@ class YsToast {
     } else {
       return Card(
         color: Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(150.w)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(75.w)),
         child: Padding(
-          padding: EdgeInsets.only(left: 30.w, top: 23.w, right: 30.w, bottom: 23.w),
+          padding: EdgeInsets.only(left: 15.w, top: 12.w, right: 15.w, bottom: 12.w),
           child: Text(
             _text,
-            style: TextStyle(fontSize: 30.sp, color: Colors.white),
+            style: TextStyle(fontSize: 15.sp, color: Colors.white),
             textAlign: TextAlign.center,
           ),
         ),

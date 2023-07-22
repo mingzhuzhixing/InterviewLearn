@@ -62,7 +62,7 @@ class ImageCardButton extends BaseCardButton {
       EdgeInsetsGeometry? padding,
       EdgeInsetsGeometry? margin})
       : super(width: width, height: height, padding: padding, margin: margin) {
-    imageStyle ??= YsImageStyle(width: 24.w, height: 24.w);
+    imageStyle ??= YsImageStyle(width: 12.w, height: 12.w);
   }
 
   @override
@@ -76,8 +76,8 @@ class ImageCardButton extends BaseCardButton {
 /// 实例：
 /// ImageAndTextCardButton(
 ///                 value,
-///                 24.w,
-///                 24.w,
+///                 12.w,
+///                 12.w,
 ///                 direction: YsTextDirection.il_tr,
 ///                 style: TextStyle(color: Colors.red),
 ///               )
@@ -114,7 +114,7 @@ class ImageAndTextCardButton extends BaseCardButton {
             padding: padding,
             margin: margin,
             matchParent: matchParent) {
-    imageStyle ??= YsImageStyle(width: 24.w, height: 24.w);
+    imageStyle ??= YsImageStyle(width: 12.w, height: 12.w);
   }
 
   @override

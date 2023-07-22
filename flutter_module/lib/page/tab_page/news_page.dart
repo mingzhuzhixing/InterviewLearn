@@ -25,7 +25,7 @@ class _NewsPageState extends State<NewsPage> {
       body: Container(
         color: Colors.white,
         width: 1.sw,
-        margin: EdgeInsets.only(top: 50.w),
+        margin: EdgeInsets.only(top: 25.w),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

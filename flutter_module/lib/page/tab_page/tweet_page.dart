@@ -27,13 +27,13 @@ class _TweetPageState extends State<TweetPage> {
       backgroundColor: Color(0xffe1e0e0),
       body: Column(
         children: [
-          SizedBox(height: 60.w),
+          SizedBox(height: 30.w),
           Card_85(0),
-          SizedBox(height: 10.w),
+          SizedBox(height: 5.w),
           Card_85(1),
-          SizedBox(height: 10.w),
+          SizedBox(height: 5.w),
           Card_85(2),
-          SizedBox(height: 10.w),
+          SizedBox(height: 5.w),
           Card_85(3)
         ],
       ),

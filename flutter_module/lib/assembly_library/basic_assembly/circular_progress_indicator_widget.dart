@@ -24,7 +24,7 @@ class _CircularProgressIndicatorWidgetPageState extends State<CircularProgressIn
             valueColor: AlwaysStoppedAnimation(Colors.blue),
           ),
 
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
 
           //进度条显示50%，会显示一个半圆
           CircularProgressIndicator(
@@ -33,7 +33,7 @@ class _CircularProgressIndicatorWidgetPageState extends State<CircularProgressIn
             value: .6,
           ),
 
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
 
           // 圆形进度条直径指定为100
           SizedBox(
@@ -46,7 +46,7 @@ class _CircularProgressIndicatorWidgetPageState extends State<CircularProgressIn
             ),
           ),
 
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
 
           // 宽高不等
           SizedBox(

@@ -62,10 +62,10 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
   @override
   Widget childWidget() {
     return SingleChildScrollView(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w),
+      padding: EdgeInsets.only(left: 10.w, right: 10.w),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           TextField(
             ///是否可编辑
             enabled: true,
@@ -183,7 +183,7 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
               ),
             ),
           ),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           TextField(
             style: TextStyle(height: 1.0, color: Colors.amber),
             keyboardType: TextInputType.text,
@@ -192,11 +192,11 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
               helperText: "随便输入文字或数字",
               border: OutlineInputBorder(
                 gapPadding: 10.0,
-                borderRadius: BorderRadius.circular(80.w),
+                borderRadius: BorderRadius.circular(40.w),
               ),
             ),
           ),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           TextField(
             style: const TextStyle(height: 1.0, color: Colors.amber),
             keyboardType: TextInputType.text,
@@ -209,10 +209,10 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
               ),
             ),
           ),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           Container(
             //color: Colors.green,
-            width: 400.w,
+            width: 200.w,
             child: TextField(
               style: TextStyle(height: 1.0, color: Colors.amber),
               keyboardType: TextInputType.text,
@@ -230,10 +230,10 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
               ),
             ),
           ),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           Container(
             //color: Colors.green,
-            width: 400.w,
+            width: 200.w,
             child: TextField(
               style: TextStyle(height: 1.0, color: Colors.amber),
               keyboardType: TextInputType.text,
@@ -260,10 +260,10 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
               ),
             ),
           ),
-          SizedBox(height: 40.w),
+          SizedBox(height: 20.w),
           Container(
             ///控制高度
-            height: 68.w,
+            height: 34.w,
             child: TextField(
               controller: _searchController,
               onChanged: (value) {
@@ -274,7 +274,7 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
               style: TextStyle(
                 color: Color(0xff75624B),
                 fontWeight: FontWeight.w500,
-                fontSize: 28.sp,
+                fontSize: 14.sp,
               ),
 
               ///输入框样式
@@ -282,7 +282,7 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
                 ///提示文字
                 hintText: "搜索你想读的书",
                 hintStyle: TextStyle(
-                  fontSize: 24.sp,
+                  fontSize: 14.sp,
                   color: Color(0xff75624B),
                   fontWeight: FontWeight.w400,
                 ),
@@ -290,7 +290,7 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
                 ///去掉输入框边框，设置角度为80，
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(80.w),
+                  borderRadius: BorderRadius.circular(40.w),
                 ),
 
                 ///设置背景色，可以修改背景色的只有fillColor这个属性。但是只设置fillColor属性是不行的，还必须同时设置filled为 true
@@ -310,7 +310,7 @@ class TextFieldWidgetPage extends BaseTitleBarWidget {
                     Fluttertoast.showToast(msg: "点击了左边搜索图标");
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20.w, right: 10.w),
+                    padding: EdgeInsets.only(left: 10.w, right: 5.w),
                     child: Image.asset(
                       "assets/images/icon_search.png",
                       width: 38.w,
@@ -391,7 +391,7 @@ class _TextFieldKeyboardPageState extends State<TextFieldKeyboardPage> {
                 alignment: Alignment.center,
                 child: Text(
                   "上部内容",
-                  style: TextStyle(fontSize: 50.sp, color: Colors.black),
+                  style: TextStyle(fontSize: 25.sp, color: Colors.black),
                 ),
               ),
             ),
@@ -455,7 +455,7 @@ class _TextFieldKeyboardPage2State extends State<TextFieldKeyboardPage2>
               alignment: Alignment.center,
               child: Text(
                 "上部内容",
-                style: TextStyle(fontSize: 50.sp, color: Colors.black),
+                style: TextStyle(fontSize: 25.sp, color: Colors.black),
               ),
             ),
           ),

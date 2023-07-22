@@ -45,7 +45,7 @@ class YsImageLoad extends StatelessWidget {
       } else {
         return powerImageNetwork();
       }
-    } else if (src.contains("assets/images")) {
+    } else if (src.contains("assets/")) {
       if (isOval) {
         return ClipOval(child: loadImageAsset());
       } else if (radius > 0) {
@@ -78,15 +78,11 @@ class YsImageLoad extends StatelessWidget {
    * Image 加载asset
    */
   Image loadImageAsset() {
-    return Image.asset(
-      src,
-      width: imageStyle?.width,
-      height: imageStyle?.height,
-      fit: imageStyle?.fit ?? BoxFit.cover,
+    return _loadImageAsset(
       frameBuilder: (BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
         //frame：如果图片还在加载中的话为null
         //wasSynchronouslyLoaded 布尔值，图片加载完成后为true
-        return _placeHodler(child, frame, wasSynchronouslyLoaded);
+        return _placeHolder(child, frame, wasSynchronouslyLoaded);
       },
       errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
         return _errorHolder();
@@ -94,22 +90,44 @@ class YsImageLoad extends StatelessWidget {
     );
   }
 
+  Image _loadImageAsset(
+      {ImageFrameBuilder? frameBuilder,
+      ImageErrorWidgetBuilder? errorBuilder}) {
+    return Image.asset(
+      src,
+      width: imageStyle?.width,
+      height: imageStyle?.height,
+      fit: imageStyle?.fit ?? BoxFit.cover,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+    );
+  }
+
   /**
    * PowerImage 加载nativeAsset
    */
   PowerImage powerImageAsset() {
+    return _powerImageAsset(
+      frameBuilder: (BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
+        //wasSynchronouslyLoaded 布尔值，图片加载完成后为true
+        return _placeHolder(child, frame, wasSynchronouslyLoaded);
+      },
+      errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
+        return _errorHolder();
+      },
+    );
+  }
+
+  PowerImage _powerImageAsset(
+      {ImageFrameBuilder? frameBuilder,
+      ImageErrorWidgetBuilder? errorBuilder}) {
     return PowerImage.nativeAsset(
       src,
       width: imageStyle?.width,
       height: imageStyle?.height,
       fit: imageStyle?.fit ?? BoxFit.cover,
-      frameBuilder: (BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
-        //wasSynchronouslyLoaded 布尔值，图片加载完成后为true
-        return _placeHodler(child, frame, wasSynchronouslyLoaded);
-      },
-      errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
-        return _errorHolder();
-      },
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
     );
   }
 
@@ -138,7 +156,7 @@ class YsImageLoad extends StatelessWidget {
       fit: imageStyle?.fit ?? BoxFit.cover,
       frameBuilder: (BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
         //wasSynchronouslyLoaded 布尔值，图片加载完成后为true
-        return _placeHodler(child, frame, wasSynchronouslyLoaded);
+        return _placeHolder(child, frame, wasSynchronouslyLoaded);
       },
       errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
         return _errorHolder();
@@ -149,7 +167,7 @@ class YsImageLoad extends StatelessWidget {
   /**
    * 占位图
    */
-  Widget _placeHodler(Widget child, int? frame, bool wasSynchronouslyLoaded) {
+  Widget _placeHolder(Widget child, int? frame, bool wasSynchronouslyLoaded) {
     print(
         "zm1234 _placeHodler:$placeholder wasSynchronouslyLoaded:$wasSynchronouslyLoaded frame：$frame child：$child");
     if (wasSynchronouslyLoaded) {
@@ -158,12 +176,11 @@ class YsImageLoad extends StatelessWidget {
       return child;
     }
     if (placeholder != null && (placeholder?.isNotEmpty ?? false)) {
-      return Image.asset(
-        placeholder!,
-        width: imageStyle?.width,
-        height: imageStyle?.height,
-        fit: imageStyle?.fit ?? BoxFit.cover,
-      );
+      if (src.contains("assets/")) {
+        return _loadImageAsset();
+      } else {
+        return _powerImageAsset();
+      }
     } else {
       return SizedBox(width: imageStyle?.width, height: imageStyle?.height);
     }
@@ -175,12 +192,11 @@ class YsImageLoad extends StatelessWidget {
   Widget _errorHolder() {
     print("zm1234 _errorHolder:$errorholder");
     if (errorholder != null && (errorholder?.isNotEmpty ?? false)) {
-      return Image.asset(
-        errorholder!,
-        width: imageStyle?.width,
-        height: imageStyle?.height,
-        fit: imageStyle?.fit ?? BoxFit.cover,
-      );
+      if (src.contains("assets/")) {
+        return _loadImageAsset();
+      } else {
+        return _powerImageAsset();
+      }
     } else {
       return SizedBox(width: imageStyle?.width, height: imageStyle?.height);
     }

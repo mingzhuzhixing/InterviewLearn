@@ -27,7 +27,7 @@ class ItemButton extends StatelessWidget {
               color: Colors.teal,
               child: Text(
                 title,
-                style: TextStyle(color: Colors.white, fontSize: 38.sp),
+                style: TextStyle(color: Colors.white, fontSize: 10.sp),
               ),
             )
           : MaterialButton(

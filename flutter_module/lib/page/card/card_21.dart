@@ -13,7 +13,7 @@ class Card21 extends CardSingle<Card_21_bean> {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.only(top: 50.w),
+          margin: EdgeInsets.only(top: 25.w),
           height: 100,
           width: 1.sw * 0.9,
           color: Colors.red,

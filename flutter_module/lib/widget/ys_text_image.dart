@@ -52,8 +52,8 @@ class YsTextImage extends StatelessWidget {
       this.callback,
       this.matchParent = false}) {
     direction = direction ?? YsTextDirection.il_tr;
-    imageStyle ??= YsImageStyle(width: 24.w, height: 24.w);
-    drawablePadding = drawablePadding ?? 2.w;
+    imageStyle ??= YsImageStyle(width: 12.w, height: 12.w);
+    drawablePadding = drawablePadding ?? 1.w;
   }
 
   @override

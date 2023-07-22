@@ -47,13 +47,13 @@ class _HtmlWidgetPageState extends State<HtmlWidgetPage> {
               data: fontData.replaceAll("<em>", "<font>").replaceAll("</em>", "</font>"),
               style: {
                 "font":
-                    Style(color: YsColor.hexToColor(heightLight_14C586), fontSize: FontSize(40.sp)),
+                    Style(color: YsColor.hexToColor(heightLight_14C586), fontSize: FontSize(20.sp)),
               },
             ),
             Html(
               data: fontData.replaceAll("<em>", "<font>").replaceAll("</em>", "</font>"),
               style: {
-                "font": Style(color: Color(0xFFEF9A9A), fontSize: FontSize(40.sp)),
+                "font": Style(color: Color(0xFFEF9A9A), fontSize: FontSize(20.sp)),
               },
             ),
             Html(
@@ -96,7 +96,7 @@ class _HtmlWidgetPageState extends State<HtmlWidgetPage> {
                 ),
               },
             ),
-            SizedBox(height: 100.w)
+            SizedBox(height: 50.w)
           ],
         ),
       ),

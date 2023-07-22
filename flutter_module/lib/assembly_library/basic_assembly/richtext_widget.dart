@@ -42,7 +42,7 @@ class _RichTextWidgetPageState extends State<RichTextWidgetPage> {
       appBar: CommonAppBar(context, "RichText widget"),
       body: Column(
         children: [
-          SizedBox(height: 20.w),
+          SizedBox(height: 10.w),
           Container(
             //ListView可滑动
             child: RichText(
@@ -78,18 +78,18 @@ class _RichTextWidgetPageState extends State<RichTextWidgetPage> {
               ),
             ),
           ),
-          SizedBox(height: 20.w),
+          SizedBox(height: 10.w),
           Container(
             child: Text.rich(
               TextSpan(
                 children: [
                   WidgetSpan(
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: 3.w, right: 10.w),
+                      padding: EdgeInsets.only(bottom: 2.w, right: 5.w),
                       child: Image.asset(
                         "assets/images/wode_baiding_dengji.png",
-                        width: 64.w,
-                        height: 25.w,
+                        width: 32.w,
+                        height: 23.w,
                       ),
                     ),
                   ),
