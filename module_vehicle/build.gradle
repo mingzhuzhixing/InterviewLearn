@@ -4,7 +4,6 @@ plugins {
 }
 
 android {
-    namespace 'com.v.module_vehicle'
     compileSdkVersion androidV.compileSdkVersion
 
     defaultConfig {
