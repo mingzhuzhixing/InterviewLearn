@@ -52,3 +52,4 @@ evaluate(new File(
         //E:\AndroidWorkspace\InterviewLearn\flutter_module
         'InterviewLearn/flutter_module/.android/include_flutter.groovy'
 ))
+include ':module_vehicle'

@@ -1,0 +1,12 @@
+Android 车载
+
+一、多屏方式
+1、Presentation Dialog(context, display)
+缺点：只处理dialog
+2、ActivityOptions
+
+3、一开始就将MainActivity展示在副屏上
+adb shell am start -n 包名/包名.MainActivity --display 2
+
+Window 窗口
+WindowManager
