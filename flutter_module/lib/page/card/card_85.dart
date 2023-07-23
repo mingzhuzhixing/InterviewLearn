@@ -73,15 +73,15 @@ class Card_85 extends CardSingle {
         children: [
           YsImageLoad(
             'https://p1.ssl.qhmsg.com/dr/220__/t01d5ccfbf9d4500c75.jpg',
-            imageStyle: YsImageStyle(width: 186.w, height: 186.w),
-            radius: 16.w,
+            imageStyle: YsImageStyle(width: 93.w, height: 93.w),
+            radius: 8.w,
             placeholder: "assets/images/zhanweitu02.png",
             errorholder: "assets/images/zhanweitu04.png",
           ),
           SizedBox(width: 16.w),
           Expanded(
             child: SizedBox(
-              height: 186.w,
+              height: 93.w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -104,8 +104,8 @@ class Card_85 extends CardSingle {
                       ),
                       Expanded(
                         child: Container(
-                          height: 46.w,
-                          width: 116.w,
+                          height: 23.w,
+                          width: 108.w,
                           color: Colors.red,
                           child: TextButton(
                             style: ButtonStyle(
@@ -131,18 +131,18 @@ class Card_85 extends CardSingle {
 
   Widget layout2() {
     return Container(
-      padding: EdgeInsets.only(left: 30.w, top: 36.w, right: 30.w, bottom: 36.w),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.w)),
+      padding: EdgeInsets.only(left: 15.w, top: 18.w, right: 15.w, bottom: 18.w),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.w)),
       child: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(16.w),
-            child: Image.asset("assets/images/icon_cover.png", width: 186.w, height: 186.w),
+            borderRadius: BorderRadius.circular(8.w),
+            child: Image.asset("assets/images/icon_cover.png", width: 93.w, height: 93.w),
           ),
           SizedBox(width: 16.w),
           Expanded(
             child: SizedBox(
-              height: 186.w,
+              height: 93.w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -172,8 +172,8 @@ class Card_85 extends CardSingle {
 
   Widget layout3() {
     return Container(
-      padding: EdgeInsets.only(left: 30.w, top: 36.w, right: 30.w, bottom: 36.w),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.w)),
+      padding: EdgeInsets.only(left: 15.w, top: 18.w, right: 15.w, bottom: 18.w),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.w)),
       child: Row(
         children: [
           Stack(
@@ -182,15 +182,16 @@ class Card_85 extends CardSingle {
               Positioned(
                 child: Image.asset(
                   "assets/images/ic_guangdie.png",
-                  width: 170.w,
-                  height: 170.w,
+                  width: 85.w,
+                  height: 85.w,
                 ),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16.w),
-                child: Padding(
-                  padding: EdgeInsets.only(right: 22.w),
-                  child: Image.asset("assets/images/icon_cover.png", width: 186.w, height: 186.w),
+              Padding(
+                padding: EdgeInsets.only(right: 13.w),
+                child: YsImageLoad(
+                  "assets/images/icon_cover.png",
+                  imageStyle: YsImageStyle(width: 93.w, height: 93.w),
+                  radius: 8.w,
                 ),
               ),
             ],
@@ -198,7 +199,7 @@ class Card_85 extends CardSingle {
           SizedBox(width: 13.w),
           Expanded(
             child: SizedBox(
-              height: 186.w,
+              height: 93.w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
