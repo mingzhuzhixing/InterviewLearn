@@ -14,9 +14,7 @@ class GestureDetectorHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: CommonAppBar(context, "GestureDetector Widget"),
-      ),
+      appBar: CommonAppBar(context, "GestureDetector Widget"),
       body: Column(
         children: [
           ItemButton("点击、双击、长按", BasicTapEventPage(), index: 0),

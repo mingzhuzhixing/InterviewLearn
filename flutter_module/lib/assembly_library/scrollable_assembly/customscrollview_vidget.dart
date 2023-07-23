@@ -152,20 +152,20 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
         slivers: [
           SliverToBoxAdapter(
             child: Container(
-              padding: EdgeInsets.only(left: 30.w, right: 30.w),
+              padding: EdgeInsets.only(left: 15.w, right: 15.w),
               width: 1.sw,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.zero,
                   topRight: Radius.zero,
-                  bottomLeft: Radius.circular(20.w),
-                  bottomRight: Radius.circular(20.w),
+                  bottomLeft: Radius.circular(10.w),
+                  bottomRight: Radius.circular(10.w),
                 ),
                 color: Colors.white,
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 30.w),
+                  SizedBox(height: 15.w),
                   Row(
                     children: [
                       Text(
@@ -176,7 +176,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                       Icon(Icons.delete)
                     ],
                   ),
-                  SizedBox(height: 30.w),
+                  SizedBox(height: 15.w),
                   Wrap(
                     runSpacing: 10.0,
                     spacing: 10.0,
@@ -190,23 +190,23 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                       itemWarp("第七个第七个第七个第七个"),
                     ],
                   ),
-                  SizedBox(height: 30.w),
+                  SizedBox(height: 15.w),
                 ],
               ),
             ),
           ),
           SliverPadding(
-            padding: EdgeInsets.only(top: 20.w),
+            padding: EdgeInsets.only(top: 10.w),
             sliver: SliverToBoxAdapter(
               child: Container(
                 width: 1.sw,
-                padding: EdgeInsets.only(left: 20, top: 20.w, bottom: 30.w),
+                padding: EdgeInsets.only(left: 10.w, top: 10.w, bottom: 15.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.zero,
                     bottomLeft: Radius.zero,
-                    topLeft: Radius.circular(20.w),
-                    topRight: Radius.circular(20.w),
+                    topLeft: Radius.circular(10.w),
+                    topRight: Radius.circular(10.w),
                   ),
                   color: Colors.white,
                 ),
@@ -247,23 +247,23 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
       alignment: Alignment(1.03, -1.3),
       children: [
         Container(
-          padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 12.w, bottom: 12.w),
+          padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 6.w, bottom: 6.w),
           child: Text(text),
           decoration: BoxDecoration(
             color: Color(0xffF5F3F0),
-            borderRadius: BorderRadius.circular(16.w),
+            borderRadius: BorderRadius.circular(8.w),
           ),
         ),
         Positioned(
           child: Container(
-            width: 26.w,
-            height: 26.w,
+            width: 13.w,
+            height: 13.w,
             decoration: BoxDecoration(
               color: Color(0xffDBDAD7),
-              borderRadius: BorderRadius.circular(16.w),
-              border: Border.all(color: Colors.white, width: 2.w),
+              borderRadius: BorderRadius.circular(8.w),
+              border: Border.all(color: Colors.white, width: 1.w),
             ),
-            child: Icon(Icons.close, color: Colors.white, size: 24.w),
+            child: Icon(Icons.close, color: Colors.white, size: 12.w),
           ),
         )
       ],
@@ -273,23 +273,23 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
   Widget _getBottomItem() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.only(left: 30.w, bottom: 20.w, right: 30.w),
+      padding: EdgeInsets.only(left: 15.w, bottom: 10.w, right: 15.w),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             child: Image.asset(
               "assets/images/icon_cover.png",
-              width: 148.w,
-              height: 208.w,
+              width: 93.w,
+              height: 93.w,
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(8.w),
+            borderRadius: BorderRadius.circular(4.w),
           ),
-          SizedBox(width: 20.w),
+          SizedBox(width: 10.w),
           Expanded(
             child: SizedBox(
-              height: 208.w,
+              height: 93.w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -303,7 +303,7 @@ class _CustomScrollViewSearchPageState extends State<CustomScrollViewSearchPage>
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 20.w),
+                  SizedBox(height: 10.w),
                   Text(
                     "他创造了太空歌剧的奇迹，也奠定了赛博朋克的基石，更预见了科技和未来。",
                     style: TextStyle(
@@ -540,9 +540,14 @@ class _BookCityPageState extends State<BookCityPage> {
         controller: scrollController,
         slivers: [
           SliverAppBar(
-            leading: Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.black,
+            leading: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.black,
+              ),
             ),
             backgroundColor: Color(0xffF5F3F0),
             pinned: true,
@@ -550,16 +555,17 @@ class _BookCityPageState extends State<BookCityPage> {
               opacity: titleOpacity,
               child: Text(
                 "书城",
-                style: TextStyle(color: Color(0xff111111), fontSize: 17.sp),
+                style: TextStyle(
+                    color: Color(0xff111111), fontSize: 17.sp, fontWeight: FontWeight.w600),
               ),
             ),
             centerTitle: true,
             // 滑动到顶端时会固定住
-            expandedHeight: 208.w,
+            expandedHeight: 104.w,
             flexibleSpace: FlexibleSpaceBar(
               title: getSearch(),
               expandedTitleScale: 1,
-              titlePadding: EdgeInsets.only(left: paddingLeft, right: 15, bottom: 26.w),
+              titlePadding: EdgeInsets.only(left: paddingLeft, right: 15, bottom: 13.w),
             ),
           ),
           SliverFixedExtentList(
@@ -584,7 +590,7 @@ class _BookCityPageState extends State<BookCityPage> {
   Widget getSearch() {
     return Container(
       ///控制高度
-      height: 68.w,
+      height: 34.w,
       width: 1.sw,
       child: TextField(
         onChanged: (value) {
@@ -611,7 +617,7 @@ class _BookCityPageState extends State<BookCityPage> {
           ///去掉输入框边框，设置角度为80，
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(80.w),
+            borderRadius: BorderRadius.circular(20.w),
           ),
 
           ///设置背景色，可以修改背景色的只有fillColor这个属性。但是只设置fillColor属性是不行的，还必须同时设置filled为 true
@@ -631,11 +637,11 @@ class _BookCityPageState extends State<BookCityPage> {
               Fluttertoast.showToast(msg: "点击了左边搜索图标");
             },
             child: Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 10.w),
+              padding: EdgeInsets.only(left: 10.w, right: 5.w),
               child: Image.asset(
                 "assets/images/icon_search.png",
-                width: 38.w,
-                height: 38.w,
+                width: 19.w,
+                height: 19.w,
               ),
             ),
           ),

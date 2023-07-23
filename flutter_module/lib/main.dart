@@ -11,7 +11,7 @@ import 'package:flutter_module/utils/ys_global.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:power_image/power_image.dart';
 
-bool runType = true;
+bool runType = false;
 
 ///创建一个自定义的Binding，继承和with的关系如下，里面什么都不用写
 class CustomFlutterBinding extends WidgetsFlutterBinding with BoostFlutterBinding {
@@ -126,7 +126,7 @@ class _FlutterBoostMyAppState extends State<FlutterBoostMyApp> {
     MethodChannelUtils.nativeChannel.setMethodCallHandler((call) {
       switch (call.method) {
       //方法名
-        case 'android.invoke/flutter':
+        case "android.invoke/flutter":
         //接收android调用flutter方法的参数
           String msg = call.arguments['msg'];
           print("zm1234 main 原生调用Flutter成功，参数是：$msg");

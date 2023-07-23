@@ -138,11 +138,11 @@ class _TabBarView2WidgetPageState extends State<TabBarView2WidgetPage>
               tabs: tabs.map((e) {
                 return Container(
                   alignment: Alignment.center,
-                  width: 124.w,
-                  height: 66.w,
-                  padding: EdgeInsets.only(bottom: 4.w),
+                  width: 62.w,
+                  height: 33.w,
+                  padding: EdgeInsets.only(bottom: 2.w),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.w),
+                    borderRadius: BorderRadius.circular(4.w),
                     color: e == tabs[selectIndex] ? Color(0xffF2DDC5) : Colors.white,
                   ),
                   child: Text(
@@ -168,7 +168,7 @@ class _TabBarView2WidgetPageState extends State<TabBarView2WidgetPage>
               children: tabs.map((e) {
                 return KeepAliveWrapper(
                   child: Container(
-                    margin: EdgeInsets.only(top: 20.w),
+                    margin: EdgeInsets.only(top: 10.w),
                     color: Color(0x4dB71C1C),
                     alignment: Alignment.center,
                     child: Text(e, textScaleFactor: 5),
@@ -198,7 +198,7 @@ class _PageState extends State<Page> {
   Widget build(BuildContext context) {
     print("build ${widget.text}");
     return Container(
-      margin: EdgeInsets.only(top: 20.w),
+      margin: EdgeInsets.only(top: 10.w),
       color: Color(0x4dB71C1C),
       child: Text(widget.text, textScaleFactor: 5),
     );
