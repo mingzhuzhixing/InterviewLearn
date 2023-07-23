@@ -1,15 +1,25 @@
 package com.v.module_flutter.flutter_boost;
 
+import static com.v.module_flutter.flutter_boost.MyFlutterFragment.methodChannel;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.idlefish.flutterboost.FlutterBoostRouteOptions;
 import com.v.module_flutter.R;
+import com.v.module_flutter.helper.MethodChannelListener;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import io.flutter.plugin.common.MethodChannel;
 
 public class MyFlutterActivity extends AppCompatActivity {
 
@@ -35,6 +45,32 @@ public class MyFlutterActivity extends AppCompatActivity {
                     .build();
             getSupportFragmentManager().beginTransaction().add(R.id.cl_root_layout, fragment).commit();
         }
+
+        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Android调用flutter方法
+                Map<String, String> params = new HashMap<String,String>();
+                params.put("msg","这是来自 Android 端的参数");
+                // 调用 Flutter 中的方法
+                methodChannel.invokeMethod("android.invoke/flutter", params, new MethodChannel.Result() {
+                    @Override
+                    public void success(@Nullable Object result) {
+                        Log.i("zm1234", "MyFlutterActivity success()"+result);
+                    }
+
+                    @Override
+                    public void error(@NonNull String errorCode, @Nullable String errorMessage, @Nullable Object errorDetails) {
+                        Log.i("zm1234", "MyFlutterActivity error() errorCode:"+errorCode+" errorMessage:"+errorMessage+" errorDetails:"+errorDetails);
+                    }
+
+                    @Override
+                    public void notImplemented() {
+                        Log.i("zm1234", "MyFlutterActivity notImplemented()");
+                    }
+                });
+            }
+        });
     }
 
 
@@ -63,5 +99,25 @@ public class MyFlutterActivity extends AppCompatActivity {
             fragment.onPause();
             Log.i("zm1234", "MyFlutterActivity onStop");
         }
+    }
+
+    /**
+     * 物理返回键监听
+     */
+    @Override
+    public void onBackPressed() {
+        Log.i("zm1234", "MyFlutterActivity onBackPressed()");
+        methodChannel.invokeMethod("onBackPressed", new HashMap<String, String>(), new MethodChannelListener() {
+            @Override
+            public void success(@Nullable Object result) {
+                Log.i("zm1234", "MyFlutterActivity onBackPressed() success() result:"+result);
+                if (result instanceof Boolean) {
+                    Boolean value = (Boolean) result;
+                    if (!value) {
+                        MyFlutterActivity.super.onBackPressed();
+                    }
+                }
+            }
+        });
     }
 }

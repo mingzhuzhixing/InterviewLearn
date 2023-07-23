@@ -1,12 +1,13 @@
 // 必须在dart文件的第一行,可以加在任何dart文件中
-import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_module/oschinabody.dart';
 import 'package:flutter_module/page/splash_page.dart';
+import 'package:flutter_module/utils/method_channel_utils.dart';
 import 'package:flutter_module/utils/sp_utils.dart';
+import 'package:flutter_module/utils/ys_global.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:power_image/power_image.dart';
 
@@ -73,10 +74,7 @@ class SeparateMyApp extends StatelessWidget {
 
 ///FlutterBoost 混合开发
 class FlutterBoostMyApp extends StatefulWidget {
-  FlutterBoostMyApp(){
-    
-  }
-  
+
   @override
   State<FlutterBoostMyApp> createState() => _FlutterBoostMyAppState();
 }
@@ -121,9 +119,39 @@ class _FlutterBoostMyAppState extends State<FlutterBoostMyApp> {
     return func(settings, uniqueId);
   }
 
+  /// android调用flutter方法,来自android的参数
+  /// 注意：flutter 不能给返回值
+  void _initNativeFlutterChannel() {
+    //定义一个channel
+    MethodChannelUtils.nativeChannel.setMethodCallHandler((call) {
+      switch (call.method) {
+      //方法名
+        case 'android.invoke/flutter':
+        //接收android调用flutter方法的参数
+          String msg = call.arguments['msg'];
+          print("zm1234 main 原生调用Flutter成功，参数是：$msg");
+          break;
+        case "onBackPressed":
+          BuildContext? c = YsGlobal.navigatorKey.currentState?.context;
+          var canPop = Navigator.of(c!).canPop();
+          print("zm1234 main 原生调用onBackPressed成功 ${canPop}");
+          if (canPop) {
+            Navigator.of(c).maybePop();
+            return Future<dynamic>.value(true);
+          } else {
+            return Future<dynamic>.value(false);
+          }
+      }
+      return Future<dynamic>.value();
+    });
+  }
+
+  late BuildContext mContext;
+
   @override
   void initState() {
     super.initState();
+    _initNativeFlutterChannel();
   }
 
   @override
@@ -133,7 +161,9 @@ class _FlutterBoostMyAppState extends State<FlutterBoostMyApp> {
       minTextAdapt: true, //是否根据宽度/高度中的最小值适配文字
       splitScreenMode: true, //支持分屏尺寸
       builder: (BuildContext? context, Widget? child) {
+        print("zm1234 main build:${child}");
         return MaterialApp(
+          navigatorKey: YsGlobal.navigatorKey, //加上此配置
           debugShowCheckedModeBanner: false,
           theme: ThemeData(primarySwatch: Colors.blue),
           //区分的原因：iOS showModalBottomSheet 不能全屏 滚动列表底部会出让安全区域
