@@ -19,17 +19,17 @@
             android:theme="@style/Theme.AppCompat"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity
-            android:name="com.idlefish.flutterboost.containers.FlutterBoostActivity"
-            android:theme="@style/Theme.AppCompat"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize" >
+<!--        <activity-->
+<!--            android:name="com.idlefish.flutterboost.containers.FlutterBoostActivity"-->
+<!--            android:theme="@style/Theme.AppCompat"-->
+<!--            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"-->
+<!--            android:hardwareAccelerated="true"-->
+<!--            android:windowSoftInputMode="adjustResize" >-->
 
-        </activity>
-        <meta-data android:name="flutterEmbedding"
-            android:value="2">
-        </meta-data>
+<!--        </activity>-->
+<!--        <meta-data android:name="flutterEmbedding"-->
+<!--            android:value="2">-->
+<!--        </meta-data>-->
 
         <activity android:name=".flutter_boost.MyFlutterActivity" />
     </application>

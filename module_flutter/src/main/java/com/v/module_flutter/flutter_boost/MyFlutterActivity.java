@@ -36,4 +36,32 @@ public class MyFlutterActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().add(R.id.cl_root_layout, fragment).commit();
         }
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (fragment != null) {
+            fragment.onResume();
+            Log.i("zm1234", "MyFlutterActivity onResume");
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (fragment != null) {
+            fragment.onPause();
+            Log.i("zm1234", "MyFlutterActivity onPause");
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (fragment != null) {
+            fragment.onPause();
+            Log.i("zm1234", "MyFlutterActivity onStop");
+        }
+    }
 }

@@ -2,7 +2,9 @@ package com.v.interviewlearn;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
+import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.idlefish.flutterboost.FlutterBoost;
 import com.idlefish.flutterboost.FlutterBoostDelegate;
@@ -93,10 +95,12 @@ public class MyApplication extends BaseApplication {
 //        // Cache the FlutterEngine to be used by FlutterActivity.
 //        FlutterEngineCache.getInstance().put("my_engine_id", flutterEngine);
 
+        Log.i("zm1234", "MyApplication initFlutterEngine()");
         //fluterboost
         FlutterBoost.instance().setup(this, new FlutterBoostDelegate() {
             @Override
             public void pushNativeRoute(FlutterBoostRouteOptions options) {
+                Log.i("zm1234", "MyApplication pushNativeRoute:" + JSON.toJSONString(options));
                 //这里根据options.pageName来判断你想跳转哪个页面，这里简单给一个
 //                Intent intent = new Intent(FlutterBoost.instance().currentActivity(), YourTargetAcitvity.class);
 //                FlutterBoost.instance().currentActivity().startActivityForResult(intent, options.requestCode());
@@ -104,6 +108,7 @@ public class MyApplication extends BaseApplication {
 
             @Override
             public void pushFlutterRoute(FlutterBoostRouteOptions options) {
+                Log.i("zm1234", "MyApplication pushFlutterRoute:" + JSON.toJSONString(options));
 //                Intent intent = new FlutterBoostActivity.CachedEngineIntentBuilder(FlutterBoostActivity.class)
 //                        .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.opaque)
 //                        .destroyEngineWithActivity(false)
@@ -119,7 +124,14 @@ public class MyApplication extends BaseApplication {
                    e.printStackTrace();
                }
             }
+
+            @Override
+            public boolean popRoute(FlutterBoostRouteOptions options) {
+                Log.i("zm1234", "MyApplication popRoute:" + JSON.toJSONString(options));
+                return FlutterBoostDelegate.super.popRoute(options);
+            }
         }, engine -> {
+            Log.i("zm1234", "MyApplication engine:" + engine);
         });
     }
 }
