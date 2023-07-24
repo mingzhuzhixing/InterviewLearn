@@ -39,8 +39,8 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     //jetpack-->navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$deps.navigation_fragment_ktx"
-    implementation "androidx.navigation:navigation-ui-ktx:$deps.navigation_ui_ktx"
+    implementation deps["navigation_fragment_ktx"]
+    implementation deps["navigation_ui_ktx"]
 
     //jetpack-->room
     implementation "android.arch.persistence.room:runtime:1.0.0-alpha5"

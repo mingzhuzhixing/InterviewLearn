@@ -35,7 +35,7 @@ dependencies {
 
     api deps['recyclerview']
 
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation deps["BaseRecyclerViewHelper"]
 
     api deps["swiperefreshlayout"]
 
@@ -51,5 +51,5 @@ dependencies {
 
     implementation project(":module_glide")
 
-    implementation 'io.github.everythingme:overscroll-decor-android:1.1.1'
+    implementation deps["overscroll_decor"]
 }

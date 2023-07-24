@@ -81,9 +81,9 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     // Okhttp库
-    implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"
+    implementation deps["okhttp"]
 
-    implementation "org.greenrobot:eventbus:$deps.eventbus"
+    implementation deps["eventbus"]
 
     implementation project(":module_handler")
     implementation project(":module_telephony")

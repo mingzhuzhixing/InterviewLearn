@@ -29,9 +29,9 @@ dependencies {
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
 
-    api 'com.google.code.gson:gson:2.8.5'
-    implementation "com.squareup.okhttp3:okhttp:$deps.okhttp"
-    implementation 'org.xutils:xutils:3.3.36'
+    api deps["gson"]
+    implementation deps["okhttp"]
+    implementation deps["xutils"]
 
     api project(":module_retrofit")
     api project(":module_rxjava")

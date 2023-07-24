@@ -45,5 +45,5 @@ dependencies {
     implementation deps["converter_gson"]
 
     //防抖
-    implementation "com.jakewharton.rxbinding2:rxbinding:$deps.rxbinding"
+    implementation deps["rxbinding"]
 }

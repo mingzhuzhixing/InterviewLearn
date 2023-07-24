@@ -27,7 +27,7 @@ android {
 dependencies {
     implementation deps["appcompat_x"]
     implementation deps["material"]
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation deps["constraint_layout"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]

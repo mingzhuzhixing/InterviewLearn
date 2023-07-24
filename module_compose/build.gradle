@@ -62,8 +62,7 @@ dependencies {
     implementation composes["compose_constraintlayout"]
 
     //Android 图片加载库
-    implementation "io.coil-kt:coil-compose:2.1.0"
-
+    implementation composes["coil_compose"]
 
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]

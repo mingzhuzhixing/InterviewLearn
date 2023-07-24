@@ -4,8 +4,9 @@ setBinding(new Binding([gradle: this]))
 evaluate(new File(
         settingsDir.parentFile,
         //E:\AndroidWorkspace\InterviewLearn\flutter_module
-        'InterviewLearn/flutter_module/.android/include_flutter.groovy'
+        '../interview_learn/flutter_module/.android/include_flutter.groovy'
 ))
+project(':flutter_module').projectDir = new File('../flutter_module')
 
 // 下面加入other模块配置
 include ':module_widget'

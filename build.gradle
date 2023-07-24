@@ -13,11 +13,12 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         //maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
         //google()
+        //mavenLocal()
         mavenCentral()
         maven { url "file://${projectDir}/repository/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:4.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         //Butterknife 插件
@@ -39,6 +40,7 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         //maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
         //google()
+        //mavenLocal()
         mavenCentral()
 //        maven {
 //            //url 'E:\\AndroidWorkspace\\InterviewLearn\\flutter_module\\build\\host\\outputs\\repo'
