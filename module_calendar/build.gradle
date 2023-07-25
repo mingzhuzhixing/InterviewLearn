@@ -35,6 +35,6 @@ dependencies {
     androidTestImplementation deps["espresso_core"]
 
     implementation deps['recyclerview']
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation deps["swipe_refresh_layout"]
     implementation project(':ncalendar')
 }

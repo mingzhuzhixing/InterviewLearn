@@ -36,7 +36,7 @@ dependencies {
     implementation project(":module_recyclerview")
     implementation deps["material"]
 
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor deps["auto_service"]
 
     implementation deps["gson"]
     implementation project(":module_utils")

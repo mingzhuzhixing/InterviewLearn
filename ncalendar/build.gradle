@@ -15,6 +15,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    api 'joda-time:joda-time:2.10.1'
+    implementation deps["appcompat_x"]
+    api deps["joda_time"]
 }

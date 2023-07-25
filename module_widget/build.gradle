@@ -40,18 +40,16 @@ dependencies {
     implementation project(":module_common")
     implementation project(":module_utils")
 
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor deps["auto_service"]
 
     // Butterknife
     implementation deps["butterknife"]
     annotationProcessor deps["butterknife_compiler"]
 
-    //implementation deps["constraint_layout_2"]
+    implementation kotlins["kotlin_stdlib"]
+    implementation deps["core_ktx"]
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.0.2'
-
-    api 'com.github.Petterpx:FloatingX:1.1.4'
+    api deps["floating_x"]
 
     //implementation 'top.wuhaojie:scrollnumber:1.0.0'
 }

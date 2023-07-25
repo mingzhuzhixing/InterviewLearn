@@ -43,8 +43,8 @@ dependencies {
     implementation deps["navigation_ui_ktx"]
 
     //jetpack-->room
-    implementation "android.arch.persistence.room:runtime:1.0.0-alpha5"
-    kapt "android.arch.persistence.room:compiler:1.0.0-alpha5"
+    implementation deps["room_runtime"]
+    kapt deps["room_compiler"]
 //    debugCompile 'com.amitshekhar.android:debug-db:1.0.1'
 
     // Retrofit库

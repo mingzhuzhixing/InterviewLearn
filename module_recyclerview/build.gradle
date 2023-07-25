@@ -37,7 +37,7 @@ dependencies {
 
     implementation deps["BaseRecyclerViewHelper"]
 
-    api deps["swiperefreshlayout"]
+    api deps["smart_refresh_layout"]
 
     // Butterknife
     api deps["butterknife"]
