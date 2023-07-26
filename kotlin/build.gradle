@@ -25,15 +25,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility androidV.sourceCompatibility
+        targetCompatibility androidV.targetCompatibility
     }
 }
 
 dependencies {
     implementation deps["appcompat_x"]
     implementation deps["constraint_layout"]
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation kotlins["kotlin_stdlib"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
