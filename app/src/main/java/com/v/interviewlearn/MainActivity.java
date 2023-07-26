@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.v.module_android_basic.AndroidBasicActivity;
 import com.v.module_animator.AnimatorMainActivity;
 import com.v.module_calendar.CalendarMainActivity;
-import com.v.module_compose.MainComposeActivity;
+//import com.v.module_compose.MainComposeActivity;
 import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_jetpack.JetpackMainActivity;
 import com.v.module_optimize.MainOptimizeActivity;
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
      * compose 组件
      */
     public void composeClick(View view) {
-        startActivity(new Intent(this, MainComposeActivity.class));
+        //startActivity(new Intent(this, MainComposeActivity.class));
     }
 
     @Override
