@@ -3,19 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sync.DownloadActivity"
-    android:orientation="vertical">
+    tools:context=".operator.OperatorActivity">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="downloadImage"
-        android:text="下载图片" />
-
-    <ImageView
-        android:id="@+id/iv_show_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop" />
+        android:onClick="filterClick"
+        android:text="过滤操作符" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.v.module_rxjava;
+package com.v.module_rxjava.sync;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.v.module_rxjava.R;
 import com.v.module_rxjava.uitls.RxJavaUtils;
 
 import java.io.InputStream;

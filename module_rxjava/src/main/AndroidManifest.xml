@@ -7,11 +7,15 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application>
-        <activity android:name=".thread_switch.ThreadSwitchActivity"/>
+        <activity android:name=".operator.OperatorActivity" />
+        <activity android:name=".thread_switch.ThreadSwitchActivity" />
         <activity android:name=".do_on_next.DoOnNextActivity" />
-        <activity android:name=".DebounceCompareActivity" />
+        <activity android:name=".debounce.DebounceCompareActivity" />
         <activity android:name=".RxJavaMainActivity" />
-        <activity android:name=".UserInfoActivity" />
-        <activity android:name=".DownloadActivity" />
+        <activity android:name=".debounce.UserInfoActivity" />
+        <activity android:name=".sync.DownloadActivity" />
+        <activity android:name=".operator.FilterActivity" />
+        <activity android:name=".lifecycle.RxJavaLifecycleActivity" />
     </application>
+
 </manifest>

@@ -1,4 +1,4 @@
-package com.v.module_rxjava;
+package com.v.module_rxjava.debounce;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.jakewharton.rxbinding2.view.RxView;
+import com.v.module_rxjava.R;
 import com.v.module_rxjava.listener.OnMultiClickListener;
 
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,12 +8,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="entryRetrofit"
-        android:text="进入retrofit页面" />
+        android:text="进入retrofit页面"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="rxJavaDebounce"
         android:text="rxJava防抖测试"
-        android:onClick="rxJavaDebounce"/>
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="operatorClick"
+        android:text="操作符"
+        android:textAllCaps="false" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="rxJavaLifecycleClick"
+        android:text="RxJava的生命周期"
+        android:textAllCaps="false" />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
@@ -32,6 +33,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation deps["appcompat_x"]
     implementation deps["constraint_layout"]
+    implementation deps["material"]
     testImplementation deps["junit"]
     androidTestImplementation deps["ext_junit"]
     androidTestImplementation deps["espresso_core"]
@@ -46,4 +48,7 @@ dependencies {
 
     //防抖
     implementation deps["rxbinding"]
+
+    implementation project(":module_utils")
+    implementation project(":module_base")
 }

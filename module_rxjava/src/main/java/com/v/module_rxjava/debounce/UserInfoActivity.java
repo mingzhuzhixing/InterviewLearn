@@ -1,4 +1,4 @@
-package com.v.module_rxjava;
+package com.v.module_rxjava.debounce;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jakewharton.rxbinding2.view.RxView;
+import com.v.module_rxjava.R;
 import com.v.module_rxjava.api.WanAndroidApi;
 import com.v.module_rxjava.bean.ProjectBean;
 import com.v.module_rxjava.bean.ProjectItem;
