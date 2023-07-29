@@ -4,56 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".operator.FilterOperatorActivity">
+    tools:context=".operator.CreateOperatorActivity"
+    android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="filter"
-        android:text="filter 操作符"
+        android:text="create 操作符"
+        android:onClick="createClick"
         android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="distinct"
-        android:text="distinct 操作符 直接使用"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="distinct2"
-        android:text="distinct 操作符 自定义去重"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="take"
-        android:text="take 操作符"
+        android:text="just 操作符"
+        android:onClick="justClick"
         android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="takeTime"
-        android:text="takeTime 操作符"
+        android:text="fromIterable 操作符"
+        android:onClick="fromIterable"
         android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="skip"
-        android:text="skip 操作符"
+        android:text="timer 操作符"
+        android:onClick="timer"
         android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="skipTime"
-        android:text="skipTime 操作符"
+        android:text="fromArray 操作符"
+        android:onClick="fromArray"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="interval 操作符"
+        android:onClick="interval"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="intervalRange 操作符"
+        android:onClick="intervalRange"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="range 操作符"
+        android:onClick="range"
         android:textAllCaps="false"/>
 
 </LinearLayout>

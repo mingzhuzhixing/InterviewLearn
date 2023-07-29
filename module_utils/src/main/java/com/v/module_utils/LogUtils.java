@@ -23,13 +23,22 @@ public class LogUtils {
     private static final int I = Log.INFO;
     private static final int W = Log.WARN;
     private static final int E = Log.ERROR;
+    private static final boolean isPrintStack = true;
 
     public static void i(String msg) {
-        i(TAG, msg);
+        if (isPrintStack) {
+            final StackTraceElement[] stack = new Throwable().getStackTrace();
+            printLog(I, TAG, msg, stack[1]);
+        } else {
+            printLog(I, TAG, msg);
+        }
     }
 
     public static void i(String tag, String msg) {
-        if (isEnableLog) {
+        if (isPrintStack) {
+            final StackTraceElement[] stack = new Throwable().getStackTrace();
+            printLog(I, tag, msg, stack[1]);
+        } else {
             printLog(I, tag, msg);
         }
     }
@@ -39,9 +48,7 @@ public class LogUtils {
     }
 
     public static void d(String tag, String msg) {
-        if (isEnableLog) {
-            printLog(D, tag, msg);
-        }
+        printLog(D, tag, msg);
     }
 
     public static void w(String msg) {
@@ -49,9 +56,7 @@ public class LogUtils {
     }
 
     public static void w(String tag, String msg) {
-        if (isEnableLog) {
-            printLog(W, tag, msg);
-        }
+        printLog(W, tag, msg);
     }
 
     public static void e(String msg) {
@@ -59,9 +64,7 @@ public class LogUtils {
     }
 
     public static void e(String tag, String msg) {
-        if (isEnableLog) {
-            printLog(E, tag, msg);
-        }
+        printLog(E, tag, msg);
     }
 
     public static void v(String msg) {
@@ -69,28 +72,37 @@ public class LogUtils {
     }
 
     public static void v(String tag, String msg) {
-        if (isEnableLog) {
-            printLog(V, tag, msg);
-        }
+        printLog(V, tag, msg);
     }
 
     private static void printLog(int type, String tag, String msg) {
+        if (!isEnableLog) {
+            return;
+        }
+        printLog(type, tag, msg, null);
+    }
+
+    private static void printLog(int type, String tag, String msg, StackTraceElement ste) {
         //判断tag值
         tag = TextUtils.isEmpty(tag) ? TAG : tag;
 
         if (msg.length() > LOG_MAX_LENGTH) {
             while (msg.length() > LOG_MAX_LENGTH) {
-                print(type, tag, msg.substring(0, LOG_MAX_LENGTH));
+                print(type, tag, msg.substring(0, LOG_MAX_LENGTH), ste);
                 msg = msg.substring(LOG_MAX_LENGTH);
             }
         }
-        print(type, tag, msg);
+        print(type, tag, msg, ste);
     }
 
-    private static void print(int type, String tag, String msg) {
+    private static void print(int type, String tag, String msg, StackTraceElement ste) {
         switch (type) {
             case I:
-                Log.i(tag, msg);
+                if (ste != null) {
+                    Log.i(tag, String.format("[%s][%s]%s[%s]", ste.getFileName(), ste.getMethodName(), ste.getLineNumber(), msg));
+                } else {
+                    Log.i(tag, msg);
+                }
                 break;
             case D:
                 Log.d(tag, msg);

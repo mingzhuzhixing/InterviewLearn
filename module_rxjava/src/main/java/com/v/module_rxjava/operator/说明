@@ -1,6 +1,48 @@
-操作符：
+操作符：https://blog.csdn.net/zengke1993/article/details/80388510
 
-过滤操作符：
+一、创建操作符 ：创建被观察者（Observable）对象&发送事件，包含：
+    create(),
+    just()，
+    fromArray(),
+    fromIterable(),
+    timer(),
+    interval(),
+    intervalRange(),
+    range(),rangeLong(),
+    nerver(),
+    empty(),
+    defer()
+
+
+二、转换操作符：变换被观察者(Observable)发送的事件。将Observable发送的数据按照一定的规则做一些变换，然后再将变换的数据发射出去。
+    变换的操作符有map,flatMap，concatMap,switchMap,buffer,groupBy等等。
+
+
+
+
+
+
+
+三、合并操作符：组合多个被观察者(Observable)&合并需要发送的事件。包含：concatMap(),concat(), merge(),mergeArray(),
+    concateArray(),reduce(),collect(),startWith(),zip(),count()等
+
+
+
+
+
+
+
+四、功能操作符：辅助被观察者(Observable) 发送事件时实现一些功能性需求，如错误处理，线程调度。
+
+
+
+
+
+
+
+五、过滤操作符：用于将Observable发送的数据进行过滤和选择。让Observable返回我们所需要的数据。过滤操作符有buffer()，
+    filter()，skip()，take()，skipLast()，takeLast()，throttleFirst()，distainctUntilChange()。
+
 
 
 

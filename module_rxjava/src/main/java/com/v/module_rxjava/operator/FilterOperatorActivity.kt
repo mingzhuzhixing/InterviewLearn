@@ -11,13 +11,16 @@ import io.reactivex.functions.Predicate
 import java.util.concurrent.TimeUnit
 
 /**
- * 过滤操作符
+ * 过滤操作符：
+ *
+ * 用于将Observable发送的数据进行过滤和选择。让Observable返回我们所需要的数据。
+ * 过滤操作符有buffer()，filter()，skip()，take()，skipLast()，takeLast()，throttleFirst()，distainctUntilChange()。
  */
 @Suppress("ObjectLiteralToLambda", "CheckResult")
-class FilterActivity : BaseTitleBarActivity() {
+class FilterOperatorActivity : BaseTitleBarActivity() {
 
     override fun setTitle(): String {
-        return "filter 操作符"
+        return "过滤操作符"
     }
 
     override fun getLayoutId(): Int {

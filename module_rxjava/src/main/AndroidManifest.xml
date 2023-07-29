@@ -14,8 +14,13 @@
         <activity android:name=".RxJavaMainActivity" />
         <activity android:name=".debounce.UserInfoActivity" />
         <activity android:name=".sync.DownloadActivity" />
-        <activity android:name=".operator.FilterActivity" />
+        <activity android:name=".operator.FilterOperatorActivity" />
         <activity android:name=".lifecycle.RxJavaLifecycleActivity" />
+        <activity android:name=".operator.CreateOperatorActivity" />
+        <activity android:name=".operator.ConditionOperatorActivity" />
+        <activity android:name=".operator.FunctionOperatorActivity" />
+        <activity android:name=".operator.MergeOperatorActivity" />
+        <activity android:name=".operator.ConvertOperatorActivity" />
     </application>
 
 </manifest>

@@ -18,8 +18,33 @@ class OperatorActivity : BaseTitleBarActivity() {
         return R.layout.activity_operator
     }
 
+    //创建操作符
+    fun createClick(view: View) {
+        startActivity(Intent(this, CreateOperatorActivity::class.java))
+    }
+
+    //转换操作符
+    fun convertClick(view: View) {
+        startActivity(Intent(this, ConvertOperatorActivity::class.java))
+    }
+
+    //合并操作符
+    fun mergeClick(view: View) {
+        startActivity(Intent(this, MergeOperatorActivity::class.java))
+    }
+
+    //功能操作符
+    fun functionClick(view: View) {
+        startActivity(Intent(this, FunctionOperatorActivity::class.java))
+    }
+
     //筛选操作符
     fun filterClick(view: View) {
-        startActivity(Intent(this, FilterActivity::class.java))
+        startActivity(Intent(this, FilterOperatorActivity::class.java))
+    }
+
+    //条件操作符
+    fun conditionClick(view: View) {
+        startActivity(Intent(this, ConditionOperatorActivity::class.java))
     }
 }
