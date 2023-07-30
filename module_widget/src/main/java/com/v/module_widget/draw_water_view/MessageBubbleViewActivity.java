@@ -21,7 +21,7 @@ public class MessageBubbleViewActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         TextView text = findViewById(R.id.tv_text);
 
         MessageBubbleView.attach(text, new BubbleMessageTouchListener.BubbleDisappearListener() {
@@ -30,10 +30,5 @@ public class MessageBubbleViewActivity extends BaseTitleBarActivity {
                 Toast.makeText(MessageBubbleViewActivity.this, "爆炸了，我消失了", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 }

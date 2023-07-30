@@ -17,18 +17,13 @@ public class ProgressBarActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mProgressView = findViewById(R.id.progress_view);
     }
 
     @Override
     protected String setTitle() {
         return "自定义圆形进度条";
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     public void startClick(View view) {

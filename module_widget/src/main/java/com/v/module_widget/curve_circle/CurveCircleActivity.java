@@ -55,7 +55,7 @@ public class CurveCircleActivity extends BaseTitleBarActivity {
     };
 
     @Override
-    protected void initData() {
+    public void initData() {
         super.initData();
         circle_layout = (CurveCircleLayout) findViewById(R.id.circle_layout);
         progressView = (WaveProgressView) findViewById(R.id.progressView);

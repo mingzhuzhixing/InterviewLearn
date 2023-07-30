@@ -20,12 +20,12 @@ public class ListDataScreenViewActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mListDataScreenView = findViewById(R.id.list_data_screen_view);
     }
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         mListDataScreenView.setAdapter(new ListScreenMenuAdapter(this));
     }
 }

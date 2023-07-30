@@ -14,14 +14,4 @@ public class FlowlayoutActivity extends BaseTitleBarActivity {
     protected String setTitle() {
         return "自定义自动换行功能的LinearLayout";
     }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void processLogical() {
-
-    }
 }

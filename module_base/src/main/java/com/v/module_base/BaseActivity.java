@@ -13,8 +13,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        setContentView(getBaseLayoutId());
         initData();
+        initPresenter();
+        //隐藏标题栏
+        initActionBar();
         //处理逻辑
         processLogical();
     }
@@ -22,15 +25,25 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 页面layoutId
      */
-    abstract int getLayoutId();
+    public abstract int getBaseLayoutId();
 
     /**
      * 初始化数据
      */
-    abstract void initData();
+    public abstract void initData();
+
+    /**
+     * 初始化Presenter
+     */
+    public abstract void initPresenter();
+
+    /**
+     * 初始化顶部ActionBar
+     */
+    public abstract void initActionBar();
 
     /**
      * 处理逻辑
      */
-    abstract void processLogical();
+    public abstract void processLogical();
 }

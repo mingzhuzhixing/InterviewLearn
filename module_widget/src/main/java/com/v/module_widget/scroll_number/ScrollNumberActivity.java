@@ -29,7 +29,7 @@ public class ScrollNumberActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         super.initData();
         scrollNumber = findViewById(R.id.scroll_number);
         scrollNumber.setNumber(2048);

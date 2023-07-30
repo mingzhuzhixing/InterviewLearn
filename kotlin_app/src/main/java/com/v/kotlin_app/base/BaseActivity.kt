@@ -1,46 +1,36 @@
 package com.v.kotlin_app.base
 
-import android.os.Bundle
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity<P : IBasePresenter> : AppCompatActivity(){
+abstract class BaseActivity<P : IBasePresenter> : com.v.module_base.BaseActivity() {
 
     protected lateinit var mPresenter: P
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(getLayoutId())
-        initData()
+    override fun getBaseLayoutId(): Int {
+        return getLayoutId()
+    }
 
+    /**
+     * 初始化Presenter
+     */
+    override fun initPresenter() {
         mPresenter = createPresenter()
+    }
 
+    override fun initActionBar() {
         //隐藏标题栏
         hideActionBar()
-
-        //处理逻辑
-        processLogical()
     }
 
     /**
      * 页面layoutId
      */
-    abstract fun getLayoutId(): Int
-
-    /**
-     * 初始化数据
-     */
-    abstract fun initData()
+    protected abstract fun getLayoutId(): Int
 
     /**
      * 子类实现
      */
     abstract fun createPresenter(): P
-
-    /**
-     * 处理逻辑
-     */
-    abstract fun processLogical()
 
     /**
      * 隐藏actionbar
@@ -56,7 +46,6 @@ abstract class BaseActivity<P : IBasePresenter> : AppCompatActivity(){
     fun showActionBar() {
         supportActionBar?.hide()
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

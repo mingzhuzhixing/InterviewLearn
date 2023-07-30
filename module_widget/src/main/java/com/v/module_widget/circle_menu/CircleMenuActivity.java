@@ -24,7 +24,7 @@ public class CircleMenuActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mCircleMenuLayout = (CircleMenuLayout) findViewById(R.id.id_menulayout);
         mCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs, mItemTexts, -180);
 
@@ -39,11 +39,6 @@ public class CircleMenuActivity extends BaseTitleBarActivity {
                 Toast.makeText(CircleMenuActivity.this, "you can do something just like ccb  ", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     public void show1Click(View view) {

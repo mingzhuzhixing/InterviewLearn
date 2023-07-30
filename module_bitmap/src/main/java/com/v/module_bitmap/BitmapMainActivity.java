@@ -11,7 +11,6 @@ import com.v.module_bitmap.recycle.RecycleBitmapActivity;
  */
 public class BitmapMainActivity extends BaseTitleBarActivity {
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_bitmap_main;
@@ -22,15 +21,6 @@ public class BitmapMainActivity extends BaseTitleBarActivity {
         return "Bitmap";
     }
 
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void processLogical() {
-
-    }
 
     public void loadBimap(View view) {
         startActivity(new Intent(this, LoadBitmapActivity.class));

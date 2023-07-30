@@ -19,15 +19,10 @@ public class AsyncTaskActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         ProgressBar pb = findViewById(R.id.progressBar);
         myAsyncTask = new MyAsyncTask(pb);
         myAsyncTask.execute();
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     @Override

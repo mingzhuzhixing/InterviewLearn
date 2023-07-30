@@ -31,7 +31,7 @@ public class TagLayoutActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         tagLayout = findViewById(R.id.tag_layout);
     }
 
@@ -39,7 +39,7 @@ public class TagLayoutActivity extends BaseTitleBarActivity {
      * cai
      */
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         //标签 ，后台获取， 很多实现方式 加List<String>的集合
         mItems = new ArrayList<>();
         mItems.add("11111");

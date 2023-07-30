@@ -23,13 +23,8 @@ public class LoveLayoutActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mLoveLayout = findViewById(R.id.love_layout);
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     /**

@@ -24,15 +24,8 @@ import butterknife.Unbinder;
  * Fragment基类  带有标题
  */
 @SuppressLint("NonConstantResourceId")
-public abstract class BaseTitleBarFragment extends Fragment {
-    protected Activity mActivity;
+public abstract class BaseTitleBarFragment extends BaseFragment {
     private Unbinder unbinder;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mActivity = getActivity();
-    }
 
     @Nullable
     @Override

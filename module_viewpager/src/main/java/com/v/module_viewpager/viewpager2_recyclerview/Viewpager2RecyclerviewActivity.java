@@ -29,7 +29,7 @@ public class Viewpager2RecyclerviewActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         super.initData();
 
         ViewPager2 viewPager = findViewById(R.id.view_pager2);

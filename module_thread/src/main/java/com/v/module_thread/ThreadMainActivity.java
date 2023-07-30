@@ -23,17 +23,11 @@ public class ThreadMainActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mTextView = findViewById(R.id.tv_content);
 
         workThreadUpdateUi();
     }
-
-    @Override
-    protected void processLogical() {
-
-    }
-
 
     /**
      * Android中子线程真的不能更新UI吗？ 不是，极端的情况可以更新的

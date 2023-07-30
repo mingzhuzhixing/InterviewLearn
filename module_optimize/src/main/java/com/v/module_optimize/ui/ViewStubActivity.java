@@ -31,7 +31,7 @@ public class ViewStubActivity extends BaseTitleBarActivity {
     Button viewStub1Btn;
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         super.processLogical();
         viewStub1 = findViewById(R.id.view_stub_1);
     }

@@ -36,7 +36,7 @@ public class SwipeRefreshLayoutActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mRecyclerView = findViewById(R.id.recyclerview);
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
@@ -46,7 +46,7 @@ public class SwipeRefreshLayoutActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         initRecyclerView();
 
         List<String> mList = new ArrayList<>();

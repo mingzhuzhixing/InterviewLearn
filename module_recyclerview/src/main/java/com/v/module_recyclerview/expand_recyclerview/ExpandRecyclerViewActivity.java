@@ -38,7 +38,7 @@ public class ExpandRecyclerViewActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         super.initData();
         unbinder = ButterKnife.bind(this);
 

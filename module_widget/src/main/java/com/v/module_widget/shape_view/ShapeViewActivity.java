@@ -23,18 +23,13 @@ public class ShapeViewActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         shapeView = findViewById(R.id.shape_view);
     }
 
     @Override
     protected String setTitle() {
         return "变换不同的图形";
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     public void startClick(View view) {

@@ -22,17 +22,12 @@ public class KsgLikeViewActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mKsgLikeView = findViewById(R.id.live_view);
         mKsgLikeView.addLikeImages(
                 R.mipmap.ic_live_yellow_heart, R.mipmap.ic_live_smile_face_heart, R.mipmap.ic_live_red_heart,
                 R.mipmap.ic_live_thumbs_up_yellow, R.mipmap.ic_live_smile_face, R.mipmap.ic_live_orange_heart,
                 R.mipmap.ic_live_grin_face_eyes, R.mipmap.ic_live_smile_face_sunglas);
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     /**

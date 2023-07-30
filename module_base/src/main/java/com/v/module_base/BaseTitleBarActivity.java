@@ -1,18 +1,11 @@
 package com.v.module_base;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -21,16 +14,20 @@ import butterknife.Unbinder;
  * activity基类  带有标题
  */
 @SuppressLint("NonConstantResourceId")
-public abstract class BaseTitleBarActivity extends AppCompatActivity {
+public abstract class BaseTitleBarActivity extends BaseActivity {
 
     private Unbinder unbinder;
     protected FrameLayout mFlContainer;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_title_bar);
+    public int getBaseLayoutId() {
+        return R.layout.activity_base_title_bar;
+    }
 
+    /**
+     * 初始化数据
+     */
+    public void initData() {
         //全局悬浮框
 //        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 //        View floatView = LayoutInflater.from(this).inflate(R.layout.window_float_layout, null);
@@ -48,9 +45,16 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
         //设置标题
         TextView mTvTile = findViewById(R.id.tv_title);
         mTvTile.setText(TextUtils.isEmpty(setTitle()) ? "" : setTitle());
+    }
 
-        initData();
-        processLogical();
+    @Override
+    public void initPresenter() {
+        // 空实现
+    }
+
+    @Override
+    public void initActionBar() {
+        // 空实现
     }
 
     /**
@@ -66,18 +70,11 @@ public abstract class BaseTitleBarActivity extends AppCompatActivity {
     protected abstract int getLayoutId();
 
     protected abstract String setTitle();
-
-    /**
-     * 初始化数据
-     */
-    protected void initData() {
-
-    }
-
+    
     /**
      * 处理逻辑
      */
-    protected void processLogical() {
+    public void processLogical() {
 
     }
 

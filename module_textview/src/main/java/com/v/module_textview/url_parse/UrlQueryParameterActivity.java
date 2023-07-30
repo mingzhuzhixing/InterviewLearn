@@ -33,7 +33,7 @@ public class UrlQueryParameterActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         String url = "http://zaiadev.laidan.com/p/newbee/newbornZone?id=000&back=1234&search=90";
 
         TextView tvUrl = findViewById(R.id.tv_url);
@@ -78,11 +78,6 @@ public class UrlQueryParameterActivity extends BaseTitleBarActivity {
         String content = uri.getQueryParameter(key);
         String str = TextUtils.isEmpty(content) ? "" : content;
         return str;
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 
     public static Map<String, String> getParams(String url) {

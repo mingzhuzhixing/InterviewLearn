@@ -2,6 +2,7 @@ package com.v.module_base;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -25,12 +26,25 @@ public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
     private Unbinder unbinder;
 
+    //1
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mActivity = (Activity) context;
+    }
+
+    //2
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivity = getActivity();
+
     }
 
+    //3
+    /**
+     * 如果 rootView为空 则使用else中的空白布局
+     * super.onCreateView(inflater, container, savedInstanceState)
+     */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,19 +58,22 @@ public abstract class BaseFragment extends Fragment {
         if (isNeedButterKnife()) {
             unbinder = ButterKnife.bind(this, view);
         }
-
-        initData();
-        processLogical();
-
         return view;
+    }
+
+    //4
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initData();
+        //处理逻辑
+        processLogical();
     }
 
     /**
      * 页面layoutId
      */
     protected abstract int getLayoutId();
-
-    protected abstract String setTitle();
 
     /**
      * 初始化数据

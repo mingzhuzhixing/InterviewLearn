@@ -54,16 +54,10 @@ public class MusicBarActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         super.initData();
         rl_main =findViewById(R.id.rl_main);
     }
-
-    @Override
-    protected void processLogical() {
-        super.processLogical();
-    }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

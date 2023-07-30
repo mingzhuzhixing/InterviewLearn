@@ -45,7 +45,7 @@ public class SwipeNoRefreshLayoutActivity extends AppCompatActivity implements O
     /**
      * 初始化数据
      */
-    protected void initData() {
+    public void initData() {
         mRecyclerView = findViewById(R.id.recyclerview);
         mRvTodayPlan = findViewById(R.id.rv_today_plan);
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
@@ -83,7 +83,7 @@ public class SwipeNoRefreshLayoutActivity extends AppCompatActivity implements O
     /**
      * 逻辑处理
      */
-    protected void processLogical() {
+    public void processLogical() {
         initRecyclerView();
         for (int i = 0; i < 10; i++) {
             allList.add("item" + i);

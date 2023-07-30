@@ -25,13 +25,13 @@ public class LetterSideBarActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         tvShowLetter = findViewById(R.id.tv_show_letter);
         letterSideBar = findViewById(R.id.letter_side_bar);
     }
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         letterSideBar.setOnLetterTouchListener(new LetterSideBar.LetterTouchListener() {
             @Override
             public void callback(String letter, boolean isShow) {

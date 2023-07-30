@@ -34,13 +34,13 @@ public class VerticalViewDragActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mListView = findViewById(R.id.listview);
         mItems = new ArrayList<>();
     }
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         for (int i = 0; i < 20; i++) {
             mItems.add("item" + i);
         }

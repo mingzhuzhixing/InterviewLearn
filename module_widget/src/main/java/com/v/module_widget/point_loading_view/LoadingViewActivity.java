@@ -14,13 +14,4 @@ public class LoadingViewActivity extends BaseTitleBarActivity {
         return "loading_view";
     }
 
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void processLogical() {
-
-    }
 }

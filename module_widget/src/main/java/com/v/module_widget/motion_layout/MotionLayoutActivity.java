@@ -23,7 +23,7 @@ public class MotionLayoutActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         flRootView = findViewById(R.id.fl_root_view);
     }
 
@@ -37,7 +37,7 @@ public class MotionLayoutActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
 
     }
 

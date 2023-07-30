@@ -18,13 +18,8 @@ public class SingleLineActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         TextView textview = findViewById(R.id.tv_content);
         textview.setText("不宽度,不确定字数不宽度,不确定字数不宽不确定字数不宽");
-    }
-
-    @Override
-    protected void processLogical() {
-
     }
 }

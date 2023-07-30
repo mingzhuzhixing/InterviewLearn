@@ -50,7 +50,7 @@ public class ViewPageActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void processLogical() {
+    public void processLogical() {
         initViewPager();
         initIndicator();
     }

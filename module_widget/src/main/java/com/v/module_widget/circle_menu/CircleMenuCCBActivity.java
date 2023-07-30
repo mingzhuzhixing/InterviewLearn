@@ -27,7 +27,7 @@ public class CircleMenuCCBActivity extends BaseTitleBarActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         CircleMenuCCBLayout mCircleMenuLayout = findViewById(R.id.id_menulayout);
         mCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs, mItemTexts);
 
@@ -44,8 +44,4 @@ public class CircleMenuCCBActivity extends BaseTitleBarActivity {
         });
     }
 
-    @Override
-    protected void processLogical() {
-
-    }
 }
