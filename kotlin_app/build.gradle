@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions' //使用引入布局xml文件的插件
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion androidV.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.v.kotlin_app"
+        minSdkVersion androidV.minSdkVersion
+        targetSdkVersion androidV.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility androidV.sourceCompatibility
+        targetCompatibility androidV.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation deps["core_ktx"]
+    implementation deps["appcompat_x"]
+    implementation deps["material"]
+    implementation deps["constraint_layout"]
+    testImplementation deps["junit"]
+    androidTestImplementation deps["ext_junit"]
+    androidTestImplementation deps["espresso_core"]
+
+    //引入包
+    implementation project(":module_common")
+
+    //jetpack-->navigation
+    implementation deps["navigation_fragment_ktx"]
+    implementation deps["navigation_ui_ktx"]
+
+    //jetpack-->room
+    implementation deps["room_runtime"]
+    annotationProcessor deps["room_compiler"]
+    kapt deps["room_compiler"]// To use Kotlin annotation processing tool (kapt)
+    implementation deps["room_ktx"]// optional - Kotlin Extensions and Coroutines support for Room
+
+    //x_banner
+    implementation deps["x_banner"]
+}

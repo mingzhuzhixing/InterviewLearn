@@ -2,6 +2,7 @@ ext.isUserApplication = false
 ext {
     kotlin_version = '1.6.20'
     compose_version = '1.2.0-beta08'
+    room_version = "2.3.0"
 }
 
 //版本名称为${conf.versionName}.${conf.versionCode}.${conf.date}"
@@ -80,8 +81,11 @@ def deps = [
         swipe_refresh_layout   : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
 
         //room
-        room_runtime           : "android.arch.persistence.room:runtime:1.0.0-alpha5",
-        room_compiler          : "android.arch.persistence.room:compiler:1.0.0-alpha5",
+        room_runtime           : "androidx.room:room-runtime:$room_version",
+        room_compiler          : "androidx.room:room-compiler:$room_version",
+        room_ktx               : "androidx.room:room-ktx:$room_version",
+
+        //
         joda_time              : "joda-time:joda-time:2.10.1",
         floating_x             : "com.github.Petterpx:FloatingX:1.1.4",
 
