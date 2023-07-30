@@ -52,9 +52,12 @@ public abstract class BaseTitleBarActivity extends BaseActivity {
         // 空实现
     }
 
+    /**
+     * 初始化顶部ActionBar状态
+     */
     @Override
-    public void initActionBar() {
-        // 空实现
+    public boolean initActionbarStatus() {
+        return true;
     }
 
     /**

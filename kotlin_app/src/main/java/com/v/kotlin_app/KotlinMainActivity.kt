@@ -29,7 +29,8 @@ class KotlinMainActivity : BaseActivity<EmptyPresenter>() {
             R.id.navigation_person
         ).build()
         val navController: NavController =
-            Navigation.findNavController(this, R.id.nav_host_fragment);
+            Navigation.findNavController(this, R.id.nav_host_fragment)
+        //使用NavigationUI 则不是使用NoActionBar主题
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController)
     }

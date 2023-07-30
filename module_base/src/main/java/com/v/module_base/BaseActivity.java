@@ -3,6 +3,7 @@ package com.v.module_base;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
@@ -17,7 +18,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
         initPresenter();
         //隐藏标题栏
-        initActionBar();
+        if (initActionbarStatus()) {
+            hideActionBar();
+        }
         //处理逻辑
         processLogical();
     }
@@ -37,13 +40,34 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public abstract void initPresenter();
 
-    /**
-     * 初始化顶部ActionBar
-     */
-    public abstract void initActionBar();
 
     /**
      * 处理逻辑
      */
     public abstract void processLogical();
+
+    /**
+     * 初始化顶部ActionBar状态
+     */
+    public abstract boolean initActionbarStatus();
+
+    /**
+     * 隐藏actionbar
+     */
+    public void hideActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+    }
+
+    /**
+     * 显示actionbar
+     */
+    public void showActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.show();
+        }
+    }
 }
