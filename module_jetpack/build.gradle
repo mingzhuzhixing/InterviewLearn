@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation deps["core_ktx"]
     implementation deps["appcompat_x"]
     implementation deps["constraint_layout"]
     implementation deps["material"]
@@ -42,12 +43,17 @@ dependencies {
 
     implementation project(":module_base")
     implementation project(":module_network")
-    implementation kotlins["kotlin_stdlib"]
 
     //paging
-//    def paging_version = "1.0.0"
     implementation deps["paging_runtime"]
     implementation deps["paging_rxjava"]
 //    implementation "android.arch.paging:runtime:$paging_version"
 //    testImplementation "android.arch.paging:common:$paging_version"
+
+    //jetpack-->room
+    implementation deps["room_runtime"]
+    annotationProcessor deps["room_compiler"]
+    kapt deps["room_compiler"]// To use Kotlin annotation processing tool (kapt)
+    implementation deps["room_ktx"]// optional - Kotlin Extensions and Coroutines support for Room
+
 }

@@ -14,4 +14,11 @@
       android:textAllCaps="false"
       android:onClick="pagingClick"/>
 
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="room"
+      android:textAllCaps="false"
+      android:onClick="roomClick"/>
+
   </LinearLayout>

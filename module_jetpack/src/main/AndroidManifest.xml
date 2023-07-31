@@ -3,15 +3,16 @@
     package="com.v.module_jetpack">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application>
         <activity
+            android:name=".room.RoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".paging.PagingActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".JetpackMainActivity"
             android:exported="false" />

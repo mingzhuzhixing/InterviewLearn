@@ -2,7 +2,7 @@ ext.isUserApplication = false
 ext {
     kotlin_version = '1.6.20'
     compose_version = '1.2.0-beta08'
-    room_version = "2.3.0"
+    room_version = "2.4.2"
 }
 
 //版本名称为${conf.versionName}.${conf.versionCode}.${conf.date}"
@@ -78,6 +78,8 @@ def deps = [
         //paging
         paging_runtime         : "androidx.paging:paging-runtime:3.0.0-beta01",
         paging_rxjava          : "android.arch.paging:rxjava2:1.0.0-rc1",
+
+        //下拉刷新控件
         swipe_refresh_layout   : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
 
         //room
