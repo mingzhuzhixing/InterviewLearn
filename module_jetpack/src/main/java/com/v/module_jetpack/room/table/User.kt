@@ -2,6 +2,7 @@ package com.v.module_jetpack.room.table
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 /**
@@ -40,9 +41,13 @@ class User {
     @ColumnInfo(name = "school")
     var school: String? = null
 
-//    @ColumnInfo(name = "phone")
-//    var phone: String? = null
+    @ColumnInfo(name = "phone")
+    var phone: String? = null
 
+    @ColumnInfo(name = "address")
+    var address: String? = null
+
+    @Ignore
     constructor(){}
 
     constructor(userId: Int, userName: String?, age: Int, sex: String?) {

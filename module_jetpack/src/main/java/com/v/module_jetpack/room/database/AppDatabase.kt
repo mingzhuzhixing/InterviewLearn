@@ -22,7 +22,8 @@ import com.v.module_jetpack.room.table.User
  */
 @Database(
     entities = [User::class, Address::class],
-    version = 2
+    version = 3,
+    exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
@@ -44,7 +45,8 @@ abstract class AppDatabase : RoomDatabase() {
             if (INSTANCE == null) {
                 Log.i("zm1234", "migrate: initApplication")
                 INSTANCE = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, DB_NAME)
-                    .addMigrations(MIGRATION_1_2)
+                    .allowMainThreadQueries()
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     .build()
             }
         }
@@ -56,20 +58,16 @@ abstract class AppDatabase : RoomDatabase() {
 
             override fun migrate(database: SupportSQLiteDatabase) {
                 Log.i("zm1234", "migrate: MIGRATION_1_2")
-                //没有布尔值，用INTEGER代替
-                //使用"ALTER TABLE Word  ADD COLUMN bar_data2 INTEGER  NOT NULL DEFAULT 1"出错。
                 //使用下面分开的形式,可以正确执行
-                database.execSQL("ALTER TABLE user ADD COLUMN phone TEXT")
+                database.execSQL("ALTER TABLE user ADD COLUMN phone TEXT DEFAULT NULL")
             }
         }
 
         //版本号 2到3
         val MIGRATION_2_3: Migration = object : Migration(2, 3) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                //没有布尔值，用INTEGER代替
-                //使用"ALTER TABLE Word  ADD COLUMN bar_data2 INTEGER  NOT NULL DEFAULT 1"出错。
-                //使用下面分开的形式,可以正确执行
-                database.execSQL("ALTER TABLE Word ADD COLUMN bar_data2 INTEGER NOT NULL DEFAULT 1")
+                Log.i("zm1234", "migrate: MIGRATION_2_3")
+                database.execSQL("ALTER TABLE user ADD COLUMN address TEXT DEFAULT NULL")
             }
         }
     }
