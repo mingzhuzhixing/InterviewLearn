@@ -53,7 +53,7 @@ interface UserDao {
      * 查询所有
      */
     @Query("SELECT * FROM user")
-    fun getAllUer(): List<User>
+    fun getAllUser(): List<User>
 
     /**
      * 根据用户名查询

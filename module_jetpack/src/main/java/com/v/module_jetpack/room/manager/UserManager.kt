@@ -60,6 +60,6 @@ class UserManager {
     }
 
     fun queryAllUser(): List<User>? {
-        return userDao?.getAllUer()
+        return userDao?.getAllUser()
     }
 }
