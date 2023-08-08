@@ -6,6 +6,7 @@ import com.v.module_base.BaseTitleBarActivity
 import com.v.module_jetpack.paging.PagingActivity
 import com.v.module_jetpack.room.RoomActivity
 import com.v.module_jetpack.room.database.AppDatabase
+import com.v.module_jetpack.sqlite.SqliteActivity
 
 class JetpackMainActivity : BaseTitleBarActivity() {
 
@@ -28,5 +29,9 @@ class JetpackMainActivity : BaseTitleBarActivity() {
 
     fun roomClick(view: View) {
         startActivity(Intent(this, RoomActivity::class.java))
+    }
+
+    fun sqliteClick(view: View) {
+        startActivity(Intent(this, SqliteActivity::class.java))
     }
 }
