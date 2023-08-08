@@ -9,9 +9,11 @@ package com.v.module_jetpack.sqlite.bean
  * @date 2023/8/8 22:44
  */
 class StudentBean {
+    var id: String? = null
     var date: String? = null
     var timestamp: Long = 0
     var name: String? = null
+    var age: Int? = 0
 
     class Builder {
         private val bean = StudentBean()

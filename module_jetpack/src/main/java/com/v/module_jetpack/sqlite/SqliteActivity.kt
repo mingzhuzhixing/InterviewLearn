@@ -44,8 +44,8 @@ class SqliteActivity : BaseTitleBarActivity() {
             .build()
 
         studentDao?.insert(student1)
-        studentDao?.insert(student2)
-        studentDao?.insert(student3)
+//        studentDao?.insert(student2)
+//        studentDao?.insert(student3)
     }
 
     /**
@@ -54,9 +54,13 @@ class SqliteActivity : BaseTitleBarActivity() {
     fun getAllClick(view: View) {
         val students = studentDao?.getAllStudent(20)
         var str = ""
-        students?.forEach {
-            str = "$str $it"
+        if (students == null || students.isEmpty()) {
             tv_all_student.text = str
+        } else {
+            students.forEach {
+                str = "$str $it"
+                tv_all_student.text = str
+            }
         }
     }
 
@@ -67,5 +71,12 @@ class SqliteActivity : BaseTitleBarActivity() {
     fun getCountClick(view: View) {
         val count = studentDao?.count
         tv_count.text = "学生count:$count"
+    }
+
+    /**
+     * 清空数据库表数据
+     */
+    fun cleanClick(view: View) {
+        studentDao?.clear()
     }
 }

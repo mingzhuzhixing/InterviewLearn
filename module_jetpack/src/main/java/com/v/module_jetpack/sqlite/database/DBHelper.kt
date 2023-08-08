@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger
  * @package_name com.v.module_jetpack.sqlite
  * @date 2023/8/8 22:35
  */
-class DatabaseHelper(context: Context, name: String, cursorFactory: CursorFactory?, version: Int) :
+class DBHelper(context: Context, name: String, cursorFactory: CursorFactory?, version: Int) :
     SQLiteOpenHelper(context, name, cursorFactory, version) {
 
     private constructor(
@@ -31,13 +31,13 @@ class DatabaseHelper(context: Context, name: String, cursorFactory: CursorFactor
     )
 
     companion object {
-        private var instance: DatabaseHelper? = null
+        private var instance: DBHelper? = null
 
-        fun getInstance(context: Context): DatabaseHelper {
+        fun getInstance(context: Context): DBHelper {
             if (instance == null) {
-                synchronized(DatabaseHelper::class.java) {
+                synchronized(DBHelper::class.java) {
                     if (instance == null) {
-                        instance = DatabaseHelper(context.applicationContext)
+                        instance = DBHelper(context.applicationContext)
                     }
                 }
             }
