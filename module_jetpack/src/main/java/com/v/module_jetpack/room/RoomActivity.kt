@@ -28,11 +28,20 @@ class RoomActivity : BaseTitleBarActivity() {
      * 插入用户
      */
     fun insertUserClick(view: View) {
+//        UserManager.getInstance().insertUser(
+//            User(12, "张三", 20, "1"),
+//            User(13, "李四", 60, "1"),
+//            User(14, "王五", 70, "0"),
+//            User(15, "赵六", 30, "0")
+//        )
+    }
+
+    /**
+     * 插入升级age类型之后的数据
+     */
+    fun insertUserAgeClick(view: View) {
         UserManager.getInstance().insertUser(
-            User(12, "张三", 20, "1"),
-            User(13, "李四", 60, "1"),
-            User(14, "王五", 70, "0"),
-            User(15, "赵六", 30, "0")
+            //User(16, "张三", "22", "1")
         )
     }
 
@@ -72,14 +81,15 @@ class RoomActivity : BaseTitleBarActivity() {
      * 插入Follow数据
      */
     fun insertFollowClick(view: View) {
-        val follow = Follow(12, 1)
-        FollowManager.getInstance().insertFollow(follow)
+//        val follow = Follow(12, 1)
+//        FollowManager.getInstance().insertFollow(follow)
+        FollowManager.getInstance().insertFollow(Follow(13, "2"))
     }
 
     /**
      * 获取所有的Follow数据
      */
-    fun getFollowClick(view: View){
+    fun getFollowClick(view: View) {
         val queryAllFollow = FollowManager.getInstance().getAllFollow()
         tv_room.text = JSON.toJSONString(queryAllFollow)
     }
@@ -88,7 +98,8 @@ class RoomActivity : BaseTitleBarActivity() {
      * 插入Follow新增type数据
      */
     fun insertFollowTypeClick(view: View) {
-        val follow = Follow(13, 1,"50")
-        FollowManager.getInstance().insertFollow(follow)
+//        val follow = Follow(13, 1, "50")
+//        FollowManager.getInstance().insertFollow(follow)
     }
+
 }
