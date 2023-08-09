@@ -47,6 +47,9 @@ class User {
     @ColumnInfo(name = "address")
     var address: String? = null
 
+//    @ColumnInfo(name = "job")
+//    var job: String = "" // 职业
+
     @Ignore
     constructor(){}
 

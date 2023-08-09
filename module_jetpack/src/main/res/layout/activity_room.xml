@@ -34,6 +34,34 @@
         android:onClick="getUserCountClick"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除所有用户数据"
+        android:onClick="deleteAllUserClick"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入Follow数据"
+        android:onClick="insertFollowClick"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入Follow新增type数据"
+        android:onClick="insertFollowTypeClick"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取全部Follow数据"
+        android:onClick="getFollowClick"
+        android:textAllCaps="false"/>
+
     <TextView
         android:id="@+id/tv_room"
         android:layout_width="wrap_content"

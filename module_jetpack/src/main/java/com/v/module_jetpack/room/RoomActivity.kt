@@ -5,7 +5,9 @@ import android.widget.Button
 import com.alibaba.fastjson.JSON
 import com.v.module_base.BaseTitleBarActivity
 import com.v.module_jetpack.R
+import com.v.module_jetpack.room.manager.FollowManager
 import com.v.module_jetpack.room.manager.UserManager
+import com.v.module_jetpack.room.table.Follow
 import com.v.module_jetpack.room.table.User
 import kotlinx.android.synthetic.main.activity_room.*
 
@@ -54,8 +56,39 @@ class RoomActivity : BaseTitleBarActivity() {
      */
     fun getUserCountClick(view: View) {
         val count = UserManager.getInstance().getCountByUserId(12)
-        if(view is Button){
+        if (view is Button) {
             view.text = "通过用户id获取count:$count"
         }
+    }
+
+    /**
+     * 删除所有用户数据
+     */
+    fun deleteAllUserClick(view: View) {
+        UserManager.getInstance().deleteAllUser()
+    }
+
+    /**
+     * 插入Follow数据
+     */
+    fun insertFollowClick(view: View) {
+        val follow = Follow(12, 1)
+        FollowManager.getInstance().insertFollow(follow)
+    }
+
+    /**
+     * 获取所有的Follow数据
+     */
+    fun getFollowClick(view: View){
+        val queryAllFollow = FollowManager.getInstance().getAllFollow()
+        tv_room.text = JSON.toJSONString(queryAllFollow)
+    }
+
+    /**
+     * 插入Follow新增type数据
+     */
+    fun insertFollowTypeClick(view: View) {
+        val follow = Follow(13, 1,"50")
+        FollowManager.getInstance().insertFollow(follow)
     }
 }
