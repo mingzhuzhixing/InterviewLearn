@@ -89,4 +89,11 @@
         android:onClick="expandRecyclerViewClick"
         android:text="可展开二级列表expand效果"
         android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ceilingRecyclerViewClick"
+        android:text="RecyclerView吸顶效果"
+        android:textAllCaps="false" />
 </LinearLayout>
