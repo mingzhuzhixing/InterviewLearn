@@ -16,6 +16,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="插入升级age后的数据"
+        android:onClick="insertUserAgeClick"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="通过用户id修改update用户数据"
         android:onClick="updateUserClick"
         android:textAllCaps="false"/>

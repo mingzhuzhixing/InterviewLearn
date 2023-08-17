@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.v.module_recyclerview.ceiling.CeilingActivity;
 import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.expand_recyclerview.ExpandRecyclerViewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
@@ -107,5 +108,13 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
      */
     public void expandRecyclerViewClick(View view) {
         startActivity(new Intent(this, ExpandRecyclerViewActivity.class));
+    }
+
+
+    /**
+     * 吸顶效果
+     */
+    public void ceilingRecyclerViewClick(View view) {
+        startActivity(new Intent(this, CeilingActivity.class));
     }
 }

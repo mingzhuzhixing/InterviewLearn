@@ -19,11 +19,11 @@ class Follow {
     @ColumnInfo(name = "id")
     var id: Int = 0
 
-    @ColumnInfo(name = "user_id")
-    var userId: Int = 0
+//    @ColumnInfo(name = "user_id")
+//    var userId: Int = 0
 
     @ColumnInfo(name = "status")
-    var status: Int = 0
+    var status: String? = null
 
     @ColumnInfo(name = "type")
     var type: String = ""
@@ -31,15 +31,15 @@ class Follow {
     constructor(){}
 
     @Ignore
-    constructor(userId: Int, status: Int) {
-        this.userId = userId
+    constructor(userId: Int, status: String) {
+//        this.userId = userId
         this.status = status
     }
 
     @Ignore
-    constructor(userId: Int, status: Int, type: String) {
-        this.userId = userId
+    constructor(userId: Int, status: String, type: String) {
+        //this.userId = userId
         this.status = status
-        this.type = type
+       this.type = type
     }
 }

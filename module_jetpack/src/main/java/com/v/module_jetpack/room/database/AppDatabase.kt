@@ -27,7 +27,7 @@ import com.v.module_jetpack.room.table.User
  */
 @Database(
     entities = [User::class, Address::class, Follow::class],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -51,7 +51,13 @@ abstract class AppDatabase : RoomDatabase() {
                     DB_NAME
                 )
                     .allowMainThreadQueries()
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+                    .addMigrations(
+                        MIGRATION_1_2,
+                        MIGRATION_2_3,
+                        MIGRATION_3_4,
+                        MIGRATION_4_5,
+                        MIGRATION_5_6
+                    )
                     .build()
             }
         }
@@ -108,6 +114,109 @@ abstract class AppDatabase : RoomDatabase() {
                 database.execSQL("ALTER TABLE follow ADD COLUMN type TEXT NOT NULL DEFAULT ''")
             }
         }
+
+        /**
+         * 版本号 5到6
+         * user 修改age 类型 为字符串
+         */
+        val MIGRATION_5_6: Migration = object : Migration(5, 6) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                Log.i("zm1234", "migrate: MIGRATION_5_6")
+
+                //创建临时表
+                database.execSQL(
+                    "CREATE TABLE follow_temp(id INTEGER PRIMARY KEY NOT NULL, status TEXT, type TEXT NOT NULL DEFAULT '')"
+                )
+                Log.i("zm1234", "migrate: MIGRATION_5_6 --1")
+                //迁移复制数据
+                database.execSQL("INSERT INTO follow_temp(id,type,status) " +
+                        "SELECT id,type,CAST(status as TEXT) FROM follow")
+                Log.i("zm1234", "migrate: MIGRATION_5_6 --2")
+                //删除旧表
+                database.execSQL("DROP TABLE follow")
+                Log.i("zm1234", "migrate: MIGRATION_5_6 --3")
+                //临时表改名
+                database.execSQL("ALTER TABLE follow_temp RENAME TO follow")
+                Log.i("zm1234", "migrate: MIGRATION_5_6 --4")
+            }
+        }
+
+
+        //成功
+//        val MIGRATION_5_6: Migration = object : Migration(5, 6) {
+//            override fun migrate(database: SupportSQLiteDatabase) {
+//                Log.i("zm1234", "migrate: MIGRATION_5_6")
+//
+//                //创建临时表
+//                database.execSQL(
+//                    "CREATE TABLE follow_temp(id INTEGER PRIMARY KEY NOT NULL, status TEXT)"
+//                )
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --1")
+//                //迁移复制数据
+//                database.execSQL("INSERT INTO follow_temp(id,status) " +
+//                        "SELECT id,CAST(status as TEXT) FROM follow")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --2")
+//                //删除旧表
+//                database.execSQL("DROP TABLE follow")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --3")
+//                //临时表改名
+//                database.execSQL("ALTER TABLE follow_temp RENAME TO follow")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --4")
+//            }
+//        }
+
+//        val MIGRATION_5_6: Migration = object : Migration(5, 6) {
+//            override fun migrate(database: SupportSQLiteDatabase) {
+//                Log.i("zm1234", "migrate: MIGRATION_5_6")
+//
+//                //创建临时表
+//                database.execSQL(
+//                    "CREATE TABLE follow_temp(id INTEGER PRIMARY KEY NOT NULL, user_id INTEGER , status TEXT, type TEXT)"
+//                )
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --1")
+//                //迁移复制数据
+//                database.execSQL("INSERT INTO follow_temp(id,user_id,status,type) " +
+//                        "SELECT id,user_id,CAST(status as TEXT),type FROM follow")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --2")
+//                //删除旧表
+//                database.execSQL("DROP TABLE follow")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --3")
+//                //临时表改名
+//                database.execSQL("ALTER TABLE follow_temp RENAME TO follow")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --4")
+//            }
+//        }
+
+//        val MIGRATION_5_6: Migration = object : Migration(5, 6) {
+//            override fun migrate(database: SupportSQLiteDatabase) {
+//                Log.i("zm1234", "migrate: MIGRATION_5_6")
+//                //创建一个新表
+////                database.execSQL("ALTER TABLE user ADD COLUMN age_new TEXT")
+////                database.execSQL("UPDATE user SET age_new=CAST(age AS TEXT)")
+////                database.execSQL("ALTER TABLE user DROP COLUMN age")
+////                database.execSQL("ALTER TABLE user RENAME age_new TO age")
+//
+//                //创建临时表
+//                database.execSQL(
+//                    "CREATE TABLE user_temp(id INTEGER PRIMARY KEY NOT NULL, user_name TEXT DEFAULT NULL, " +
+//                            "user_pwd TEXT DEFAULT NULL," +
+//                            "sex TEXT DEFAULT NULL, age TEXT DEFAULT NULL," +
+//                            "email TEXT DEFAULT NULL,school TEXT DEFAULT NULL," +
+//                            "phone TEXT DEFAULT NULL,address TEXT DEFAULT NULL)"
+//                )
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --1")
+//                //迁移复制数据
+//                database.execSQL("INSERT INTO user_temp(id,user_name,user_pwd,sex,age,email,school,phone,address) " +
+//                        "SELECT id,user_name,user_pwd,sex,CAST(age as TEXT),email,school,phone,address FROM user")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --2")
+//                //删除旧表
+//                database.execSQL("DROP TABLE user")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --3")
+//                //临时表改名
+//                database.execSQL("ALTER TABLE user_temp RENAME TO user")
+//                Log.i("zm1234", "migrate: MIGRATION_5_6 --4")
+//            }
+//        }
 
         //删除原有表中的字段 具体的版本迁移策略
 //        val MIGRATION_5_6: Migration = object : Migration(5, 6) {
