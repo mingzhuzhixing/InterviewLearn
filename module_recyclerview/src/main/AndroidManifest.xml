@@ -4,6 +4,13 @@
 
     <application>
         <activity
+            android:name=".StickyActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CeilingActivity"
             android:exported="false">
             <meta-data
@@ -33,6 +40,10 @@
         <activity android:name=".gridview.GridviewHorizontalActivity" />
         <activity android:name=".expand_recyclerview.ExpandRecyclerViewActivity" />
         <activity android:name=".ceiling.CeilingActivity" />
+        <activity android:name=".sticky_decoration.StickyActivity" />
+        <activity android:name=".sticky_decoration.StickyGridActivity" />
+        <activity android:name=".sticky_decoration.ExpandableActivity" />
+        <activity android:name=".sticky_decoration.PowerfulStickyActivity" />
     </application>
 
 </manifest>

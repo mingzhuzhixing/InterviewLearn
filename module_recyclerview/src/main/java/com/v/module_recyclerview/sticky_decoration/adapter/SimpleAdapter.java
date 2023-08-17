@@ -1,0 +1,96 @@
+package com.v.module_recyclerview.sticky_decoration.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.v.module_recyclerview.R;
+import com.v.module_recyclerview.sticky_decoration.bean.City;
+import com.v.module_utils.DensityUtils;
+
+import java.util.List;
+
+
+/**
+ * Created log
+ */
+
+public class SimpleAdapter extends RecyclerView.Adapter {
+    private List<City> mCities;
+    private Context mContext;
+
+    public SimpleAdapter(Context context, List<City> cities) {
+        mCities = cities;
+        mContext = context;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_city, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
+        ViewHolder holder = (ViewHolder) viewHolder;
+        if (mCities.size() > position) {
+            City city = mCities.get(position);
+            if (city.isExpanded()) {
+                ViewGroup.LayoutParams layoutParams = holder.mLlBg.getLayoutParams();
+                layoutParams.height = DensityUtils.dip2px(mContext, 100);
+                holder.mLlBg.setLayoutParams(layoutParams);
+                //holder.itemView.setVisibility(View.VISIBLE);
+                int i = position % 5 + 1;
+                if (i == 1) {
+                    holder.mIvCity.setImageResource(R.drawable.subject1);
+                    holder.mLlBg.setBackgroundColor(mContext.getResources().getColor(R.color.color_ff4d4d));
+                } else if (i == 2) {
+                    holder.mIvCity.setImageResource(R.drawable.subject2);
+                    holder.mLlBg.setBackgroundColor(mContext.getResources().getColor(R.color.green_3d));
+                } else if (i == 3) {
+                    holder.mIvCity.setImageResource(R.drawable.subject3);
+                    holder.mLlBg.setBackgroundColor(mContext.getResources().getColor(R.color.blue_2b));
+                } else if (i == 4) {
+                    holder.mIvCity.setImageResource(R.drawable.subject4);
+                    holder.mLlBg.setBackgroundColor(mContext.getResources().getColor(R.color.yellow_eb6d28));
+                } else {
+                    holder.mIvCity.setImageResource(R.drawable.subject5);
+                    holder.mLlBg.setBackgroundColor(mContext.getResources().getColor(R.color.black_25));
+                }
+                holder.mTvCity.setText(city.getName());
+            } else {
+                ViewGroup.LayoutParams layoutParams = holder.mLlBg.getLayoutParams();
+                layoutParams.height = DensityUtils.dip2px(mContext, 0);
+                holder.mLlBg.setLayoutParams(layoutParams);
+                //holder.itemView.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return mCities.size();
+    }
+
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView mIvCity;
+        TextView mTvCity;
+        TextView mTvBrief;
+        LinearLayout mLlBg;
+
+        ViewHolder(View view) {
+            super(view);
+            mIvCity = view.findViewById(R.id.iv_city);
+            mTvCity = view.findViewById(R.id.tv_city);
+            mTvBrief = view.findViewById(R.id.tv_brief);
+            mLlBg = view.findViewById(R.id.ll_bg);
+        }
+    }
+}

@@ -53,4 +53,6 @@ dependencies {
     implementation project(":module_glide")
 
     implementation deps["overscroll_decor"]
+
+    implementation project(":module_utils")
 }

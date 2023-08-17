@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.v.module_base.BaseTitleBarActivity;
 import com.v.module_recyclerview.ceiling.CeilingActivity;
 import com.v.module_recyclerview.drag_recyclerview.DragListviewActivity;
 import com.v.module_recyclerview.expand_recyclerview.ExpandRecyclerViewActivity;
@@ -16,16 +17,24 @@ import com.v.module_recyclerview.gridview.GridviewHorizontalActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.overscroll.OverscrollRecyclerViewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
+import com.v.module_recyclerview.sticky_decoration.PowerfulStickyActivity;
+import com.v.module_recyclerview.sticky_decoration.PowerfulStickyGridActivity;
+import com.v.module_recyclerview.sticky_decoration.StickyActivity;
+import com.v.module_recyclerview.sticky_decoration.StickyGridActivity;
 import com.v.module_recyclerview.swipe_refresh_layout.SwipeNoRefreshLayoutActivity;
 import com.v.module_recyclerview.swipe_refresh_layout.SwipeRefreshLayoutActivity;
 import com.v.module_recyclerview.waterfall_flow.WaterfallFlowActivity;
 
-public class RecyclerviewMainActivity extends AppCompatActivity {
+public class RecyclerviewMainActivity extends BaseTitleBarActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recyclerview_main);
+    protected int getLayoutId() {
+        return R.layout.activity_recyclerview_main;
+    }
+
+    @Override
+    protected String setTitle() {
+        return "Recyclerview";
     }
 
     public void snapHelper(View view) {
@@ -117,4 +126,40 @@ public class RecyclerviewMainActivity extends AppCompatActivity {
     public void ceilingRecyclerViewClick(View view) {
         startActivity(new Intent(this, CeilingActivity.class));
     }
+
+    /**
+     *
+     */
+    public void stickViewClick(View view) {
+        startActivity(new Intent(this, StickyActivity.class));
+    }
+
+    /**
+     *
+     */
+    public void stickGridViewClick(View view) {
+        startActivity(new Intent(this, StickyGridActivity.class));
+    }
+
+    /**
+     *
+     */
+    public void powerfulStickViewClick(View view) {
+        startActivity(new Intent(this, PowerfulStickyActivity.class));
+    }
+
+    /**
+     *
+     */
+    public void powerfulStickGridViewClick(View view) {
+        startActivity(new Intent(this, PowerfulStickyGridActivity.class));
+    }
+
+    /**
+     *
+     */
+    public void expandableStickViewClick(View view) {
+        startActivity(new Intent(this, ExpandRecyclerViewActivity.class));
+    }
+
 }

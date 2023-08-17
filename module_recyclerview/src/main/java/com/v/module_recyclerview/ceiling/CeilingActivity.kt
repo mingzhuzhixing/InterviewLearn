@@ -55,7 +55,7 @@ class CeilingActivity : BaseTitleBarActivity() {
     }
 
     private fun initRecyclerView() {
-        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recycler_view)
         recyclerView?.adapter = SampleAdapter2(beanList)
         recyclerView?.layoutManager = LinearLayoutManager(this)
         recyclerView?.layoutParams?.width = ViewGroup.LayoutParams.MATCH_PARENT
