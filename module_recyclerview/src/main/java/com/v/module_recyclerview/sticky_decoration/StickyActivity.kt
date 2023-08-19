@@ -15,6 +15,7 @@ import com.v.module_recyclerview.sticky_decoration_widget.StickyDecoration
 import com.v.module_recyclerview.sticky_decoration_widget.listener.OnGroupClickListener
 import com.v.module_recyclerview.sticky_decoration_widget.widget.MyRecyclerView
 import com.v.module_utils.DensityUtils
+import kotlinx.android.synthetic.main.activity_sticky_recycler_view.*
 
 /**
  * 文字悬浮
@@ -31,6 +32,11 @@ class StickyActivity : BaseTitleBarActivity() {
 
     override fun initData() {
         super.initData()
+        btn_add.visibility = View.VISIBLE
+        btn_clean.visibility = View.VISIBLE
+        btn_refresh.visibility = View.VISIBLE
+        btn_delete.visibility = View.VISIBLE
+        btn_delete_list.visibility = View.VISIBLE
 
         //模拟数据
         dataList.addAll(CityUtil.getCityList())

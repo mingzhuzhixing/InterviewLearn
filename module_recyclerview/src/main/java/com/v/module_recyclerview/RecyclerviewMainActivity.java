@@ -17,6 +17,7 @@ import com.v.module_recyclerview.gridview.GridviewHorizontalActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
 import com.v.module_recyclerview.overscroll.OverscrollRecyclerViewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
+import com.v.module_recyclerview.sticky_decoration.ExpandableActivity;
 import com.v.module_recyclerview.sticky_decoration.PowerfulStickyActivity;
 import com.v.module_recyclerview.sticky_decoration.PowerfulStickyGridActivity;
 import com.v.module_recyclerview.sticky_decoration.StickyActivity;
@@ -159,7 +160,7 @@ public class RecyclerviewMainActivity extends BaseTitleBarActivity {
      *
      */
     public void expandableStickViewClick(View view) {
-        startActivity(new Intent(this, ExpandRecyclerViewActivity.class));
+        startActivity(new Intent(this, ExpandableActivity.class));
     }
 
 }

@@ -1,8 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions' //使用引入布局xml文件的插件
 }
 apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion androidV.compileSdkVersion
 
