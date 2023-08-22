@@ -1,10 +1,8 @@
 package com.v.module_recyclerview;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.v.module_base.BaseTitleBarActivity;
@@ -15,6 +13,7 @@ import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.gridview.GridviewFullActivity;
 import com.v.module_recyclerview.gridview.GridviewHorizontalActivity;
 import com.v.module_recyclerview.listview.ListviewActivity;
+import com.v.module_recyclerview.move_top_bottom.MoveTopBottomActivity;
 import com.v.module_recyclerview.overscroll.OverscrollRecyclerViewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
 import com.v.module_recyclerview.sticky_decoration.PowerfulStickyActivity;
@@ -160,6 +159,13 @@ public class RecyclerviewMainActivity extends BaseTitleBarActivity {
      */
     public void expandableStickViewClick(View view) {
         startActivity(new Intent(this, ExpandRecyclerViewActivity.class));
+    }
+
+    /**
+     *
+     */
+    public void removeTopBottomClick(View view) {
+        startActivity(new Intent(this, MoveTopBottomActivity.class));
     }
 
 }
