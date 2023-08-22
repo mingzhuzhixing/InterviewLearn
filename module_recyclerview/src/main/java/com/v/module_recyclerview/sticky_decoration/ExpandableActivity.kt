@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.v.module_base.BaseTitleBarActivity
 import com.v.module_recyclerview.R
 import com.v.module_recyclerview.sticky_decoration.adapter.SimpleAdapter
 import com.v.module_recyclerview.sticky_decoration.bean.City
@@ -16,19 +17,29 @@ import com.v.module_recyclerview.sticky_decoration.utils.CityUtil
 import com.v.module_recyclerview.sticky_decoration_widget.listener.PowerGroupListener
 import com.v.module_recyclerview.sticky_decoration_widget.widget.MyRecyclerView
 import com.v.module_utils.DensityUtils
+import kotlinx.android.synthetic.main.activity_sticky_recycler_view.*
 import java.util.ArrayList
 
 /**
  * 可展开的recyclerview View悬浮
  */
-class ExpandableActivity : AppCompatActivity() {
+class ExpandableActivity : BaseTitleBarActivity() {
     var mAdapter: RecyclerView.Adapter<*>? = null
     var dataList: MutableList<City> = ArrayList()
     var decoration: PowerfulStickyDecoration? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sticky_recycler_view)
+    override fun setTitle(): String {
+        return "可展开的recyclerview View悬浮"
+    }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_sticky_recycler_view;
+    }
+
+    override fun processLogical() {
+        super.processLogical()
+        ll_option.visibility = View.GONE
+
         initView()
     }
 
@@ -39,48 +50,50 @@ class ExpandableActivity : AppCompatActivity() {
 
         //------------- PowerfulStickyDecoration 使用部分  ----------------
         decoration = PowerfulStickyDecoration.Builder
-                .init(object : PowerGroupListener {
-                    override fun getGroupName(position: Int): String? {
-                        //获取组名，用于判断是否是同一组
-                        return if (dataList.size > position) {
-                            dataList[position].province
-                        } else null
-                    }
+            .init(object : PowerGroupListener {
+                override fun getGroupName(position: Int): String? {
+                    //获取组名，用于判断是否是同一组
+                    return if (dataList.size > position) {
+                        dataList[position].province
+                    } else null
+                }
 
-                    override fun getGroupView(position: Int): View? {
-                        //获取自定定义的组View
-                        return if (dataList.size > position) {
-                            val view = layoutInflater.inflate(R.layout.city_group, null, false)
-                            (view.findViewById<View>(R.id.tv) as TextView).text = dataList[position].province
-                            val imageView = view.findViewById<View>(R.id.iv) as ImageView
-                            imageView.setImageResource(dataList[position].icon)
-                            view
-                        } else {
-                            null
-                        }
-                    }
-                })
-                .setCacheEnable(true)
-                .setGroupHeight(DensityUtils.dip2px(this@ExpandableActivity, 40f))
-                .setOnClickListener { position, id ->
-                    if (dataList.size > position) {
-                        //修改数据
-                        changeExpandedState(position)
-                        val city = dataList[position]
-                        //修改悬浮窗
+                override fun getGroupView(position: Int): View? {
+                    //获取自定定义的组View
+                    return if (dataList.size > position) {
                         val view = layoutInflater.inflate(R.layout.city_group, null, false)
-                        (view.findViewById<View>(R.id.tv) as TextView).text = dataList[position].province
+                        (view.findViewById<View>(R.id.tv) as TextView).text =
+                            dataList[position].province
                         val imageView = view.findViewById<View>(R.id.iv) as ImageView
                         imageView.setImageResource(dataList[position].icon)
-                        val ivExpanded = view.findViewById<View>(R.id.iv_expanded) as ImageView
-                        val rotation = if (city.isExpanded) 0 else 180
-                        ivExpanded.rotation = rotation.toFloat()
-                        //修改数据后，刷新指定的悬浮窗
-                        decoration!!.notifyRedraw(mRecyclerView, view, position)
-                        mAdapter!!.notifyDataSetChanged()
+                        view
+                    } else {
+                        null
                     }
                 }
-                .build()
+            })
+            .setCacheEnable(true)
+            .setGroupHeight(DensityUtils.dip2px(this@ExpandableActivity, 40f))
+            .setOnClickListener { position, id ->
+                if (dataList.size > position) {
+                    //修改数据
+                    changeExpandedState(position)
+                    val city = dataList[position]
+                    //修改悬浮窗
+                    val view = layoutInflater.inflate(R.layout.city_group, null, false)
+                    (view.findViewById<View>(R.id.tv) as TextView).text =
+                        dataList[position].province
+                    val imageView = view.findViewById<View>(R.id.iv) as ImageView
+                    imageView.setImageResource(dataList[position].icon)
+                    val ivExpanded = view.findViewById<View>(R.id.iv_expanded) as ImageView
+                    val rotation = if (city.isExpanded) 0 else 180
+                    ivExpanded.rotation = rotation.toFloat()
+                    //修改数据后，刷新指定的悬浮窗
+                    decoration!!.notifyRedraw(mRecyclerView, view, position)
+                    mAdapter!!.notifyDataSetChanged()
+                }
+            }
+            .build()
         //----------------                 -------------
         //下面是平时的RecyclerView操作
 

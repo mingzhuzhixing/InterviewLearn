@@ -1,7 +1,6 @@
 package com.v.module_recyclerview.sticky_decoration
 
 import android.graphics.Color
-import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -9,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.v.module_recyclerview.sticky_decoration.bean.City
 import com.v.module_recyclerview.sticky_decoration_widget.PowerfulStickyDecoration
 import com.v.module_recyclerview.sticky_decoration.utils.CityUtil
@@ -20,22 +17,32 @@ import com.v.module_utils.DensityUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.v.module_base.BaseTitleBarActivity
 import com.v.module_recyclerview.R
 import com.v.module_recyclerview.sticky_decoration_widget.widget.MyRecyclerView
+import kotlinx.android.synthetic.main.activity_sticky_recycler_view.*
 import java.util.ArrayList
 
 /**
  * 自定义View悬浮
  */
-class PowerfulStickyActivity : AppCompatActivity() {
+class PowerfulStickyActivity : BaseTitleBarActivity() {
 
     var mAdapter: QuickAdapter? = null
     var dataList: MutableList<City> = ArrayList()
     var decoration: PowerfulStickyDecoration? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sticky_recycler_view)
+    override fun setTitle(): String {
+        return "自定义View悬浮"
+    }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_sticky_recycler_view
+    }
+
+    override fun processLogical() {
+        super.processLogical()
+        btn_refresh.visibility = View.VISIBLE
         initView()
     }
 
@@ -99,6 +106,8 @@ class PowerfulStickyActivity : AppCompatActivity() {
         mRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         mRecyclerView.addItemDecoration(decoration!!)
         mRecyclerView.adapter = mAdapter
+
+        mAdapter?.setNewData(dataList)
     }
 
     class QuickAdapter : BaseQuickAdapter<City, BaseViewHolder>(R.layout.item_recycler_view) {

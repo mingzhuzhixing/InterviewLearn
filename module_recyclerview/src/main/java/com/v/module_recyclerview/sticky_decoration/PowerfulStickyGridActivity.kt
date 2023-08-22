@@ -1,16 +1,15 @@
 package com.v.module_recyclerview.sticky_decoration
 
 import android.graphics.Color
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.v.module_base.BaseTitleBarActivity
 import com.v.module_recyclerview.R
 import com.v.module_recyclerview.sticky_decoration.bean.City
 import com.v.module_recyclerview.sticky_decoration_widget.PowerfulStickyDecoration
@@ -18,24 +17,36 @@ import com.v.module_recyclerview.sticky_decoration.utils.CityUtil
 import com.v.module_recyclerview.sticky_decoration_widget.listener.PowerGroupListener
 import com.v.module_recyclerview.sticky_decoration_widget.widget.MyRecyclerView
 import com.v.module_utils.DensityUtils
+import kotlinx.android.synthetic.main.activity_sticky_recycler_view.*
 import java.util.ArrayList
 
 /**
  * 自定义View悬浮
  */
-class PowerfulStickyGridActivity : AppCompatActivity() {
+class PowerfulStickyGridActivity : BaseTitleBarActivity() {
+
     var mAdapter: RecyclerView.Adapter<*>? = null
     var dataList: MutableList<City> = ArrayList()
     var decoration: PowerfulStickyDecoration? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sticky_recycler_view)
+
+    override fun setTitle(): String {
+        return "自定义View悬浮"
+    }
+
+    override fun getLayoutId(): Int {
+       return R.layout.activity_sticky_recycler_view
+    }
+
+    override fun processLogical() {
+        super.processLogical()
+        btn_refresh.visibility = View.VISIBLE
         initView()
     }
 
     private fun initView() {
         val mRecyclerView: MyRecyclerView = findViewById(R.id.my_recycler_view)
         //模拟数据
+        dataList.addAll(CityUtil.getCityList())
         dataList.addAll(CityUtil.getCityList())
         dataList.addAll(CityUtil.getCityList())
 

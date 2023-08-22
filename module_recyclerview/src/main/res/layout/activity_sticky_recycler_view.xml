@@ -11,6 +11,7 @@
         android:layout_height="match_parent" />
 
     <LinearLayout
+        android:id="@+id/ll_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -18,34 +19,49 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onAdd"
-            android:text="Add" />
+            android:text="Add"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
         <Button
+            android:id="@+id/btn_clean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClean"
-            android:text="onClean" />
+            android:text="onClean"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
         <Button
+            android:id="@+id/btn_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRefresh"
-            android:text="onRefresh" />
+            android:text="onRefresh"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
         <Button
+            android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onDelete"
-            android:text="Delete" />
+            android:text="Delete"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
         <Button
+            android:id="@+id/btn_delete_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onDeleteLast"
-            android:text="Delete Last" />
+            android:text="Delete Last"
+            android:visibility="gone"
+            tools:visibility="visible"/>
     </LinearLayout>
 
 </RelativeLayout>

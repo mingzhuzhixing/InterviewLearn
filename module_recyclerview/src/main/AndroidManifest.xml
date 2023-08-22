@@ -45,6 +45,7 @@
         <activity android:name=".sticky_decoration.ExpandableActivity" />
         <activity android:name=".sticky_decoration.PowerfulStickyActivity" />
         <activity android:name=".move_top_bottom.MoveTopBottomActivity" />
+        <activity android:name=".sticky_decoration.PowerfulStickyGridActivity" />
     </application>
 
 </manifest>
