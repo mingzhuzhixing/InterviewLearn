@@ -2,21 +2,17 @@ package com.v.module_recyclerview.overscroll;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.animation.TranslateAnimation;
 
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
-import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
 import com.v.module_recyclerview.decoration.VerticalDividerItemDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_recyclerview.listview.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +21,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.everything.android.ui.overscroll.HorizontalOverScrollBounceEffectDecorator;
-import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
 import me.everything.android.ui.overscroll.adapters.RecyclerViewOverScrollDecorAdapter;
 
 /**
@@ -41,9 +36,9 @@ public class OverscrollRecyclerViewActivity extends AppCompatActivity {
     @BindView(R2.id.recyclerview3)
     public RecyclerView recyclerView3;
 
-    private ListviewAdapter mAdapter;
-    private ListviewAdapter mAdapter2;
-    private ListviewAdapter mAdapter3;
+    private RecyclerViewAdapter mAdapter;
+    private RecyclerViewAdapter mAdapter2;
+    private RecyclerViewAdapter mAdapter3;
     private Unbinder unbinder;
 
     RecyclerView.ItemDecoration itemDecoration;
@@ -75,7 +70,7 @@ public class OverscrollRecyclerViewActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(itemDecoration);
-        mAdapter = new ListviewAdapter(R.layout.item_listview_hor);
+        mAdapter = new RecyclerViewAdapter(R.layout.item_listview_hor);
         recyclerView.setAdapter(mAdapter);
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -139,7 +134,7 @@ public class OverscrollRecyclerViewActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView2.setLayoutManager(layoutManager2);
         recyclerView2.addItemDecoration(itemDecoration);
-        mAdapter2 = new ListviewAdapter(R.layout.item_listview_hor);
+        mAdapter2 = new RecyclerViewAdapter(R.layout.item_listview_hor);
         recyclerView2.setAdapter(mAdapter2);
     }
 
@@ -151,7 +146,7 @@ public class OverscrollRecyclerViewActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager3 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView3.setLayoutManager(layoutManager3);
         recyclerView3.addItemDecoration(itemDecoration);
-        mAdapter3 = new ListviewAdapter(R.layout.item_listview_hor);
+        mAdapter3 = new RecyclerViewAdapter(R.layout.item_listview_hor);
         recyclerView3.setAdapter(mAdapter3);
     }
 

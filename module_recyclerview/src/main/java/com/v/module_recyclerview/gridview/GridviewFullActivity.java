@@ -1,7 +1,6 @@
 package com.v.module_recyclerview.gridview;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
-import com.v.module_recyclerview.decoration.GridItemCenterDecoration;
 import com.v.module_recyclerview.decoration.GridItemDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
-import com.v.module_utils.DensityUtils;
 import com.v.module_utils.ScreenUtils;
 
 import java.util.ArrayList;

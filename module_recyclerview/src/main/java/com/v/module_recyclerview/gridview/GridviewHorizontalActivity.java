@@ -11,10 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
-import com.v.module_recyclerview.decoration.GridItemCenterDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
-import com.v.module_utils.DensityUtils;
-import com.v.module_utils.ScreenUtils;
+import com.v.module_recyclerview.listview.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +46,7 @@ public class GridviewHorizontalActivity extends AppCompatActivity {
         int spanCount = mList.size();
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, spanCount, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(gridLayoutManager);
-        ListviewAdapter mAdapter = new ListviewAdapter(R.layout.item_gridview_2);
+        RecyclerViewAdapter mAdapter = new RecyclerViewAdapter(R.layout.item_gridview_2);
         recyclerView.setAdapter(mAdapter);
         mAdapter.setList(mList);
     }

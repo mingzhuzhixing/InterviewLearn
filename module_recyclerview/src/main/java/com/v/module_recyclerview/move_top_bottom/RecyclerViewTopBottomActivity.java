@@ -14,7 +14,7 @@ import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
 import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
 import com.v.module_recyclerview.decoration.VerticalDividerItemDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_recyclerview.listview.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +24,12 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 @SuppressLint("NonConstantResourceId")
-public class MoveTopBottomActivity extends AppCompatActivity {
+public class RecyclerViewTopBottomActivity extends AppCompatActivity {
 
     @BindView(R2.id.recyclerview)
     public RecyclerView recyclerView;
 
-    private ListviewAdapter mAdapter;
+    private RecyclerViewAdapter mAdapter;
     private Unbinder unbinder;
 
     private static final String KEY_ORIENTATION = "key_orientation";
@@ -40,7 +40,7 @@ public class MoveTopBottomActivity extends AppCompatActivity {
     private int mOrientation = LinearLayoutManager.VERTICAL;
 
     public static Intent newInstance(Context context, int orientation) {
-        Intent intent = new Intent(context, MoveTopBottomActivity.class);
+        Intent intent = new Intent(context, RecyclerViewTopBottomActivity.class);
         intent.putExtra(KEY_ORIENTATION, orientation);
         return intent;
     }
@@ -68,7 +68,7 @@ public class MoveTopBottomActivity extends AppCompatActivity {
                     .sizeResId(R.dimen.y2)
                     .build();
             recyclerView.addItemDecoration(itemDecoration);
-            mAdapter = new ListviewAdapter(R.layout.item_listview_hor);
+            mAdapter = new RecyclerViewAdapter(R.layout.item_listview_hor);
         } else {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(layoutManager);
@@ -78,7 +78,7 @@ public class MoveTopBottomActivity extends AppCompatActivity {
                     .sizeResId(R.dimen.y2)
                     .build();
             recyclerView.addItemDecoration(itemDecoration);
-            mAdapter = new ListviewAdapter(R.layout.item_listview_ver);
+            mAdapter = new RecyclerViewAdapter(R.layout.item_listview_ver);
         }
 
         recyclerView.setAdapter(mAdapter);

@@ -12,8 +12,9 @@ import com.v.module_recyclerview.expand_recyclerview.ExpandRecyclerViewActivity;
 import com.v.module_recyclerview.gridview.GridviewActivity;
 import com.v.module_recyclerview.gridview.GridviewFullActivity;
 import com.v.module_recyclerview.gridview.GridviewHorizontalActivity;
-import com.v.module_recyclerview.listview.ListviewActivity;
-import com.v.module_recyclerview.move_top_bottom.MoveTopBottomActivity;
+import com.v.module_recyclerview.listview.RecyclerViewActivity;
+import com.v.module_recyclerview.move_top_bottom.ListviewTopBottomActivity;
+import com.v.module_recyclerview.move_top_bottom.RecyclerViewTopBottomActivity;
 import com.v.module_recyclerview.overscroll.OverscrollRecyclerViewActivity;
 import com.v.module_recyclerview.snap_helper.SnapHelperActivity;
 import com.v.module_recyclerview.sticky_decoration.ExpandableActivity;
@@ -45,14 +46,14 @@ public class RecyclerviewMainActivity extends BaseTitleBarActivity {
      * 竖向listview
      */
     public void listviewVerClick(View view) {
-        startActivity(ListviewActivity.newInstance(this, LinearLayoutManager.VERTICAL));
+        startActivity(RecyclerViewActivity.newInstance(this, LinearLayoutManager.VERTICAL));
     }
 
     /**
      * 横向listview
      */
     public void listviewHorClick(View view) {
-        startActivity(ListviewActivity.newInstance(this, LinearLayoutManager.HORIZONTAL));
+        startActivity(RecyclerViewActivity.newInstance(this, LinearLayoutManager.HORIZONTAL));
     }
 
     /**
@@ -166,7 +167,14 @@ public class RecyclerviewMainActivity extends BaseTitleBarActivity {
      *
      */
     public void removeTopBottomClick(View view) {
-        startActivity(new Intent(this, MoveTopBottomActivity.class));
+        startActivity(new Intent(this, RecyclerViewTopBottomActivity.class));
+    }
+
+    /**
+     *
+     */
+    public void listviewRemoveTopBottomClick(View view) {
+        startActivity(new Intent(this, ListviewTopBottomActivity.class));
     }
 
 }

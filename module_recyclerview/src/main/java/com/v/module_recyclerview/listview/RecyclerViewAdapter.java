@@ -7,11 +7,11 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.v.module_recyclerview.R;
 
 /**
- * listview 适配器
+ * RecyclerView 适配器
  */
-public class ListviewAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public class RecyclerViewAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
-    public ListviewAdapter(int layoutResId) {
+    public RecyclerViewAdapter(int layoutResId) {
         super(layoutResId);
     }
 

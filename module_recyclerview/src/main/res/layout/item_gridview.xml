@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="80dp"
     android:layout_height="wrap_content"
-    tools:context=".listview.ListviewActivity">
+    tools:context=".listview.RecyclerViewActivity">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/iv_icon"

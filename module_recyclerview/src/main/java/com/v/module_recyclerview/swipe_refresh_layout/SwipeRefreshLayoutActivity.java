@@ -5,13 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.v.module_base.BaseTitleBarActivity;
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_recyclerview.listview.RecyclerViewAdapter;
 import com.v.module_recyclerview.swipe_refresh_layout.refreshview.OnRefreshTextHelper;
-import com.v.module_recyclerview.swipe_refresh_layout.refreshview.VerticalMouldingHeader;
 import com.v.module_recyclerview.swipe_refresh_layout.refreshview.VerticalMouldingHeaderJson;
 
 import java.util.ArrayList;
@@ -23,7 +21,7 @@ import java.util.List;
 public class SwipeRefreshLayoutActivity extends BaseTitleBarActivity {
     private RecyclerView mRecyclerView;
     private SmartRefreshLayout mSwipeRefreshLayout;
-    private ListviewAdapter mAdapter;
+    private RecyclerViewAdapter mAdapter;
 
     @Override
     protected int getLayoutId() {
@@ -68,7 +66,7 @@ public class SwipeRefreshLayoutActivity extends BaseTitleBarActivity {
                 .sizeResId(R.dimen.y2)
                 .build();
         mRecyclerView.addItemDecoration(itemDecoration);
-        mAdapter = new ListviewAdapter(R.layout.item_listview_ver);
+        mAdapter = new RecyclerViewAdapter(R.layout.item_listview_ver);
         mRecyclerView.setAdapter(mAdapter);
     }
 }

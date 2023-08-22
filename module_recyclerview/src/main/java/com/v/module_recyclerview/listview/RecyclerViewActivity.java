@@ -22,12 +22,12 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 @SuppressLint("NonConstantResourceId")
-public class ListviewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends AppCompatActivity {
 
     @BindView(R2.id.recyclerview)
     public RecyclerView recyclerView;
 
-    private ListviewAdapter mAdapter;
+    private RecyclerViewAdapter mAdapter;
     private Unbinder unbinder;
 
     private static final String KEY_ORIENTATION = "key_orientation";
@@ -38,7 +38,7 @@ public class ListviewActivity extends AppCompatActivity {
     private int mOrientation = LinearLayoutManager.VERTICAL;
 
     public static Intent newInstance(Context context, int orientation) {
-        Intent intent = new Intent(context, ListviewActivity.class);
+        Intent intent = new Intent(context, RecyclerViewActivity.class);
         intent.putExtra(KEY_ORIENTATION, orientation);
         return intent;
     }
@@ -66,7 +66,7 @@ public class ListviewActivity extends AppCompatActivity {
                     .sizeResId(R.dimen.y2)
                     .build();
             recyclerView.addItemDecoration(itemDecoration);
-            mAdapter = new ListviewAdapter(R.layout.item_listview_hor);
+            mAdapter = new RecyclerViewAdapter(R.layout.item_listview_hor);
         } else {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(layoutManager);
@@ -76,7 +76,7 @@ public class ListviewActivity extends AppCompatActivity {
                     .sizeResId(R.dimen.y2)
                     .build();
             recyclerView.addItemDecoration(itemDecoration);
-            mAdapter = new ListviewAdapter(R.layout.item_listview_ver);
+            mAdapter = new RecyclerViewAdapter(R.layout.item_listview_ver);
         }
 
         recyclerView.setAdapter(mAdapter);

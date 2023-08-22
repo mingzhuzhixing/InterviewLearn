@@ -30,7 +30,7 @@
             android:name=".gridview.GridviewActivity"
             android:exported="true" />
         <activity
-            android:name=".listview.ListviewActivity"
+            android:name=".listview.RecyclerViewActivity"
             android:exported="true" />
         <activity android:name=".RecyclerviewMainActivity" />
         <activity android:name=".snap_helper.SnapHelperActivity" />
@@ -44,8 +44,9 @@
         <activity android:name=".sticky_decoration.StickyGridActivity" />
         <activity android:name=".sticky_decoration.ExpandableActivity" />
         <activity android:name=".sticky_decoration.PowerfulStickyActivity" />
-        <activity android:name=".move_top_bottom.MoveTopBottomActivity" />
+        <activity android:name=".move_top_bottom.RecyclerViewTopBottomActivity" />
         <activity android:name=".sticky_decoration.PowerfulStickyGridActivity" />
+        <activity android:name=".move_top_bottom.ListviewTopBottomActivity" />
     </application>
 
 </manifest>

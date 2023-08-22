@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
 import com.v.module_recyclerview.decoration.GridItemCenterDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_recyclerview.listview.RecyclerViewAdapter;
 import com.v.module_utils.DensityUtils;
 import com.v.module_utils.ScreenUtils;
 
@@ -29,7 +29,7 @@ public class GridviewActivity extends AppCompatActivity {
     @BindView(R2.id.recyclerview)
     public RecyclerView recyclerView;
 
-    private ListviewAdapter mAdapter;
+    private RecyclerViewAdapter mAdapter;
     private Unbinder unbinder;
 
     @Override
@@ -51,7 +51,7 @@ public class GridviewActivity extends AppCompatActivity {
         //设置分割线 item居中显示
         float space = ScreenUtils.getScreenWidthPixels(this) - DensityUtils.dip2px(this, 80) * spanCount;
         recyclerView.addItemDecoration(new GridItemCenterDecoration(spanCount, (int) (space / (spanCount - 1)), false));
-        mAdapter = new ListviewAdapter(R.layout.item_gridview);
+        mAdapter = new RecyclerViewAdapter(R.layout.item_gridview);
         recyclerView.setAdapter(mAdapter);
     }
 

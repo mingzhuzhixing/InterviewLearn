@@ -14,7 +14,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
+import com.v.module_recyclerview.listview.RecyclerViewAdapter;
 import com.v.module_recyclerview.swipe_refresh_layout.refreshview.OnRefreshTextHelper;
 import com.v.module_recyclerview.swipe_refresh_layout.refreshview.VerticalMouldingHeaderJson;
 import com.v.module_recyclerview.widget.MyRecyclerView;
@@ -29,8 +29,8 @@ public class SwipeNoRefreshLayoutActivity extends AppCompatActivity implements O
     private MyRecyclerView mRecyclerView;
     private MyRecyclerView mRvTodayPlan;
     private SmartRefreshLayout mSwipeRefreshLayout;
-    private ListviewAdapter mAdapter;
-    private ListviewAdapter mTodayAdapter;
+    private RecyclerViewAdapter mAdapter;
+    private RecyclerViewAdapter mTodayAdapter;
     private final List<String> allList = new ArrayList<>();
     private final List<String> mTodayList = new ArrayList<>();
 
@@ -70,13 +70,13 @@ public class SwipeNoRefreshLayoutActivity extends AppCompatActivity implements O
                 .sizeResId(R.dimen.y2)
                 .build();
         mRecyclerView.addItemDecoration(itemDecoration);
-        mAdapter = new ListviewAdapter(R.layout.item_listview_ver_2);
+        mAdapter = new RecyclerViewAdapter(R.layout.item_listview_ver_2);
         mRecyclerView.setAdapter(mAdapter);
 
         mRvTodayPlan.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         //设置分割线
         mRvTodayPlan.addItemDecoration(itemDecoration);
-        mTodayAdapter = new ListviewAdapter(R.layout.item_listview_ver_3);
+        mTodayAdapter = new RecyclerViewAdapter(R.layout.item_listview_ver_3);
         mRvTodayPlan.setAdapter(mTodayAdapter);
     }
 

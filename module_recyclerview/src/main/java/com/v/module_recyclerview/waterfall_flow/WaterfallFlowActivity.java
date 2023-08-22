@@ -1,7 +1,6 @@
 package com.v.module_recyclerview.waterfall_flow;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -10,9 +9,6 @@ import android.os.Bundle;
 
 import com.v.module_recyclerview.R;
 import com.v.module_recyclerview.R2;
-import com.v.module_recyclerview.decoration.HorizontalDividerItemDecoration;
-import com.v.module_recyclerview.decoration.VerticalDividerItemDecoration;
-import com.v.module_recyclerview.listview.ListviewAdapter;
 
 import java.util.Arrays;
 import java.util.List;

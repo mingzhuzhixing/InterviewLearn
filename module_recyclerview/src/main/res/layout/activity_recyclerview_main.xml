@@ -143,6 +143,13 @@
             android:onClick="removeTopBottomClick"
             android:text="RemoveTopBottom"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="listviewRemoveTopBottomClick"
+            android:text="ListviewRemoveTopBottom"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
