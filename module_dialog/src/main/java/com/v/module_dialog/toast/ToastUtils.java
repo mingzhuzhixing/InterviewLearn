@@ -76,6 +76,10 @@ public final class ToastUtils {
      */
     private static Toast toast;
 
+    public static void showToast(int stringId) {
+        showToast(getApp().getString(stringId));
+    }
+
     @SuppressLint("ShowToast")
     public static void showToast(String content) {
         DialogUtils.checkMainThread();

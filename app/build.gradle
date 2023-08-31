@@ -101,5 +101,7 @@ dependencies {
     implementation project(":module_jetpack")
     implementation project(":module_viewpager")
     implementation project(":module_optimize")
+    implementation project(":module_camera")
+    implementation project(":module_permission")
 //    implementation project(":module_compose")
 }

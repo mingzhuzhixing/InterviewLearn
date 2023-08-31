@@ -13,9 +13,11 @@ import com.v.module_android_basic.AndroidBasicActivity;
 import com.v.module_animator.AnimatorMainActivity;
 import com.v.module_calendar.CalendarMainActivity;
 //import com.v.module_compose.MainComposeActivity;
+import com.v.module_camera.CameraMainActivity;
 import com.v.module_flutter.FlutterMainActivity;
 import com.v.module_jetpack.JetpackMainActivity;
 import com.v.module_optimize.MainOptimizeActivity;
+import com.v.module_permission.PermissionMainActivity;
 import com.v.module_picker_view.MainPickerViewActivity;
 import com.v.module_protobuf.ProtobufMainActivity;
 import com.v.module_viewpager.MainViewpagerActivity;
@@ -242,6 +244,20 @@ public class MainActivity extends AppCompatActivity {
      */
     public void composeClick(View view) {
         //startActivity(new Intent(this, MainComposeActivity.class));
+    }
+
+    /**
+     * compose 组件
+     */
+    public void cameraClick(View view) {
+        startActivity(new Intent(this, CameraMainActivity.class));
+    }
+
+    /**
+     * 权限 组件
+     */
+    public void permissionClick(View view) {
+        startActivity(new Intent(this, PermissionMainActivity.class));
     }
 
     @Override
