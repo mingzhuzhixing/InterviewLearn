@@ -24,6 +24,7 @@ import com.v.module_thread.thread.ThreadPool;
 
 import comv.module_network.HttpHelper;
 import comv.module_network.xutils.XutilsProcessor;
+//import io.realm.Realm;
 //import io.flutter.embedding.engine.FlutterEngine;
 //import io.flutter.embedding.engine.FlutterEngineCache;
 //import io.flutter.embedding.engine.dart.DartExecutor;
@@ -65,6 +66,9 @@ public class MyApplication extends BaseApplication {
         //初始化线程
         ThreadPool.startup();
         initFlutterEngine();
+
+        //realm数据库使用之前的初始化
+//        Realm.init(this);
 
         //浮窗初始化
 //        AppHelper helper = AppHelper.builder()

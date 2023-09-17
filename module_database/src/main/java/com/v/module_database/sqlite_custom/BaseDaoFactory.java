@@ -1,4 +1,4 @@
-package com.v.module_database;
+package com.v.module_database.sqlite_custom;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;

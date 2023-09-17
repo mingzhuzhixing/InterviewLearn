@@ -1,4 +1,4 @@
-package com.v.module_database.annotion;
+package com.v.module_database.sqlite_custom.annotion;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

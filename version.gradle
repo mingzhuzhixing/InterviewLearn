@@ -96,6 +96,9 @@ def deps = [
         ijkplayer_armv7a       : "tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3",
         ijkplayer_armv5        : "tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3",
         ijkplayer_x86          : "tv.danmaku.ijk.media:ijkplayer-x86:0.8.3",
+
+        //realm 数据库
+        realm                  : "io.realm:realm-gradle-plugin:10.0.1",
 ]
 
 def composes = [
