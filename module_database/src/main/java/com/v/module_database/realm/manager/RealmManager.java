@@ -1,7 +1,9 @@
 package com.v.module_database.realm.manager;
 
-//import io.realm.Realm;
-//import io.realm.RealmConfiguration;
+import android.util.Log;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 /**
  * ClassName: RealmManager
@@ -25,11 +27,11 @@ public class RealmManager {
         return SingletonFactory.instance;
     }
 
-//    public Realm getRealm() {
-//        RealmConfiguration config = new RealmConfiguration.Builder()
-//                .name(realm_name) //文件名
-//                .schemaVersion(1)
-//                .build();
-//        return Realm.getInstance(config);
-//    }
+    public Realm getRealm() {
+        RealmConfiguration config = new RealmConfiguration.Builder()
+                .name(realm_name) //文件名
+                .schemaVersion(1)
+                .build();
+        return Realm.getInstance(config);
+    }
 }

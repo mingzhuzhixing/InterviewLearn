@@ -22,9 +22,14 @@ public interface UserDao {
     //更新
     User updateUser(User User) throws Exception;
 
+    //根据条件修改
+    void updateUserByUserId(String userId, String userName, int age) throws Exception;
+
     //删除
     void deleteUser(String userId) throws Exception;
 
     //异步插入
     void insertUserAsync(User user) throws Exception;
+
+    void closeDB();
 }

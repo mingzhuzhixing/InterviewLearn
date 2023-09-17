@@ -1,7 +1,8 @@
 package com.v.module_database.realm.model;
 
-//import io.realm.RealmObject;
-//import io.realm.annotations.Ignore;
+import io.realm.RealmObject;
+import io.realm.annotations.Ignore;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * https://codeleading.com/article/73763610221/
@@ -33,25 +34,32 @@ package com.v.module_database.realm.model;
  *
  * 但是注意主键默认没有加@Required, 如果主键要求非null, 需要显式添加@Required.
  */
-public class User /*extends RealmObject*/ {
-    private int user_id;
+
+//相当于sqllite的表
+//字段表示表中的列
+public class User extends RealmObject {
+    @PrimaryKey
+    private String user_id;
     private String name;
     private int age;
 
-    public User(int user_id, String name, int age) {
+    public User() {
+    }
+
+    public User(String user_id, String name, int age) {
         this.user_id = user_id;
         this.name = name;
         this.age = age;
     }
 
-//    @Ignore
+    @Ignore
     private int sessionId;
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 
@@ -78,6 +86,16 @@ public class User /*extends RealmObject*/ {
 
     public void setSessionId(int sessionId) {
         this.sessionId = sessionId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id='" + user_id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", sessionId=" + sessionId +
+                '}';
     }
 }
 

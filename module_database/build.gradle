@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.library'
-//    id 'realm-android'
+    id 'realm-android'
 }
 
 android {
@@ -39,5 +39,5 @@ dependencies {
 
     implementation project(":module_base")
 
-//    implementation deps["realm"]
+    api deps["realm"]
 }
