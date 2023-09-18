@@ -4,6 +4,9 @@ import android.content.Intent
 import android.view.View
 import com.v.module_base.BaseTitleBarActivity
 import com.v.module_jetpack.paging.PagingActivity
+import com.v.module_jetpack.realm.dao.PersonDao
+import com.v.module_jetpack.realm.dao.PersonDaoImpl
+import com.v.module_jetpack.realm.model.Person
 import com.v.module_jetpack.room.RoomActivity
 import com.v.module_jetpack.room.database.AppDatabase
 import com.v.module_jetpack.sqlite.SqliteActivity
@@ -33,5 +36,11 @@ class JetpackMainActivity : BaseTitleBarActivity() {
 
     fun sqliteClick(view: View) {
         startActivity(Intent(this, SqliteActivity::class.java))
+    }
+
+    fun realmClick(view: View) {
+        val user = Person("1", "zhangs", 20)
+        val dao: PersonDao = PersonDaoImpl(this)
+        dao.insert(user)
     }
 }

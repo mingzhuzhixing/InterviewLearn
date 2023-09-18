@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+//    id 'realm-android'
 }
 
 android {
@@ -56,4 +57,7 @@ dependencies {
     kapt deps["room_compiler"]// To use Kotlin annotation processing tool (kapt)
     implementation deps["room_ktx"]// optional - Kotlin Extensions and Coroutines support for Room
 
+    implementation project(":module_database")
+
+    implementation deps["realm"]
 }
