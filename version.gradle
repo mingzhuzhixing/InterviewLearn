@@ -99,6 +99,9 @@ def deps = [
 
         //权限请求框架：https://github.com/getActivity/XXPermissions
         permissions            : "com.github.getActivity:XXPermissions:18.2",
+
+        //realm 数据库
+        realm                  : "io.realm:realm-gradle-plugin:10.0.1",
 ]
 
 def composes = [

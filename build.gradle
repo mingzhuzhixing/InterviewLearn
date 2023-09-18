@@ -27,6 +27,9 @@ buildscript {
 
         //protobuf 插件
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
+
+        //realm 插件
+        classpath "io.realm:realm-gradle-plugin:10.0.1"
     }
 }
 

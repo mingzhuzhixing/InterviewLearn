@@ -1,7 +1,7 @@
-package com.v.module_database;
+package com.v.module_database.sqlite_custom;
 
-import com.v.module_database.annotion.DbFiled;
-import com.v.module_database.annotion.DbTable;
+import com.v.module_database.sqlite_custom.annotion.DbFiled;
+import com.v.module_database.sqlite_custom.annotion.DbTable;
 
 /**
  * Class description here
